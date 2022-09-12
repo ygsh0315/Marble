@@ -37,16 +37,36 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void PlayerMove(int dice1, int dice2)
+    public void PlayerMovee(int dice1, int dice2)
+    {
+        StartCoroutine(IEMove(dice1, dice2));
+    }
+    //public void PlayerMove(int dice1, int dice2)
+    //{
+        //int destinationIndex = dice1 + dice2;
+        //for (int i = 1; i<= destinationIndex; i++)
+        //{
+            //if (currentMapIndex + i > 31)
+            //{
+                //currentMapIndex -= 32;
+            //}
+            //Player1.transform.position = MapList[currentMapIndex + i].transform.position + new Vector3(0,1.5f,0);
+            //StartCoroutine(IEMove(dice1, dice2));
+        //}
+        //currentMapIndex += destinationIndex;
+    //}
+
+    IEnumerator IEMove(int dice1, int dice2)
     {
         int destinationIndex = dice1 + dice2;
-        for (int i = 1; i<= destinationIndex; i++)
+        for (int i = 1; i <= destinationIndex; i++)
         {
             if (currentMapIndex + i > 31)
             {
                 currentMapIndex -= 32;
             }
-            Player1.transform.position = MapList[currentMapIndex + i].transform.position + new Vector3(0,1.5f,0);
+            Player1.transform.position = MapList[currentMapIndex + i].transform.position + new Vector3(0, 1.5f, 0);
+            yield return new WaitForSeconds(0.5f);
         }
         currentMapIndex += destinationIndex;
     }
