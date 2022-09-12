@@ -44,10 +44,9 @@ public class GameManager : MonoBehaviour
         {
             if (currentMapIndex + i > 31)
             {
-                destinationIndex = currentMapIndex + i - mapCount;
-                currentMapIndex = 0;
+                currentMapIndex -= 32;
             }
-            Player1.transform.position = MapList[currentMapIndex + i].transform.position + new Vector3(0,1,0);
+            Player1.transform.position = MapList[currentMapIndex + i].transform.position + new Vector3(0,1.5f,0);
         }
         currentMapIndex += destinationIndex;
     }

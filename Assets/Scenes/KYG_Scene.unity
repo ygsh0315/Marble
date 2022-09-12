@@ -12707,8 +12707,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 15
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -14574,8 +14574,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   round: 0
+  Player1: {fileID: 907509956}
+  Player2: {fileID: 0}
+  Player3: {fileID: 0}
+  Player4: {fileID: 0}
   Map: {fileID: 487933795}
+  mapCount: 0
   MapList: []
+  currentMapIndex: 0
 --- !u!4 &1942610885
 Transform:
   m_ObjectHideFlags: 0
