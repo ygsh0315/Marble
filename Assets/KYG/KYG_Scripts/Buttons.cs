@@ -6,7 +6,6 @@ using TMPro;
 
 public class Buttons : MonoBehaviour
 {
-    // Start is called before the first frame update
     public TextMeshProUGUI dice1Number;
     public TextMeshProUGUI dice2Number;
     void Start()
@@ -25,6 +24,6 @@ public class Buttons : MonoBehaviour
         int dice2 = Random.Range(1, 7);
         dice1Number.text = dice1.ToString();
         dice2Number.text = dice2.ToString();
-        GameManager.instance.PlayerMovee(dice1, dice2);
+        GameManager.instance.currentTurnPlayer.GetComponent<Player>().PlayerMove(dice1, dice2);
     }
 }

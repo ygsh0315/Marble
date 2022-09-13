@@ -12,15 +12,16 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
-    public int round = 1;
     public GameObject Player1;
     public GameObject Player2;
     public GameObject Player3;
     public GameObject Player4;
     public GameObject Map;
     public int mapCount;
+    public int turnIndex;
     public List<GameObject> MapList = new List<GameObject>();
-    public int currentMapIndex = 0;
+    public List<GameObject> PlayerList = new List<GameObject>();
+    public GameObject currentTurnPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,45 +30,25 @@ public class GameManager : MonoBehaviour
         {
             MapList.Add(Map.transform.GetChild(i).gameObject);
         }
+        PlayerList.Add(Player1);
+        PlayerList.Add(Player2);
+        PlayerList.Add(Player3);
+        PlayerList.Add(Player4);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void PlayerMovee(int dice1, int dice2)
-    {
-        StartCoroutine(IEMove(dice1, dice2));
-    }
-    //public void PlayerMove(int dice1, int dice2)
-    //{
-        //int destinationIndex = dice1 + dice2;
-        //for (int i = 1; i<= destinationIndex; i++)
-        //{
-            //if (currentMapIndex + i > 31)
-            //{
-                //currentMapIndex -= 32;
-            //}
-            //Player1.transform.position = MapList[currentMapIndex + i].transform.position + new Vector3(0,1.5f,0);
-            //StartCoroutine(IEMove(dice1, dice2));
-        //}
-        //currentMapIndex += destinationIndex;
-    //}
-
-    IEnumerator IEMove(int dice1, int dice2)
-    {
-        int destinationIndex = dice1 + dice2;
-        for (int i = 1; i <= destinationIndex; i++)
+        if (turnIndex > PlayerList.Count - 1)
         {
-            if (currentMapIndex + i > 31)
-            {
-                currentMapIndex -= 32;
-            }
-            Player1.transform.position = MapList[currentMapIndex + i].transform.position + new Vector3(0, 1.5f, 0);
-            yield return new WaitForSeconds(0.5f);
+            turnIndex -= PlayerList.Count;
         }
-        currentMapIndex += destinationIndex;
+        ChangeCurrentTurnPlayer(turnIndex);
+    }
+
+    public void ChangeCurrentTurnPlayer(int i)
+    {
+        
+        currentTurnPlayer = PlayerList[i];
     }
 }
