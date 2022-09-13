@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public int round = 1;
     public int currentMapIndex = 0;
     public int money;
-    int sameDiceCount = 0;
+    public int sameDiceCount = 0;
     public GameObject RollDiceBtn;
     public enum PlayerState 
     { 
@@ -83,6 +83,14 @@ public class Player : MonoBehaviour
 
     public void PlayerMove(int dice1, int dice2)
     {
+        if(dice1 == dice2)
+        sameDiceCount++;
+        if (sameDiceCount == 3)
+        {
+            transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
+            state = PlayerState.Turn;
+            return;
+        }
         state = PlayerState.Move;      
         StartCoroutine(IEMove(dice1, dice2));
     }
@@ -90,6 +98,7 @@ public class Player : MonoBehaviour
 
     IEnumerator IEMove(int dice1, int dice2)
     {
+        
         int destinationIndex = dice1 + dice2;
         for (int i = 1; i <= destinationIndex; i++)
         {
@@ -103,14 +112,9 @@ public class Player : MonoBehaviour
         currentMapIndex += destinationIndex;
         if(dice1 == dice2)
         {
+            
             state = PlayerState.Idle;
             RollDiceBtn.SetActive(true);
-            sameDiceCount++;
-            if(sameDiceCount == 3)
-            {
-                transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
-                state = PlayerState.Turn;
-            }
         }
         else
         {
