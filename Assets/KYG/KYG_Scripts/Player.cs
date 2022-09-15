@@ -88,6 +88,8 @@ public class Player : MonoBehaviour
         if (sameDiceCount == 3)
         {
             transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
+            currentMapIndex = 8;
+            sameDiceCount = 0;
             state = PlayerState.Turn;
             return;
         }

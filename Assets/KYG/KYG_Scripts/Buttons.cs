@@ -20,8 +20,8 @@ public class Buttons : MonoBehaviour
     }
     public void RollDice()
     {
-        int dice1 = Random.Range(6, 7);
-        int dice2 = Random.Range(6, 7);
+        int dice1 = Random.Range(1, 2);
+        int dice2 = Random.Range(1, 2);
         dice1Number.text = dice1.ToString();
         dice2Number.text = dice2.ToString();
         GameManager.instance.currentTurnPlayer.GetComponent<Player>().PlayerMove(dice1, dice2);

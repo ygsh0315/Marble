@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Block : MonoBehaviour
+public class BasicBlock : MonoBehaviour
 {
     //땅 주인
     public GameObject LandOwner;
@@ -14,13 +14,13 @@ public class Block : MonoBehaviour
     public GameObject landFlagFactory;
 
     //object1공장
-    public GameObject object1Factory;
+    public GameObject tear1Factory;
 
     //object2공장
-    public GameObject object2Factory;
+    public GameObject tear22Factory;
 
     //object3공장
-    public GameObject object3Factory;
+    public GameObject tear3Factory;
 
     //landMark 공장
     public GameObject landMarkFactory;
