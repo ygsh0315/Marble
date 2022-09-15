@@ -25,5 +25,7 @@ public class Buttons : MonoBehaviour
         dice1Number.text = dice1.ToString();
         dice2Number.text = dice2.ToString();
         GameManager.instance.currentTurnPlayer.GetComponent<Player>().PlayerMove(dice1, dice2);
+        GetComponent<DicePower>().diceButton = true;
+        
     }
 }
