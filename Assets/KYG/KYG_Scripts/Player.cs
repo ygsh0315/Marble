@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public int currentMapIndex = 0;
     public int money;
     public int sameDiceCount = 0;
+    public bool sameDice = false;
     public GameObject RollDiceBtn;
     public enum PlayerState 
     { 
@@ -23,7 +24,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        money = GameManager.instance.startMoney;
     }
 
     // Update is called once per frame
@@ -54,14 +55,6 @@ public class Player : MonoBehaviour
     private void Idle()
     {
         
-        //if (GameManager.instance.currentTurnPlayer != transform.gameObject)
-        //{
-        //    RollDiceBtn.SetActive(false);
-        //}
-        //else
-        //{
-        //    RollDiceBtn.SetActive(true);
-        //}
     }
     private void Move()
     {
@@ -70,8 +63,50 @@ public class Player : MonoBehaviour
 
     private void Turn()
     {
+        getBlockInfo();
+        if(sameDice == true)
+        {
+            
+            state = PlayerState.Idle;
+            RollDiceBtn.SetActive(true);
+        }
+        else
+        {
+            state = PlayerState.End;
+        }
+    }
 
-        state = PlayerState.End;
+    private void getBlockInfo()
+    {
+        GameObject currentBlock = GameManager.instance.MapList[currentMapIndex];
+        switch (currentBlock.tag)
+        {
+            case "StartBlock":               
+                currentBlock.GetComponent<StartBlock>().OnStartBlock(transform);
+                break;
+            case "BasicBlock":
+                currentBlock.GetComponent<BasicBlock>().OnBasicBlock(transform);
+                break;
+            case "EventBlock":               
+                currentBlock.GetComponent<EventBlock>().OnEventBlock(transform);
+                break;
+            case "SpecialBlock":               
+                currentBlock.GetComponent<SpecialBlock>().OnSpecialBlock(transform);
+                break;
+            case "CardBlock":            
+                currentBlock.GetComponent<CardBlock>().OnCardBlock(transform);
+                break;
+            case "TrapBlock":              
+                currentBlock.GetComponent<TrapBlock>().OnTrapBlock(transform);
+                break;
+            case "DoubleBlock":               
+                currentBlock.GetComponent<DoubleBlock>().OnDoubleBlock(transform);
+                break;
+            case "TeleportBlock":                
+                currentBlock.GetComponent<TeleportBlock>().OnTeleportBlock(transform);
+                break;
+
+        }
     }
 
     private void End()
@@ -88,6 +123,7 @@ public class Player : MonoBehaviour
         if (sameDiceCount == 3)
         {
             transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
+            sameDice = false;
             currentMapIndex = 8;
             sameDiceCount = 0;
             state = PlayerState.Turn;
@@ -111,17 +147,15 @@ public class Player : MonoBehaviour
             transform.position = GameManager.instance.MapList[currentMapIndex + i].transform.position + new Vector3(0, 1.5f, 0);
             yield return new WaitForSeconds(0.1f);
         }
-        currentMapIndex += destinationIndex;
+        currentMapIndex += destinationIndex;       
         if(dice1 == dice2)
         {
-            
-            state = PlayerState.Idle;
-            RollDiceBtn.SetActive(true);
+            sameDice = true; 
         }
         else
         {
-            state = PlayerState.Turn;
+            sameDice = false;
         }
-        
+        state = PlayerState.Turn;
     }
 }

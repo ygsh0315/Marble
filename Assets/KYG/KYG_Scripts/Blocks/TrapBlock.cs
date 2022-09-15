@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckBlock : MonoBehaviour
+public class TrapBlock : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,11 +15,8 @@ public class CheckBlock : MonoBehaviour
     {
         
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.GetComponent<Player>().state == Player.PlayerState.Turn)
-    //    {
-            
-    //    }
-    //}
+    public void OnTrapBlock(Transform player)
+    {
+        print("TrapBlock");
+    }
 }

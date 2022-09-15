@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
+    public int startMoney = 2000000;
     public GameObject Player1;
     public GameObject Player2;
     public GameObject Player3;

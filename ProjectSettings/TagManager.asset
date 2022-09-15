@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - StartBlock
+  - BasicBlock
+  - EventBlock
+  - SpecialBlock
+  - CardBlock
+  - TrapBlock
+  - DoubleBlock
+  - TeleportBlock
   layers:
   - Default
   - TransparentFX
