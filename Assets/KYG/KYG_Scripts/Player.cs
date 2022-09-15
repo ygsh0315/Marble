@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public int round = 1;
     public int currentMapIndex = 0;
     public int money;
+    public int salary = 300000;
     public int sameDiceCount = 0;
     public bool sameDice = false;
     public GameObject RollDiceBtn;
@@ -119,7 +120,13 @@ public class Player : MonoBehaviour
     public void PlayerMove(int dice1, int dice2)
     {
         if(dice1 == dice2)
-        sameDiceCount++;
+        {
+            sameDiceCount++;
+        }
+        else
+        {
+            sameDiceCount = 0;
+        }
         if (sameDiceCount == 3)
         {
             transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
@@ -142,6 +149,7 @@ public class Player : MonoBehaviour
         {
             if (currentMapIndex + i > 31)
             {
+                money += salary;
                 currentMapIndex -= 32;
             }
             transform.position = GameManager.instance.MapList[currentMapIndex + i].transform.position + new Vector3(0, 1.5f, 0);
