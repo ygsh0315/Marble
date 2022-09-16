@@ -20,13 +20,13 @@ public class EvenOdd : MonoBehaviour
 
     public void onClick()
     {
-        if(gameObject.name == "EvenButton")
+        if(gameObject.name == "Even")
         {
             even = true;
         }
-        else
+        else if(gameObject.name == "Odd")
         {
-
+            odd = true;
         }
 
     }
