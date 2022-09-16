@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
                 currentBlock.GetComponent<StartBlock>().OnStartBlock(transform);
                 break;
             case "BasicBlock":
-                currentBlock.GetComponent<BasicBlock>().OnBasicBlock(transform);
+                currentBlock.GetComponent<BasicBlock>().OnBasicBlock(gameObject);
                 break;
             case "EventBlock":               
                 currentBlock.GetComponent<EventBlock>().OnEventBlock(transform);

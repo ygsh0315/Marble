@@ -263,7 +263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: 100}
+  m_AnchoredPosition: {x: -100, y: 100}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &61501480
@@ -312,7 +312,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 523216468}
+        m_TargetAssemblyTypeName: PurchaseUI, Assembly-CSharp
+        m_MethodName: landToggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1001 &62308880
 PrefabInstance:
@@ -324,6 +336,46 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 124000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 250000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 34000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 74000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 172000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 390000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 250000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 750000
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
@@ -517,6 +569,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 146000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 180000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 48000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 92000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 220000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 470000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 750000
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -573,6 +665,46 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 140000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 180000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 44000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 86000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 460000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 300000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 750000
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
@@ -661,7 +793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50, y: 100}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &100658014
@@ -710,7 +842,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 523216468}
+        m_TargetAssemblyTypeName: PurchaseUI, Assembly-CSharp
+        m_MethodName: tear1Toggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &119000828
 GameObject:
@@ -1265,6 +1409,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 164000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 70000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 210000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 350000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 56000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 124000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 280000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 600000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 350000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 700000
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -1632,6 +1816,7 @@ GameObject:
   - component: {fileID: 523216465}
   - component: {fileID: 523216467}
   - component: {fileID: 523216466}
+  - component: {fileID: 523216468}
   m_Layer: 5
   m_Name: PurchaseUI
   m_TagString: Untagged
@@ -1655,6 +1840,9 @@ RectTransform:
   - {fileID: 100658013}
   - {fileID: 844208950}
   - {fileID: 607203834}
+  - {fileID: 1132641615}
+  - {fileID: 1053340305}
+  - {fileID: 1599915067}
   m_Father: {fileID: 1276059281}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1701,6 +1889,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523216464}
   m_CullTransparentMesh: 1
+--- !u!114 &523216468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523216464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18ab0187ced8b14f9fc7de1789945d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeText: {fileID: 1132641616}
+  charge: 0
+  landCharge: 0
+  landCount: 0
+  land: 0
+  tear1Charge: 0
+  tear1Count: 0
+  tear1: 0
+  tear2Charge: 0
+  tear2Count: 0
+  tear2: 0
+  tear3Charge: 0
+  tear3Count: 0
+  tear3: 0
+  player: {fileID: 0}
+  currentBlock: {fileID: 0}
 --- !u!1 &532864973
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,7 +2103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 100}
+  m_AnchoredPosition: {x: 200, y: 100}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &607203835
@@ -1936,7 +2152,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 523216468}
+        m_TargetAssemblyTypeName: PurchaseUI, Assembly-CSharp
+        m_MethodName: tear3Toggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!4 &608686975 stripped
 Transform:
@@ -2034,6 +2262,46 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 118000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 250000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 32000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 70000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 168000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 380000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 250000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 750000
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
@@ -2290,6 +2558,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769318856}
   m_CullTransparentMesh: 1
+--- !u!1 &776634296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 776634297}
+  - component: {fileID: 776634299}
+  - component: {fileID: 776634298}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &776634297
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776634296}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1599915067}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &776634298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776634296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uCDE8\uC18C"
+--- !u!222 &776634299
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776634296}
+  m_CullTransparentMesh: 1
 --- !u!4 &792722445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
@@ -2308,6 +2656,7 @@ GameObject:
   - component: {fileID: 796163000}
   - component: {fileID: 796162999}
   - component: {fileID: 796162998}
+  - component: {fileID: 796163002}
   m_Layer: 5
   m_Name: Even
   m_TagString: Untagged
@@ -2444,6 +2793,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796162996}
   m_CullTransparentMesh: 1
+--- !u!114 &796163002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796162996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f18ab0187ced8b14f9fc7de1789945d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeText: {fileID: 0}
+  charge: 0
+  landCharge: 0
+  landCount: 0
+  land: 0
+  tear1Charge: 0
+  tear1Count: 0
+  tear1: 0
+  tear2Charge: 0
+  tear2Count: 0
+  tear2: 0
+  tear3Charge: 0
+  tear3Count: 0
+  tear3: 0
+  player: {fileID: 0}
+  currentBlock: {fileID: 0}
 --- !u!1 &844208949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2480,7 +2857,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 100}
+  m_AnchoredPosition: {x: 100, y: 100}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &844208951
@@ -2529,7 +2906,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 523216468}
+        m_TargetAssemblyTypeName: PurchaseUI, Assembly-CSharp
+        m_MethodName: tear2Toggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &855431686
 GameObject:
@@ -2622,6 +3011,46 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 94000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 120000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 46000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 114000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 270000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 700000
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
@@ -2875,6 +3304,140 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6309143453700105520, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
   m_PrefabInstance: {fileID: 1725993379}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1053340304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1053340305}
+  - component: {fileID: 1053340308}
+  - component: {fileID: 1053340307}
+  - component: {fileID: 1053340306}
+  m_Layer: 5
+  m_Name: PurchaseBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1053340305
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053340304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1142175393}
+  m_Father: {fileID: 523216465}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -180, y: -90}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1053340306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053340304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1053340307}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 523216468}
+        m_TargetAssemblyTypeName: PurchaseUI, Assembly-CSharp
+        m_MethodName: OnPurchaseBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1053340307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053340304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1053340308
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053340304}
+  m_CullTransparentMesh: 1
 --- !u!1 &1057018212
 GameObject:
   m_ObjectHideFlags: 0
@@ -3114,11 +3677,226 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
+--- !u!1 &1132641614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1132641615}
+  - component: {fileID: 1132641617}
+  - component: {fileID: 1132641616}
+  m_Layer: 5
+  m_Name: charge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1132641615
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132641614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 523216465}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1132641616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132641614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 0
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1132641617
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132641614}
+  m_CullTransparentMesh: 1
 --- !u!4 &1140411201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
   m_PrefabInstance: {fileID: 3634312270458132908}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1142175392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1142175393}
+  - component: {fileID: 1142175395}
+  - component: {fileID: 1142175394}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1142175393
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142175392}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1053340305}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1142175394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142175392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\uAD6C\uB9E4\uD558\uAE30"
+--- !u!222 &1142175395
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142175392}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1146100168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3129,6 +3907,46 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 170000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 70000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 210000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 350000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 130000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 290000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 620000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 350000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 700000
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
@@ -3812,6 +4630,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 54000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 48000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 120000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 450000
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -4112,6 +4970,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 80000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 240000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 400000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 80000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 160000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 340000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 700000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 400000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 600000
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -4174,6 +5072,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 192000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 80000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 240000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 400000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 72000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 148000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 320000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 680000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 400000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 600000
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -4220,6 +5158,140 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+--- !u!1 &1599915066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1599915067}
+  - component: {fileID: 1599915070}
+  - component: {fileID: 1599915069}
+  - component: {fileID: 1599915068}
+  m_Layer: 5
+  m_Name: CancelBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1599915067
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599915066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 776634297}
+  m_Father: {fileID: 523216465}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 180, y: -90}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1599915068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599915066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1599915069}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 523216468}
+        m_TargetAssemblyTypeName: PurchaseUI, Assembly-CSharp
+        m_MethodName: OnCancelBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1599915069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599915066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1599915070
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599915066}
+  m_CullTransparentMesh: 1
 --- !u!1 &1616408867
 GameObject:
   m_ObjectHideFlags: 0
@@ -4723,6 +5795,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 40000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 120000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 24000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 48000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 118000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 280000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 700000
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -4779,6 +5891,46 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 66000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 30000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 90000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 12000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 28000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 80000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 600000
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
@@ -4917,6 +6069,50 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: charge
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 26000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 30000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 22000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 250000
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
@@ -5480,6 +6676,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 72000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 30000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 90000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 14000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 32000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 84000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 220000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 150000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 600000
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -5536,6 +6772,46 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landPrice
+      value: 54000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1Price
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2Price
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3Price
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landTallFee
+      value: 6000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear1TallFee
+      value: 18000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear2TallFee
+      value: 46000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: tear3TallFee
+      value: 120000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkPrice
+      value: 100000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: landMarkTallFee
+      value: 450000
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_RootOrder

@@ -28,12 +28,14 @@ public class GameUI : MonoBehaviour
     {
         
     }
-    public void Purchase()
+    public void Purchase(GameObject block, GameObject player)
     {
         PurchaseUI.SetActive(true);
+        PurchaseUI.GetComponent<PurchaseUI>().process(block, player);
+        
     }
 
-    public void TakeOver()
+    public void TakeOver(GameObject block)
     {
         TakeOverUI.SetActive(true);
     }

@@ -94,18 +94,18 @@ public class BasicBlock : MonoBehaviour
     {
         charge = landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount;
     }
-    public void OnBasicBlock(Transform player)
+    public void OnBasicBlock(GameObject player)
     {
         print("BasicBlock");
         if (!LandOwner)
         {
-            GameUI.instance.Purchase();
+            GameUI.instance.Purchase(gameObject, player);
         }
         else if(LandOwner == player)
         {
             if(!landMark)
             {
-                GameUI.instance.Purchase();
+                GameUI.instance.Purchase(gameObject, player);
             }
         }
         else
@@ -113,7 +113,7 @@ public class BasicBlock : MonoBehaviour
             player.GetComponent<Player>().money -= charge;
             if (!landMark)
             {
-                GameUI.instance.TakeOver();
+                GameUI.instance.TakeOver(gameObject);
             }
         }
     }
