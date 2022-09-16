@@ -492,9 +492,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &15010932
 MeshRenderer:
@@ -2145,9 +2145,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &299237548
 MeshRenderer:
@@ -2655,9 +2655,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &340064153
 MeshRenderer:
@@ -2777,9 +2777,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &340073465
 MeshRenderer:
@@ -3730,9 +3730,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &449833227
 MeshRenderer:
@@ -4380,9 +4380,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &500454251
 MeshRenderer:
@@ -6241,9 +6241,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &686314531
 MeshRenderer:
@@ -7900,9 +7900,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &842906753
 MeshRenderer:
@@ -9072,9 +9072,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &962884287
 MeshRenderer:
@@ -10342,9 +10342,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &1079721288
 MeshRenderer:
@@ -13538,8 +13538,8 @@ GameObject:
   - component: {fileID: 1508946342}
   - component: {fileID: 1508946341}
   - component: {fileID: 1508946340}
-  - component: {fileID: 1508946344}
   - component: {fileID: 1508946339}
+  - component: {fileID: 1508946344}
   m_Layer: 5
   m_Name: RollDice
   m_TagString: Untagged
@@ -13689,7 +13689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceSlider: {fileID: 1972914127}
-  maxPower: 0
+  maxPower: 100
   diceButton: 0
 --- !u!1 &1531054629
 GameObject:
@@ -13856,9 +13856,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &1544771018
 MeshRenderer:
@@ -15261,9 +15261,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &1689689065
 MeshRenderer:
@@ -16180,9 +16180,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &1833536324
 MeshRenderer:
@@ -16760,7 +16760,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1972914126}
   - component: {fileID: 1972914127}
-  - component: {fileID: 1972914128}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -16842,21 +16841,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1972914128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972914125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d77e6765344dcb4f9ae4f744b650b47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  diceSlider: {fileID: 1972914127}
-  maxPower: 100
-  diceButton: 0
 --- !u!1 &1977103634
 GameObject:
   m_ObjectHideFlags: 0
@@ -16925,9 +16909,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &1977103638
 MeshRenderer:
@@ -17182,9 +17166,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &2001686839
 MeshRenderer:
@@ -17865,9 +17849,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &2055463750
 MeshRenderer:
@@ -18336,9 +18320,9 @@ MonoBehaviour:
   LandOwner: {fileID: 0}
   charge: 0
   landFlagFactory: {fileID: 0}
-  tear1Factory: {fileID: 0}
-  tear22Factory: {fileID: 0}
-  tear3Factory: {fileID: 0}
+  object1Factory: {fileID: 0}
+  object2Factory: {fileID: 0}
+  object3Factory: {fileID: 0}
   landMarkFactory: {fileID: 0}
 --- !u!23 &2078842418
 MeshRenderer:
