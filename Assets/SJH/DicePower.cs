@@ -71,7 +71,7 @@ public class DicePower : MonoBehaviour
         }
         if(diceButton == true)
         {
-            print(power);
+            //print(power);
         }
         //else if (diceSlider.value == diceSlider.maxValue)
         //{
