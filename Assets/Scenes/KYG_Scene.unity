@@ -325,6 +325,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 523216468}
+        m_TargetAssemblyTypeName: PurchaseUI, Assembly-CSharp
+        m_MethodName: landToggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1001 &62308880
 PrefabInstance:
@@ -853,7 +865,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 1
 --- !u!1 &119000828
@@ -1917,6 +1929,10 @@ MonoBehaviour:
   tear3: 0
   player: {fileID: 0}
   currentBlock: {fileID: 0}
+  landTog: {fileID: 0}
+  tear1Tog: {fileID: 0}
+  tear2og: {fileID: 0}
+  tear3Tog: {fileID: 0}
 --- !u!1 &532864973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2163,7 +2179,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 1
 --- !u!4 &608686975 stripped
@@ -2656,7 +2672,6 @@ GameObject:
   - component: {fileID: 796163000}
   - component: {fileID: 796162999}
   - component: {fileID: 796162998}
-  - component: {fileID: 796163002}
   m_Layer: 5
   m_Name: Even
   m_TagString: Untagged
@@ -2793,34 +2808,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796162996}
   m_CullTransparentMesh: 1
---- !u!114 &796163002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796162996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f18ab0187ced8b14f9fc7de1789945d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chargeText: {fileID: 0}
-  charge: 0
-  landCharge: 0
-  landCount: 0
-  land: 0
-  tear1Charge: 0
-  tear1Count: 0
-  tear1: 0
-  tear2Charge: 0
-  tear2Count: 0
-  tear2: 0
-  tear3Charge: 0
-  tear3Count: 0
-  tear3: 0
-  player: {fileID: 0}
-  currentBlock: {fileID: 0}
 --- !u!1 &844208949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,7 +2904,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_IsOn: 1
 --- !u!1 &855431686
