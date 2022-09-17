@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
         StateMachine();
         if (money <= 0)
         {
+            GameManager.instance.turnIndex++;
             Destroy(gameObject);
             GameManager.instance.PlayerList.Remove(gameObject);
         }

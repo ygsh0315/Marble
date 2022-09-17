@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class PurchaseUI : MonoBehaviour
 {
+    public TextMeshProUGUI LandName;
     public TextMeshProUGUI chargeText;
     public int charge=0;
     public int landCharge;
@@ -29,6 +30,7 @@ public class PurchaseUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         landTog.onValueChanged.AddListener(landToggle);
         tear1Tog.onValueChanged.AddListener(tear1Toggle);
         tear2Tog.onValueChanged.AddListener(tear2Toggle);
@@ -43,6 +45,7 @@ public class PurchaseUI : MonoBehaviour
         {
             charge = landCharge * landCount + tear1Charge * tear1Count + tear2Charge * tear2Count + tear3Charge * tear3Count;
             chargeText.text = charge.ToString();
+            LandName.text = currentBlock.name;
             if (!landTog.isOn && !tear1Tog.isOn && !tear2Tog.isOn && !tear3Tog.isOn)
             {
                 purchaseBtn.interactable = false;
@@ -59,6 +62,8 @@ public class PurchaseUI : MonoBehaviour
         if (blockInfo.GetComponent<BasicBlock>().land)
         {
             landTog.interactable = false;
+            landTog.isOn = false;
+            land = false;
         }
         else
         {
@@ -69,6 +74,8 @@ public class PurchaseUI : MonoBehaviour
         if (blockInfo.GetComponent<BasicBlock>().tear1)
         {
             tear1Tog.interactable = false;
+            tear1Tog.isOn = false;
+            tear1 = false;
         }
         else
         {
@@ -79,6 +86,8 @@ public class PurchaseUI : MonoBehaviour
         if (blockInfo.GetComponent<BasicBlock>().tear2)
         {
             tear2Tog.interactable = false;
+            tear2Tog.isOn = false;
+            tear2 = false;
         }
         else
         {
@@ -89,6 +98,8 @@ public class PurchaseUI : MonoBehaviour
         if (blockInfo.GetComponent<BasicBlock>().tear3)
         {
             tear3Tog.interactable = false;
+            tear3Tog.isOn = false;
+            tear3 = false;
         }
         else
         {
@@ -166,29 +177,33 @@ public class PurchaseUI : MonoBehaviour
     public void OnPurchaseBtn()
     {
         currentBlock.GetComponent<BasicBlock>().LandOwner = player;
-        currentBlock.GetComponent<BasicBlock>().land = land;
-        currentBlock.GetComponent<BasicBlock>().tear1 = tear1;
-        currentBlock.GetComponent<BasicBlock>().tear2 = tear2;
-        currentBlock.GetComponent<BasicBlock>().tear3 = tear3;
+        //currentBlock.GetComponent<BasicBlock>().land = land;
+        //currentBlock.GetComponent<BasicBlock>().tear1 = tear1;
+        //currentBlock.GetComponent<BasicBlock>().tear2 = tear2;
+        //currentBlock.GetComponent<BasicBlock>().tear3 = tear3;
         if (landTog.isOn)
         {
             //currentBlock.GetComponent<BasicBlock>().landFlagFactory.SetActive(true);
             currentBlock.GetComponent<BasicBlock>().landCount = 1;
+            currentBlock.GetComponent<BasicBlock>().land = true;
         }
         if (tear1Tog.isOn)
         {
             currentBlock.GetComponent<BasicBlock>().tear1Factory.SetActive(true);
             currentBlock.GetComponent<BasicBlock>().tear1Count = 1;
+            currentBlock.GetComponent<BasicBlock>().tear1 = true;
         }
         if (tear2Tog.isOn)
         {
             currentBlock.GetComponent<BasicBlock>().tear2Factory.SetActive(true);
             currentBlock.GetComponent<BasicBlock>().tear2Count = 1;
+            currentBlock.GetComponent<BasicBlock>().tear2 = true;
         }
         if (tear3Tog.isOn)
         {
             currentBlock.GetComponent<BasicBlock>().tear3Factory.SetActive(true);
             currentBlock.GetComponent<BasicBlock>().tear3Count = 1;
+            currentBlock.GetComponent<BasicBlock>().tear3 = true;
         }
         player.GetComponent<Player>().money -= charge;
         gameObject.SetActive(false);
