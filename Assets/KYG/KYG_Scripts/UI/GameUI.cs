@@ -16,11 +16,14 @@ public class GameUI : MonoBehaviour
     public GameObject PurchaseUI;
 
     public GameObject TakeOverUI;
+
+    public GameObject WinUI;
     // Start is called before the first frame update
     void Start()
     {
         PurchaseUI.SetActive(false);
         TakeOverUI.SetActive(false);
+        WinUI.SetActive(false);
     }
 
     // Update is called once per frame

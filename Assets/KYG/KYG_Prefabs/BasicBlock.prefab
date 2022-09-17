@@ -204,24 +204,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1aeefa3f4bf9c478305cd4d11a0099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  landName: {fileID: 2825046285405901314}
+  landMagText: {fileID: 2825046285457440465}
+  landMag: 1
   LandOwner: {fileID: 0}
   charge: 0
+  takeOverCharge: 0
+  landCount: 0
   land: 0
   landFlagFactory: {fileID: 0}
   landPrice: 0
   landTallFee: 0
+  tear1Count: 0
   tear1: 0
   tear1Factory: {fileID: 650951571636479613}
   tear1Price: 0
   tear1TallFee: 0
+  tear2Count: 0
   tear2: 0
   tear2Factory: {fileID: 2094853267684236965}
   tear2Price: 0
   tear2TallFee: 0
+  tear3Count: 0
   tear3: 0
   tear3Factory: {fileID: 8208844580695170370}
   tear3Price: 0
   tear3TallFee: 0
+  landMarkCount: 0
   landMark: 0
   landMarkFactory: {fileID: 0}
   landMarkPrice: 0
@@ -402,7 +411,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC9C0\uAD6C\n"
+  m_text: 'LandName
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_sharedMaterial: {fileID: 1592513434061130, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
@@ -537,7 +548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X 4
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_sharedMaterial: {fileID: 1592513434061130, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}

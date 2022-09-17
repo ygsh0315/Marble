@@ -56,7 +56,8 @@ public class PurchaseUI : MonoBehaviour
             }
         }
     }
-    public void Interactable(GameObject blockInfo)
+
+    public void Interactable(GameObject blockInfo, GameObject playerInfo)
     {
         
         if (blockInfo.GetComponent<BasicBlock>().land)
@@ -71,7 +72,7 @@ public class PurchaseUI : MonoBehaviour
             landTog.isOn = true;
             land = true;
         }
-        if (blockInfo.GetComponent<BasicBlock>().tear1)
+        if (blockInfo.GetComponent<BasicBlock>().tear1 || playerInfo.GetComponent<Player>().money< blockInfo.GetComponent<BasicBlock>().landPrice + blockInfo.GetComponent<BasicBlock>().tear1Price)
         {
             tear1Tog.interactable = false;
             tear1Tog.isOn = false;
@@ -83,7 +84,7 @@ public class PurchaseUI : MonoBehaviour
             tear1Tog.isOn = true;
             tear1 = true;
         }
-        if (blockInfo.GetComponent<BasicBlock>().tear2)
+        if (blockInfo.GetComponent<BasicBlock>().tear2 || playerInfo.GetComponent<Player>().money < blockInfo.GetComponent<BasicBlock>().landPrice + blockInfo.GetComponent<BasicBlock>().tear1Price + blockInfo.GetComponent<BasicBlock>().tear2Price)
         {
             tear2Tog.interactable = false;
             tear2Tog.isOn = false;
@@ -95,7 +96,7 @@ public class PurchaseUI : MonoBehaviour
             tear2Tog.isOn = true;
             tear2 = true;
         }
-        if (blockInfo.GetComponent<BasicBlock>().tear3)
+        if (blockInfo.GetComponent<BasicBlock>().tear3 || playerInfo.GetComponent<Player>().money < blockInfo.GetComponent<BasicBlock>().landPrice + blockInfo.GetComponent<BasicBlock>().tear1Price + blockInfo.GetComponent<BasicBlock>().tear2Price + blockInfo.GetComponent<BasicBlock>().tear3Price)
         {
             tear3Tog.interactable = false;
             tear3Tog.isOn = false;
@@ -110,7 +111,7 @@ public class PurchaseUI : MonoBehaviour
     }
     public void process(GameObject blockInfo, GameObject playerInfo)
     {
-        Interactable(blockInfo);
+        Interactable(blockInfo, playerInfo);
         landCharge = blockInfo.GetComponent<BasicBlock>().landPrice;
         tear1Charge = blockInfo.GetComponent<BasicBlock>().tear1Price;
         tear2Charge = blockInfo.GetComponent<BasicBlock>().tear2Price;

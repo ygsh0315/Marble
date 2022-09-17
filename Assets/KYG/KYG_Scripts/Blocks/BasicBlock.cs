@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BasicBlock : MonoBehaviour
 {
+    public TextMeshProUGUI landName;
+
+    public TextMeshProUGUI landMagText;
+
+    public int landMag = 1;
     //¶¥ ÁÖÀÎ
     public GameObject LandOwner;
     
@@ -90,14 +96,18 @@ public class BasicBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        landName.text = gameObject.name;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (landMag >= 2)
+        {
+            landMagText.text = "X " + landMag;
+        }
         charge = landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount;
-        takeOverCharge = landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count;
+        takeOverCharge = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count) * 2;
     }
     public void OnBasicBlock(GameObject player)
     {
@@ -117,6 +127,7 @@ public class BasicBlock : MonoBehaviour
         else
         {
             player.GetComponent<Player>().money -= charge;
+            LandOwner.GetComponent<Player>().money += charge;
             if (!landMark)
             {
                 if (player.GetComponent<Player>().money >= takeOverCharge)

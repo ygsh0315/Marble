@@ -10,8 +10,8 @@ TagManager:
   - SpecialBlock
   - CardBlock
   - TrapBlock
-  - DoubleBlock
   - TeleportBlock
+  - FestivalBlock
   layers:
   - Default
   - TransparentFX

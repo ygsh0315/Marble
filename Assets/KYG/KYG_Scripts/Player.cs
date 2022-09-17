@@ -9,10 +9,13 @@ public class Player : MonoBehaviour
     public int round = 1;
     public int currentMapIndex = 0;
     public int money;
+    public int TotalMoney;
+    public int playerRank;
     public int salary = 300000;
     public int sameDiceCount = 0;
     public bool sameDice = false;
     public GameObject RollDiceBtn;
+    public List<GameObject> ownLandList = new List<GameObject>();
     public enum PlayerState 
     { 
         Idle,
@@ -35,9 +38,43 @@ public class Player : MonoBehaviour
         if (money <= 0)
         {
             GameManager.instance.turnIndex++;
+            RollDiceBtn.SetActive(true);
             Destroy(gameObject);
             GameManager.instance.PlayerList.Remove(gameObject);
         }
+        TotalMoney = CalculateTotalMoney();
+        for (int i = 0; i < GameManager.instance.MapList.Count; i++)
+        {
+            if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
+            {
+                if (GameManager.instance.MapList[i].GetComponent<BasicBlock>().LandOwner == gameObject)
+                {
+                    if (!ownLandList.Contains(GameManager.instance.MapList[i]))
+                    {
+                        ownLandList.Add(GameManager.instance.MapList[i]);
+                    }
+                }
+                else
+                {
+                    if (ownLandList.Contains(GameManager.instance.MapList[i]))
+                    {
+                        ownLandList.Remove(GameManager.instance.MapList[i]);
+                    }
+                }
+            }
+        }
+    }
+
+    private int CalculateTotalMoney()
+    {
+        int landPrice=0;
+        int total;
+        for(int i = 0; i< ownLandList.Count; i++)
+        {
+            landPrice += ownLandList[i].GetComponent<BasicBlock>().takeOverCharge / 2;
+        }
+        total = money + landPrice;
+        return total;
     }
 
     private void StateMachine()
@@ -85,6 +122,7 @@ public class Player : MonoBehaviour
 
     private void getBlockInfo()
     {
+        RollDiceBtn.SetActive(false);
         GameObject currentBlock = GameManager.instance.MapList[currentMapIndex];
         switch (currentBlock.tag)
         {
@@ -106,8 +144,8 @@ public class Player : MonoBehaviour
             case "TrapBlock":              
                 currentBlock.GetComponent<TrapBlock>().OnTrapBlock(transform);
                 break;
-            case "DoubleBlock":               
-                currentBlock.GetComponent<DoubleBlock>().OnDoubleBlock(transform);
+            case "FestivalBlock":               
+                currentBlock.GetComponent<FestivalBlock>().OnFestivalBlock(transform);
                 break;
             case "TeleportBlock":                
                 currentBlock.GetComponent<TeleportBlock>().OnTeleportBlock(transform);

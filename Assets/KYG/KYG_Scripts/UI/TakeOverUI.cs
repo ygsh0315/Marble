@@ -30,8 +30,10 @@ public class TakeOverUI : MonoBehaviour
     public void OnTakeOverBtn()
     {
         player.GetComponent<Player>().money -= currentBlock.GetComponent<BasicBlock>().takeOverCharge;
+        currentBlock.GetComponent<BasicBlock>().LandOwner.GetComponent<Player>().money += currentBlock.GetComponent<BasicBlock>().takeOverCharge;
         currentBlock.GetComponent<BasicBlock>().LandOwner = player;
         gameObject.SetActive(false);
+        if(!currentBlock.GetComponent<BasicBlock>().land || !currentBlock.GetComponent<BasicBlock>().tear1 || !currentBlock.GetComponent<BasicBlock>().tear2 || !currentBlock.GetComponent<BasicBlock>().tear3 && player.GetComponent<Player>().money>= currentBlock.GetComponent<BasicBlock>().landTallFee)
         currentBlock.GetComponent<BasicBlock>().OnBasicBlock(player);
     }
 
