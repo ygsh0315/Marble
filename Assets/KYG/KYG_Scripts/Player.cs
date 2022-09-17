@@ -32,6 +32,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         StateMachine();
+        if (money <= 0)
+        {
+            Destroy(gameObject);
+            GameManager.instance.PlayerList.Remove(gameObject);
+        }
     }
 
     private void StateMachine()

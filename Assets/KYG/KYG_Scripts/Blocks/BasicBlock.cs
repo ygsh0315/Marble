@@ -10,9 +10,13 @@ public class BasicBlock : MonoBehaviour
     //통행료
     public int charge = 0;
 
+    //인수 비용
+    public int takeOverCharge = 0;
+
+
     #region land
 
-    int landCount = 0;
+    public int landCount = 0;
 
     public bool land = false;
     //땅표시 공장
@@ -26,7 +30,7 @@ public class BasicBlock : MonoBehaviour
     #endregion
 
     #region tear1
-    int tear1Count = 0;
+    public int tear1Count = 0;
 
     public bool tear1 = false;
     //object1공장
@@ -40,7 +44,7 @@ public class BasicBlock : MonoBehaviour
     #endregion
 
     #region tear2
-    int tear2Count = 0;
+    public int tear2Count = 0;
 
     public bool tear2 = false;
     //object2공장
@@ -54,7 +58,7 @@ public class BasicBlock : MonoBehaviour
     #endregion
 
     #region tear3
-    int tear3Count = 0;
+    public int tear3Count = 0;
 
     public bool tear3 = false;
     //object3공장
@@ -68,7 +72,7 @@ public class BasicBlock : MonoBehaviour
     #endregion
 
     #region landMark
-    int landMarkCount = 0;
+    public int landMarkCount = 0;
 
     public bool landMark = false;
     //landMark 공장
@@ -93,12 +97,14 @@ public class BasicBlock : MonoBehaviour
     void Update()
     {
         charge = landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount;
+        takeOverCharge = landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count;
     }
     public void OnBasicBlock(GameObject player)
     {
         print("BasicBlock");
         if (!LandOwner)
         {
+            if(player.GetComponent<Player>().money>=landTallFee)
             GameUI.instance.Purchase(gameObject, player);
         }
         else if(LandOwner == player)
@@ -113,7 +119,10 @@ public class BasicBlock : MonoBehaviour
             player.GetComponent<Player>().money -= charge;
             if (!landMark)
             {
-                GameUI.instance.TakeOver(gameObject);
+                if (player.GetComponent<Player>().money >= takeOverCharge)
+                {
+                    GameUI.instance.TakeOver(gameObject, player);
+                }
             }
         }
     }

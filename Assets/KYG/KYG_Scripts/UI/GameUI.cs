@@ -35,8 +35,9 @@ public class GameUI : MonoBehaviour
         
     }
 
-    public void TakeOver(GameObject block)
+    public void TakeOver(GameObject block, GameObject player)
     {
         TakeOverUI.SetActive(true);
+        TakeOverUI.GetComponent<TakeOverUI>().process(block, player);
     }
 }
