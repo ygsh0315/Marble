@@ -7,7 +7,7 @@ public class StepBlock : MonoBehaviour
     //°ü±¤Áö
     public GameObject stepOne;
     GameObject stepO;
-    List<GameObject> tourBlocks = new List<GameObject>();
+    
     //¶¥ ÁÖÀÎ
     public GameObject LandOwner;
     
@@ -17,6 +17,7 @@ public class StepBlock : MonoBehaviour
     public int chargeThree = 0;
 
     int count = 0;
+    public int charge;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,18 @@ public class StepBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (count ==0)
+        {
+            charge = chargeOne;
+        }
+        else if (count == 1)
+        {
+            charge = chargeTwo;
+        }
+        else if (count == 2)
+        {
+            charge = chargeThree;
+        }
     }
     public void OnSpecialBlock(Transform player)
     {
@@ -40,6 +52,10 @@ public class StepBlock : MonoBehaviour
         else if (LandOwner == player)
         {
             count++;
+        }
+        else if (LandOwner != player)
+        {
+            player.GetComponent<Player>().money -= charge;
         }
 
     }
