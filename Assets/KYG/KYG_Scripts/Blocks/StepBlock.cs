@@ -22,41 +22,41 @@ public class StepBlock : MonoBehaviour
     void Start()
     {
        
-        stepO = stepOne.GetComponent<SpecialBlock>().LandOwner;
+        //stepO = stepOne.GetComponent<SpecialBlock>().LandOwner;
        
     }
     
     // Update is called once per frame
     void Update()
     {
-        if (count ==0)
-        {
-            charge = chargeOne;
-        }
-        else if (count == 1)
-        {
-            charge = chargeTwo;
-        }
-        else if (count == 2)
-        {
-            charge = chargeThree;
-        }
+        //if (count ==0)
+        //{
+        //    charge = chargeOne;
+        //}
+        //else if (count == 1)
+        //{
+        //    charge = chargeTwo;
+        //}
+        //else if (count == 2)
+        //{
+        //    charge = chargeThree;
+        //}
     }
     public void OnSpecialBlock(Transform player)
     {
         print("StepBlock");
-        if (!LandOwner)
-        {
-            GameUI.instance.Purchase();
-        }
-        else if (LandOwner == player)
-        {
-            count++;
-        }
-        else if (LandOwner != player)
-        {
-            player.GetComponent<Player>().money -= charge;
-        }
+        //if (!LandOwner)
+        //{
+        //    GameUI.instance.Purchase();
+        //}
+        //else if (LandOwner == player)
+        //{
+        //    count++;
+        //}
+        //else if (LandOwner != player)
+        //{
+        //    player.GetComponent<Player>().money -= charge;
+        //}
 
     }
 }
