@@ -11522,6 +11522,7 @@ MonoBehaviour:
   mapCount: 0
   turnIndex: 0
   MapList: []
+  FestivalList: []
   PlayerList: []
   currentTurnPlayer: {fileID: 0}
 --- !u!4 &1942610885
@@ -13101,7 +13102,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8717558917015342182, guid: 9237bad7008cd8d449273e55e4c24435, type: 3}
       propertyPath: m_Name
-      value: DoubleBlock
+      value: FestivalBlock
       objectReference: {fileID: 0}
     - target: {fileID: 8717558917015342182, guid: 9237bad7008cd8d449273e55e4c24435, type: 3}
       propertyPath: m_TagString
