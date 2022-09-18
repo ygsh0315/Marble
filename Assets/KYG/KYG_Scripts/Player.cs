@@ -161,7 +161,7 @@ public class Player : MonoBehaviour
     }
     private void Bankrupt()
     {
-        if (money <= 0)
+        if (money < 0)
         {
             for (int i = 0; i < ownLandList.Count; i++)
             {
