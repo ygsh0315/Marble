@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -624,6 +624,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
       value: 124000
@@ -856,6 +860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
       value: 146000
@@ -1087,6 +1095,10 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
@@ -1902,6 +1914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpecialBlock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1946,6 +1962,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourOne
+      value: 
+      objectReference: {fileID: 686543442}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourTwo
+      value: 
+      objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourThree
+      value: 
+      objectReference: {fileID: 1773453885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
 --- !u!1001 &190939607
@@ -1958,6 +1986,10 @@ PrefabInstance:
     - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_Name
       value: SpecialBlock (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_RootOrder
@@ -2003,6 +2035,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourOne
+      value: 
+      objectReference: {fileID: 686543442}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourTwo
+      value: 
+      objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourThree
+      value: 
+      objectReference: {fileID: 1773453885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
 --- !u!1 &213770337
@@ -2283,6 +2327,12 @@ MonoBehaviour:
   sameDice: 0
   RollDiceBtn: {fileID: 1912175531}
   ownLandList: []
+  lines: []
+  lineOne: []
+  lineTwo: []
+  lineThree: []
+  lineFour: []
+  line: 1
   state: 0
 --- !u!136 &226556182
 CapsuleCollider:
@@ -2751,6 +2801,10 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
@@ -4417,6 +4471,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632444408}
   m_CullTransparentMesh: 1
+--- !u!1 &633018918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+  m_PrefabInstance: {fileID: 183726296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &648874941
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,6 +4639,10 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
@@ -4887,6 +4950,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680665588}
   m_CullTransparentMesh: 1
+--- !u!1 &686543442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+  m_PrefabInstance: {fileID: 3634312270458132908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697700630
 GameObject:
   m_ObjectHideFlags: 0
@@ -4929,6 +4997,12 @@ MonoBehaviour:
   sameDice: 0
   RollDiceBtn: {fileID: 1912175531}
   ownLandList: []
+  lines: []
+  lineOne: []
+  lineTwo: []
+  lineThree: []
+  lineFour: []
+  line: 1
   state: 0
 --- !u!136 &697700632
 CapsuleCollider:
@@ -6003,6 +6077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
       value: 94000
@@ -6210,6 +6288,12 @@ MonoBehaviour:
   sameDice: 0
   RollDiceBtn: {fileID: 1912175531}
   ownLandList: []
+  lines: []
+  lineOne: []
+  lineTwo: []
+  lineThree: []
+  lineFour: []
+  line: 1
   state: 0
 --- !u!1 &912848589
 GameObject:
@@ -6958,6 +7042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpecialBlock (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -7002,6 +7090,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourOne
+      value: 
+      objectReference: {fileID: 686543442}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourTwo
+      value: 
+      objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourThree
+      value: 
+      objectReference: {fileID: 1773453885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
 --- !u!4 &1080352849 stripped
@@ -7685,6 +7785,10 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
@@ -9183,6 +9287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
       value: 54000
@@ -10004,6 +10112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
       value: 200000
@@ -10105,6 +10217,10 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
@@ -10682,6 +10798,12 @@ MonoBehaviour:
   sameDice: 0
   RollDiceBtn: {fileID: 1912175531}
   ownLandList: []
+  lines: []
+  lineOne: []
+  lineTwo: []
+  lineThree: []
+  lineFour: []
+  line: 1
   state: 0
 --- !u!136 &1698953039
 CapsuleCollider:
@@ -10967,6 +11089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
       value: 100000
@@ -11064,6 +11190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: land
       value: 0
@@ -11158,6 +11288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+--- !u!1 &1773453885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+  m_PrefabInstance: {fileID: 1074826136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1778354702
 GameObject:
   m_ObjectHideFlags: 0
@@ -11249,6 +11384,10 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: charge
@@ -12662,6 +12801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
       value: 72000
@@ -13028,6 +13171,10 @@ PrefabInstance:
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
       value: Block (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
@@ -13653,6 +13800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block
       objectReference: {fileID: 0}
+    - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038238, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: landPrice
       value: 20000
@@ -13750,6 +13901,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpecialBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -13794,6 +13949,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourOne
+      value: 
+      objectReference: {fileID: 686543442}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourTwo
+      value: 
+      objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourThree
+      value: 
+      objectReference: {fileID: 1773453885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
 --- !u!1001 &6309143453425369611
