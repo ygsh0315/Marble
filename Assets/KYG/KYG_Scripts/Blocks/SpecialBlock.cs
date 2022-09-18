@@ -15,7 +15,7 @@ public class SpecialBlock : MonoBehaviour
     GameObject tourT;
     GameObject tourTh;
     //≈Î«‡∑·
-    public int charge = 0;
+    public int charge = 60000;
     public int chargeTwo = 0;
     public int chargeThree = 0;
 
@@ -68,32 +68,45 @@ public class SpecialBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        charge = lantalFee * landCount + chargeTwo * chargeTwoCount + chargeThree * chargeThreeCount;
+        
     }
     public void OnSpecialBlock(GameObject player)
     {
         print("SpecialBlock");
         if (!LandOwner)
         {
-            GameUI.instance.SPurchase(gameObject, player);
+            if(player.GetComponent<Player>().money >= landPrice)
+            {
+            GameUI.instance.SPurchase(gameObject, player);                
+            }
+            else
+            {
+                player.GetComponent<Player>().onTurn = false;
+            }
         }
         else if (LandOwner != player)
         {            
             if (tourO == tourT || tourO == tourTh || tourT == tourTh)
             {
-                charge = chargeTwo;
-                player.GetComponent<Player>().money -= chargeTwo;
-
+               
+                charge *= 2;
+                player.GetComponent<Player>().money -= charge;
+                LandOwner.GetComponent<Player>().money += charge;
+                player.GetComponent<Player>().onTurn = false;
             }
             else if (tourO == tourT == tourTh)
             {
-                charge = chargeThree; 
-                player.GetComponent<Player>().money -= chargeThree;
+                charge *= 3; 
+                player.GetComponent<Player>().money -= charge;
+                LandOwner.GetComponent<Player>().money += charge;
+                player.GetComponent<Player>().onTurn = false;
             }
             else
             {
-                charge = lantalFee ;
-                player.GetComponent<Player>().money -= lantalFee;
+                charge *= 1;
+                player.GetComponent<Player>().money -= charge;
+                LandOwner.GetComponent<Player>().money += charge;
+                player.GetComponent<Player>().onTurn = false;
             }
         }
 

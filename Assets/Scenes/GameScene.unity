@@ -2178,6 +2178,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: charge
+      value: 60000
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: tourOne
       value: 
       objectReference: {fileID: 686543442}
@@ -2265,6 +2269,10 @@ PrefabInstance:
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: charge
+      value: 60000
       objectReference: {fileID: 0}
     - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: tourOne
@@ -2580,6 +2588,9 @@ MonoBehaviour:
   lineThree: []
   lineFour: []
   line: 1
+  onTurn: 0
+  hasInfo: 0
+  isTraped: 0
   state: 0
 --- !u!136 &226556182
 CapsuleCollider:
@@ -5361,6 +5372,9 @@ MonoBehaviour:
   lineThree: []
   lineFour: []
   line: 1
+  onTurn: 0
+  hasInfo: 0
+  isTraped: 0
   state: 0
 --- !u!136 &697700632
 CapsuleCollider:
@@ -6652,6 +6666,9 @@ MonoBehaviour:
   lineThree: []
   lineFour: []
   line: 1
+  onTurn: 0
+  hasInfo: 0
+  isTraped: 0
   state: 0
 --- !u!1 &912848589
 GameObject:
@@ -7447,6 +7464,10 @@ PrefabInstance:
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: charge
+      value: 60000
       objectReference: {fileID: 0}
     - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: tourOne
@@ -8978,6 +8999,7 @@ MonoBehaviour:
   SPurchaseUI: {fileID: 659633320}
   TakeOverUI: {fileID: 119000828}
   LandMarkUI: {fileID: 461878660}
+  TrapBlockUI: {fileID: 0}
   WinUI: {fileID: 912848589}
 --- !u!1 &1279898372
 GameObject:
@@ -11457,6 +11479,9 @@ MonoBehaviour:
   lineThree: []
   lineFour: []
   line: 1
+  onTurn: 0
+  hasInfo: 0
+  isTraped: 0
   state: 0
 --- !u!136 &1698953039
 CapsuleCollider:
@@ -14815,6 +14840,10 @@ PrefabInstance:
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: charge
+      value: 60000
       objectReference: {fileID: 0}
     - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: tourOne

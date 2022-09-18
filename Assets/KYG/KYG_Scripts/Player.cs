@@ -161,7 +161,12 @@ public class Player : MonoBehaviour
         int total;
         for (int i = 0; i < ownLandList.Count; i++)
         {
+            if (ownLandList[i].GetComponent<BasicBlock>())
+            {
             landPrice += ownLandList[i].GetComponent<BasicBlock>().takeOverCharge / 2;
+
+            }
+            
         }
         total = money + landPrice;
         return total;

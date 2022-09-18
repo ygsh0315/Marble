@@ -70,11 +70,13 @@ public class SPurchaseUI : MonoBehaviour
         
         player.GetComponent<Player>().money -= charge;
         gameObject.SetActive(false);
+        player.GetComponent<Player>().onTurn = false;
     }
 
     public void OnCancelBtn()
     {
         gameObject.SetActive(false);
+        player.GetComponent<Player>().onTurn = false;
         //player.GetComponent<Player>().state = Player.PlayerState.End;
     }
 }
