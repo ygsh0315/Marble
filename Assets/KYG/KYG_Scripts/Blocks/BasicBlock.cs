@@ -134,11 +134,35 @@ public class BasicBlock : MonoBehaviour
                 else if(!tear1 || !tear2 || !tear3)
                 {
                     if(!tear1 && player.GetComponent<Player>().money>= tear1Price)
-                    GameUI.instance.Purchase(gameObject, player);
+                    {
+                        GameUI.instance.Purchase(gameObject, player);
+                    }
+                    else
+                    {
+                        player.GetComponent<Player>().onTurn = false;
+                    }
                     if (!tear2 && player.GetComponent<Player>().money >= tear2Price)
+                    {
                         GameUI.instance.Purchase(gameObject, player);
+                    }
+                    else
+                    {
+                        player.GetComponent<Player>().onTurn = false;
+                    }
                     if (!tear3 && player.GetComponent<Player>().money >= tear3Price)
+                    {
                         GameUI.instance.Purchase(gameObject, player);
+                    }
+                    else
+                    {
+                        player.GetComponent<Player>().onTurn = false;
+                    }
+
+
+                }
+                else
+                {
+                    player.GetComponent<Player>().onTurn = false;
                 }
             }
             else
