@@ -55,6 +55,8 @@ public class Player : MonoBehaviour
     {
         for (int i = 0; i < GameManager.instance.MapList.Count; i++)
         {
+            if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>())
+            {
             if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>().LandOwner == gameObject)
             {
                 if (!ownLandList.Contains(GameManager.instance.MapList[i]))
@@ -68,6 +70,8 @@ public class Player : MonoBehaviour
                 {
                     ownLandList.Remove(GameManager.instance.MapList[i]);
                 }
+            }
+
             }
             if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
             {
@@ -91,7 +95,7 @@ public class Player : MonoBehaviour
 
     private void Line()
     {
-        for (int i = 0; i <= lines.Count; i++)
+        for (int i = 0; i < lines.Count; i++)
         {
             if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineOne"))
             {
@@ -219,7 +223,7 @@ public class Player : MonoBehaviour
                 currentBlock.GetComponent<EventBlock>().OnEventBlock(transform);
                 break;
             case "SpecialBlock":
-                currentBlock.GetComponent<SpecialBlock>().OnSpecialBlock(transform);
+                currentBlock.GetComponent<SpecialBlock>().OnSpecialBlock(gameObject);
                 break;
             case "CardBlock":
                 currentBlock.GetComponent<CardBlock>().OnCardBlock(transform);

@@ -1828,6 +1828,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourOne
+      value: 
+      objectReference: {fileID: 686543442}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourTwo
+      value: 
+      objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourThree
+      value: 
+      objectReference: {fileID: 1773453885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
 --- !u!1001 &190939607
@@ -1889,6 +1901,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourOne
+      value: 
+      objectReference: {fileID: 686543442}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourTwo
+      value: 
+      objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourThree
+      value: 
+      objectReference: {fileID: 1773453885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
 --- !u!1 &213770337
@@ -2170,6 +2194,11 @@ MonoBehaviour:
   RollDiceBtn: {fileID: 1912175531}
   ownLandList: []
   lines: []
+  lineOne: []
+  lineTwo: []
+  lineThree: []
+  lineFour: []
+  line: 1
   state: 0
 --- !u!136 &226556182
 CapsuleCollider:
@@ -4134,6 +4163,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632444408}
   m_CullTransparentMesh: 1
+--- !u!1 &633018918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+  m_PrefabInstance: {fileID: 183726296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &648874941
 GameObject:
   m_ObjectHideFlags: 0
@@ -4608,6 +4642,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680665588}
   m_CullTransparentMesh: 1
+--- !u!1 &686543442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+  m_PrefabInstance: {fileID: 3634312270458132908}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &697700630
 GameObject:
   m_ObjectHideFlags: 0
@@ -4651,6 +4690,11 @@ MonoBehaviour:
   RollDiceBtn: {fileID: 1912175531}
   ownLandList: []
   lines: []
+  lineOne: []
+  lineTwo: []
+  lineThree: []
+  lineFour: []
+  line: 1
   state: 0
 --- !u!136 &697700632
 CapsuleCollider:
@@ -5857,6 +5901,11 @@ MonoBehaviour:
   RollDiceBtn: {fileID: 1912175531}
   ownLandList: []
   lines: []
+  lineOne: []
+  lineTwo: []
+  lineThree: []
+  lineFour: []
+  line: 1
   state: 0
 --- !u!1 &912848589
 GameObject:
@@ -6653,6 +6702,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourOne
+      value: 
+      objectReference: {fileID: 686543442}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourTwo
+      value: 
+      objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourThree
+      value: 
+      objectReference: {fileID: 1773453885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
 --- !u!4 &1080352849 stripped
@@ -10213,6 +10274,11 @@ MonoBehaviour:
   RollDiceBtn: {fileID: 1912175531}
   ownLandList: []
   lines: []
+  lineOne: []
+  lineTwo: []
+  lineThree: []
+  lineFour: []
+  line: 1
   state: 0
 --- !u!136 &1698953039
 CapsuleCollider:
@@ -10697,6 +10763,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+--- !u!1 &1773453885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+  m_PrefabInstance: {fileID: 1074826136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1778354702
 GameObject:
   m_ObjectHideFlags: 0
@@ -13004,6 +13075,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourOne
+      value: 
+      objectReference: {fileID: 686543442}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourTwo
+      value: 
+      objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourThree
+      value: 
+      objectReference: {fileID: 1773453885}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
 --- !u!1001 &6309143453425369611

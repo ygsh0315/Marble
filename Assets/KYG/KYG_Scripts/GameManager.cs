@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
                 {
 
 
-                    if (PlayerList[i].GetComponent<Player>().lineOne.Any() == true || PlayerList[i].GetComponent<Player>().lineTwo.Any() == true || PlayerList[i].GetComponent<Player>().lineThree.Any() == true || PlayerList[i].GetComponent<Player>().lineFour.Any() == true)
+                    if (PlayerList[i].GetComponent<Player>().lineOne.Any() == false || PlayerList[i].GetComponent<Player>().lineTwo.Any() == false || PlayerList[i].GetComponent<Player>().lineThree.Any() == false || PlayerList[i].GetComponent<Player>().lineFour.Any() == false)
                     {
                         winner = PlayerList[i];
                         GameUI.instance.WinUI.SetActive(true);
