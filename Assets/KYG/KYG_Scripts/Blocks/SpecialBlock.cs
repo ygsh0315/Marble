@@ -119,6 +119,9 @@ public class SpecialBlock : MonoBehaviour
                 player.GetComponent<Player>().onTurn = false;
             }
         }
-
+        else
+        {
+            player.GetComponent<Player>().onTurn = false;
+        }
     }
 }

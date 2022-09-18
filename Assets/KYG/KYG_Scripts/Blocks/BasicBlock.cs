@@ -141,6 +141,10 @@ public class BasicBlock : MonoBehaviour
                         GameUI.instance.Purchase(gameObject, player);
                 }
             }
+            else
+            {
+                player.GetComponent<Player>().onTurn = false;
+            }
         }
         else
         {
