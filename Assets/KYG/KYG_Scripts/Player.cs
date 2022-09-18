@@ -9,10 +9,13 @@ public class Player : MonoBehaviour
     public int round = 1;
     public int currentMapIndex = 0;
     public int money;
+    public int TotalMoney;
+    public int playerRank;
     public int salary = 300000;
     public int sameDiceCount = 0;
     public bool sameDice = false;
     public GameObject RollDiceBtn;
+    public List<GameObject> ownLandList = new List<GameObject>();
     public enum PlayerState 
     { 
         Idle,
@@ -32,6 +35,74 @@ public class Player : MonoBehaviour
     void Update()
     {
         StateMachine();
+        Bankrupt();
+        OwnLandCheck();
+        TotalMoney = CalculateTotalMoney();
+        
+    }
+
+    private void OwnLandCheck()
+    {
+        for (int i = 0; i < GameManager.instance.MapList.Count; i++)
+        {
+            if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
+            {
+                if (GameManager.instance.MapList[i].GetComponent<BasicBlock>().LandOwner == gameObject)
+                {
+                    if (!ownLandList.Contains(GameManager.instance.MapList[i]))
+                    {
+                        ownLandList.Add(GameManager.instance.MapList[i]);
+                    }
+                }
+                else
+                {
+                    if (ownLandList.Contains(GameManager.instance.MapList[i]))
+                    {
+                        ownLandList.Remove(GameManager.instance.MapList[i]);
+                    }
+                }
+            }
+        }
+    }
+
+    private void Bankrupt()
+    {
+        if (money <= 0)
+        {
+            for(int i = 0; i< ownLandList.Count; i++)
+            {
+                ownLandList[i].GetComponent<BasicBlock>().land = false;
+                ownLandList[i].GetComponent<BasicBlock>().landCount = 0;
+                ownLandList[i].GetComponent<BasicBlock>().tear1 = false;
+                ownLandList[i].GetComponent<BasicBlock>().tear1Count = 0;
+                ownLandList[i].GetComponent<BasicBlock>().tear1Factory.SetActive(false);
+                ownLandList[i].GetComponent<BasicBlock>().tear2 = false;
+                ownLandList[i].GetComponent<BasicBlock>().tear2Count = 0;
+                ownLandList[i].GetComponent<BasicBlock>().tear2Factory.SetActive(false);
+                ownLandList[i].GetComponent<BasicBlock>().tear3 = false;
+                ownLandList[i].GetComponent<BasicBlock>().tear3Count = 0;
+                ownLandList[i].GetComponent<BasicBlock>().tear3Factory.SetActive(false);
+                ownLandList[i].GetComponent<BasicBlock>().landMark = false;
+                ownLandList[i].GetComponent<BasicBlock>().landMarkCount = 0;
+                ownLandList[i].GetComponent<BasicBlock>().landMarkFactory.SetActive(false);
+            }
+            GameManager.instance.turnIndex++;
+            RollDiceBtn.SetActive(true);
+            Destroy(gameObject);
+            GameManager.instance.PlayerList.Remove(gameObject);
+        }
+    }
+
+    private int CalculateTotalMoney()
+    {
+        int landPrice=0;
+        int total;
+        for(int i = 0; i< ownLandList.Count; i++)
+        {
+            landPrice += ownLandList[i].GetComponent<BasicBlock>().takeOverCharge / 2;
+        }
+        total = money + landPrice;
+        return total;
     }
 
     private void StateMachine()
@@ -65,9 +136,14 @@ public class Player : MonoBehaviour
     private void Turn()
     {
         getBlockInfo();
-        if(sameDice == true)
+        TurnCheck();    
+    }
+
+    private void TurnCheck()
+    {
+        if (sameDice == true)
         {
-            
+
             state = PlayerState.Idle;
             RollDiceBtn.SetActive(true);
         }
@@ -79,6 +155,7 @@ public class Player : MonoBehaviour
 
     private void getBlockInfo()
     {
+        RollDiceBtn.SetActive(false);
         GameObject currentBlock = GameManager.instance.MapList[currentMapIndex];
         switch (currentBlock.tag)
         {
@@ -86,7 +163,7 @@ public class Player : MonoBehaviour
                 currentBlock.GetComponent<StartBlock>().OnStartBlock(transform);
                 break;
             case "BasicBlock":
-                currentBlock.GetComponent<BasicBlock>().OnBasicBlock(transform);
+                currentBlock.GetComponent<BasicBlock>().OnBasicBlock(gameObject);
                 break;
             case "EventBlock":               
                 currentBlock.GetComponent<EventBlock>().OnEventBlock(transform);
@@ -100,8 +177,8 @@ public class Player : MonoBehaviour
             case "TrapBlock":              
                 currentBlock.GetComponent<TrapBlock>().OnTrapBlock(transform);
                 break;
-            case "DoubleBlock":               
-                currentBlock.GetComponent<DoubleBlock>().OnDoubleBlock(transform);
+            case "FestivalBlock":               
+                currentBlock.GetComponent<FestivalBlock>().OnFestivalBlock(transform);
                 break;
             case "TeleportBlock":                
                 currentBlock.GetComponent<TeleportBlock>().OnTeleportBlock(transform);
