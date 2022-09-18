@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public bool onTurn = false;
     public bool hasInfo = false;
     public bool isTraped = false;
+    public int trapCount;
     public enum PlayerState
     {
         Idle,
@@ -211,20 +212,32 @@ public class Player : MonoBehaviour
     private void TurnCheck()
     {
         hasInfo = false;
+        if(trapCount == 0)
+        {
+            isTraped = false;
+        }
         if (isTraped)
         {
-            GameUI.instance.TrapBlockUI.SetActive(true);
-        }
-        if (sameDice == true)
-        {
-
-            state = PlayerState.Idle;
-            RollDiceBtn.SetActive(true);
+            if (trapCount < 4)
+            {
+                GameUI.instance.TrapBlockUI.SetActive(true);
+            }
+            state = PlayerState.End;
         }
         else
         {
-            state = PlayerState.End;
+            if (sameDice == true)
+            {
+
+                state = PlayerState.Idle;
+                RollDiceBtn.SetActive(true);
+            }
+            else
+            {
+                state = PlayerState.End;
+            }
         }
+        
      
     }
 
@@ -251,7 +264,7 @@ public class Player : MonoBehaviour
                 currentBlock.GetComponent<CardBlock>().OnCardBlock(transform);
                 break;
             case "TrapBlock":
-                currentBlock.GetComponent<TrapBlock>().OnTrapBlock(transform);
+                currentBlock.GetComponent<TrapBlock>().OnTrapBlock(gameObject);
                 break;
             case "FestivalBlock":
                 currentBlock.GetComponent<FestivalBlock>().OnFestivalBlock(transform);
@@ -283,6 +296,8 @@ public class Player : MonoBehaviour
         if (sameDiceCount == 3)
         {
             transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
+            isTraped = true;
+            trapCount = 4;
             sameDice = false;
             currentMapIndex = 8;
             sameDiceCount = 0;

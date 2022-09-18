@@ -15,10 +15,12 @@ public class TrapBlock : MonoBehaviour
     {
         
     }
-    public void OnTrapBlock(Transform player)
+    public void OnTrapBlock(GameObject player)
     {
         print("TrapBlock");
-        player.GetComponent<Player>().onTurn = false;
+        GameUI.instance.TrapBlockUI.GetComponent<TrapBlockUI>().process(player);
         player.GetComponent<Player>().isTraped = true;
+        player.GetComponent<Player>().trapCount = 4;
+        player.GetComponent<Player>().onTurn = false;
     }
 }
