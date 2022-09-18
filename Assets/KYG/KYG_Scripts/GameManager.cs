@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     private void Awake()
     {
-        if(!instance)
+        if (!instance)
         {
             instance = this;
         }
@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         mapCount = Map.transform.childCount;
-        for (int i = 0; i< mapCount; i++)
+        for (int i = 0; i < mapCount; i++)
         {
             MapList.Add(Map.transform.GetChild(i).gameObject);
         }
-        for(int i = 0; i<mapCount; i++)
+        for (int i = 0; i < mapCount; i++)
         {
             if (MapList[i].GetComponent<BasicBlock>())
             {
@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         Winner();
         turnCalculate();
         ChangeCurrentTurnPlayer(turnIndex);
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     private void Festival()
     {
-        for(int i = 0; i<FestivalList.Count; i++)
+        for (int i = 0; i < FestivalList.Count; i++)
         {
             FestivalList[i].GetComponent<BasicBlock>().landMag *= 2;
         }
@@ -72,11 +72,28 @@ public class GameManager : MonoBehaviour
 
     private void Winner()
     {
-        if(PlayerList.Count == 1)
+        if (PlayerList.Count == 1)
         {
             winner = PlayerList[0];
             GameUI.instance.WinUI.SetActive(true);
         }
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+            if (PlayerList[i])
+            {
+                if (PlayerList[i].GetComponent<Player>().line == false)
+                {
+
+
+                    if (PlayerList[i].GetComponent<Player>().lineOne.Any() == true || PlayerList[i].GetComponent<Player>().lineTwo.Any() == true || PlayerList[i].GetComponent<Player>().lineThree.Any() == true || PlayerList[i].GetComponent<Player>().lineFour.Any() == true)
+                    {
+                        winner = PlayerList[i];
+                        GameUI.instance.WinUI.SetActive(true);
+                    }
+                }
+            }
+        }
+
     }
 
     public void turnCalculate()
@@ -102,7 +119,7 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeCurrentTurnPlayer(int i)
     {
-        
+
         currentTurnPlayer = PlayerList[i];
     }
 }
