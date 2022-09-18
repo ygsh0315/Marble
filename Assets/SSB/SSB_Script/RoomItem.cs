@@ -17,4 +17,9 @@ public class RoomItem : MonoBehaviour
     {
         
     }
+
+    public void SetInfo(string roomName, byte currPlayer, byte maxPlayer)
+    {
+        roomInfo.text = roomName + " (" + currPlayer + " / " + maxPlayer + ")";
+    }
 }

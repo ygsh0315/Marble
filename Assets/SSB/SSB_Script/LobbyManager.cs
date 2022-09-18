@@ -85,6 +85,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
+        PhotonNetwork.LoadLevel("GameScene");
     }
 
     //방 참가가 실패 되었을 때 호출되는 함수
@@ -92,5 +93,14 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinRandomFailed(returnCode, message);
         print("OnJoinRandomFailed, " + returnCode + ", " + message);
+    }
+
+    //방에 대한 정보가 변경되면 호출되는 함수 (추가/삭제/수정)
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        base.OnRoomListUpdate(roomList);
+
+        for (int i = 0; i < roomList.Count; i++)
+            print(roomList[i].Name);
     }
 }
