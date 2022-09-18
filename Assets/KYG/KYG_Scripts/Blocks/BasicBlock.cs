@@ -106,22 +106,34 @@ public class BasicBlock : MonoBehaviour
         {
             landMagText.text = "X " + landMag;
         }
-        charge = landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount;
-        takeOverCharge = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count) * 2;
+        charge = (landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount) * landMag;
+        takeOverCharge = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count + landMarkPrice * landMarkCount) * 2;
     }
     public void OnBasicBlock(GameObject player)
     {
         print("BasicBlock");
         if (!LandOwner)
         {
-            if(player.GetComponent<Player>().money>=landTallFee)
+            if(player.GetComponent<Player>().money>=landPrice)
             GameUI.instance.Purchase(gameObject, player);
         }
         else if(LandOwner == player)
         {
             if(!landMark)
-            {
-                GameUI.instance.Purchase(gameObject, player);
+            {             
+                if(land && tear1 && tear2 && tear3 && player.GetComponent<Player>().money >=landMarkPrice)
+                {
+                    GameUI.instance.LandMarkPurchase(gameObject, player);
+                }
+                else if(!tear1 || !tear2 || !tear3)
+                {
+                    if(!tear1 && player.GetComponent<Player>().money>= tear1Price)
+                    GameUI.instance.Purchase(gameObject, player);
+                    if (!tear2 && player.GetComponent<Player>().money >= tear2Price)
+                        GameUI.instance.Purchase(gameObject, player);
+                    if (!tear3 && player.GetComponent<Player>().money >= tear3Price)
+                        GameUI.instance.Purchase(gameObject, player);
+                }
             }
         }
         else

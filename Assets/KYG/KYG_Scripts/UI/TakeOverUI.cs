@@ -35,6 +35,10 @@ public class TakeOverUI : MonoBehaviour
         gameObject.SetActive(false);
         if(!currentBlock.GetComponent<BasicBlock>().land || !currentBlock.GetComponent<BasicBlock>().tear1 || !currentBlock.GetComponent<BasicBlock>().tear2 || !currentBlock.GetComponent<BasicBlock>().tear3 && player.GetComponent<Player>().money>= currentBlock.GetComponent<BasicBlock>().landTallFee)
         currentBlock.GetComponent<BasicBlock>().OnBasicBlock(player);
+        if (currentBlock.GetComponent<BasicBlock>().land && currentBlock.GetComponent<BasicBlock>().tear1 && currentBlock.GetComponent<BasicBlock>().tear2 && currentBlock.GetComponent<BasicBlock>().tear3 && player.GetComponent<Player>().money >= currentBlock.GetComponent<BasicBlock>().landMarkPrice)
+            GameUI.instance.LandMarkPurchase(currentBlock, player);
+
+
     }
 
     public void OnCancelBtn()

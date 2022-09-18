@@ -17,12 +17,15 @@ public class GameUI : MonoBehaviour
 
     public GameObject TakeOverUI;
 
+    public GameObject LandMarkUI;
+
     public GameObject WinUI;
     // Start is called before the first frame update
     void Start()
     {
         PurchaseUI.SetActive(false);
         TakeOverUI.SetActive(false);
+        LandMarkUI.SetActive(false);
         WinUI.SetActive(false);
     }
 
@@ -37,7 +40,11 @@ public class GameUI : MonoBehaviour
         PurchaseUI.GetComponent<PurchaseUI>().process(block, player);
         
     }
-
+    public void LandMarkPurchase(GameObject block, GameObject player)
+    {
+        LandMarkUI.SetActive(true);
+        LandMarkUI.GetComponent<LandMarkPurchaseUI>().process(block, player);
+    }
     public void TakeOver(GameObject block, GameObject player)
     {
         TakeOverUI.SetActive(true);

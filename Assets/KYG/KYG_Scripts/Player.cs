@@ -69,6 +69,23 @@ public class Player : MonoBehaviour
     {
         if (money <= 0)
         {
+            for(int i = 0; i< ownLandList.Count; i++)
+            {
+                ownLandList[i].GetComponent<BasicBlock>().land = false;
+                ownLandList[i].GetComponent<BasicBlock>().landCount = 0;
+                ownLandList[i].GetComponent<BasicBlock>().tear1 = false;
+                ownLandList[i].GetComponent<BasicBlock>().tear1Count = 0;
+                ownLandList[i].GetComponent<BasicBlock>().tear1Factory.SetActive(false);
+                ownLandList[i].GetComponent<BasicBlock>().tear2 = false;
+                ownLandList[i].GetComponent<BasicBlock>().tear2Count = 0;
+                ownLandList[i].GetComponent<BasicBlock>().tear2Factory.SetActive(false);
+                ownLandList[i].GetComponent<BasicBlock>().tear3 = false;
+                ownLandList[i].GetComponent<BasicBlock>().tear3Count = 0;
+                ownLandList[i].GetComponent<BasicBlock>().tear3Factory.SetActive(false);
+                ownLandList[i].GetComponent<BasicBlock>().landMark = false;
+                ownLandList[i].GetComponent<BasicBlock>().landMarkCount = 0;
+                ownLandList[i].GetComponent<BasicBlock>().landMarkFactory.SetActive(false);
+            }
             GameManager.instance.turnIndex++;
             RollDiceBtn.SetActive(true);
             Destroy(gameObject);
@@ -119,9 +136,14 @@ public class Player : MonoBehaviour
     private void Turn()
     {
         getBlockInfo();
-        if(sameDice == true)
+        TurnCheck();    
+    }
+
+    private void TurnCheck()
+    {
+        if (sameDice == true)
         {
-            
+
             state = PlayerState.Idle;
             RollDiceBtn.SetActive(true);
         }
