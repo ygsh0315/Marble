@@ -15,10 +15,38 @@ public class SpecialBlock : MonoBehaviour
     GameObject tourT;
     GameObject tourTh;
     //통행료
-    public int chargeOne = 0;
+    public int charge = 0;
     public int chargeTwo = 0;
     public int chargeThree = 0;
 
+
+    //땅표시 공장
+    public GameObject landFlagFactory;
+
+    
+    //땅 건설 가격
+    public int landPrice;
+
+    public int landCount = 0;
+
+    public bool land = false;
+    //통행료
+    public int lantalFee = 0;
+
+    
+
+    public int chargeTwoCount = 0;
+
+    public bool charge2 = false;
+
+    public int chargeThreeCount = 0;
+
+    public bool charge3 = false;
+
+
+
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -40,29 +68,32 @@ public class SpecialBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        charge = lantalFee * landCount + chargeTwo * chargeTwoCount + chargeThree * chargeThreeCount;
     }
     public void OnSpecialBlock(GameObject player)
     {
         print("SpecialBlock");
         if (!LandOwner)
         {
-            GameUI.instance.Purchase(gameObject, player);
+            GameUI.instance.SPurchase(gameObject, player);
         }
         else if (LandOwner != player)
         {            
             if (tourO == tourT || tourO == tourTh || tourT == tourTh)
             {
-                
+                charge = chargeTwo;
                 player.GetComponent<Player>().money -= chargeTwo;
+
             }
             else if (tourO == tourT == tourTh)
             {
+                charge = chargeThree; 
                 player.GetComponent<Player>().money -= chargeThree;
             }
             else
             {
-                player.GetComponent<Player>().money -= chargeOne;
+                charge = lantalFee ;
+                player.GetComponent<Player>().money -= lantalFee;
             }
         }
 
