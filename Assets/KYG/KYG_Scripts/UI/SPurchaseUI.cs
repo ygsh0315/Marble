@@ -42,7 +42,7 @@ public class SPurchaseUI : MonoBehaviour
         if (gameObject.activeSelf)
         {
             
-            charge = landCharge * landCount + chargeOne * chargeOneCount + chargeTwo * chargeTwoCount + chargeThree * chargeThreeCount;
+            charge = landCharge + chargeOne * chargeOneCount + chargeTwo * chargeTwoCount + chargeThree * chargeThreeCount;
             chargeText.text = charge.ToString();
             LandName.text = currentBlock.name;
          
