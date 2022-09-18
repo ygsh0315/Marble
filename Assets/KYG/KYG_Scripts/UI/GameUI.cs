@@ -15,6 +15,8 @@ public class GameUI : MonoBehaviour
 
     public GameObject PurchaseUI;
 
+    public GameObject SPurchaseUI;
+
     public GameObject TakeOverUI;
 
     public GameObject LandMarkUI;
@@ -42,6 +44,11 @@ public class GameUI : MonoBehaviour
         PurchaseUI.SetActive(true);
         PurchaseUI.GetComponent<PurchaseUI>().process(block, player);
         
+    }
+    public void SPurchase(GameObject block, GameObject player)
+    {
+        SPurchaseUI.SetActive(true);
+        SPurchaseUI.GetComponent<SPurchaseUI>().process(block, player);
     }
     public void LandMarkPurchase(GameObject block, GameObject player)
     {
