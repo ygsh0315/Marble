@@ -30,7 +30,7 @@ public class GameUI : MonoBehaviour
         PurchaseUI.SetActive(false);
         TakeOverUI.SetActive(false);
         LandMarkUI.SetActive(false);
-        TrapBlockUI.SetActive(false);
+        //TrapBlockUI.SetActive(false);
         WinUI.SetActive(false);
     }
 
