@@ -208,7 +208,7 @@ public class Player : MonoBehaviour
         hasInfo = false;
         if (isTraped)
         {
-
+            GameUI.instance.TrapBlockUI.SetActive(true);
         }
         if (sameDice == true)
         {
