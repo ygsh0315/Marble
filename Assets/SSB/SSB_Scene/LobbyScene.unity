@@ -1187,6 +1187,8 @@ MonoBehaviour:
   countMaxPlayer: 4
   btnJoin: {fileID: 1954658638}
   btnCreate: {fileID: 1438165837}
+  trListContent: {fileID: 331738818}
+  roomItemFactory: {fileID: 8252094346145047625, guid: 77ee470bc3d64b543abbce56e67b76b7, type: 3}
 --- !u!4 &593186613
 Transform:
   m_ObjectHideFlags: 0
