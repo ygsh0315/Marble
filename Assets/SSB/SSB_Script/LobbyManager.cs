@@ -63,6 +63,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         roomOptions.MaxPlayers = byte.Parse(inputMaxPlayer.text);
         //룸 목록에 보이냐? 보이지 않느냐?
         roomOptions.IsVisible = true;
+        //custom정보를 셋팅
+        ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
+        
+
 
         //방을 만든다
         PhotonNetwork.CreateRoom(inputRoomName.text, roomOptions);
@@ -158,13 +162,21 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public GameObject roomItemFactory;
     void CreateRoomListUI()
     {
-        foreach(RoomInfo info in roomCache.Values) //이건 이해못함
+        foreach (RoomInfo info in roomCache.Values) //이건 이해못함
         {
             //룸 아이템을 만든다.
             GameObject go = Instantiate(roomItemFactory, trListContent); //trListContent가 부모
             //룸 아이템 정보를 셋팅(방제목(0/0))
             RoomItem item = go.GetComponent<RoomItem>();
             item.SetInfo(info.Name, info.PlayerCount, info.MaxPlayers);
+
+            //roomItem버튼이 클릭되면 호출되는 함수 등록
+            item.onClickAction = SetRoomName;
+        }
+
+        void SetRoomName(string room)
+        {
+            inputRoomName.text = room;
         }
     }
 }
