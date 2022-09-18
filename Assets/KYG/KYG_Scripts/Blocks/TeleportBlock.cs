@@ -18,5 +18,6 @@ public class TeleportBlock : MonoBehaviour
     public void OnTeleportBlock(Transform player)
     {
         print("TeleportBlock");
+        player.GetComponent<Player>().onTurn = false;
     }
 }

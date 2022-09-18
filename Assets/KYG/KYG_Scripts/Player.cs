@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     public int round = 1;
     public int currentMapIndex = 0;
+
     public int money;
     public int TotalMoney;
     public int playerRank;
@@ -21,8 +22,13 @@ public class Player : MonoBehaviour
     public List<GameObject> lineTwo = new List<GameObject>();
     public List<GameObject> lineThree = new List<GameObject>();
     public List<GameObject> lineFour = new List<GameObject>();
+    public List<GameObject> specialBlocks = new List<GameObject>();
     public bool line = true;
-
+    public bool special = true;
+    public bool onTurn = false;
+    public bool hasInfo = false;
+    public bool isTraped = false;
+    public int trapCount;
     public enum PlayerState
     {
         Idle,
@@ -38,6 +44,7 @@ public class Player : MonoBehaviour
         money = GameManager.instance.startMoney;
         lines.AddRange(GameObject.FindGameObjectsWithTag("BasicBlock"));
         lines.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
+        specialBlocks.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
         Line();
     }
 
@@ -47,6 +54,7 @@ public class Player : MonoBehaviour
         StateMachine();
         Bankrupt();
         OwnLandCheck();
+        CheckLine();
         TotalMoney = CalculateTotalMoney();
 
     }
@@ -140,11 +148,41 @@ public class Player : MonoBehaviour
                 }
             }
         }
+        for (int i = 0; i < ownLandList.Count; i++)
+        {
+            for (int j = 0; j < specialBlocks.Count; j++)
+            {
+                if (ownLandList[i] = specialBlocks[j])
+                {
+                    specialBlocks.Remove(specialBlocks[j]);
+                }
+            }
+        }
     }
     private void Bankrupt()
     {
         if (money <= 0)
         {
+            for (int i = 0; i < ownLandList.Count; i++)
+            {
+                if (ownLandList[i].GetComponent<BasicBlock>())
+                {
+                    ownLandList[i].GetComponent<BasicBlock>().land = false;
+                    ownLandList[i].GetComponent<BasicBlock>().landCount = 0;
+                    ownLandList[i].GetComponent<BasicBlock>().tear1 = false;
+                    ownLandList[i].GetComponent<BasicBlock>().tear1Count = 0;
+                    ownLandList[i].GetComponent<BasicBlock>().tear1Factory.SetActive(false);
+                    ownLandList[i].GetComponent<BasicBlock>().tear2 = false;
+                    ownLandList[i].GetComponent<BasicBlock>().tear2Count = 0;
+                    ownLandList[i].GetComponent<BasicBlock>().tear2Factory.SetActive(false);
+                    ownLandList[i].GetComponent<BasicBlock>().tear3 = false;
+                    ownLandList[i].GetComponent<BasicBlock>().tear3Count = 0;
+                    ownLandList[i].GetComponent<BasicBlock>().tear3Factory.SetActive(false);
+                    ownLandList[i].GetComponent<BasicBlock>().landMark = false;
+                    ownLandList[i].GetComponent<BasicBlock>().landMarkCount = 0;
+                    ownLandList[i].GetComponent<BasicBlock>().landMarkFactory.SetActive(false);
+                }
+            }
             GameManager.instance.turnIndex++;
             RollDiceBtn.SetActive(true);
             Destroy(gameObject);
@@ -158,7 +196,12 @@ public class Player : MonoBehaviour
         int total;
         for (int i = 0; i < ownLandList.Count; i++)
         {
-            landPrice += ownLandList[i].GetComponent<BasicBlock>().takeOverCharge / 2;
+            if (ownLandList[i].GetComponent<BasicBlock>())
+            {
+                landPrice += ownLandList[i].GetComponent<BasicBlock>().takeOverCharge / 2;
+
+            }
+
         }
         total = money + landPrice;
         return total;
@@ -194,21 +237,47 @@ public class Player : MonoBehaviour
 
     private void Turn()
     {
-        getBlockInfo();
-        if (sameDice == true)
-        {
+        if (onTurn && !hasInfo)
+            getBlockInfo();
+        if (!onTurn)
+            TurnCheck();
+    }
 
-            state = PlayerState.Idle;
-            RollDiceBtn.SetActive(true);
+    private void TurnCheck()
+    {
+        hasInfo = false;
+        if (trapCount == 0)
+        {
+            isTraped = false;
+        }
+        if (isTraped)
+        {
+            if (trapCount < 4)
+            {
+                GameUI.instance.TrapBlockUI.SetActive(true);
+            }
+            state = PlayerState.End;
         }
         else
         {
-            state = PlayerState.End;
+            if (sameDice == true)
+            {
+
+                state = PlayerState.Idle;
+                RollDiceBtn.SetActive(true);
+            }
+            else
+            {
+                state = PlayerState.End;
+            }
         }
+
+
     }
 
     private void getBlockInfo()
     {
+        hasInfo = true;
         RollDiceBtn.SetActive(false);
         GameObject currentBlock = GameManager.instance.MapList[currentMapIndex];
         switch (currentBlock.tag)
@@ -229,7 +298,7 @@ public class Player : MonoBehaviour
                 currentBlock.GetComponent<CardBlock>().OnCardBlock(transform);
                 break;
             case "TrapBlock":
-                currentBlock.GetComponent<TrapBlock>().OnTrapBlock(transform);
+                currentBlock.GetComponent<TrapBlock>().OnTrapBlock(gameObject);
                 break;
             case "FestivalBlock":
                 currentBlock.GetComponent<FestivalBlock>().OnFestivalBlock(transform);
@@ -261,6 +330,8 @@ public class Player : MonoBehaviour
         if (sameDiceCount == 3)
         {
             transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
+            isTraped = true;
+            trapCount = 4;
             sameDice = false;
             currentMapIndex = 8;
             sameDiceCount = 0;
@@ -295,6 +366,7 @@ public class Player : MonoBehaviour
         {
             sameDice = false;
         }
+        onTurn = true;
         state = PlayerState.Turn;
     }
 }

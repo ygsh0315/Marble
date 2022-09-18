@@ -90,6 +90,11 @@ public class GameManager : MonoBehaviour
                         winner = PlayerList[i];
                         GameUI.instance.WinUI.SetActive(true);
                     }
+                    //if (PlayerList[i].GetComponent<Player>().specialBlocks.Any() == false)
+                    //{
+                    //    winner = PlayerList[i];
+                    //    GameUI.instance.WinUI.SetActive(true);
+                    //}
                 }
             }
         }

@@ -18,5 +18,6 @@ public class EventBlock : MonoBehaviour
     public void OnEventBlock(Transform player)
     {
         print("EventBlock");
+        player.GetComponent<Player>().onTurn = false;
     }
 }
