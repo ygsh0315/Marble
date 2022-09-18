@@ -60,18 +60,10 @@ public class PurchaseUI : MonoBehaviour
     public void Interactable(GameObject blockInfo, GameObject playerInfo)
     {
         
-        if (blockInfo.GetComponent<BasicBlock>().land)
-        {
-            landTog.interactable = false;
-            landTog.isOn = false;
-            land = false;
-        }
-        else
-        {
-            landTog.interactable = true;
-            landTog.isOn = true;
-            land = true;
-        }
+        landTog.interactable = false;
+        landTog.isOn = true;
+        land = true;
+        
         if (blockInfo.GetComponent<BasicBlock>().tear1 || playerInfo.GetComponent<Player>().money< blockInfo.GetComponent<BasicBlock>().landPrice + blockInfo.GetComponent<BasicBlock>().tear1Price)
         {
             tear1Tog.interactable = false;

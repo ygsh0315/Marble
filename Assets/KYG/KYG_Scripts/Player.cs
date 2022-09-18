@@ -35,14 +35,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         StateMachine();
-        if (money <= 0)
-        {
-            GameManager.instance.turnIndex++;
-            RollDiceBtn.SetActive(true);
-            Destroy(gameObject);
-            GameManager.instance.PlayerList.Remove(gameObject);
-        }
+        Bankrupt();
+        OwnLandCheck();
         TotalMoney = CalculateTotalMoney();
+        
+    }
+
+    private void OwnLandCheck()
+    {
         for (int i = 0; i < GameManager.instance.MapList.Count; i++)
         {
             if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
@@ -62,6 +62,17 @@ public class Player : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    private void Bankrupt()
+    {
+        if (money <= 0)
+        {
+            GameManager.instance.turnIndex++;
+            RollDiceBtn.SetActive(true);
+            Destroy(gameObject);
+            GameManager.instance.PlayerList.Remove(gameObject);
         }
     }
 
