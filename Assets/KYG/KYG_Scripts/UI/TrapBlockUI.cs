@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventBlock : MonoBehaviour
+public class TrapBlockUI : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,5 @@ public class EventBlock : MonoBehaviour
     void Update()
     {
         
-    }
-    public void OnEventBlock(Transform player)
-    {
-        print("EventBlock");
-        player.GetComponent<Player>().onTurn = false;
     }
 }

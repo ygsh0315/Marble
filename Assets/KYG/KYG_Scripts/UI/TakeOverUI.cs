@@ -33,16 +33,25 @@ public class TakeOverUI : MonoBehaviour
         currentBlock.GetComponent<BasicBlock>().LandOwner.GetComponent<Player>().money += currentBlock.GetComponent<BasicBlock>().takeOverCharge;
         currentBlock.GetComponent<BasicBlock>().LandOwner = player;
         gameObject.SetActive(false);
-        if(!currentBlock.GetComponent<BasicBlock>().land || !currentBlock.GetComponent<BasicBlock>().tear1 || !currentBlock.GetComponent<BasicBlock>().tear2 || !currentBlock.GetComponent<BasicBlock>().tear3 && player.GetComponent<Player>().money>= currentBlock.GetComponent<BasicBlock>().landTallFee)
-        currentBlock.GetComponent<BasicBlock>().OnBasicBlock(player);
-        if (currentBlock.GetComponent<BasicBlock>().land && currentBlock.GetComponent<BasicBlock>().tear1 && currentBlock.GetComponent<BasicBlock>().tear2 && currentBlock.GetComponent<BasicBlock>().tear3 && player.GetComponent<Player>().money >= currentBlock.GetComponent<BasicBlock>().landMarkPrice)
+        if (!currentBlock.GetComponent<BasicBlock>().land || !currentBlock.GetComponent<BasicBlock>().tear1 || !currentBlock.GetComponent<BasicBlock>().tear2 || !currentBlock.GetComponent<BasicBlock>().tear3 && player.GetComponent<Player>().money >= currentBlock.GetComponent<BasicBlock>().landTallFee)
+        {
+            currentBlock.GetComponent<BasicBlock>().OnBasicBlock(player);
+        }
+        else if (currentBlock.GetComponent<BasicBlock>().land && currentBlock.GetComponent<BasicBlock>().tear1 && currentBlock.GetComponent<BasicBlock>().tear2 && currentBlock.GetComponent<BasicBlock>().tear3 && player.GetComponent<Player>().money >= currentBlock.GetComponent<BasicBlock>().landMarkPrice)
+        {
             GameUI.instance.LandMarkPurchase(currentBlock, player);
+        }
+        else
+        {
+            player.GetComponent<Player>().onTurn = false;
+        }
 
 
     }
 
     public void OnCancelBtn()
     {
+        player.GetComponent<Player>().onTurn = false;
         gameObject.SetActive(false);
         //player.GetComponent<Player>().state = Player.PlayerState.End;
     }

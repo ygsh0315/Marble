@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     public int round = 1;
     public int currentMapIndex = 0;
+
     public int money;
     public int TotalMoney;
     public int playerRank;
@@ -22,7 +23,9 @@ public class Player : MonoBehaviour
     public List<GameObject> lineThree = new List<GameObject>();
     public List<GameObject> lineFour = new List<GameObject>();
     public bool line = true;
-
+    public bool onTurn = false;
+    public bool hasInfo = false;
+    public bool isTraped = false;
     public enum PlayerState
     {
         Idle,
@@ -194,7 +197,19 @@ public class Player : MonoBehaviour
 
     private void Turn()
     {
+        if(onTurn && !hasInfo)
         getBlockInfo();
+        if(!onTurn)
+        TurnCheck();
+    }
+
+    private void TurnCheck()
+    {
+        hasInfo = false;
+        if (isTraped)
+        {
+
+        }
         if (sameDice == true)
         {
 
@@ -205,10 +220,12 @@ public class Player : MonoBehaviour
         {
             state = PlayerState.End;
         }
+     
     }
 
     private void getBlockInfo()
     {
+        hasInfo = true;
         RollDiceBtn.SetActive(false);
         GameObject currentBlock = GameManager.instance.MapList[currentMapIndex];
         switch (currentBlock.tag)
@@ -295,6 +312,7 @@ public class Player : MonoBehaviour
         {
             sameDice = false;
         }
+        onTurn = true;
         state = PlayerState.Turn;
     }
 }

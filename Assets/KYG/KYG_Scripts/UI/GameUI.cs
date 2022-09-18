@@ -19,6 +19,8 @@ public class GameUI : MonoBehaviour
 
     public GameObject LandMarkUI;
 
+    public GameObject TrapBlockUI;
+
     public GameObject WinUI;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,7 @@ public class GameUI : MonoBehaviour
         PurchaseUI.SetActive(false);
         TakeOverUI.SetActive(false);
         LandMarkUI.SetActive(false);
+        TrapBlockUI.SetActive(false);
         WinUI.SetActive(false);
     }
 

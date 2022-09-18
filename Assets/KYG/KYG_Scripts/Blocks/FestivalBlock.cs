@@ -17,16 +17,18 @@ public class FestivalBlock : MonoBehaviour
     }
     public void OnFestivalBlock(Transform player)
     {
-        if (Input.GetMouseButton(0))
+        print("FestivalBlock");
+        if (Input.GetButtonDown("Fire1"))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             // Casts the ray and get the first game object hit
             Physics.Raycast(ray, out hit);
-            Debug.Log("This hit at " + hit.point);
             if (hit.transform.gameObject.GetComponent<BasicBlock>())
             {
+                print(hit.transform.gameObject.name);
                 hit.transform.gameObject.GetComponent<BasicBlock>().landMag *= 2;
+                player.GetComponent<Player>().onTurn = false;
             }
         }
     }

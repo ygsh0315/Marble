@@ -18,5 +18,7 @@ public class TrapBlock : MonoBehaviour
     public void OnTrapBlock(Transform player)
     {
         print("TrapBlock");
+        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().isTraped = true;
     }
 }

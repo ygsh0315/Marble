@@ -114,8 +114,14 @@ public class BasicBlock : MonoBehaviour
         print("BasicBlock");
         if (!LandOwner)
         {
-            if(player.GetComponent<Player>().money>=landPrice)
-            GameUI.instance.Purchase(gameObject, player);
+            if (player.GetComponent<Player>().money >= landPrice)
+            {
+                GameUI.instance.Purchase(gameObject, player);
+            }
+            else
+            {
+                player.GetComponent<Player>().onTurn = false;
+            }
         }
         else if(LandOwner == player)
         {
@@ -147,6 +153,7 @@ public class BasicBlock : MonoBehaviour
                     GameUI.instance.TakeOver(gameObject, player);
                 }
             }
+             player.GetComponent<Player>().onTurn = false;
         }
     }
 }
