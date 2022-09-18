@@ -86,6 +86,8 @@ public class ConncectionManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedLobby();
         print("OnJoinedLobby");
+        //LobbyScene으로 이동
+        PhotonNetwork.LoadLevel("LobbyScene");
     }
 
     

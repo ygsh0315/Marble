@@ -3,16 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
+
+    // 방이름 InputField
+    public InputField inputRoomName;
+    // 총인원 InputField
+    public InputField inputMaxPlayer;
+    // 최대 인원
+    public int countMaxPlayer;
+
+    // 방참가 Button
+    public Button btnJoin;
+    // 방생성 Button
+    public Button btnCreate;
+  
     void Start()
     {
-        CreateRoom();
+        //방이름(InputField 내용)이 변경될 때 호출되는 함수 등록
+        inputRoomName.onValueChanged.AddListener(OnRoomNamevalueChanged);
+        //총인원(InputField 내용)이 변경될 때 호출되는 함수 등록
+        inputMaxPlayer.onValueChanged.AddListener(OnMaxPlayervalueChanged);
     }
 
-    // Update is called once per frame
+    public void OnRoomNamevalueChanged(string s)
+    {
+        //참가
+        btnJoin.interactable = s.Length > 0;
+        //생성, 총인원 (텍스트 길이가 0보다 크고, 총인원은 4명 이하)
+        btnCreate.interactable = s.Length > 0 && inputMaxPlayer.text.Length > 0 && countMaxPlayer <= 4;
+    }
+
+    public void OnMaxPlayervalueChanged(string s)
+    {
+        btnCreate.interactable = s.Length > 0 && inputRoomName.text.Length > 0;
+    }
+
     void Update()
     {
         
@@ -24,12 +52,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         RoomOptions roomOptions = new RoomOptions();
 
         //최대인원
-        roomOptions.MaxPlayers = 10;
+        roomOptions.MaxPlayers = byte.Parse(inputMaxPlayer.text);
         //룸 목록에 보이냐? 보이지 않느냐?
         roomOptions.IsVisible = true;
 
         //방을 만든다
-        PhotonNetwork.CreateRoom("모두의마블", roomOptions, TypedLobby.Default);
+        PhotonNetwork.CreateRoom(inputRoomName.text, roomOptions);
     }
 
     //방 생성 완료
@@ -49,7 +77,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     //방 참가 요청
     public void JoinRoom()
     {
-        PhotonNetwork.JoinRoom("XR_B반");
+        PhotonNetwork.JoinRoom(inputRoomName.text);
     }
 
     //방 참가가 완료 되었을 때 호출되는 함수
