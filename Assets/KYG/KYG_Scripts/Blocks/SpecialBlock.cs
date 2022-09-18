@@ -8,12 +8,14 @@ public class SpecialBlock : MonoBehaviour
     public GameObject tourOne;
     public GameObject tourTwo;
     public GameObject tourThree;
+    public GameObject tourFour;
     List<GameObject> tourBlocks = new List<GameObject>();
     //¶¥ ÁÖÀÎ
     public GameObject LandOwner;
     GameObject tourO;
     GameObject tourT;
     GameObject tourTh;
+    GameObject tourF;
     //ÅëÇà·á
     public int charge = 60000;
     public int chargeTwo = 0;
@@ -23,7 +25,7 @@ public class SpecialBlock : MonoBehaviour
     //¶¥Ç¥½Ã °øÀå
     public GameObject landFlagFactory;
 
-    
+
     //¶¥ °Ç¼³ °¡°Ý
     public int landPrice;
 
@@ -33,7 +35,7 @@ public class SpecialBlock : MonoBehaviour
     //ÅëÇà·á
     public int lantalFee = 0;
 
-    
+
 
     public int chargeTwoCount = 0;
 
@@ -46,7 +48,7 @@ public class SpecialBlock : MonoBehaviour
 
 
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,24 +62,25 @@ public class SpecialBlock : MonoBehaviour
                 tourBlocks.RemoveAt(i);
             }
         }
-         tourO = tourOne.GetComponent<SpecialBlock>().LandOwner;
-         tourT = tourTwo.GetComponent<SpecialBlock>().LandOwner;
-         tourTh = tourThree.GetComponent<SpecialBlock>().LandOwner;
+        tourO = tourOne.GetComponent<SpecialBlock>().LandOwner;
+        tourT = tourTwo.GetComponent<SpecialBlock>().LandOwner;
+        tourTh = tourThree.GetComponent<SpecialBlock>().LandOwner;
+        tourF = tourFour.GetComponent<SpecialBlock>().LandOwner;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void OnSpecialBlock(GameObject player)
     {
         print("SpecialBlock");
         if (!LandOwner)
         {
-            if(player.GetComponent<Player>().money >= landPrice)
+            if (player.GetComponent<Player>().money >= landPrice)
             {
-            GameUI.instance.SPurchase(gameObject, player);                
+                GameUI.instance.SPurchase(gameObject, player);
             }
             else
             {
@@ -85,18 +88,25 @@ public class SpecialBlock : MonoBehaviour
             }
         }
         else if (LandOwner != player)
-        {            
+        {
             if (tourO == tourT || tourO == tourTh || tourT == tourTh)
             {
-               
+
                 charge *= 2;
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
                 player.GetComponent<Player>().onTurn = false;
             }
-            else if (tourO == tourT == tourTh)
+            else if (tourO == tourT == tourTh || tourO == tourT == tourF || tourO == tourTh == tourF || tourT == tourTh == tourF)
             {
-                charge *= 3; 
+                charge *= 3;
+                player.GetComponent<Player>().money -= charge;
+                LandOwner.GetComponent<Player>().money += charge;
+                player.GetComponent<Player>().onTurn = false;
+            }
+            else if (tourO == tourT == tourTh == tourF)
+            {
+                charge *= 4;
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
                 player.GetComponent<Player>().onTurn = false;

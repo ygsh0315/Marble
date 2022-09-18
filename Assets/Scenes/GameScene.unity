@@ -2190,6 +2190,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 633018918}
     - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourFour
+      value: 
+      objectReference: {fileID: 878923776}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: chargeTwo
       value: 200000
       objectReference: {fileID: 0}
@@ -2282,6 +2286,10 @@ PrefabInstance:
       propertyPath: tourTwo
       value: 
       objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourFour
+      value: 
+      objectReference: {fileID: 878923776}
     - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: chargeTwo
       value: 200000
@@ -6435,6 +6443,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855431686}
   m_CullTransparentMesh: 1
+--- !u!1 &878923776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+  m_PrefabInstance: {fileID: 190939607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &881068411 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8277528331372694700, guid: b3ca0cd8bb59f914aa436db30b687e3d, type: 3}
@@ -7480,6 +7493,10 @@ PrefabInstance:
       propertyPath: tourTwo
       value: 
       objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourFour
+      value: 
+      objectReference: {fileID: 878923776}
     - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: chargeTwo
       value: 200000
@@ -14857,6 +14874,10 @@ PrefabInstance:
       propertyPath: tourTwo
       value: 
       objectReference: {fileID: 633018918}
+    - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
+      propertyPath: tourFour
+      value: 
+      objectReference: {fileID: 878923776}
     - target: {fileID: 9201713508612220191, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: chargeTwo
       value: 200000
