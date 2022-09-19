@@ -41,11 +41,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         //참가
         btnJoin.interactable = s.Length > 0;
         //생성, 총인원 (텍스트 길이가 0보다 크고, 총인원은 4명 이하)
-        btnCreate.interactable = s.Length > 0 && inputMaxPlayer.text.Length > 0 && countMaxPlayer <= 4;
+        btnCreate.interactable = s.Length > 0 && inputMaxPlayer.text.Length > 0;
     }
 
     public void OnMaxPlayervalueChanged(string s)
     {
+        if (int.Parse(s) > 4) inputMaxPlayer.text = 4.ToString();
         btnCreate.interactable = s.Length > 0 && inputRoomName.text.Length > 0;
     }
 
