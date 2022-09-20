@@ -16,7 +16,7 @@ public class WinUI : MonoBehaviour
     {
         if (GameManager.instance.winner)
         {
-            winner.text = GameManager.instance.winner.name + " ½Â¸®!!!!!";
+            winner.text = GameManager.instance.winner.name + GameManager.instance.winType;
 
         }
     }
