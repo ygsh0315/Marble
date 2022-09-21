@@ -127,7 +127,7 @@ public class BasicBlock : MonoBehaviour
             }
             else
             {
-                player.GetComponent<Player>().onTurn = false;
+                player.GetComponent<Player>().TurnCheck(); 
             }
         }
         else if(LandOwner == player)
@@ -146,7 +146,7 @@ public class BasicBlock : MonoBehaviour
                     }
                     else
                     {
-                        player.GetComponent<Player>().onTurn = false;
+                        player.GetComponent<Player>().TurnCheck();
                     }
                     if (!tear2 && player.GetComponent<Player>().money >= tear2Price)
                     {
@@ -154,7 +154,7 @@ public class BasicBlock : MonoBehaviour
                     }
                     else
                     {
-                        player.GetComponent<Player>().onTurn = false;
+                        player.GetComponent<Player>().TurnCheck();
                     }
                     if (!tear3 && player.GetComponent<Player>().money >= tear3Price)
                     {
@@ -162,19 +162,19 @@ public class BasicBlock : MonoBehaviour
                     }
                     else
                     {
-                        player.GetComponent<Player>().onTurn = false;
+                        player.GetComponent<Player>().TurnCheck();
                     }
 
 
                 }
                 else
                 {
-                    player.GetComponent<Player>().onTurn = false;
+                    player.GetComponent<Player>().TurnCheck();
                 }
             }
             else
             {
-                player.GetComponent<Player>().onTurn = false;
+                player.GetComponent<Player>().TurnCheck();
             }
         }
         else
@@ -189,12 +189,12 @@ public class BasicBlock : MonoBehaviour
                 }
                 else
                 {
-                    player.GetComponent<Player>().onTurn = false;
+                    player.GetComponent<Player>().TurnCheck();
                 }
             }
             else
             {
-                player.GetComponent<Player>().onTurn = false;
+                player.GetComponent<Player>().TurnCheck();
             }
         }
     }

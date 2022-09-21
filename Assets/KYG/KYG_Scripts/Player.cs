@@ -237,13 +237,13 @@ public class Player : MonoBehaviour
 
     private void Turn()
     {
-        if (onTurn && !hasInfo)
-            getBlockInfo();
-        if (!onTurn)
-            TurnCheck();
+        //if (onTurn && !hasInfo)
+        //    getBlockInfo();
+        //if (!onTurn)
+        //    TurnCheck();
     }
 
-    private void TurnCheck()
+    public void TurnCheck()
     {
         hasInfo = false;
         if (trapCount == 0)
@@ -366,7 +366,8 @@ public class Player : MonoBehaviour
         {
             sameDice = false;
         }
-        onTurn = true;
+        //onTurn = true;
         state = PlayerState.Turn;
+        getBlockInfo();
     }
 }

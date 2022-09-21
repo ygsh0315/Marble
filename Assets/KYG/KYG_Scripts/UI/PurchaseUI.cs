@@ -201,7 +201,7 @@ public class PurchaseUI : MonoBehaviour
             currentBlock.GetComponent<BasicBlock>().tear3 = true;
         }
         player.GetComponent<Player>().money -= charge;
-        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().TurnCheck();
         gameObject.SetActive(false);
         //player.GetComponent<Player>().state = Player.PlayerState.End;
     }
@@ -209,7 +209,7 @@ public class PurchaseUI : MonoBehaviour
     public void OnCancelBtn()
     {
         gameObject.SetActive(false);
-        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().TurnCheck();// = false;
         //player.GetComponent<Player>().state = Player.PlayerState.End;
     }
 }

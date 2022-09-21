@@ -43,7 +43,7 @@ public class TakeOverUI : MonoBehaviour
         }
         else
         {
-            player.GetComponent<Player>().onTurn = false;
+            player.GetComponent<Player>().TurnCheck();
         }
 
 
@@ -51,7 +51,7 @@ public class TakeOverUI : MonoBehaviour
 
     public void OnCancelBtn()
     {
-        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().TurnCheck();
         gameObject.SetActive(false);
         //player.GetComponent<Player>().state = Player.PlayerState.End;
     }

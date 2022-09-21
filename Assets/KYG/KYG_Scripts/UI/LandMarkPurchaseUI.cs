@@ -30,13 +30,13 @@ public class LandMarkPurchaseUI : MonoBehaviour
     {
         currentBlock.GetComponent<BasicBlock>().OnPurchaseBtn();
         player.GetComponent<Player>().money -= currentBlock.GetComponent<BasicBlock>().landMarkPrice;
-        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().TurnCheck();
         gameObject.SetActive(false);
     }
 
     public void OnCancelBtn()
     {
-        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().TurnCheck();
         gameObject.SetActive(false);
         //player.GetComponent<Player>().state = Player.PlayerState.End;
     }
