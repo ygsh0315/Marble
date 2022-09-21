@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class SpecialBlock : MonoBehaviour
 {
+    public TextMeshProUGUI landName;
+    public TextMeshProUGUI landPriceText;
     //°ü±¤Áö
     public GameObject tourOne;
     public GameObject tourTwo;
@@ -52,6 +54,8 @@ public class SpecialBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        landName.text = gameObject.name;
+        landPriceText.text = (landPrice/10000).ToString() + " ¸¸";
         tourBlocks.Add(tourOne);
         tourBlocks.Add(tourTwo);
         tourBlocks.Add(tourThree);

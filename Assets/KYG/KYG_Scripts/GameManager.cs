@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
+    public GameObject currentTurnPlayer;
+    public bool cDice = false;
+    public int cDice1 = 0;
+    public int cDice2 = 0;
     public int startMoney = 2000000;
     public GameObject Player1;
     public GameObject Player2;
@@ -33,7 +37,14 @@ public class GameManager : MonoBehaviour
     public List<GameObject> Line2BlockList = new List<GameObject>();
     public List<GameObject> Line3BlockList = new List<GameObject>();
     public List<GameObject> Line4BlockList = new List<GameObject>();
-    public GameObject currentTurnPlayer;
+    public List<GameObject> Group1BlockList = new List<GameObject>();
+    public List<GameObject> Group2BlockList = new List<GameObject>();
+    public List<GameObject> Group3BlockList = new List<GameObject>();
+    public List<GameObject> Group4BlockList = new List<GameObject>();
+    public List<GameObject> Group5BlockList = new List<GameObject>();
+    public List<GameObject> Group6BlockList = new List<GameObject>();
+    public List<GameObject> Group7BlockList = new List<GameObject>();
+    public List<GameObject> Group8BlockList = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {

@@ -40,10 +40,11 @@ public class Buttons : MonoBehaviour
 
     public void PointerUp()
     {
-        //int dice1 = Random.Range(6, 7);
-        //int dice2 = Random.Range(6, 7);
         int dice1 = 0;
         int dice2 = 0;
+        
+        //int dice1 = Random.Range(6, 7);
+        //int dice2 = Random.Range(6, 7);
         int[] a = { 2, 4, 6 };
         int[] b = { 1, 3, 5 };
         float value = GetComponent<DicePower>().power;
@@ -79,6 +80,11 @@ public class Buttons : MonoBehaviour
 
 
             }
+        }
+        if (GameManager.instance.cDice == true)
+        {
+            dice1 = GameManager.instance.cDice1;
+            dice2 = GameManager.instance.cDice2;
         }
         dice1Number.text = dice1.ToString();
         dice2Number.text = dice2.ToString();

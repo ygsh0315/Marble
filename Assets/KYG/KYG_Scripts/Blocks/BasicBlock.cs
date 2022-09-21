@@ -105,6 +105,13 @@ public class BasicBlock : MonoBehaviour
         if (landMag >= 2)
         {
             landMagText.text = "X " + landMag;
+        }else if (!LandOwner)
+        {
+            landMagText.text = "";   
+        }
+        else
+        {
+            landMagText.text = (charge / 10000).ToString() + " ¸¸";
         }
         charge = (landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount) * landMag;
         takeOverCharge = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count + landMarkPrice * landMarkCount) * 2;
@@ -180,8 +187,40 @@ public class BasicBlock : MonoBehaviour
                 {
                     GameUI.instance.TakeOver(gameObject, player);
                 }
+                else
+                {
+                    player.GetComponent<Player>().onTurn = false;
+                }
             }
-             player.GetComponent<Player>().onTurn = false;
+            else
+            {
+                player.GetComponent<Player>().onTurn = false;
+            }
         }
+    }
+
+    public void OnPurchaseBtn()
+    {
+        tear1Factory.SetActive(false);
+        tear2Factory.SetActive(false);
+        tear3Factory.SetActive(false);
+        landMarkFactory.SetActive(true);
+        landMarkCount = 1;
+        landMark = true;
+    }
+
+    public bool HasMoney(int type, Player player)
+    {
+        switch(type)
+        {
+            case 1:
+                return (tear1 || player.money < landPrice + tear1Price);
+            case 2:
+                return tear2 || player.money <landPrice + tear1Price + tear2Price;
+            case 3:
+                return tear3 || player.money < landPrice + tear1Price + tear2Price +tear3Price;
+        }
+
+        return false;
     }
 }

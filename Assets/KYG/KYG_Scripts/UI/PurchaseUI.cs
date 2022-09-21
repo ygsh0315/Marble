@@ -63,8 +63,10 @@ public class PurchaseUI : MonoBehaviour
         landTog.interactable = false;
         landTog.isOn = true;
         land = true;
-        
-        if (blockInfo.GetComponent<BasicBlock>().tear1 || playerInfo.GetComponent<Player>().money< blockInfo.GetComponent<BasicBlock>().landPrice + blockInfo.GetComponent<BasicBlock>().tear1Price)
+
+        // 해당 블록에 1번 건물이 지어져 있고, 플레이어가 땅 + 1번 건문 가격보다 돈이 없다면
+        BasicBlock block = blockInfo.GetComponent<BasicBlock>();
+        if (block.HasMoney(1, playerInfo.GetComponent<Player>()))
         {
             tear1Tog.interactable = false;
             tear1Tog.isOn = false;
@@ -76,7 +78,7 @@ public class PurchaseUI : MonoBehaviour
             tear1Tog.isOn = true;
             tear1 = true;
         }
-        if (blockInfo.GetComponent<BasicBlock>().tear2 || playerInfo.GetComponent<Player>().money < blockInfo.GetComponent<BasicBlock>().landPrice + blockInfo.GetComponent<BasicBlock>().tear1Price + blockInfo.GetComponent<BasicBlock>().tear2Price)
+        if (block.HasMoney(2, playerInfo.GetComponent<Player>()))
         {
             tear2Tog.interactable = false;
             tear2Tog.isOn = false;
@@ -88,7 +90,7 @@ public class PurchaseUI : MonoBehaviour
             tear2Tog.isOn = true;
             tear2 = true;
         }
-        if (blockInfo.GetComponent<BasicBlock>().tear3 || playerInfo.GetComponent<Player>().money < blockInfo.GetComponent<BasicBlock>().landPrice + blockInfo.GetComponent<BasicBlock>().tear1Price + blockInfo.GetComponent<BasicBlock>().tear2Price + blockInfo.GetComponent<BasicBlock>().tear3Price)
+        if (block.HasMoney(3, playerInfo.GetComponent<Player>()))
         {
             tear3Tog.interactable = false;
             tear3Tog.isOn = false;
