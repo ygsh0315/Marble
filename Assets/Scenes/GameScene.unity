@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15059652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 80368651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &30696864
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5294118, g: 0.33333334, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -500,6 +505,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54751708}
   m_CullTransparentMesh: 1
+--- !u!1 &56387026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 1146100168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &56477254
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,9 +710,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 584934e5b46ae8941a29de2ad0360989, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (9)
+      value: "\uB098\uB798 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -1071,9 +1085,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa525aee9b076c74897662fb38e19831, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (11)
+      value: "\uAC00\uC628 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -1232,8 +1250,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4290373114
+  m_fontColor: {r: 0.9803922, g: 0.8980393, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1307,9 +1325,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa525aee9b076c74897662fb38e19831, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (10)
+      value: "\uD574\uC194 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -1673,8 +1695,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4290373114
+  m_fontColor: {r: 0.98039216, g: 0.8980392, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1926,6 +1948,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
   m_PrefabInstance: {fileID: 1726141949}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &133747340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 1543944897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &147211093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1979,7 +2006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8277528331372694701, guid: b3ca0cd8bb59f914aa436db30b687e3d, type: 3}
       propertyPath: m_Name
-      value: EventBlock (1)
+      value: "\uC789\uCE74\uC758 \uC2E0 \uC11D\uC0C1"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ca0cd8bb59f914aa436db30b687e3d, type: 3}
@@ -2050,8 +2077,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4290373114
+  m_fontColor: {r: 0.98039216, g: 0.8980392, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2127,7 +2154,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_Name
-      value: SpecialBlock (1)
+      value: "\uD5E4\uBE44\uCE58 \uD1A0\uD15C"
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_Layer
@@ -2151,7 +2178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2159,7 +2186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2171,7 +2198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2224,7 +2251,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_Name
-      value: SpecialBlock (3)
+      value: "\uBBF8\uB2C8\uB798 \uD1A0\uD15C"
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_Layer
@@ -2248,7 +2275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2256,7 +2283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.z
@@ -2268,7 +2295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2637,7 +2664,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb76ede6d2b21a1488a4dae663801328, type: 2}
+  - {fileID: 2100000, guid: 4f606c7384d95254fae935a1ba120e19, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2734,7 +2761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5529412, g: 0.34509805, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3067,9 +3094,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 144a06749c4c691438168018ff20972c, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (12)
+      value: "\uD30C\uB974\uD14C\uB17C \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -3296,6 +3327,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346867619}
   m_CullTransparentMesh: 1
+--- !u!1 &375870928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 1772091642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &376991002
 GameObject:
   m_ObjectHideFlags: 0
@@ -3563,7 +3599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.027450982, g: 0.2392157, b: 0.427451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4054,7 +4090,7 @@ Transform:
   m_GameObject: {fileID: 487933795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1853801479}
@@ -4562,7 +4598,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4626,7 +4662,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &630959570
@@ -4829,7 +4865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.13333334, g: 0.35686275, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4937,9 +4973,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 584934e5b46ae8941a29de2ad0360989, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (8)
+      value: "\uB3C4\uB780 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -5294,8 +5334,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4290373114
+  m_fontColor: {r: 0.98039216, g: 0.8980392, b: 0.7254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5456,7 +5496,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 86a9b7020c053b44c96b690a6f4b8e73, type: 2}
+  - {fileID: 2100000, guid: a4775ed916a1c924e968bcc07c398aef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6193,7 +6233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: 0.5}
+  m_AnchoredPosition: {x: -180, y: 53}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796162998
@@ -6388,6 +6428,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &829147930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 1726141949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &844208949
 GameObject:
   m_ObjectHideFlags: 0
@@ -6563,6 +6608,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855431686}
   m_CullTransparentMesh: 1
+--- !u!1 &862855485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 1795615741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &878923776 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
@@ -6580,9 +6630,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0a9cf5ef02bdf54c8e1fd2763021cba, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (6)
+      value: "\uB8E8\uB098 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -6728,7 +6782,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f08d5d20d333827429f4ea84f9087e37, type: 2}
+  - {fileID: 2100000, guid: 005bd1307efb5d94092f421e1fd89528, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7116,6 +7170,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003050787}
   m_CullTransparentMesh: 1
+--- !u!1 &1013152794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 886531326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1031886778
 GameObject:
   m_ObjectHideFlags: 0
@@ -7544,6 +7603,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057018212}
   m_CullTransparentMesh: 1
+--- !u!1 &1062550274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 62308880}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1074826136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7553,7 +7617,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_Name
-      value: SpecialBlock (2)
+      value: "\uB098\uB9B0 \uD1A0\uD15C"
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_Layer
@@ -7577,7 +7641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -7589,7 +7653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7597,7 +7661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098989, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -7786,6 +7850,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
   m_PrefabInstance: {fileID: 1772091642}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1103688176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 654769783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1107557247
 GameObject:
   m_ObjectHideFlags: 0
@@ -7956,7 +8025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -119}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1127765932
@@ -8012,7 +8081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6309143453700105521, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
       propertyPath: m_Name
-      value: CardBlock (3)
+      value: "\uD3EC\uCE08\uCE74\uB4DC"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
@@ -8076,8 +8145,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
+  m_sharedMaterial: {fileID: 1592513434061130, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8202,7 +8271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.94436383, b: 0, a: 1}
+  m_Color: {r: 0.7254902, g: 0.2627451, b: 0.14901961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8319,9 +8388,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 144a06749c4c691438168018ff20972c, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (13)
+      value: "\uC544\uD3F4\uB860 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -8756,7 +8829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8277528331372694701, guid: b3ca0cd8bb59f914aa436db30b687e3d, type: 3}
       propertyPath: m_Name
-      value: EventBlock (2)
+      value: "\uC57C\uCC28\uC758 \uC2E0 \uC11D\uC0C1"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ca0cd8bb59f914aa436db30b687e3d, type: 3}
@@ -9218,7 +9291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: 0.5}
+  m_AnchoredPosition: {x: 180, y: 53}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1295700813
@@ -9389,7 +9462,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: LandName
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9453,7 +9526,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1297512323
@@ -9524,7 +9597,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: LandName
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9588,7 +9661,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1308044256
@@ -9656,7 +9729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.027450982, g: 0.24705884, b: 0.4431373, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9734,7 +9807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6309143453700105521, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
       propertyPath: m_Name
-      value: CardBlock (2)
+      value: "\uD3EC\uCE08\uCE74\uB4DC"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
@@ -9790,7 +9863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7568628, g: 0.27450982, b: 0.15686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9957,9 +10030,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a09cc5d59247b4746b8b33f92ce465b6, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (3)
+      value: "\uCD94\uC5B4 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -10111,8 +10188,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LandName
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
+  m_sharedMaterial: {fileID: 1592513434061130, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10782,9 +10859,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3eed92c4e75eeae4d96dfcfa37ae4114, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (15)
+      value: "\uD5E4\uB77C \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -10901,9 +10982,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3eed92c4e75eeae4d96dfcfa37ae4114, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (14)
+      value: "\uB2C8\uCF00 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -11667,7 +11752,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c5a64793c96c70b48928720bf5b468a6, type: 2}
+  - {fileID: 2100000, guid: cb3a7cbf15905844da5f936b87cd0ceb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11765,7 +11850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8277528331372694701, guid: b3ca0cd8bb59f914aa436db30b687e3d, type: 3}
       propertyPath: m_Name
-      value: EventBlock (3)
+      value: "\uADF8\uB9AC\uC2A4 \uC5EC\uC2E0 \uC11D\uC0C1"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ca0cd8bb59f914aa436db30b687e3d, type: 3}
@@ -11902,7 +11987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6309143453700105521, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
       propertyPath: m_Name
-      value: CardBlock (1)
+      value: "\uD3EC\uCE08\uCE74\uB4DC"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
@@ -11913,9 +11998,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0a9cf5ef02bdf54c8e1fd2763021cba, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (7)
+      value: "\uB514\uC624\uC2A4 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -12007,6 +12096,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+--- !u!1 &1759447628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 89060873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1772091642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12014,9 +12108,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba770cef0f4c7f24a8d7c0756489fe99, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (4)
+      value: "\uCE74\uB77C \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -12197,10 +12295,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778354702}
   m_CullTransparentMesh: 1
+--- !u!1 &1787781340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 1596046888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1790462728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
   m_PrefabInstance: {fileID: 1795615741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1794499765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 297427229}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1795615741
 PrefabInstance:
@@ -12209,9 +12317,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b87c08489e29faf4c96678237923ff9b, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (1)
+      value: "\uC7A0\uBCF4 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -12545,6 +12657,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840602328}
   m_CullTransparentMesh: 1
+--- !u!1 &1843319791 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 2029728397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1853801479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1568711098273655561, guid: 5768fe7cecfc8a44190c27b81ad5b57f, type: 3}
@@ -12610,7 +12727,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -12674,7 +12791,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1863181042
@@ -12900,6 +13017,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883028492}
   m_CullTransparentMesh: 1
+--- !u!1 &1893716170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 1579149572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1901376153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2825046284212038239, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
@@ -12948,7 +13070,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 36}
+  m_AnchoredPosition: {x: 0, y: 309}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912175533
@@ -13139,6 +13261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42b7f8bd5dbd5f34bb99bef256fd91bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTurnPlayer: {fileID: 0}
   cDice: 1
   cDice1: 4
   cDice2: 6
@@ -13160,7 +13283,30 @@ MonoBehaviour:
   Line2BlockList: []
   Line3BlockList: []
   Line4BlockList: []
-  currentTurnPlayer: {fileID: 0}
+  Group1BlockList:
+  - {fileID: 1591542148}
+  - {fileID: 862855485}
+  Group2BlockList:
+  - {fileID: 2026294701}
+  - {fileID: 133747340}
+  Group3BlockList:
+  - {fileID: 375870928}
+  - {fileID: 1843319791}
+  Group4BlockList:
+  - {fileID: 1013152794}
+  - {fileID: 829147930}
+  Group5BlockList:
+  - {fileID: 1103688176}
+  - {fileID: 1062550274}
+  Group6BlockList:
+  - {fileID: 1759447628}
+  - {fileID: 15059652}
+  Group7BlockList:
+  - {fileID: 1794499765}
+  - {fileID: 56387026}
+  Group8BlockList:
+  - {fileID: 1787781340}
+  - {fileID: 1893716170}
 --- !u!4 &1942610885
 Transform:
   m_ObjectHideFlags: 0
@@ -13627,6 +13773,11 @@ MonoBehaviour:
   playerRank: {fileID: 81546020}
   isGone: {fileID: 126728661}
   player: {fileID: 907509956}
+--- !u!1 &2026294701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+  m_PrefabInstance: {fileID: 2110297238}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2029728397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13634,9 +13785,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba770cef0f4c7f24a8d7c0756489fe99, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (5)
+      value: "\uD30C\uC988 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -14219,9 +14374,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 487933796}
     m_Modifications:
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a09cc5d59247b4746b8b33f92ce465b6, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block (2)
+      value: "\uC2EC\uBC14 \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -14774,7 +14933,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1240998971651137824, guid: b3b7d92c5b33e7743835b2bd109fe8a3, type: 3}
       propertyPath: m_Name
-      value: TrapBlock
+      value: "\uACE0\uD589\uC758 \uBC29"
       objectReference: {fileID: 0}
     - target: {fileID: 1240998971651137827, guid: b3b7d92c5b33e7743835b2bd109fe8a3, type: 3}
       propertyPath: m_RootOrder
@@ -14890,9 +15049,13 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1636823310}
+    - target: {fileID: 2825046284212038233, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b87c08489e29faf4c96678237923ff9b, type: 2}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Name
-      value: Block
+      value: "\uD53C\uC2DC \uC2E0\uC804"
       objectReference: {fileID: 0}
     - target: {fileID: 2825046284212038235, guid: f1967fbaf310a494790dcdebd5db512e, type: 3}
       propertyPath: m_Layer
@@ -14993,7 +15156,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_Name
-      value: SpecialBlock
+      value: "\uC218\uD53C\uC544 \uD1A0\uD15C"
       objectReference: {fileID: 0}
     - target: {fileID: 3634312271481098988, guid: 2532820d122a4c94a97c0469bc0eaaf1, type: 3}
       propertyPath: m_Layer
@@ -15134,7 +15297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6309143453700105521, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
       propertyPath: m_Name
-      value: CardBlock
+      value: "\uD3EC\uCE08\uCE74\uB4DC"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33242455f91f2f74a865ba81bf74d086, type: 3}
@@ -15147,7 +15310,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8109940704171799184, guid: cc94c3e684654ad4c93182f186862db4, type: 3}
       propertyPath: m_Name
-      value: TeleportBlock
+      value: "\uD398\uAC00\uC218\uC2A4"
       objectReference: {fileID: 0}
     - target: {fileID: 8109940704171799187, guid: cc94c3e684654ad4c93182f186862db4, type: 3}
       propertyPath: m_RootOrder
@@ -15248,7 +15411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8277528331372694701, guid: b3ca0cd8bb59f914aa436db30b687e3d, type: 3}
       propertyPath: m_Name
-      value: EventBlock
+      value: "\uBC00\uB9BC\uC758 \uC2E0 \uC11D\uC0C1"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3ca0cd8bb59f914aa436db30b687e3d, type: 3}
@@ -15261,7 +15424,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8717558917015342182, guid: 9237bad7008cd8d449273e55e4c24435, type: 3}
       propertyPath: m_Name
-      value: FestivalBlock
+      value: "\uC2E0\uC758 \uCD95\uBCF5"
       objectReference: {fileID: 0}
     - target: {fileID: 8717558917015342182, guid: 9237bad7008cd8d449273e55e4c24435, type: 3}
       propertyPath: m_TagString
