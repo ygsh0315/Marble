@@ -277,6 +277,7 @@ public class Player : MonoBehaviour
 
     private void getBlockInfo()
     {
+        state = PlayerState.Turn;
         hasInfo = true;
         RollDiceBtn.SetActive(false);
         GameObject currentBlock = GameManager.instance.MapList[currentMapIndex];
@@ -335,7 +336,7 @@ public class Player : MonoBehaviour
             sameDice = false;
             currentMapIndex = 8;
             sameDiceCount = 0;
-            state = PlayerState.Turn;
+            state = PlayerState.End;
             return;
         }
         state = PlayerState.Move;
@@ -367,7 +368,7 @@ public class Player : MonoBehaviour
             sameDice = false;
         }
         //onTurn = true;
-        state = PlayerState.Turn;
+        
         getBlockInfo();
     }
 }
