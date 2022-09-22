@@ -42,10 +42,10 @@ public class Player : MonoBehaviour
     void Start()
     {
         money = GameManager.instance.startMoney;
-        //lines.AddRange(GameObject.FindGameObjectsWithTag("BasicBlock"));
-        //lines.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
-        //specialBlocks.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
-        //Line();
+        lines.AddRange(GameObject.FindGameObjectsWithTag("BasicBlock"));
+        lines.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
+        specialBlocks.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
+        Line();
     }
 
     // Update is called once per frame
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         Bankrupt();
         OwnLandCheck();
         TotalMoney = CalculateTotalMoney();
-        //CheckLine();
+        CheckLine();
 
     }
 
@@ -101,64 +101,64 @@ public class Player : MonoBehaviour
         }
     }
 
-    //private void Line()
-    //{
-    //    for (int i = 0; i < lines.Count; i++)
-    //    {
-    //        if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineOne"))
-    //        {
-    //            lineOne.Add(lines[i]);
-    //        }
-    //        if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineTwo"))
-    //        {
-    //            lineTwo.Add(lines[i]);
-    //        }
-    //        if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineThree"))
-    //        {
-    //            lineThree.Add(lines[i]);
-    //        }
-    //        if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineFour"))
-    //        {
-    //            lineFour.Add(lines[i]);
-    //        }
-    //    }
-    //    line = false;
-    //}
-    //private void CheckLine()
-    //{
-    //    for (int i = 0; i < ownLandList.Count; i++)
-    //    {
-    //        for (int j = 0; j < lineOne.Count; j++)
-    //        {
-    //            if (ownLandList[i] == lineOne[j])
-    //            {
-    //                lineOne.Remove(lineOne[j]);
-    //            }
-    //            if (ownLandList[i] == lineTwo[j])
-    //            {
-    //                lineOne.Remove(lineTwo[j]);
-    //            }
-    //            if (ownLandList[i] == lineThree[j])
-    //            {
-    //                lineOne.Remove(lineThree[j]);
-    //            }
-    //            if (ownLandList[i] == lineFour[j])
-    //            {
-    //                lineOne.Remove(lineFour[j]);
-    //            }
-    //        }
-    //    }
-    //    for (int i = 0; i < ownLandList.Count; i++)
-    //    {
-    //        for (int j = 0; j < specialBlocks.Count; j++)
-    //        {
-    //            if (ownLandList[i] = specialBlocks[j])
-    //            {
-    //                specialBlocks.Remove(specialBlocks[j]);
-    //            }
-    //        }
-    //    }
-    //}
+    private void Line()
+    {
+        for (int i = 0; i < lines.Count; i++)
+        {
+            if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineOne"))
+            {
+                lineOne.Add(lines[i]);
+            }
+            if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineTwo"))
+            {
+                lineTwo.Add(lines[i]);
+            }
+            if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineThree"))
+            {
+                lineThree.Add(lines[i]);
+            }
+            if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineFour"))
+            {
+                lineFour.Add(lines[i]);
+            }
+        }
+        line = false;
+    }
+    private void CheckLine()
+    {
+        for (int i = 0; i < ownLandList.Count; i++)
+        {
+            for (int j = 0; j < lineOne.Count; j++)
+            {
+                if (ownLandList[i] == lineOne[j])
+                {
+                    lineOne.Remove(lineOne[j]);
+                }
+                if (ownLandList[i] == lineTwo[j])
+                {
+                    lineOne.Remove(lineTwo[j]);
+                }
+                if (ownLandList[i] == lineThree[j])
+                {
+                    lineOne.Remove(lineThree[j]);
+                }
+                if (ownLandList[i] == lineFour[j])
+                {
+                    lineOne.Remove(lineFour[j]);
+                }
+            }
+        }
+        for (int i = 0; i < ownLandList.Count; i++)
+        {
+            for (int j = 0; j < specialBlocks.Count; j++)
+            {
+                if (ownLandList[i] == specialBlocks[j])
+                {
+                    specialBlocks.Remove(specialBlocks[j]);
+                }
+            }
+        }
+    }
     private void Bankrupt()
     {
         if (money < 0)
