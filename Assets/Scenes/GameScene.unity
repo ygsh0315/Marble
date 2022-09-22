@@ -13263,8 +13263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTurnPlayer: {fileID: 0}
   cDice: 1
-  cDice1: 3
-  cDice2: 3
+  cDice1: 0
+  cDice2: 1
   startMoney: 2000000
   Player1: {fileID: 907509956}
   Player2: {fileID: 697700630}
