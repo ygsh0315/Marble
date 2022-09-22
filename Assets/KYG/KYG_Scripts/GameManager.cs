@@ -48,28 +48,39 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //전체 맵 세팅 함수
         MapSet();
+        //플레이어 세팅 함수
         PlayerSet();
+        //축제 개최 함수
         Festival();
     }
     // Update is called once per frame
     void Update()
     {
+        //승리자 판정 함수
         Winner();
+        //턴 계산 함수
         turnCalculate();
+        //턴 변경 함수
         ChangeCurrentTurnPlayer(turnIndex);
+        //랭크 계산 함수
         RankCalCulate();
     }
 
+    //축제 개최 함수
     private void Festival()
     {
         for (int i = 0; i < FestivalList.Count; i++)
         {
+            //축제가 개최지들의 배율 2배
             FestivalList[i].GetComponent<BasicBlock>().landMag *= 2;
         }
     }
+    //플레이어 세팅 함수
     private void PlayerSet()
     {
+        //플레이어 리스트에 플레이어 추가
         PlayerList.Add(Player1);
         PlayerList.Add(Player2);
         PlayerList.Add(Player3);
@@ -95,6 +106,8 @@ public class GameManager : MonoBehaviour
                 SpecialBockList.Add(MapList[i]);
             }
         }
+
+        //각 라인에 해당 블럭들 추가
         for(int i = 1; i<8; i++)
         {
             if(MapList[i].GetComponent<BasicBlock>()|| MapList[i].GetComponent<SpecialBlock>())
@@ -115,13 +128,20 @@ public class GameManager : MonoBehaviour
             if (MapList[i].GetComponent<BasicBlock>() || MapList[i].GetComponent<SpecialBlock>())
                 Line4BlockList.Add(MapList[i]);
         }
+
+
         //축제블럭 리스트를 랜덤으로 섞고 3개를 추출
         FestivalList = FestivalList.OrderBy(a => Guid.NewGuid()).Take(3).ToList();
 
     }
     private void Winner()
     {
+        //파산승리 체크
         BankruptCheck();
+        //관광지독점 체크
+        SpecialBlockMonopolyCheck();
+        //라인독점 체크
+        LineMonopolyCheck();
         #region 정훈이형 코드
         //for (int i = 0; i < PlayerList.Count; i++)
         //{
@@ -145,14 +165,18 @@ public class GameManager : MonoBehaviour
         //    }
         //}
         #endregion
-        if(winner)
+
+        //만약에 승리자가 선정되면 승리 UI 추가
+        if (winner)
         GameUI.instance.WinUI.SetActive(true);
     }
 
+    //관광지 독점 체크
     public void SpecialBlockMonopolyCheck()
     {
 
     }
+    //라인 독점 체크
     public void LineMonopolyCheck()
     {
         for(int i=0; i<Line1BlockList.Count; i++)
@@ -163,6 +187,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    //파산 체크
     public void BankruptCheck()
     {
         if (PlayerList.Count == 1)
@@ -171,6 +196,7 @@ public class GameManager : MonoBehaviour
             winType = "파산승리!";
         }
     }
+    //랭크 계산
     public void RankCalCulate()
     {
         for (int i = 0; i < PlayerList.Count; i++)
@@ -185,6 +211,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    //턴 계산 함수
     public void turnCalculate()
     {
         if (turnIndex > PlayerList.Count - 1)
@@ -192,6 +219,7 @@ public class GameManager : MonoBehaviour
             turnIndex -= PlayerList.Count;
         }
     }
+    //턴 변경 함수
     public void ChangeCurrentTurnPlayer(int i)
     {
 
