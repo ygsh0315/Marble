@@ -28,20 +28,15 @@ public class LandMarkPurchaseUI : MonoBehaviour
     }
     public void OnPurchaseBtn()
     {
-        currentBlock.GetComponent<BasicBlock>().tear1Factory.SetActive(false);
-        currentBlock.GetComponent<BasicBlock>().tear2Factory.SetActive(false);
-        currentBlock.GetComponent<BasicBlock>().tear3Factory.SetActive(false);
-        currentBlock.GetComponent<BasicBlock>().landMarkFactory.SetActive(true);
+        currentBlock.GetComponent<BasicBlock>().OnPurchaseBtn();
         player.GetComponent<Player>().money -= currentBlock.GetComponent<BasicBlock>().landMarkPrice;
-        currentBlock.GetComponent<BasicBlock>().landMarkCount = 1;
-        currentBlock.GetComponent<BasicBlock>().landMark = true;
-        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().TurnCheck();
         gameObject.SetActive(false);
     }
 
     public void OnCancelBtn()
     {
-        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().TurnCheck();
         gameObject.SetActive(false);
         //player.GetComponent<Player>().state = Player.PlayerState.End;
     }

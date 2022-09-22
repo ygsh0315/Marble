@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class SpecialBlock : MonoBehaviour
 {
+    public TextMeshProUGUI landName;
+    public TextMeshProUGUI landPriceText;
     //°ü±¤Áö
     public GameObject tourOne;
     public GameObject tourTwo;
@@ -52,6 +54,8 @@ public class SpecialBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        landName.text = gameObject.name;
+        landPriceText.text = (landPrice/10000).ToString() + " ¸¸";
         tourBlocks.Add(tourOne);
         tourBlocks.Add(tourTwo);
         tourBlocks.Add(tourThree);
@@ -84,7 +88,7 @@ public class SpecialBlock : MonoBehaviour
             }
             else
             {
-                player.GetComponent<Player>().onTurn = false;
+                player.GetComponent<Player>().TurnCheck();
             }
         }
         else if (LandOwner != player)
@@ -95,33 +99,33 @@ public class SpecialBlock : MonoBehaviour
                 charge *= 2;
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
-                player.GetComponent<Player>().onTurn = false;
+                player.GetComponent<Player>().TurnCheck();
             }
             else if (tourO == tourT == tourTh || tourO == tourT == tourF || tourO == tourTh == tourF || tourT == tourTh == tourF)
             {
                 charge *= 3;
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
-                player.GetComponent<Player>().onTurn = false;
+                player.GetComponent<Player>().TurnCheck();
             }
             else if (tourO == tourT == tourTh == tourF)
             {
                 charge *= 4;
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
-                player.GetComponent<Player>().onTurn = false;
+                player.GetComponent<Player>().TurnCheck();
             }
             else
             {
                 charge *= 1;
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
-                player.GetComponent<Player>().onTurn = false;
+                player.GetComponent<Player>().TurnCheck();
             }
         }
         else
         {
-            player.GetComponent<Player>().onTurn = false;
+            player.GetComponent<Player>().TurnCheck();
         }
     }
 }

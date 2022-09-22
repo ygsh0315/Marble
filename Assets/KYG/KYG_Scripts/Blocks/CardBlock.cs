@@ -18,6 +18,6 @@ public class CardBlock : MonoBehaviour
     public void OnCardBlock(Transform player)
     {
         print("CardBlock");
-        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().TurnCheck();
     }
 }

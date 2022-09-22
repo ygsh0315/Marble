@@ -18,7 +18,7 @@ public class FestivalBlock : MonoBehaviour
     public void OnFestivalBlock(Transform player)
     {
         print("FestivalBlock");
-        player.GetComponent<Player>().onTurn = false;
+        player.GetComponent<Player>().TurnCheck();
         //if (Input.GetButtonDown("Fire1"))
         //{
         //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -29,7 +29,7 @@ public class FestivalBlock : MonoBehaviour
         //    {
         //        print(hit.transform.gameObject.name);
         //        hit.transform.gameObject.GetComponent<BasicBlock>().landMag *= 2;
-        //        player.GetComponent<Player>().onTurn = false;
+        //        player.GetComponent<Player>().TurnCheck();
         //    }
         //}
     }
