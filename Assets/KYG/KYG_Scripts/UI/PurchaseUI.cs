@@ -185,6 +185,7 @@ public class PurchaseUI : MonoBehaviour
         if (tear1Tog.isOn)
         {
             currentBlock.GetComponent<BasicBlock>().tear1Factory.SetActive(true);
+           
             currentBlock.GetComponent<BasicBlock>().tear1Count = 1;
             currentBlock.GetComponent<BasicBlock>().tear1 = true;
         }

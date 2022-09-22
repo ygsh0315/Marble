@@ -91,17 +91,28 @@ public class BasicBlock : MonoBehaviour
     public int landMarkTallFee;
     #endregion
 
-
-
+    public Material[] materials;
+    Renderer rbOne;
+    Renderer rbTwo;
+    Renderer rbThree;
+    Renderer landM;
     // Start is called before the first frame update
     void Start()
     {
         landName.text = gameObject.name;
+        materials = Resources.LoadAll<Material>("Color");
+        rbOne = tear1Factory.GetComponent<MeshRenderer>();
+        rbTwo = tear2Factory.GetComponent<MeshRenderer>();
+        rbThree = tear3Factory.GetComponent<MeshRenderer>();
+        landM = landMarkFactory.GetComponent<MeshRenderer>();
+        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        ColorCheck();
         if (landMag >= 2)
         {
             landMagText.text = "X " + landMag;
@@ -198,7 +209,23 @@ public class BasicBlock : MonoBehaviour
             }
         }
     }
-
+    public void ColorCheck()
+    {
+        if (LandOwner)
+        {
+            for (int i = 0; i < materials.Length; i++)
+            {
+                if (LandOwner.gameObject.name == materials[i].name)
+                {
+                    rbOne.material = materials[i];
+                    rbTwo.material = materials[i];
+                    rbThree.material = materials[i];
+                    landM.material = materials[i];
+                     
+                }
+            }
+        }
+    }
     public void OnPurchaseBtn()
     {
         tear1Factory.SetActive(false);

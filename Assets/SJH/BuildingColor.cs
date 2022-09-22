@@ -9,7 +9,7 @@ public class BuildingColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       materials = Resources.LoadAll<Material>("Resources");
+       materials = Resources.LoadAll<Material>("Color");
     }
 
     // Update is called once per frame
