@@ -95,22 +95,22 @@ public class GameManager : MonoBehaviour
                 SpecialBockList.Add(MapList[i]);
             }
         }
-        for(int i = 1; i<8; i++)
+        for (int i = 1; i < 8; i++)
         {
-            if(MapList[i].GetComponent<BasicBlock>()|| MapList[i].GetComponent<SpecialBlock>())
-            Line1BlockList.Add(MapList[i]);
+            if (MapList[i].GetComponent<BasicBlock>() || MapList[i].GetComponent<SpecialBlock>())
+                Line1BlockList.Add(MapList[i]);
         }
-        for(int i=9; i < 16; i++)
+        for (int i = 9; i < 16; i++)
         {
             if (MapList[i].GetComponent<BasicBlock>() || MapList[i].GetComponent<SpecialBlock>())
                 Line2BlockList.Add(MapList[i]);
         }
-        for(int i=17; i<24; i++)
+        for (int i = 17; i < 24; i++)
         {
             if (MapList[i].GetComponent<BasicBlock>() || MapList[i].GetComponent<SpecialBlock>())
                 Line3BlockList.Add(MapList[i]);
         }
-        for(int i=25; i < 32; i++)
+        for (int i = 25; i < 32; i++)
         {
             if (MapList[i].GetComponent<BasicBlock>() || MapList[i].GetComponent<SpecialBlock>())
                 Line4BlockList.Add(MapList[i]);
@@ -123,46 +123,55 @@ public class GameManager : MonoBehaviour
     {
         BankruptCheck();
         #region 정훈이형 코드
-        //for (int i = 0; i < PlayerList.Count; i++)
-        //{
-        //    if (PlayerList[i])
-        //    {
-        //        if (PlayerList[i].GetComponent<Player>().line == false)
-        //        {
-
-
-        //            if (PlayerList[i].GetComponent<Player>().lineOne.Any() == false || PlayerList[i].GetComponent<Player>().lineTwo.Any() == false || PlayerList[i].GetComponent<Player>().lineThree.Any() == false || PlayerList[i].GetComponent<Player>().lineFour.Any() == false)
-        //            {
-        //                winner = PlayerList[i];
-        //                GameUI.instance.WinUI.SetActive(true);
-        //            }
-        //            //if (PlayerList[i].GetComponent<Player>().specialBlocks.Any() == false)
-        //            //{
-        //            //    winner = PlayerList[i];
-        //            //    GameUI.instance.WinUI.SetActive(true);
-        //            //}
-        //        }
-        //    }
-        //}
+        LineMonopolyCheck();
+        SpecialMonopolyCheck();
         #endregion
-        if(winner)
-        GameUI.instance.WinUI.SetActive(true);
+        if (winner)
+            GameUI.instance.WinUI.SetActive(true);
     }
 
-    public void SpecialBlockMonopolyCheck()
-    {
-
-    }
     public void LineMonopolyCheck()
     {
-        for(int i=0; i<Line1BlockList.Count; i++)
+        for (int i = 0; i < PlayerList.Count; i++)
         {
-            if (Line1BlockList[i].GetComponent<BasicBlock>())
+            if (PlayerList[i])
             {
+                if (PlayerList[i].GetComponent<Player>().line == false)
+                {
+                    if (PlayerList[i].GetComponent<Player>().lineOne.Any() == false || PlayerList[i].GetComponent<Player>().lineTwo.Any() == false || PlayerList[i].GetComponent<Player>().lineThree.Any() == false || PlayerList[i].GetComponent<Player>().lineFour.Any() == false)
+                    {
+                        winner = PlayerList[i];
+                        winType = "라인 독점!";
+                        GameUI.instance.WinUI.SetActive(true);
+                    }
 
+                }
             }
         }
     }
+
+    public void SpecialMonopolyCheck()
+    {
+
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+            if (PlayerList[i])
+            {
+                if (PlayerList[i].GetComponent<Player>().line == false)
+                {
+                    if (PlayerList[i].GetComponent<Player>().specialBlocks.Any() == false)
+                    {
+                        winner = PlayerList[i];
+                        GameUI.instance.WinUI.SetActive(true);
+                        winType = "관광지 독점!";
+                    }
+                }
+            }
+        }
+
+    }
+
+
     public void BankruptCheck()
     {
         if (PlayerList.Count == 1)

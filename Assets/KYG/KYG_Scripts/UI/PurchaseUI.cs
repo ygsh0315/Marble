@@ -64,7 +64,7 @@ public class PurchaseUI : MonoBehaviour
         landTog.isOn = true;
         land = true;
 
-        // 해당 블록에 1번 건물이 지어져 있고, 플레이어가 땅 + 1번 건문 가격보다 돈이 없다면
+        // 해당 블록에 1번 건물이 지어져 있고, 플레이어가 땅 + 1번 건물 가격보다 돈이 없다면
         BasicBlock block = blockInfo.GetComponent<BasicBlock>();
         if (block.HasMoney(1, playerInfo.GetComponent<Player>()))
         {
