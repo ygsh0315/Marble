@@ -30,11 +30,7 @@ public class M_PlayerFire : MonoBehaviour
             //4.탄창에 있을때는 총알을 비활성화 시키고 싶다 
             bullet.SetActive(false);
 
-            //5.만약 반복이 5번 했다면 그만하고 싶다 
-            if(i ==4 )
-            {
-                return;
-            }
+           
         }
     }
 
@@ -45,10 +41,24 @@ public class M_PlayerFire : MonoBehaviour
 
         //1.사용자가 발사버튼을 눌렀으니까
         if(Input.GetButtonDown("Fire1"))
-        {
+        {   //탄창에서 비활성화 되어있는 총알을 꺼내고 싶다 
+            //반복적으로 탄창에서 총알을 하나씩 꺼내야 한다 
+            for (int i = 0; i < bulletPoolSize; i++)
+            {
 
-            //3. 총알을 발사하고 싶다 
-           // bullet.transform.position = gun.transform.position;
+            }
+            //탄창에서 꺼낸 총알을 꺼낸다.
+            GameObject bullet = bulletPool[0];
+            //만약 탄창에서 꺼낸 총알이 비활성화 되어있다면
+            if(bulletFactory.activeSelf == false) 
+            {
+                bullet.SetActive(true);
+                //3. 총알을 발사하고 싶다 
+                bullet.transform.position = gun.transform.position;
+                //그만 찾고싶다
+              
+            }
+       
 
         }
     }
