@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
     bool six = true;
     bool seven = true;
     bool eight = true;
-    public int trapCount =4;
+    public int trapCount = 0;
     public int colorCount = 0;
     public enum PlayerState
     {
@@ -381,6 +381,8 @@ public class Player : MonoBehaviour
         if (trapCount >= 4)
         {
             trapCount = 0;
+            isTraped = false;
+
         }
     }
     public void TurnCheck()
@@ -395,14 +397,11 @@ public class Player : MonoBehaviour
             if (trapCount < 4)
             {
                 GameUI.instance.TrapBlockUI.SetActive(true);
-            state = PlayerState.End;
-               
-                
+                state = PlayerState.End;
+
+
             }
-            else if (trapCount >= 4)
-            {
-                isTraped = false;
-            }
+
         }
         else
         {
@@ -456,9 +455,12 @@ public class Player : MonoBehaviour
 
     private void End()
     {
+
+
         RollDiceBtn.SetActive(true);
         GameManager.instance.turnIndex++;
         state = PlayerState.Idle;
+
     }
 
     public void PlayerMove(int dice1, int dice2)
@@ -475,7 +477,7 @@ public class Player : MonoBehaviour
         {
             transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
             isTraped = true;
-            trapCount = 4;
+            //trapCount = 4;
             sameDice = false;
             currentMapIndex = 8;
             sameDiceCount = 0;

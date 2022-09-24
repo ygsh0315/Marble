@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player4;
     public GameObject winner;
     public string winType;
+
     public GameObject Map;
     public int mapCount;
     public int turnIndex;
@@ -218,17 +219,32 @@ public class GameManager : MonoBehaviour
     public void ChangeCurrentTurnPlayer(int i)
     {
         currentTurnPlayer = PlayerList[i];
+        if (currentTurnPlayer)
+        {
+            //print(currentTurnPlayer);
+            if (currentTurnPlayer.GetComponent<Player>().trapCount >= 4)
+            {
+                currentTurnPlayer.GetComponent<Player>().isTraped = false;
+                currentTurnPlayer.GetComponent<Player>().trapCount = 0;
+            }
+            if (currentTurnPlayer.GetComponent<Player>().isTraped == true)
+            {
+                currentTurnPlayer.GetComponent<Player>().trapCount++;
+
+                currentTurnPlayer.GetComponent<Player>().state = Player.PlayerState.End;
+            }
+        }
     }
 
     public void TrapCheck()
     {
         if (currentTurnPlayer)
         {
-            print(currentTurnPlayer);
-            if (currentTurnPlayer.GetComponent<Player>().isTraped == true)
-            {
-                currentTurnPlayer.GetComponent<Player>().state = Player.PlayerState.End;
-            }
+           // print(currentTurnPlayer);
+            //if (currentTurnPlayer.GetComponent<Player>().isTraped == true)
+            //{
+            //    currentTurnPlayer.GetComponent<Player>().state = Player.PlayerState.End;
+            //}
         }
     }
 }
