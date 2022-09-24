@@ -13,7 +13,13 @@ public class TeleportBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+
+        RaycastHit hitinfo;
+        if(Physics.Raycast(ray,out hitinfo))
+        {
+
+        }
     }
     public void OnTeleportBlock(Transform player)
     {

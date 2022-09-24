@@ -23,12 +23,29 @@ public class Player : MonoBehaviour
     public List<GameObject> lineThree = new List<GameObject>();
     public List<GameObject> lineFour = new List<GameObject>();
     public List<GameObject> specialBlocks = new List<GameObject>();
+    public List<GameObject> color1 = new List<GameObject>();
+    public List<GameObject> color2 = new List<GameObject>();
+    public List<GameObject> color3 = new List<GameObject>();
+    public List<GameObject> color4 = new List<GameObject>();
+    public List<GameObject> color5 = new List<GameObject>();
+    public List<GameObject> color6 = new List<GameObject>();
+    public List<GameObject> color7 = new List<GameObject>();
+    public List<GameObject> color8 = new List<GameObject>();
     public bool line = true;
     public bool special = true;
     public bool onTurn = false;
     public bool hasInfo = false;
     public bool isTraped = false;
-    public int trapCount;
+    bool one = true;
+    bool two = true;
+    bool three = true;
+    bool four = true;
+    bool five = true;
+    bool six = true;
+    bool seven = true;
+    bool eight = true;
+    public int trapCount =4;
+    public int colorCount = 0;
     public enum PlayerState
     {
         Idle,
@@ -45,17 +62,37 @@ public class Player : MonoBehaviour
         lines.AddRange(GameObject.FindGameObjectsWithTag("BasicBlock"));
         lines.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
         specialBlocks.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
+        color1.Add(GameObject.Find("피시 신전"));
+        color1.Add(GameObject.Find("잠보 신전"));
+        color2.Add(GameObject.Find("심바 신전"));
+        color2.Add(GameObject.Find("추어 신전"));
+        color3.Add(GameObject.Find("카라 신전"));
+        color3.Add(GameObject.Find("파즈 신전"));
+        color4.Add(GameObject.Find("루나 신전"));
+        color4.Add(GameObject.Find("디오스 신전"));
+        color5.Add(GameObject.Find("도란 신전"));
+        color5.Add(GameObject.Find("나래 신전"));
+        color6.Add(GameObject.Find("해솔 신전"));
+        color6.Add(GameObject.Find("가온 신전"));
+        color7.Add(GameObject.Find("파르테논 신전"));
+        color7.Add(GameObject.Find("아폴론 신전"));
+        color8.Add(GameObject.Find("니케 신전"));
+        color8.Add(GameObject.Find("헤라 신전"));
         Line();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //print(gameObject.name);
         StateMachine();
         Bankrupt();
         OwnLandCheck();
+        TrapCount();
         TotalMoney = CalculateTotalMoney();
         CheckLine();
+        ColorCheck();
+        ColorCount();
 
     }
 
@@ -159,6 +196,94 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    private void ColorCheck()
+    {
+        for (int i = 0; i < ownLandList.Count; i++)
+        {
+            for (int j = 0; j < color1.Count; j++)
+            {
+                if (ownLandList[i] == color1[j])
+                {
+                    color1.Remove(color1[j]);
+                }
+                if (ownLandList[i] == color2[j])
+                {
+                    color2.Remove(color2[j]);
+                }
+                if (ownLandList[i] == color3[j])
+                {
+                    color3.Remove(color3[j]);
+                }
+                if (ownLandList[i] == color4[j])
+                {
+                    color4.Remove(color4[j]);
+                }
+                if (ownLandList[i] == color5[j])
+                {
+                    color5.Remove(color5[j]);
+                }
+                if (ownLandList[i] == color6[j])
+                {
+                    color6.Remove(color6[j]);
+                }
+                if (ownLandList[i] == color7[j])
+                {
+                    color7.Remove(color7[j]);
+                }
+                if (ownLandList[i] == color8[j])
+                {
+                    color8.Remove(color8[j]);
+                }
+            }
+        }
+    }
+
+    private void ColorCount()
+    {
+        if (color1.Count == 0 && one == true)
+        {
+            colorCount++;
+            one = false;
+        }
+        if (color2.Count == 0 && two == true)
+        {
+            colorCount++;
+            two = false;
+        }
+        if (color3.Count == 0 && three == true)
+        {
+            colorCount++;
+            three = false;
+        }
+        if (color4.Count == 0 && four == true)
+        {
+            colorCount++;
+            four = false;
+        }
+        if (color5.Count == 0 && five == true)
+        {
+            colorCount++;
+            five = false;
+        }
+        if (color6.Count == 0 && six == true)
+        {
+            colorCount++;
+            six = false;
+        }
+        if (color7.Count == 0 && seven == true)
+        {
+            colorCount++;
+            seven = false;
+        }
+        if (color8.Count == 0 && eight == true)
+        {
+            colorCount++;
+            eight = false;
+        }
+
+
+    }
     private void Bankrupt()
     {
         if (money < 0)
@@ -228,7 +353,15 @@ public class Player : MonoBehaviour
 
     private void Idle()
     {
+        //if (GameManager.instance.currentTurnPlayer)
+        //{
 
+        //    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().isTraped)
+        //    {
+        //        GameManager.instance.turnIndex++;
+        //        trapCount++;
+        //    }
+        //}
     }
     private void Move()
     {
@@ -243,20 +376,33 @@ public class Player : MonoBehaviour
         //    TurnCheck();
     }
 
+    private void TrapCount()
+    {
+        if (trapCount >= 4)
+        {
+            trapCount = 0;
+        }
+    }
     public void TurnCheck()
     {
         hasInfo = false;
-        if (trapCount == 0)
-        {
-            isTraped = false;
-        }
+        //if (trapCount == 0)
+        //{
+        //    isTraped = false;
+        //}
         if (isTraped)
         {
             if (trapCount < 4)
             {
                 GameUI.instance.TrapBlockUI.SetActive(true);
-            }
             state = PlayerState.End;
+               
+                
+            }
+            else if (trapCount >= 4)
+            {
+                isTraped = false;
+            }
         }
         else
         {
@@ -271,8 +417,6 @@ public class Player : MonoBehaviour
                 state = PlayerState.End;
             }
         }
-
-
     }
 
     private void getBlockInfo()
@@ -307,7 +451,6 @@ public class Player : MonoBehaviour
             case "TeleportBlock":
                 currentBlock.GetComponent<TeleportBlock>().OnTeleportBlock(transform);
                 break;
-
         }
     }
 
@@ -339,6 +482,7 @@ public class Player : MonoBehaviour
             state = PlayerState.End;
             return;
         }
+
         state = PlayerState.Move;
         StartCoroutine(IEMove(dice1, dice2));
     }
@@ -368,7 +512,7 @@ public class Player : MonoBehaviour
             sameDice = false;
         }
         //onTurn = true;
-        
+
         getBlockInfo();
     }
 }
