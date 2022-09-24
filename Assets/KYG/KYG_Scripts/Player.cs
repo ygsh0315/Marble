@@ -228,49 +228,70 @@ public class Player : MonoBehaviour
 
     private void ColorCheck()
     {
-        if (ownLandList.Count != 0)
+        for (int i = 0; i < ownLandList.Count; i++)
         {
-            for (int i = 0; i < ownLandList.Count; i++)
+            for (int j = 0; j < color1.Count; j++)
             {
-                for (int j = 0; j < color1.Count; j++)
-                {
 
-                    if (ownLandList[i] == color1[j])
-                    {
-                        color1.Remove(color1[j]);
-                    }
-                    if (ownLandList[i] == color2[j])
-                    {
-                        color2.Remove(color2[j]);
-                    }
-                    if (ownLandList[i] == color3[j])
-                    {
-                        color3.Remove(color3[j]);
-                    }
-                    if (ownLandList[i] == color4[j])
-                    {
-                        color4.Remove(color4[j]);
-                    }
-                    if (ownLandList[i] == color5[j])
-                    {
-                        color5.Remove(color5[j]);
-                    }
-                    if (ownLandList[i] == color6[j])
-                    {
-                        color6.Remove(color6[j]);
-                    }
-                    if (ownLandList[i] == color7[j])
-                    {
-                        color7.Remove(color7[j]);
-                    }
-                    if (ownLandList[i] == color8[j])
-                    {
-                        color8.Remove(color8[j]);
-                    }
+                if (ownLandList[i] == color1[j])
+                {
+                    color1.Remove(color1[j]);
+                }
+
+            }
+            for (int j = 0; j < color2.Count; j++)
+            {
+                if (ownLandList[i] == color2[j])
+                {
+                    color2.Remove(color2[j]);
                 }
             }
+            for (int j = 0; j < color3.Count; j++)
+            {
+                if (ownLandList[i] == color3[j])
+                {
+                    color3.Remove(color3[j]);
+                }
+            }
+            for (int j = 0; j < color4.Count; j++)
+            {
+                if (ownLandList[i] == color4[j])
+                {
+                    color4.Remove(color4[j]);
+                }
+            }
+            for (int j = 0; j < color5.Count; j++)
+            {
 
+                if (ownLandList[i] == color5[j])
+                {
+                    color5.Remove(color5[j]);
+                }
+            }
+            for (int j = 0; j < color6.Count; j++)
+            {
+                if (ownLandList[i] == color6[j])
+                {
+                    color6.Remove(color6[j]);
+                }
+            }
+            for (int j = 0; j < color7.Count; j++)
+            {
+                if (ownLandList[i] == color7[j])
+                {
+                    color7.Remove(color7[j]);
+                }
+            }
+            for (int j = 0; j < color8.Count; j++)
+            {
+                if (ownLandList[i] == color8[j])
+                {
+                    color8.Remove(color8[j]);
+                }
+            }
         }
+
+
     }
 
     private void ColorCount()

@@ -2712,6 +2712,8 @@ MonoBehaviour:
   onTurn: 0
   hasInfo: 0
   isTraped: 0
+  telePort: 0
+  telePortCount: 0
   trapCount: 0
   colorCount: 0
   state: 0
@@ -5664,6 +5666,8 @@ MonoBehaviour:
   onTurn: 0
   hasInfo: 0
   isTraped: 0
+  telePort: 0
+  telePortCount: 0
   trapCount: 0
   colorCount: 0
   state: 0
@@ -7073,6 +7077,8 @@ MonoBehaviour:
   onTurn: 0
   hasInfo: 0
   isTraped: 0
+  telePort: 0
+  telePortCount: 0
   trapCount: 0
   colorCount: 0
   state: 0
@@ -11939,6 +11945,8 @@ MonoBehaviour:
   onTurn: 0
   hasInfo: 0
   isTraped: 0
+  telePort: 0
+  telePortCount: 0
   trapCount: 0
   colorCount: 0
   state: 0
@@ -13491,8 +13499,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTurnPlayer: {fileID: 0}
   cDice: 1
-  cDice1: 4
-  cDice2: 4
+  cDice1: 24
+  cDice2: 0
   startMoney: 2000000
   Player1: {fileID: 907509956}
   Player2: {fileID: 697700630}
