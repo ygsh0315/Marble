@@ -55,9 +55,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TrapCheck();
         Winner();
         turnCalculate();
         ChangeCurrentTurnPlayer(turnIndex);
+        ColorMonopolyCheck();
         RankCalCulate();
     }
 
@@ -150,6 +152,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ColorMonopolyCheck()
+    {
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+            if (PlayerList[i].GetComponent<Player>().colorCount >= 3)
+            {
+                winner = PlayerList[i];
+                winType = "컬러 독점!";
+                GameUI.instance.WinUI.SetActive(true);
+            }
+        }
+    }
     public void SpecialMonopolyCheck()
     {
 
@@ -203,7 +217,18 @@ public class GameManager : MonoBehaviour
     }
     public void ChangeCurrentTurnPlayer(int i)
     {
-
         currentTurnPlayer = PlayerList[i];
+    }
+
+    public void TrapCheck()
+    {
+        if (currentTurnPlayer)
+        {
+            print(currentTurnPlayer);
+            if (currentTurnPlayer.GetComponent<Player>().isTraped == true)
+            {
+                currentTurnPlayer.GetComponent<Player>().state = Player.PlayerState.End;
+            }
+        }
     }
 }
