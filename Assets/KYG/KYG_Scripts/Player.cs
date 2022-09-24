@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
     public bool onTurn = false;
     public bool hasInfo = false;
     public bool isTraped = false;
+    public bool telePort = false;
+    public int telePortCount = 0;
     bool one = true;
     bool two = true;
     bool three = true;
@@ -90,12 +92,39 @@ public class Player : MonoBehaviour
         OwnLandCheck();
         TrapCount();
         TotalMoney = CalculateTotalMoney();
+        Click();
+        ClickTurnCheck();
         CheckLine();
         ColorCheck();
         ColorCount();
 
     }
 
+    public void Click()
+    {
+        if (telePort == true)
+        {
+            Teleport();
+
+        }
+    }
+
+    public void ClickTurnCheck()
+    {
+        if (telePortCount == 1 && telePort == false)
+        {
+            ReturnTelePort();
+        }
+    }
+
+    public void ReturnTelePort()
+    {
+
+        telePortCount = 0;
+        telePort = false;
+        state = PlayerState.Idle;
+        getBlockInfo();
+    }
     private void OwnLandCheck()
     {
         for (int i = 0; i < GameManager.instance.MapList.Count; i++)
@@ -199,43 +228,48 @@ public class Player : MonoBehaviour
 
     private void ColorCheck()
     {
-        for (int i = 0; i < ownLandList.Count; i++)
+        if (ownLandList.Count != 0)
         {
-            for (int j = 0; j < color1.Count; j++)
+            for (int i = 0; i < ownLandList.Count; i++)
             {
-                if (ownLandList[i] == color1[j])
+                for (int j = 0; j < color1.Count; j++)
                 {
-                    color1.Remove(color1[j]);
-                }
-                if (ownLandList[i] == color2[j])
-                {
-                    color2.Remove(color2[j]);
-                }
-                if (ownLandList[i] == color3[j])
-                {
-                    color3.Remove(color3[j]);
-                }
-                if (ownLandList[i] == color4[j])
-                {
-                    color4.Remove(color4[j]);
-                }
-                if (ownLandList[i] == color5[j])
-                {
-                    color5.Remove(color5[j]);
-                }
-                if (ownLandList[i] == color6[j])
-                {
-                    color6.Remove(color6[j]);
-                }
-                if (ownLandList[i] == color7[j])
-                {
-                    color7.Remove(color7[j]);
-                }
-                if (ownLandList[i] == color8[j])
-                {
-                    color8.Remove(color8[j]);
+
+                    if (ownLandList[i] == color1[j])
+                    {
+                        color1.Remove(color1[j]);
+                    }
+                    if (ownLandList[i] == color2[j])
+                    {
+                        color2.Remove(color2[j]);
+                    }
+                    if (ownLandList[i] == color3[j])
+                    {
+                        color3.Remove(color3[j]);
+                    }
+                    if (ownLandList[i] == color4[j])
+                    {
+                        color4.Remove(color4[j]);
+                    }
+                    if (ownLandList[i] == color5[j])
+                    {
+                        color5.Remove(color5[j]);
+                    }
+                    if (ownLandList[i] == color6[j])
+                    {
+                        color6.Remove(color6[j]);
+                    }
+                    if (ownLandList[i] == color7[j])
+                    {
+                        color7.Remove(color7[j]);
+                    }
+                    if (ownLandList[i] == color8[j])
+                    {
+                        color8.Remove(color8[j]);
+                    }
                 }
             }
+
         }
     }
 
@@ -456,7 +490,6 @@ public class Player : MonoBehaviour
     private void End()
     {
 
-
         RollDiceBtn.SetActive(true);
         GameManager.instance.turnIndex++;
         state = PlayerState.Idle;
@@ -489,6 +522,40 @@ public class Player : MonoBehaviour
         StartCoroutine(IEMove(dice1, dice2));
     }
 
+    public void Teleport()
+    {
+        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit mouseInfo;
+        if (Physics.Raycast(mouseRay, out mouseInfo))
+        {
+            print("가리키는 대상: " + mouseInfo.transform.name);
+
+        }
+        else
+        {
+            print("가리키는 대상 없음");
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+
+            GameObject telePortt = GameObject.Find(mouseInfo.transform.name);
+            for (int i = 0; i < GameManager.instance.MapList.Count; i++)
+            {
+                if (GameManager.instance.MapList[i] == telePortt)
+                {
+                    GameManager.instance.currentTurnPlayer.transform.position =
+                    GameManager.instance.MapList[i].transform.position + new Vector3(0, 1.5f, 0);
+                    GameManager.instance.currentTurnPlayer.GetComponent<Player>().currentMapIndex = i;
+                }
+            }
+            telePortCount++;
+            if (telePortCount == 1)
+            {
+                telePort = false;
+            }
+        }
+
+    }
 
     IEnumerator IEMove(int dice1, int dice2)
     {

@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         TrapCheck();
+        
         Winner();
         turnCalculate();
         ChangeCurrentTurnPlayer(turnIndex);
