@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     public bool hasInfo = false;
     public bool isTraped = false;
     public bool telePort = false;
+   
     public bool festival = false;
     public bool startB = false;
     public int festivaCount = 0;
@@ -89,7 +90,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //print(gameObject.name);
+        //TrapCheck();
         StateMachine();
         StartBonus();
         Bankrupt();
@@ -103,6 +106,20 @@ public class Player : MonoBehaviour
         ColorCount();
 
     }
+    //public void TrapUI()
+    //{
+    //    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().isTraped == true)
+    //    {
+    //        GameUI.instance.TrapBlockUI.SetActive(true);
+    //        currentTime += Time.deltaTime;
+    //        if (currentTime > createTime)
+    //        {
+
+    //        }
+
+    //    }
+    //}
+
     public void StartBonus()
     {
         if (startB == true)
@@ -120,8 +137,11 @@ public class Player : MonoBehaviour
             }
             if (Input.GetButtonDown("Fire1"))
             {
+                if(mouseInfo.transform)
+                {
 
-
+                GameObject startBonus = GameObject.Find(mouseInfo.transform.name); 
+                }
                 for (int i = 0; i < ownLandList.Count; i++)
                 {
                     if (ownLandList[i].gameObject.name == mouseInfo.transform.name)
@@ -525,6 +545,8 @@ public class Player : MonoBehaviour
 
         }
     }
+    float currentTime = 0;
+    public float createTime = 1;
     public void TurnCheck()
     {
         hasInfo = false;
@@ -536,8 +558,11 @@ public class Player : MonoBehaviour
         {
             if (trapCount < 4)
             {
-                GameUI.instance.TrapBlockUI.SetActive(true);
+
+               // GameUI.instance.TrapBlockUI.SetActive(true);
                 state = PlayerState.End;
+
+                
 
 
             }
@@ -557,7 +582,24 @@ public class Player : MonoBehaviour
             }
         }
     }
+    //public void TrapCheck()
+    //{
+    //    if (GameManager.instance.currentTurnPlayer)
+    //    {
 
+    //        if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().isTraped == true)
+    //        {
+    //            GameUI.instance.TrapBlockUI.SetActive(true);
+    //            currentTime += Time.deltaTime;
+    //            if (currentTime > createTime)
+    //            {
+    //                GameUI.instance.TrapBlockUI.SetActive(false);
+    //            }
+
+    //        }
+    //    }
+    //    print(currentTime);
+    //}
     private void getBlockInfo()
     {
         state = PlayerState.Turn;
@@ -595,7 +637,7 @@ public class Player : MonoBehaviour
 
     private void End()
     {
-
+        
         RollDiceBtn.SetActive(true);
         for (int i = 0; i < GameManager.instance.MapList.Count; i++)
         {
@@ -617,6 +659,7 @@ public class Player : MonoBehaviour
         }
         GameManager.instance.turnIndex++;
 
+       // currentTime = 0;
         state = PlayerState.Idle;
 
     }
