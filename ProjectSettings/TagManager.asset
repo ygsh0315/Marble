@@ -12,6 +12,7 @@ TagManager:
   - TrapBlock
   - TeleportBlock
   - FestivalBlock
+  - DoubleBlock
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - post
   - 
   - 
   - 
