@@ -18,6 +18,7 @@ public class StartBlock : MonoBehaviour
     public void OnStartBlock(Transform player)
     {
         print("StartBlock");
+        player.GetComponent<Player>().startB = true;
         player.GetComponent<Player>().TurnCheck();
     }
 }

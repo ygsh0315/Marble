@@ -91,6 +91,7 @@ public class Player : MonoBehaviour
     {
         //print(gameObject.name);
         StateMachine();
+        StartBonus();
         Bankrupt();
         OwnLandCheck();
         TrapCount();
@@ -605,9 +606,13 @@ public class Player : MonoBehaviour
                     GameManager.instance.MapList[i].GetComponent<BasicBlock>().festivalCount++;
                 }
             }
-            if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival == true)
+            if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>())
             {
-                GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festivalCount++;
+                if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival == true)
+                {
+                    GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festivalCount++;
+                }
+
             }
         }
         GameManager.instance.turnIndex++;
