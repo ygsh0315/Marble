@@ -47,7 +47,8 @@ public class SpecialBlock : MonoBehaviour
 
     public bool charge3 = false;
 
-
+    public bool festival = false;
+    public int festivalCount = 0;
 
 
 
@@ -75,7 +76,14 @@ public class SpecialBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        FestivalCount();
+    }
+    public void FestivalCount()
+    {
+        if (festivalCount > 3)
+        {
+            festival = false;
+        }
     }
     public void OnSpecialBlock(GameObject player)
     {
@@ -93,24 +101,49 @@ public class SpecialBlock : MonoBehaviour
         }
         else if (LandOwner != player)
         {
-            if (tourO == tourT || tourO == tourTh || tourT == tourTh)
+            if (tourO == tourT || tourO == tourTh || tourO == tourF || tourT == tourTh || tourT == tourF || tourTh == tourF)
             {
 
+                if (festival == true)
+                {
+                    charge *= 4;
+                }
+                else
+                {
                 charge *= 2;
+
+                }
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
                 player.GetComponent<Player>().TurnCheck();
             }
             else if (tourO == tourT == tourTh || tourO == tourT == tourF || tourO == tourTh == tourF || tourT == tourTh == tourF)
             {
+                if (festival == true)
+                {
+                    charge *= 6;
+                }
+                else
+                {
                 charge *= 3;
+
+                }
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
                 player.GetComponent<Player>().TurnCheck();
             }
             else if (tourO == tourT == tourTh == tourF)
             {
-                charge *= 4;
+                if(festival == true)
+                {
+                    charge *= 8;
+                }
+                else
+                {
+                    charge *= 4;
+
+                }
+                
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
                 player.GetComponent<Player>().TurnCheck();

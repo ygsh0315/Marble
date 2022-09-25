@@ -234,8 +234,11 @@ public class GameManager : MonoBehaviour
 
                 currentTurnPlayer.GetComponent<Player>().state = Player.PlayerState.End;
             }
+            
+            
         }
     }
+    
 
     public void TrapCheck()
     {

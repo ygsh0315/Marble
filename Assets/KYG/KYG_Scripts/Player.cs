@@ -37,6 +37,9 @@ public class Player : MonoBehaviour
     public bool hasInfo = false;
     public bool isTraped = false;
     public bool telePort = false;
+    public bool festival = false;
+    public bool startB = false;
+    public int festivaCount = 0;
     public int telePortCount = 0;
     bool one = true;
     bool two = true;
@@ -99,13 +102,94 @@ public class Player : MonoBehaviour
         ColorCount();
 
     }
+    public void StartBonus()
+    {
+        if (startB == true)
+        {
+            Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit mouseInfo;
+            if (Physics.Raycast(mouseRay, out mouseInfo))
+            {
+                print("가리키는 대상: " + mouseInfo.transform.name);
 
+            }
+            else
+            {
+                print("가리키는 대상 없음");
+            }
+            if (Input.GetButtonDown("Fire1"))
+            {
+
+
+                for (int i = 0; i < ownLandList.Count; i++)
+                {
+                    if (ownLandList[i].gameObject.name == mouseInfo.transform.name)
+                    {
+                        if (ownLandList[i].GetComponent<BasicBlock>())
+                        {
+                            ownLandList[i].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+
+    public void Festival()
+    {
+
+        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit mouseInfo;
+        if (Physics.Raycast(mouseRay, out mouseInfo))
+        {
+            print("가리키는 대상: " + mouseInfo.transform.name);
+
+        }
+        else
+        {
+            print("가리키는 대상 없음");
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+
+            GameObject festivall = GameObject.Find(mouseInfo.transform.name);
+            for (int i = 0; i < GameManager.instance.MapList.Count; i++)
+            {
+                if (GameManager.instance.MapList[i] == festivall)
+                {
+                    if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
+                    {
+
+                        GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival = true;
+                        festival = true;
+                    }
+                    if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>())
+                    {
+
+                        GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival = true;
+                        festival = true;
+                    }
+
+
+                }
+            }
+            festival = false;
+
+        }
+
+    }
     public void Click()
     {
         if (telePort == true)
         {
             Teleport();
 
+        }
+        if (festival == true)
+        {
+            Festival();
         }
     }
 
@@ -512,7 +596,22 @@ public class Player : MonoBehaviour
     {
 
         RollDiceBtn.SetActive(true);
+        for (int i = 0; i < GameManager.instance.MapList.Count; i++)
+        {
+            if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
+            {
+                if (GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival == true)
+                {
+                    GameManager.instance.MapList[i].GetComponent<BasicBlock>().festivalCount++;
+                }
+            }
+            if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival == true)
+            {
+                GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festivalCount++;
+            }
+        }
         GameManager.instance.turnIndex++;
+
         state = PlayerState.Idle;
 
     }
@@ -575,7 +674,6 @@ public class Player : MonoBehaviour
                 telePort = false;
             }
         }
-
     }
 
     IEnumerator IEMove(int dice1, int dice2)
