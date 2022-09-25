@@ -96,6 +96,8 @@ public class BasicBlock : MonoBehaviour
     Renderer rbTwo;
     Renderer rbThree;
     Renderer landM;
+    public bool festival = false;
+    public int festivalCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -112,6 +114,7 @@ public class BasicBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FestivalCount();
         ColorCheck();
         if (landMag >= 2)
         {
@@ -124,7 +127,15 @@ public class BasicBlock : MonoBehaviour
         {
             landMagText.text = (charge / 10000).ToString() + " ¸¸";
         }
+        if (festival == true)
+        {
+            charge = (landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount) * landMag * 2;
+        }
+        else
+        {
         charge = (landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount) * landMag;
+        }
+
         takeOverCharge = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count + landMarkPrice * landMarkCount) * 2;
     }
     public void OnBasicBlock(GameObject player)
@@ -207,6 +218,13 @@ public class BasicBlock : MonoBehaviour
             {
                 player.GetComponent<Player>().TurnCheck();
             }
+        }
+    }
+    public void FestivalCount()
+    {
+        if(festivalCount >3)
+        {
+            festival = false;
         }
     }
     public void ColorCheck()
