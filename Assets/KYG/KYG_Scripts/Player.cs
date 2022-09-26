@@ -300,23 +300,23 @@ public class Player : MonoBehaviour
     {
         if (GameManager.instance.currentTurnPlayer)
         {
-            for (int i = 0; i < GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList.Count; i++)
+            for (int i = 0; i < ownLandList.Count; i++)
             {
                 for (int j = 0; j < lineOne.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == lineOne[j])
+                    if (ownLandList[i] == lineOne[j])
                     {
                         lineOne.Remove(lineOne[j]);
                     }
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == lineTwo[j])
+                    if (ownLandList[i] == lineTwo[j])
                     {
                         lineOne.Remove(lineTwo[j]);
                     }
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == lineThree[j])
+                    if (ownLandList[i] == lineThree[j])
                     {
                         lineOne.Remove(lineThree[j]);
                     }
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == lineFour[j])
+                    if (ownLandList[i] == lineFour[j])
                     {
                         lineOne.Remove(lineFour[j]);
                     }
