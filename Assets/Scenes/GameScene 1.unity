@@ -2896,6 +2896,7 @@ MonoBehaviour:
   trapCount: 0
   colorCount: 0
   state: 0
+  createTime: 1
 --- !u!136 &226556182
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6478,6 +6479,7 @@ MonoBehaviour:
   trapCount: 0
   colorCount: 0
   state: 0
+  createTime: 1
 --- !u!136 &697700632
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7970,6 +7972,7 @@ MonoBehaviour:
   trapCount: 0
   colorCount: 0
   state: 0
+  createTime: 1
 --- !u!1 &912848589
 GameObject:
   m_ObjectHideFlags: 0
@@ -8182,6 +8185,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0788acbfc7ffbe04cbcc31a1ceba296d, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 8417e4ed2221bac4d81e64e137f0738e, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8417e4ed2221bac4d81e64e137f0738e, type: 3}
 --- !u!1 &970556038
@@ -13428,6 +13435,7 @@ MonoBehaviour:
   trapCount: 0
   colorCount: 0
   state: 0
+  createTime: 1
 --- !u!136 &1698953039
 CapsuleCollider:
   m_ObjectHideFlags: 0
