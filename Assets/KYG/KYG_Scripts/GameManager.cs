@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
     public GameObject Player4;
     public GameObject winner;
     public string winType;
-
     public GameObject Map;
     public int mapCount;
     public int turnIndex;
@@ -148,7 +147,6 @@ public class GameManager : MonoBehaviour
                         winType = "라인 독점!";
                         GameUI.instance.WinUI.SetActive(true);
                     }
-
                 }
             }
         }
@@ -238,8 +236,6 @@ public class GameManager : MonoBehaviour
             
         }
     }
-    
-
     public void TrapCheck()
     {
         if (currentTurnPlayer)
