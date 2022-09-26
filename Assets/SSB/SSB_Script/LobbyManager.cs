@@ -98,7 +98,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
-        PhotonNetwork.LoadLevel("GameScene");
+        PhotonNetwork.LoadLevel("GameScene 1");
     }
 
     //방 참가가 실패 되었을 때 호출되는 함수
