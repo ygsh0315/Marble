@@ -32,7 +32,10 @@ public class Player : MonoBehaviour
     public List<GameObject> color7 = new List<GameObject>();
     public List<GameObject> color8 = new List<GameObject>();
     public List<GameObject> colorPool = new List<GameObject>();
-    public List<GameObject> linePool = new List<GameObject>();
+    public List<GameObject> lineOnePool = new List<GameObject>();
+    public List<GameObject> lineTwoPool = new List<GameObject>();
+    public List<GameObject> lineThreePool = new List<GameObject>();
+    public List<GameObject> lineFourPool = new List<GameObject>();
     public bool line = true;
     public bool special = true;
     public bool onTurn = false;
@@ -139,10 +142,10 @@ public class Player : MonoBehaviour
             }
             if (Input.GetButtonDown("Fire1"))
             {
-                if(mouseInfo.transform)
+                if (mouseInfo.transform)
                 {
 
-                GameObject startBonus = GameObject.Find(mouseInfo.transform.name); 
+                    GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
                 }
                 for (int i = 0; i < ownLandList.Count; i++)
                 {
@@ -279,6 +282,7 @@ public class Player : MonoBehaviour
             if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineOne"))
             {
                 lineOne.Add(lines[i]);
+
             }
             if (lines[i].gameObject.layer == LayerMask.NameToLayer("LineTwo"))
             {
@@ -297,41 +301,54 @@ public class Player : MonoBehaviour
     }
     private void CheckLine()
     {
-       
-            for (int i = 0; i < ownLandList.Count; i++)
-            {
-                for (int j = 0; j < lineOne.Count; j++)
-                {
-                    if (ownLandList[i] == lineOne[j])
-                    {
-                        lineOne.Remove(lineOne[j]);
 
-                    }
-                    if (ownLandList[i] == lineTwo[j])
-                    {
-                        lineOne.Remove(lineTwo[j]);
-                    }
-                    if (ownLandList[i] == lineThree[j])
-                    {
-                        lineOne.Remove(lineThree[j]);
-                    }
-                    if (ownLandList[i] == lineFour[j])
-                    {
-                        lineOne.Remove(lineFour[j]);
-                    }
-                }
-            }
-            for (int i = 0; i < ownLandList.Count; i++)
+        for (int i = 0; i < ownLandList.Count; i++)
+        {
+            for (int j = 0; j < lineOne.Count; j++)
             {
-                for (int j = 0; j < specialBlocks.Count; j++)
+                if (ownLandList[i] == lineOne[j])
                 {
-                    if (ownLandList[i] == specialBlocks[j])
-                    {
-                        specialBlocks.Remove(specialBlocks[j]);
-                    }
+                    lineOne.Remove(lineOne[j]);
+                    lineOnePool.Add(lineOne[j]);
                 }
             }
-        
+            for (int j = 0; j < lineTwo.Count; j++)
+            {
+                if (ownLandList[i] == lineTwo[j])
+                {
+                    lineTwo.Remove(lineTwo[j]);
+                    lineTwoPool.Add(lineTwo[j]);
+                }
+            }
+            for (int j=0; j < lineThree.Count; j++)
+            {
+                if (ownLandList[i] == lineThree[j])
+                {
+                    lineThree.Remove(lineThree[j]);
+                    lineThreePool.Add(lineThree[j]);
+                }
+            }
+            for (int j=0; j< lineFour.Count; j++)
+            {
+                if (ownLandList[i] == lineFour[j])
+                {
+                    lineFour.Remove(lineFour[j]);
+                    lineFourPool.Add(lineFour[j]);
+                }
+            }
+
+        }
+        for (int i = 0; i < ownLandList.Count; i++)
+        {
+            for (int j = 0; j < specialBlocks.Count; j++)
+            {
+                if (ownLandList[i] == specialBlocks[j])
+                {
+                    specialBlocks.Remove(specialBlocks[j]);
+                }
+            }
+        }
+
     }
 
     private void ColorCheck()
@@ -342,12 +359,10 @@ public class Player : MonoBehaviour
             {
                 for (int j = 0; j < color1.Count; j++)
                 {
-
                     if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color1[j])
                     {
                         color1.Remove(color1[j]);
                     }
-
                 }
                 for (int j = 0; j < color2.Count; j++)
                 {
@@ -372,7 +387,6 @@ public class Player : MonoBehaviour
                 }
                 for (int j = 0; j < color5.Count; j++)
                 {
-
                     if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color5[j])
                     {
                         color5.Remove(color5[j]);
@@ -403,7 +417,32 @@ public class Player : MonoBehaviour
         }
 
     }
+    public  void TakeOverColor()
+    {
+       for(int i = 0; i< ownLandList.Count; i++)
+        {
+            for(int j =0; j < lineOnePool.Count; j++)
+            {
+                if(ownLandList[i] == lineOnePool[j])
+                {
+                    lineOne.Add(lineOnePool[j]);
+                }
+                if(ownLandList[i] == lineTwoPool[j])
+                {
+                    lineTwo.Add(lineTwoPool[j]);
+                }
+                if(ownLandList[i] == lineThreePool[j])
+                {
+                    lineThree.Add(lineThreePool[j]);
+                }
+                if(ownLandList[i] == lineFourPool[j])
+                {
+                    lineFour.Add(lineFourPool[j]);
+                }
 
+            }
+        }
+    }
     private void ColorCount()
     {
         if (color1.Count == 0 && one == true)
@@ -476,7 +515,7 @@ public class Player : MonoBehaviour
             GameManager.instance.turnIndex--;
             bankrupt = true;
             RollDiceBtn.SetActive(true);
-            
+
             Destroy(gameObject);
             GameManager.instance.PlayerList.Remove(gameObject);
         }
@@ -566,10 +605,10 @@ public class Player : MonoBehaviour
             if (trapCount < 4)
             {
 
-               // GameUI.instance.TrapBlockUI.SetActive(true);
+                // GameUI.instance.TrapBlockUI.SetActive(true);
                 state = PlayerState.End;
 
-                
+
 
 
             }
@@ -644,7 +683,7 @@ public class Player : MonoBehaviour
 
     private void End()
     {
-        
+
         RollDiceBtn.SetActive(true);
         for (int i = 0; i < GameManager.instance.MapList.Count; i++)
         {
@@ -664,12 +703,12 @@ public class Player : MonoBehaviour
 
             }
         }
-       
-        GameManager.instance.turnIndex++;
-      
-        
 
-       // currentTime = 0;
+        GameManager.instance.turnIndex++;
+
+
+
+        // currentTime = 0;
         state = PlayerState.Idle;
 
     }
