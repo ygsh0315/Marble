@@ -31,7 +31,8 @@ public class Player : MonoBehaviour
     public List<GameObject> color6 = new List<GameObject>();
     public List<GameObject> color7 = new List<GameObject>();
     public List<GameObject> color8 = new List<GameObject>();
-    
+    public List<GameObject> colorPool = new List<GameObject>();
+    public List<GameObject> linePool = new List<GameObject>();
     public bool line = true;
     public bool special = true;
     public bool onTurn = false;
