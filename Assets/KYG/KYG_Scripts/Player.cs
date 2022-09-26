@@ -31,14 +31,13 @@ public class Player : MonoBehaviour
     public List<GameObject> color6 = new List<GameObject>();
     public List<GameObject> color7 = new List<GameObject>();
     public List<GameObject> color8 = new List<GameObject>();
-    
     public bool line = true;
     public bool special = true;
     public bool onTurn = false;
     public bool hasInfo = false;
     public bool isTraped = false;
     public bool telePort = false;
-    public bool bankrupt = false;
+   
     public bool festival = false;
     public bool startB = false;
     public int festivaCount = 0;
@@ -298,38 +297,35 @@ public class Player : MonoBehaviour
     }
     private void CheckLine()
     {
-        if (GameManager.instance.currentTurnPlayer)
+        for (int i = 0; i < ownLandList.Count; i++)
         {
-            for (int i = 0; i < ownLandList.Count; i++)
+            for (int j = 0; j < lineOne.Count; j++)
             {
-                for (int j = 0; j < lineOne.Count; j++)
+                if (ownLandList[i] == lineOne[j])
                 {
-                    if (ownLandList[i] == lineOne[j])
-                    {
-                        lineOne.Remove(lineOne[j]);
-                    }
-                    if (ownLandList[i] == lineTwo[j])
-                    {
-                        lineOne.Remove(lineTwo[j]);
-                    }
-                    if (ownLandList[i] == lineThree[j])
-                    {
-                        lineOne.Remove(lineThree[j]);
-                    }
-                    if (ownLandList[i] == lineFour[j])
-                    {
-                        lineOne.Remove(lineFour[j]);
-                    }
+                    lineOne.Remove(lineOne[j]);
+                }
+                if (ownLandList[i] == lineTwo[j])
+                {
+                    lineOne.Remove(lineTwo[j]);
+                }
+                if (ownLandList[i] == lineThree[j])
+                {
+                    lineOne.Remove(lineThree[j]);
+                }
+                if (ownLandList[i] == lineFour[j])
+                {
+                    lineOne.Remove(lineFour[j]);
                 }
             }
-            for (int i = 0; i < GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList.Count; i++)
+        }
+        for (int i = 0; i < ownLandList.Count; i++)
+        {
+            for (int j = 0; j < specialBlocks.Count; j++)
             {
-                for (int j = 0; j < specialBlocks.Count; j++)
+                if (ownLandList[i] == specialBlocks[j])
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == specialBlocks[j])
-                    {
-                        specialBlocks.Remove(specialBlocks[j]);
-                    }
+                    specialBlocks.Remove(specialBlocks[j]);
                 }
             }
         }
@@ -337,71 +333,69 @@ public class Player : MonoBehaviour
 
     private void ColorCheck()
     {
-        if (GameManager.instance.currentTurnPlayer)
+        for (int i = 0; i < ownLandList.Count; i++)
         {
-            for (int i = 0; i < GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList.Count; i++)
+            for (int j = 0; j < color1.Count; j++)
             {
-                for (int j = 0; j < color1.Count; j++)
-                {
 
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color1[j])
-                    {
-                        color1.Remove(color1[j]);
-                    }
+                if (ownLandList[i] == color1[j])
+                {
+                    color1.Remove(color1[j]);
+                }
 
-                }
-                for (int j = 0; j < color2.Count; j++)
+            }
+            for (int j = 0; j < color2.Count; j++)
+            {
+                if (ownLandList[i] == color2[j])
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color2[j])
-                    {
-                        color2.Remove(color2[j]);
-                    }
+                    color2.Remove(color2[j]);
                 }
-                for (int j = 0; j < color3.Count; j++)
+            }
+            for (int j = 0; j < color3.Count; j++)
+            {
+                if (ownLandList[i] == color3[j])
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color3[j])
-                    {
-                        color3.Remove(color3[j]);
-                    }
+                    color3.Remove(color3[j]);
                 }
-                for (int j = 0; j < color4.Count; j++)
+            }
+            for (int j = 0; j < color4.Count; j++)
+            {
+                if (ownLandList[i] == color4[j])
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color4[j])
-                    {
-                        color4.Remove(color4[j]);
-                    }
+                    color4.Remove(color4[j]);
                 }
-                for (int j = 0; j < color5.Count; j++)
-                {
+            }
+            for (int j = 0; j < color5.Count; j++)
+            {
 
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color5[j])
-                    {
-                        color5.Remove(color5[j]);
-                    }
-                }
-                for (int j = 0; j < color6.Count; j++)
+                if (ownLandList[i] == color5[j])
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color6[j])
-                    {
-                        color6.Remove(color6[j]);
-                    }
+                    color5.Remove(color5[j]);
                 }
-                for (int j = 0; j < color7.Count; j++)
+            }
+            for (int j = 0; j < color6.Count; j++)
+            {
+                if (ownLandList[i] == color6[j])
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color7[j])
-                    {
-                        color7.Remove(color7[j]);
-                    }
+                    color6.Remove(color6[j]);
                 }
-                for (int j = 0; j < color8.Count; j++)
+            }
+            for (int j = 0; j < color7.Count; j++)
+            {
+                if (ownLandList[i] == color7[j])
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color8[j])
-                    {
-                        color8.Remove(color8[j]);
-                    }
+                    color7.Remove(color7[j]);
+                }
+            }
+            for (int j = 0; j < color8.Count; j++)
+            {
+                if (ownLandList[i] == color8[j])
+                {
+                    color8.Remove(color8[j]);
                 }
             }
         }
+
 
     }
 
@@ -474,10 +468,8 @@ public class Player : MonoBehaviour
                     ownLandList[i].GetComponent<BasicBlock>().landMarkFactory.SetActive(false);
                 }
             }
-            GameManager.instance.turnIndex--;
-            bankrupt = true;
+            GameManager.instance.turnIndex++;
             RollDiceBtn.SetActive(true);
-            
             Destroy(gameObject);
             GameManager.instance.PlayerList.Remove(gameObject);
         }
@@ -665,10 +657,7 @@ public class Player : MonoBehaviour
 
             }
         }
-       
         GameManager.instance.turnIndex++;
-      
-        
 
        // currentTime = 0;
         state = PlayerState.Idle;

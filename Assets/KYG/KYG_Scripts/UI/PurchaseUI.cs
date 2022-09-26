@@ -172,7 +172,6 @@ public class PurchaseUI : MonoBehaviour
     public void OnPurchaseBtn()
     {
         currentBlock.GetComponent<BasicBlock>().LandOwner = player;
-
         //currentBlock.GetComponent<BasicBlock>().land = land;
         //currentBlock.GetComponent<BasicBlock>().tear1 = tear1;
         //currentBlock.GetComponent<BasicBlock>().tear2 = tear2;
