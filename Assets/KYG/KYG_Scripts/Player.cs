@@ -183,13 +183,11 @@ public class Player : MonoBehaviour
                 {
                     if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
                     {
-
                         GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival = true;
                         festival = true;
                     }
                     if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>())
                     {
-
                         GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival = true;
                         festival = true;
                     }
@@ -298,8 +296,7 @@ public class Player : MonoBehaviour
     }
     private void CheckLine()
     {
-        if (GameManager.instance.currentTurnPlayer)
-        {
+       
             for (int i = 0; i < ownLandList.Count; i++)
             {
                 for (int j = 0; j < lineOne.Count; j++)
@@ -307,6 +304,7 @@ public class Player : MonoBehaviour
                     if (ownLandList[i] == lineOne[j])
                     {
                         lineOne.Remove(lineOne[j]);
+
                     }
                     if (ownLandList[i] == lineTwo[j])
                     {
@@ -322,17 +320,17 @@ public class Player : MonoBehaviour
                     }
                 }
             }
-            for (int i = 0; i < GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList.Count; i++)
+            for (int i = 0; i < ownLandList.Count; i++)
             {
                 for (int j = 0; j < specialBlocks.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == specialBlocks[j])
+                    if (ownLandList[i] == specialBlocks[j])
                     {
                         specialBlocks.Remove(specialBlocks[j]);
                     }
                 }
             }
-        }
+        
     }
 
     private void ColorCheck()
