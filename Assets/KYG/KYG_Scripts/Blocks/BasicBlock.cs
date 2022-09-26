@@ -106,9 +106,7 @@ public class BasicBlock : MonoBehaviour
         rbOne = tear1Factory.GetComponent<MeshRenderer>();
         rbTwo = tear2Factory.GetComponent<MeshRenderer>();
         rbThree = tear3Factory.GetComponent<MeshRenderer>();
-        landM = landMarkFactory.GetComponent<MeshRenderer>();
-        
-
+        landM = landMarkFactory.GetComponent<MeshRenderer>();      
     }
 
     // Update is called once per frame
@@ -238,8 +236,7 @@ public class BasicBlock : MonoBehaviour
                     rbOne.material = materials[i];
                     rbTwo.material = materials[i];
                     rbThree.material = materials[i];
-                    landM.material = materials[i];
-                     
+                    landM.material = materials[i];               
                 }
             }
         }
@@ -265,7 +262,6 @@ public class BasicBlock : MonoBehaviour
             case 3:
                 return tear3 || player.money < landPrice + tear1Price + tear2Price +tear3Price;
         }
-
         return false;
     }
 }
