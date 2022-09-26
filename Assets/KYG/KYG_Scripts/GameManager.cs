@@ -214,6 +214,11 @@ public class GameManager : MonoBehaviour
         {
             turnIndex -= PlayerList.Count;
         }
+        if (turnIndex < 0)
+        {
+            turnIndex = PlayerList.Count - 1;
+        }
+        
     }
     public void ChangeCurrentTurnPlayer(int i)
     {
