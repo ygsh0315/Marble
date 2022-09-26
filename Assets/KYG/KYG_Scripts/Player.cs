@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Photon.Pun;
+
 public class Player : MonoBehaviour
 {
     public int round = 1;
@@ -52,7 +52,6 @@ public class Player : MonoBehaviour
     bool eight = true;
     public int trapCount = 0;
     public int colorCount = 0;
-    public GameObject[] Models;
     public enum PlayerState
     {
         Idle,
@@ -86,7 +85,6 @@ public class Player : MonoBehaviour
         color8.Add(GameObject.Find("니케 신전"));
         color8.Add(GameObject.Find("헤라 신전"));
         Line();
-        Models[PhotonNetwork.CurrentRoom.PlayerCount - 1].SetActive(true);
     }
 
     // Update is called once per frame
