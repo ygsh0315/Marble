@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Photon.Pun;
 
 public class GameManager : MonoBehaviour
 {
@@ -74,10 +75,13 @@ public class GameManager : MonoBehaviour
     }
     private void PlayerSet()
     {
-        PlayerList.Add(Player1);
-        PlayerList.Add(Player2);
-        PlayerList.Add(Player3);
-        PlayerList.Add(Player4);
+        //PlayerList.Add(Player1);
+        //PlayerList.Add(Player2);
+        //PlayerList.Add(Player3);
+        //PlayerList.Add(Player4);
+
+        GameObject player = PhotonNetwork.Instantiate("Player", MapList[0].transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+        PlayerList.Add(player);
     }
     //맵 세팅 함수
     private void MapSet()
@@ -125,7 +129,7 @@ public class GameManager : MonoBehaviour
     }
     private void Winner()
     {
-        BankruptCheck();
+        //BankruptCheck();
         #region 정훈이형 코드
         LineMonopolyCheck();
         SpecialMonopolyCheck();
