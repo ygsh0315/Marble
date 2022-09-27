@@ -18,7 +18,8 @@ public class FestivalBlock : MonoBehaviour
     public void OnFestivalBlock(Transform player)
     {
         print("FestivalBlock");
+        player.GetComponent<Player>().festivalUI = true;
         player.GetComponent<Player>().festival = true;
-        player.GetComponent<Player>().TurnCheck();
+        //player.GetComponent<Player>().TurnCheck();
     }
 }

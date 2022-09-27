@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 {
     public int round = 1;
     public int currentMapIndex = 0;
-
+   
     public int money;
     public int TotalMoney;
     public int playerRank;
@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     public bool telePort = false;
     public bool bankrupt = false;
     public bool festival = false;
+    public bool festivalUI = false;
     public bool startB = false;
     public int festivaCount = 0;
     public int telePortCount = 0;
@@ -95,7 +96,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (festivalUI == true)
+        {
+            GameUI.instance.TrapBlockUI.SetActive(true);
+            FestivalUI();
+        }
         //print(gameObject.name);
         //TrapCheck();
         StateMachine();
@@ -111,6 +116,16 @@ public class Player : MonoBehaviour
         ColorCount();
         
 
+    }
+
+    public void FestivalUI()
+    {
+        currentTime += Time.deltaTime;
+        if(currentTime > createTime)
+        {
+            GameUI.instance.TrapBlockUI.SetActive(false);
+            TurnCheck();
+        }
     }
     //public void TrapUI()
     //{
@@ -702,6 +717,8 @@ public class Player : MonoBehaviour
     public float createTime = 1;
     public void TurnCheck()
     {
+        festivalUI = false;
+        currentTime = 0;
         hasInfo = false;
         //if (trapCount == 0)
         //{
