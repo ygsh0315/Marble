@@ -6,6 +6,7 @@ public class SpecialBlock : MonoBehaviour
 {
     public TextMeshProUGUI landName;
     public TextMeshProUGUI landPriceText;
+    public int landMag = 1;
     //°ü±¤Áö
     public GameObject tourOne;
     public GameObject tourTwo;

@@ -109,6 +109,7 @@ public class Player : MonoBehaviour
         CheckLine();
         ColorCheck();
         ColorCount();
+        
 
     }
     //public void TrapUI()
@@ -187,7 +188,7 @@ public class Player : MonoBehaviour
                 {
                     if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
                     {
-                        GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival = true;
+                        GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag *=2;
                         festival = true;
                     }
                     if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>())
@@ -243,6 +244,7 @@ public class Player : MonoBehaviour
                 {
                     if (!ownLandList.Contains(GameManager.instance.MapList[i]))
                     {
+                       
                         ownLandList.Add(GameManager.instance.MapList[i]);
                     }
                 }
@@ -250,6 +252,22 @@ public class Player : MonoBehaviour
                 {
                     if (ownLandList.Contains(GameManager.instance.MapList[i]))
                     {
+                        if (GameManager.instance.MapList[i].gameObject.name == "수피아 토템")
+                        {
+                            lineOne.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "헤비치 토템")
+                        {
+                            lineTwo.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "나린 토템")
+                        {
+                            lineThree.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "미니래 토템")
+                        {
+                            lineFour.Add(GameManager.instance.MapList[i]);
+                        }
                         ownLandList.Remove(GameManager.instance.MapList[i]);
                     }
                 }
@@ -268,6 +286,87 @@ public class Player : MonoBehaviour
                 {
                     if (ownLandList.Contains(GameManager.instance.MapList[i]))
                     {
+
+                        if (GameManager.instance.MapList[i].gameObject.name == "피시 신전")
+                        {                            
+                            lineOne.Add(GameManager.instance.MapList[i]);
+                            color1.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "잠보 신전")
+                        {
+                            lineOne.Add(GameManager.instance.MapList[i]);
+                            color1.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "심바 신전")
+                        {
+                            lineOne.Add(GameManager.instance.MapList[i]);
+                            color2.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "추어 신전")
+                        {
+                            lineOne.Add(GameManager.instance.MapList[i]);
+                            color2.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "카라 신전")
+                        {
+                            lineTwo.Add(GameManager.instance.MapList[i]);
+                            color3.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "파즈 신전")
+                        {
+                            lineTwo.Add(GameManager.instance.MapList[i]);
+                            color3.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "루나 신전")
+                        {
+                            lineTwo.Add(GameManager.instance.MapList[i]);
+                            color4.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "디오스 신전")
+                        {
+                            lineTwo.Add(GameManager.instance.MapList[i]);
+                            color4.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "도란 신전")
+                        {
+                            lineThree.Add(GameManager.instance.MapList[i]);
+                            color5.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "나래 신전")
+                        {
+                            lineThree.Add(GameManager.instance.MapList[i]);
+                            color5.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "해솔 신전")
+                        {
+                            lineThree.Add(GameManager.instance.MapList[i]);
+                            color6.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "가온 신전")
+                        {
+                            lineThree.Add(GameManager.instance.MapList[i]);
+                            color6.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "파르테논 신전")
+                        {
+                            lineFour.Add(GameManager.instance.MapList[i]);
+                            color7.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "아폴론 신전")
+                        {
+                            lineFour.Add(GameManager.instance.MapList[i]);
+                            color7.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "니케 신전")
+                        {
+                            lineFour.Add(GameManager.instance.MapList[i]);
+                            color8.Add(GameManager.instance.MapList[i]);
+                        }
+                        if (GameManager.instance.MapList[i].gameObject.name == "헤라 신전")
+                        {
+                            lineFour.Add(GameManager.instance.MapList[i]);
+                            color8.Add(GameManager.instance.MapList[i]);
+                        }
                         ownLandList.Remove(GameManager.instance.MapList[i]);
                     }
                 }
@@ -308,32 +407,32 @@ public class Player : MonoBehaviour
             {
                 if (ownLandList[i] == lineOne[j])
                 {
-                    lineOne.Remove(lineOne[j]);
                     lineOnePool.Add(lineOne[j]);
+                    lineOne.Remove(lineOne[j]);
                 }
             }
             for (int j = 0; j < lineTwo.Count; j++)
             {
                 if (ownLandList[i] == lineTwo[j])
                 {
-                    lineTwo.Remove(lineTwo[j]);
                     lineTwoPool.Add(lineTwo[j]);
+                    lineTwo.Remove(lineTwo[j]);
                 }
             }
             for (int j=0; j < lineThree.Count; j++)
             {
                 if (ownLandList[i] == lineThree[j])
                 {
-                    lineThree.Remove(lineThree[j]);
                     lineThreePool.Add(lineThree[j]);
+                    lineThree.Remove(lineThree[j]);
                 }
             }
             for (int j=0; j< lineFour.Count; j++)
             {
                 if (ownLandList[i] == lineFour[j])
                 {
-                    lineFour.Remove(lineFour[j]);
                     lineFourPool.Add(lineFour[j]);
+                    lineFour.Remove(lineFour[j]);
                 }
             }
 
@@ -353,67 +452,67 @@ public class Player : MonoBehaviour
 
     private void ColorCheck()
     {
-        if (GameManager.instance.currentTurnPlayer)
-        {
-            for (int i = 0; i < GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList.Count; i++)
+        //if (GameManager.instance.currentTurnPlayer)
+        //{
+            for (int i = 0; i < ownLandList.Count; i++)
             {
                 for (int j = 0; j < color1.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color1[j])
+                    if (ownLandList[i] == color1[j])
                     {
                         color1.Remove(color1[j]);
                     }
                 }
                 for (int j = 0; j < color2.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color2[j])
+                    if (ownLandList[i] == color2[j])
                     {
                         color2.Remove(color2[j]);
                     }
                 }
                 for (int j = 0; j < color3.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color3[j])
+                    if (ownLandList[i] == color3[j])
                     {
                         color3.Remove(color3[j]);
                     }
                 }
                 for (int j = 0; j < color4.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color4[j])
+                    if (ownLandList[i] == color4[j])
                     {
                         color4.Remove(color4[j]);
                     }
                 }
                 for (int j = 0; j < color5.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color5[j])
+                    if (ownLandList[i] == color5[j])
                     {
                         color5.Remove(color5[j]);
                     }
                 }
                 for (int j = 0; j < color6.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color6[j])
+                    if (ownLandList[i] == color6[j])
                     {
                         color6.Remove(color6[j]);
                     }
                 }
                 for (int j = 0; j < color7.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color7[j])
+                    if (ownLandList[i] == color7[j])
                     {
                         color7.Remove(color7[j]);
                     }
                 }
                 for (int j = 0; j < color8.Count; j++)
                 {
-                    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().ownLandList[i] == color8[j])
+                    if (ownLandList[i] == color8[j])
                     {
                         color8.Remove(color8[j]);
                     }
                 }
-            }
+            //}
         }
 
     }
@@ -426,20 +525,28 @@ public class Player : MonoBehaviour
                 if(ownLandList[i] == lineOnePool[j])
                 {
                     lineOne.Add(lineOnePool[j]);
-                }
-                if(ownLandList[i] == lineTwoPool[j])
+                }              
+            }
+            for (int j=0; j< lineTwoPool.Count; j++)
+            {
+                if (ownLandList[i] == lineTwoPool[j])
                 {
                     lineTwo.Add(lineTwoPool[j]);
                 }
-                if(ownLandList[i] == lineThreePool[j])
+            }
+            for (int j=0; j< lineThreePool.Count; j++)
+            {
+                if (ownLandList[i] == lineThreePool[j])
                 {
                     lineThree.Add(lineThreePool[j]);
                 }
-                if(ownLandList[i] == lineFourPool[j])
+            }
+            for(int j=0; j< lineFourPool.Count; j++)
+            {
+                if (ownLandList[i] == lineFourPool[j])
                 {
                     lineFour.Add(lineFourPool[j]);
                 }
-
             }
         }
     }
