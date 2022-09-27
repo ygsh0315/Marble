@@ -5,7 +5,8 @@ using TMPro;
 public class SpecialBlock : MonoBehaviour
 {
     public TextMeshProUGUI landName;
-    public TextMeshProUGUI landPriceText;
+    public TextMeshProUGUI landMagText;
+    //public TextMeshProUGUI landPriceText;
     public int landMag = 1;
     //관광지
     public GameObject tourOne;
@@ -57,7 +58,7 @@ public class SpecialBlock : MonoBehaviour
     void Start()
     {
         landName.text = gameObject.name;
-        landPriceText.text = (landPrice/10000).ToString() + " 만";
+        //landPriceText.text = (landPrice/10000).ToString() + " 만";
         tourBlocks.Add(tourOne);
         tourBlocks.Add(tourTwo);
         tourBlocks.Add(tourThree);
@@ -78,6 +79,18 @@ public class SpecialBlock : MonoBehaviour
     void Update()
     {
         FestivalCount();
+        if (landMag >= 2)
+        {
+            landMagText.text = "X " + landMag;
+        }
+        else if (!LandOwner)
+        {
+            landMagText.text = "";
+        }
+        else
+        {
+            landMagText.text = (charge / 10000).ToString() + " 만";
+        }
     }
     public void FestivalCount()
     {
@@ -107,11 +120,11 @@ public class SpecialBlock : MonoBehaviour
 
                 if (festival == true)
                 {
-                    charge *= 4;
+                    charge *= 4 * landMag;
                 }
                 else
                 {
-                charge *= 2;
+                charge *= 2 * landMag;
 
                 }
                 player.GetComponent<Player>().money -= charge;
@@ -122,11 +135,11 @@ public class SpecialBlock : MonoBehaviour
             {
                 if (festival == true)
                 {
-                    charge *= 6;
+                    charge *= 6 * landMag;
                 }
                 else
                 {
-                charge *= 3;
+                charge *= 3 * landMag;
 
                 }
                 player.GetComponent<Player>().money -= charge;
@@ -137,11 +150,11 @@ public class SpecialBlock : MonoBehaviour
             {
                 if(festival == true)
                 {
-                    charge *= 8;
+                    charge *= 8 * landMag;
                 }
                 else
                 {
-                    charge *= 4;
+                    charge *= 4 * landMag;
 
                 }
                 
@@ -151,7 +164,7 @@ public class SpecialBlock : MonoBehaviour
             }
             else
             {
-                charge *= 1;
+                charge *= 1 * landMag;
                 player.GetComponent<Player>().money -= charge;
                 LandOwner.GetComponent<Player>().money += charge;
                 player.GetComponent<Player>().TurnCheck();

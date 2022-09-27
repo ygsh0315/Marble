@@ -193,7 +193,7 @@ public class Player : MonoBehaviour
                     }
                     if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>())
                     {
-                        GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival = true;
+                        GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag *= 2;
                         festival = true;
                     }
 

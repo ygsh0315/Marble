@@ -125,10 +125,10 @@ public class BasicBlock : MonoBehaviour
         {
             landMagText.text = (charge / 10000).ToString() + " ¸¸";
         }
-        if (festival == true)
-        {
-           landMag *= 2;
-        }
+        //if (festival == true)
+        //{
+        //   landMag *= 2;
+        //}
       
         charge = (landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount) * landMag;
 
