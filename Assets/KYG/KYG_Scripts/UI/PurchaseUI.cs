@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class PurchaseUI : MonoBehaviour
+using Photon.Pun;
+public class PurchaseUI : MonoBehaviourPun
 {
     public TextMeshProUGUI LandName;
     public TextMeshProUGUI chargeText;
@@ -171,6 +172,11 @@ public class PurchaseUI : MonoBehaviour
     }
     public void OnPurchaseBtn()
     {
+        photonView.RPC("RPCOnPurchaseBtn", RpcTarget.All, currentBlock, player,gameObject);
+    }
+    [PunRPC]
+    public void RPCOnPurchaseBtn(GameObject currentBlock, GameObject player, GameObject gameObject)
+    {
         currentBlock.GetComponent<BasicBlock>().LandOwner = player;
 
         //currentBlock.GetComponent<BasicBlock>().land = land;
@@ -186,7 +192,7 @@ public class PurchaseUI : MonoBehaviour
         if (tear1Tog.isOn)
         {
             currentBlock.GetComponent<BasicBlock>().tear1Factory.SetActive(true);
-           
+
             currentBlock.GetComponent<BasicBlock>().tear1Count = 1;
             currentBlock.GetComponent<BasicBlock>().tear1 = true;
         }
