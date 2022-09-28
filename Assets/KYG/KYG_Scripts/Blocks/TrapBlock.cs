@@ -19,6 +19,7 @@ public class TrapBlock : MonoBehaviour
     {
         print("TrapBlock");
         player.GetComponent<Player>().isTraped = true;
+        //player.GetComponent<Player>().trapUI = true;
         player.GetComponent<Player>().trapCount++;
         player.GetComponent<Player>().TurnCheck();
         //GameUI.instance.TrapBlockUI.GetComponent<TrapBlockUI>().process(player);

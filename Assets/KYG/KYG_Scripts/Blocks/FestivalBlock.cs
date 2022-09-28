@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FestivalBlock : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,6 @@ public class FestivalBlock : MonoBehaviour
         print("FestivalBlock");
         player.GetComponent<Player>().festivalUI = true;
         player.GetComponent<Player>().festival = true;
-        //player.GetComponent<Player>().TurnCheck();
+        player.GetComponent<Player>().TurnCheck();
     }
 }

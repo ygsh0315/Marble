@@ -19,6 +19,7 @@ public class StartBlock : MonoBehaviour
     {
         print("StartBlock");
         player.GetComponent<Player>().startB = true;
-        player.GetComponent<Player>().TurnCheck();
+        player.GetComponent<Player>().startUI = true;
+        //player.GetComponent<Player>().TurnCheck();
     }
 }

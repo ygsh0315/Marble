@@ -256,7 +256,7 @@ public class BasicBlock : MonoBehaviour
             case 1:
                 return (tear1 || player.money < landPrice + tear1Price);
             case 2:
-                return tear2 || player.money <landPrice + tear1Price + tear2Price;
+                return tear2 || player.money < landPrice + tear1Price + tear2Price;
             case 3:
                 return tear3 || player.money < landPrice + tear1Price + tear2Price +tear3Price;
         }

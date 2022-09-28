@@ -91,11 +91,16 @@ public class SpecialBlock : MonoBehaviour
         {
             landMagText.text = (charge / 10000).ToString() + " ¸¸";
         }
+        if (festival == false)
+        {
+            landMag = 1;
+        }
     }
     public void FestivalCount()
     {
         if (festivalCount > 3)
-        {
+        {         
+            festivalCount = 0;
             festival = false;
         }
     }

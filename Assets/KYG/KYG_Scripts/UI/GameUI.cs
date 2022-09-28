@@ -23,6 +23,12 @@ public class GameUI : MonoBehaviour
 
     public GameObject TrapBlockUI;
 
+    public GameObject FestivalUI;
+
+    public GameObject StartUI;
+
+    public GameObject TeleportUI;
+
     public GameObject WinUI;
     // Start is called before the first frame update
     void Start()

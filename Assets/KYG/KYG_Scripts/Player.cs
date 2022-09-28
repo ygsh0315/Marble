@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
 {
     public int round = 1;
     public int currentMapIndex = 0;
-   
     public int money;
     public int TotalMoney;
     public int playerRank;
@@ -45,6 +44,9 @@ public class Player : MonoBehaviour
     public bool bankrupt = false;
     public bool festival = false;
     public bool festivalUI = false;
+    public bool trapUI = false;
+    public bool teleportUI = false;
+    public bool startUI = false;
     public bool startB = false;
     public int festivaCount = 0;
     public int telePortCount = 0;
@@ -98,8 +100,23 @@ public class Player : MonoBehaviour
     {
         if (festivalUI == true)
         {
-            GameUI.instance.TrapBlockUI.SetActive(true);
+            GameUI.instance.FestivalUI.SetActive(true);
             FestivalUI();
+        }
+        if (trapUI == true)
+        {
+            GameUI.instance.TrapBlockUI.SetActive(true);
+            TrapUI();
+        }
+        if (teleportUI == true)
+        {
+            GameUI.instance.TeleportUI.SetActive(true);
+            TeleportUI();
+        }
+        if (startUI == true)
+        {
+            GameUI.instance.StartUI.SetActive(true);
+            StartUI();
         }
         //print(gameObject.name);
         //TrapCheck();
@@ -118,12 +135,42 @@ public class Player : MonoBehaviour
 
     }
 
+    private void TeleportUI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.TeleportUI.SetActive(false);
+            TurnCheck();
+        }
+    }
+    public void StartUI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.StartUI.SetActive(false);
+            TurnCheck();
+        }
+    }
+
+    public void TrapUI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.TrapBlockUI.SetActive(false);
+            TurnCheck();
+        }
+    }
+
+
     public void FestivalUI()
     {
         currentTime += Time.deltaTime;
         if(currentTime > createTime)
         {
-            GameUI.instance.TrapBlockUI.SetActive(false);
+            GameUI.instance.FestivalUI.SetActive(false);
             TurnCheck();
         }
     }
@@ -150,7 +197,6 @@ public class Player : MonoBehaviour
             if (Physics.Raycast(mouseRay, out mouseInfo))
             {
                 print("가리키는 대상: " + mouseInfo.transform.name);
-
             }
             else
             {
@@ -204,15 +250,13 @@ public class Player : MonoBehaviour
                     if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
                     {
                         GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag *=2;
-                        festival = true;
+                        GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival = true;
                     }
                     if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>())
                     {
                         GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag *= 2;
-                        festival = true;
+                        GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival = true;
                     }
-
-
                 }
             }
             festival = false;
@@ -637,7 +681,6 @@ public class Player : MonoBehaviour
             GameManager.instance.turnIndex--;
             bankrupt = true;
             RollDiceBtn.SetActive(true);
-
             Destroy(gameObject);
             GameManager.instance.PlayerList.Remove(gameObject);
         }
@@ -717,6 +760,9 @@ public class Player : MonoBehaviour
     public float createTime = 1;
     public void TurnCheck()
     {
+        trapUI = false;
+        teleportUI = false;
+        startUI = false;
         festivalUI = false;
         currentTime = 0;
         hasInfo = false;
@@ -899,7 +945,6 @@ public class Player : MonoBehaviour
 
     IEnumerator IEMove(int dice1, int dice2)
     {
-
         int destinationIndex = dice1 + dice2;
         for (int i = 1; i <= destinationIndex; i++)
         {
