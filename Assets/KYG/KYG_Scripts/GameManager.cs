@@ -65,14 +65,6 @@ public class GameManager : MonoBehaviourPun
         ColorMonopolyCheck();
         RankCalCulate();
 
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            if(PhotonNetwork.IsMasterClient)
-            {
-                ChangeCurrentTurnPlayer();
-
-            }
-        }
     }
 
     private void Festival()
@@ -136,7 +128,8 @@ public class GameManager : MonoBehaviourPun
     }
     private void Winner()
     {
-        //BankruptCheck();
+        if (GameUI.instance.GameStartUI.activeSelf) return;
+        BankruptCheck();
         #region 정훈이형 코드
         LineMonopolyCheck();
         SpecialMonopolyCheck();

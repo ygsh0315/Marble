@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class GameUI : MonoBehaviour
+using Photon.Pun;
+public class GameUI : MonoBehaviourPun
 {
     public static GameUI instance;
     private void Awake()
@@ -30,6 +31,8 @@ public class GameUI : MonoBehaviour
     public GameObject TeleportUI;
 
     public GameObject WinUI;
+
+    public GameObject GameStartUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,5 +68,19 @@ public class GameUI : MonoBehaviour
     {
         TakeOverUI.SetActive(true);
         TakeOverUI.GetComponent<TakeOverUI>().process(block, player);
+    }
+
+    public void GameStart()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("RPCGameStart", RpcTarget.All);
+        }
+    }
+    [PunRPC]
+    void RPCGameStart()
+    {
+        GameManager.instance.ChangeCurrentTurnPlayer();
+        GameStartUI.SetActive(false);
     }
 }

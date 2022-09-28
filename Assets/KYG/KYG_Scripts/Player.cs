@@ -102,6 +102,10 @@ public class Player : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.currentTurnPlayer != gameObject)
+        {
+            RollDiceBtn.SetActive(false);
+        }
         if (festivalUI == true)
         {
             GameUI.instance.FestivalUI.SetActive(true);
@@ -781,10 +785,6 @@ public class Player : MonoBehaviourPun
 
                 // GameUI.instance.TrapBlockUI.SetActive(true);
                 state = PlayerState.End;
-
-
-
-
             }
 
         }

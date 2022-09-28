@@ -172,11 +172,7 @@ public class PurchaseUI : MonoBehaviourPun
     }
     public void OnPurchaseBtn()
     {
-        photonView.RPC("RPCOnPurchaseBtn", RpcTarget.All, currentBlock, player,gameObject);
-    }
-    [PunRPC]
-    public void RPCOnPurchaseBtn(GameObject currentBlock, GameObject player, GameObject gameObject)
-    {
+        //photonView.RPC("RPCOnPurchaseBtn", RpcTarget.All, currentBlock, player,gameObject);
         currentBlock.GetComponent<BasicBlock>().LandOwner = player;
 
         //currentBlock.GetComponent<BasicBlock>().land = land;
@@ -213,6 +209,11 @@ public class PurchaseUI : MonoBehaviourPun
         gameObject.SetActive(false);
         //player.GetComponent<Player>().state = Player.PlayerState.End;
     }
+    //[PunRPC]
+    //public void RPCOnPurchaseBtn(GameObject currentBlock, GameObject player, GameObject gameObject)
+    //{
+       
+    //}
 
     public void OnCancelBtn()
     {
