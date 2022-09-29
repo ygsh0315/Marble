@@ -60,8 +60,8 @@ public class GameManager : MonoBehaviourPun
         TrapCheck();
         
         Winner();
-        turnCalculate();
-        ChangeCurrentTurnPlayer(turnIndex);
+        //turnCalculate();
+        //ChangeCurrentTurnPlayer(turnIndex);
         ColorMonopolyCheck();
         RankCalCulate();
     }
