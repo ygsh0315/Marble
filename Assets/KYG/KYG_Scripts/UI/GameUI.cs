@@ -69,7 +69,6 @@ public class GameUI : MonoBehaviourPun
         TakeOverUI.SetActive(true);
         TakeOverUI.GetComponent<TakeOverUI>().process(block, player);
     }
-
     public void GameStart()
     {
         if (PhotonNetwork.IsMasterClient)

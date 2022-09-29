@@ -60,11 +60,10 @@ public class GameManager : MonoBehaviourPun
         TrapCheck();
         
         Winner();
-        //turnCalculate();
-        //ChangeCurrentTurnPlayer(turnIndex);
+        turnCalculate();
+        ChangeCurrentTurnPlayer(turnIndex);
         ColorMonopolyCheck();
         RankCalCulate();
-
     }
 
     private void Festival()
@@ -215,7 +214,6 @@ public class GameManager : MonoBehaviourPun
     }
     public void turnCalculate()
     {
-        turnIndex++;
         if (turnIndex > PlayerList.Count - 1)
         {
             turnIndex -= PlayerList.Count;
@@ -223,9 +221,9 @@ public class GameManager : MonoBehaviourPun
         if (turnIndex < 0)
         {
             turnIndex = PlayerList.Count - 1;
-        }        
+        }
+        
     }
-
     public void ChangeCurrentTurnPlayer()
     {
         photonView.RPC("RpcChangeCurrentTurnPlayer", RpcTarget.All);
@@ -283,7 +281,7 @@ public class GameManager : MonoBehaviourPun
             return 1;
         }
 
-        else if(pv1.ViewID < pv2.ViewID)
+        else if (pv1.ViewID < pv2.ViewID)
         {
             return -1;
         }

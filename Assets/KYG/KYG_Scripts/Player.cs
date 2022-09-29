@@ -73,9 +73,7 @@ public class Player : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        //photonView.RPC("RPCListAddPlayer", RpcTarget.All, gameObject);
         GameManager.instance.AddPlayer(gameObject);
-        
         money = GameManager.instance.startMoney;
         lines.AddRange(GameObject.FindGameObjectsWithTag("BasicBlock"));
         lines.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
@@ -102,10 +100,6 @@ public class Player : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.currentTurnPlayer != gameObject)
-        {
-            RollDiceBtn.SetActive(false);
-        }
         if (festivalUI == true)
         {
             GameUI.instance.FestivalUI.SetActive(true);
@@ -257,13 +251,28 @@ public class Player : MonoBehaviourPun
                 {
                     if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
                     {
-                        GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag *=2;
+
                         GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival = true;
+                        if (GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival == true)
+                        {
+                        GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag *=2;
+                        }
+                        else
+                        {
+                            GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag = 1;
+                        }
                     }
                     if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>())
                     {
-                        GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag *= 2;
                         GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival = true;
+                        if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival == true)
+                        {
+                        GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag *= 2;
+                        }
+                        else
+                        {
+                            GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag = 1;
+                        }
                     }
                 }
             }
@@ -690,7 +699,7 @@ public class Player : MonoBehaviourPun
             bankrupt = true;
             RollDiceBtn.SetActive(true);
             Destroy(gameObject);
-           // GameManager.instance.PlayerList.Remove(0);
+            //GameManager.instance.PlayerList.Remove(gameObject);
         }
     }
 
@@ -785,6 +794,10 @@ public class Player : MonoBehaviourPun
 
                 // GameUI.instance.TrapBlockUI.SetActive(true);
                 state = PlayerState.End;
+
+
+
+
             }
 
         }
@@ -882,6 +895,7 @@ public class Player : MonoBehaviourPun
         GameManager.instance.ChangeCurrentTurnPlayer();
 
 
+
         // currentTime = 0;
         state = PlayerState.Idle;
 
@@ -972,8 +986,10 @@ public class Player : MonoBehaviourPun
         //onTurn = true;
 
         getBlockInfo();
-    }
 
+
+    }
+    
     void ListAddPlayer(GameObject player)
     {
         GameManager.instance.PlayerList.Add(player);
