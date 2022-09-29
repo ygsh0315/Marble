@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviourPun
 {
     public int round = 1;
     public int currentMapIndex = 0;
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance.AddPlayer(gameObject);
         money = GameManager.instance.startMoney;
         lines.AddRange(GameObject.FindGameObjectsWithTag("BasicBlock"));
         lines.AddRange(GameObject.FindGameObjectsWithTag("SpecialBlock"));
@@ -697,7 +699,7 @@ public class Player : MonoBehaviour
             bankrupt = true;
             RollDiceBtn.SetActive(true);
             Destroy(gameObject);
-            GameManager.instance.PlayerList.Remove(gameObject);
+            //GameManager.instance.PlayerList.Remove(gameObject);
         }
     }
 
@@ -889,7 +891,8 @@ public class Player : MonoBehaviour
             }
         }
 
-        GameManager.instance.turnIndex++;
+        //GameManager.instance.turnIndex++;
+        GameManager.instance.ChangeCurrentTurnPlayer();
 
 
 
@@ -983,5 +986,12 @@ public class Player : MonoBehaviour
         //onTurn = true;
 
         getBlockInfo();
+
+
+    }
+    
+    void ListAddPlayer(GameObject player)
+    {
+        GameManager.instance.PlayerList.Add(player);
     }
 }

@@ -4,8 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Photon.Pun;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviourPun
 {
     public static GameManager instance;
     private void Awake()
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        turnIndex = -1;
         MapSet();
         PlayerSet();
         Festival();
@@ -73,10 +75,11 @@ public class GameManager : MonoBehaviour
     }
     private void PlayerSet()
     {
-        PlayerList.Add(Player1);
-        PlayerList.Add(Player2);
-        PlayerList.Add(Player3);
-        PlayerList.Add(Player4);
+        //PlayerList.Add(Player1);
+        //PlayerList.Add(Player2);
+        //PlayerList.Add(Player3);
+        //PlayerList.Add(Player4);
+        PhotonNetwork.Instantiate("Player", MapList[0].transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
     }
     //맵 세팅 함수
     private void MapSet()
@@ -124,6 +127,7 @@ public class GameManager : MonoBehaviour
     }
     private void Winner()
     {
+        if (GameUI.instance.GameStartUI.activeSelf) return;
         BankruptCheck();
         #region 정훈이형 코드
         LineMonopolyCheck();
@@ -220,8 +224,17 @@ public class GameManager : MonoBehaviour
         }
         
     }
-    public void ChangeCurrentTurnPlayer(int i)
+    public void ChangeCurrentTurnPlayer()
     {
+        photonView.RPC("RpcChangeCurrentTurnPlayer", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void RpcChangeCurrentTurnPlayer()
+    {
+        if (PlayerList.Count <= 0) return;
+        turnCalculate();
+        int i = turnIndex;
         currentTurnPlayer = PlayerList[i];
         if (currentTurnPlayer)
         {
@@ -237,8 +250,6 @@ public class GameManager : MonoBehaviour
 
                 currentTurnPlayer.GetComponent<Player>().state = Player.PlayerState.End;
             }
-            
-            
         }
     }
     public void TrapCheck()
@@ -251,5 +262,30 @@ public class GameManager : MonoBehaviour
             //    currentTurnPlayer.GetComponent<Player>().state = Player.PlayerState.End;
             //}
         }
+    }
+
+    public void AddPlayer(GameObject player)
+    {
+        PlayerList.Add(player);
+
+        //정렬
+        PlayerList.Sort(SortByViewID);
+    }
+
+    int SortByViewID(GameObject g1, GameObject g2)
+    {
+        PhotonView pv1 = g1.GetComponent<PhotonView>();
+        PhotonView pv2 = g2.GetComponent<PhotonView>();
+        if (pv1.ViewID > pv2.ViewID)
+        {
+            return 1;
+        }
+
+        else if (pv1.ViewID < pv2.ViewID)
+        {
+            return -1;
+        }
+
+        return 0;
     }
 }
