@@ -284,6 +284,7 @@ public class GameManager : MonoBehaviourPun
         for(int i = 0; i < PlayerList.Count; i++)
         {
             PlayerList[i].GetComponent<Player>().myColor = playerMat[i];
+            GameUI.instance.PlayerUiList[i].GetComponent<PlayerUI>().player = PlayerList[i];
         }
     }
 

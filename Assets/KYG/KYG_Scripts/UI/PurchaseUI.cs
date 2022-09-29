@@ -185,44 +185,6 @@ public class PurchaseUI : MonoBehaviourPun
         player.GetComponent<Player>().TurnCheck();
         gameObject.SetActive(false);
 
-
-        //currentBlock.GetComponent<BasicBlock>().land = land;
-        //currentBlock.GetComponent<BasicBlock>().tear1 = tear1;
-        //currentBlock.GetComponent<BasicBlock>().tear2 = tear2;
-        //currentBlock.GetComponent<BasicBlock>().tear3 = tear3;
-        //if (landTog.isOn)
-        //{
-        //    //currentBlock.GetComponent<BasicBlock>().landFlagFactory.SetActive(true);
-        //    currentBlock.GetComponent<BasicBlock>().landCount = 1;
-        //    currentBlock.GetComponent<BasicBlock>().land = true;
-        //}
-        //if (tear1Tog.isOn)
-        //{
-        //    currentBlock.GetComponent<BasicBlock>().tear1Factory.SetActive(true);
-
-        //    currentBlock.GetComponent<BasicBlock>().tear1Count = 1;
-        //    currentBlock.GetComponent<BasicBlock>().tear1 = true;
-        //}
-        //if (tear2Tog.isOn)
-        //{
-        //    currentBlock.GetComponent<BasicBlock>().tear2Factory.SetActive(true);
-        //    currentBlock.GetComponent<BasicBlock>().tear2Count = 1;
-        //    currentBlock.GetComponent<BasicBlock>().tear2 = true;
-        //}
-        //if (tear3Tog.isOn)
-        //{
-        //    currentBlock.GetComponent<BasicBlock>().tear3Factory.SetActive(true);
-        //    currentBlock.GetComponent<BasicBlock>().tear3Count = 1;
-        //    currentBlock.GetComponent<BasicBlock>().tear3 = true;
-        //}
-
-        //currentBlock.GetComponent<BasicBlock>().LandOwner = player;
-        //player.GetComponent<Player>().money -= charge;
-
-
-
-        //SetVisibleContent(false);
-        //player.GetComponent<Player>().state = Player.PlayerState.End;
     }
     [PunRPC]
     public void RPCOnPurchaseBtn(int playerViewId, int charge, int blockId, bool isLandTog, bool isTear1Tog, bool isTear2Tog, bool isTear3Tog)

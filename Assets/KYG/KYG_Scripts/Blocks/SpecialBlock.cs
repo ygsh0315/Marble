@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 public class SpecialBlock : Block
 {
     public TextMeshProUGUI landName;
@@ -132,8 +133,8 @@ public class SpecialBlock : Block
                 charge *= 2 * landMag;
 
                 }
-                player.GetComponent<Player>().money -= charge;
-                LandOwner.GetComponent<Player>().money += charge;
+                player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+                LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
                 player.GetComponent<Player>().TurnCheck();
             }
             else if (tourO == tourT == tourTh || tourO == tourT == tourF || tourO == tourTh == tourF || tourT == tourTh == tourF)
@@ -147,8 +148,8 @@ public class SpecialBlock : Block
                 charge *= 3 * landMag;
 
                 }
-                player.GetComponent<Player>().money -= charge;
-                LandOwner.GetComponent<Player>().money += charge;
+                player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+                LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
                 player.GetComponent<Player>().TurnCheck();
             }
             else if (tourO == tourT == tourTh == tourF)
@@ -162,16 +163,16 @@ public class SpecialBlock : Block
                     charge *= 4 * landMag;
 
                 }
-                
-                player.GetComponent<Player>().money -= charge;
-                LandOwner.GetComponent<Player>().money += charge;
+
+                player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+                LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
                 player.GetComponent<Player>().TurnCheck();
             }
             else
             {
                 charge *= 1 * landMag;
-                player.GetComponent<Player>().money -= charge;
-                LandOwner.GetComponent<Player>().money += charge;
+                player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+                LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
                 player.GetComponent<Player>().TurnCheck();
             }
         }

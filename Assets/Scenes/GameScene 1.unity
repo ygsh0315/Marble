@@ -2165,13 +2165,14 @@ GameObject:
   - component: {fileID: 119000831}
   - component: {fileID: 119000830}
   - component: {fileID: 119000832}
+  - component: {fileID: 119000833}
   m_Layer: 5
   m_Name: TakeOverUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &119000829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2251,6 +2252,29 @@ MonoBehaviour:
   currentBlock: {fileID: 0}
   LandName: {fileID: 1308044255}
   TakeOverChargeText: {fileID: 630959569}
+  takeOverCharge: 0
+--- !u!114 &119000833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119000828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 6
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &126728661
 GameObject:
   m_ObjectHideFlags: 0
@@ -5021,13 +5045,14 @@ GameObject:
   - component: {fileID: 461878664}
   - component: {fileID: 461878663}
   - component: {fileID: 461878662}
+  - component: {fileID: 461878665}
   m_Layer: 5
   m_Name: LandPurchaseUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &461878661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5107,6 +5132,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461878660}
   m_CullTransparentMesh: 1
+--- !u!114 &461878665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461878660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 7
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!4 &466665851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
@@ -6198,7 +6245,7 @@ MonoBehaviour:
   m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1592513434061130, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11435,6 +11482,11 @@ MonoBehaviour:
   TeleportUI: {fileID: 1794534791}
   WinUI: {fileID: 912848589}
   GameStartUI: {fileID: 1714252872}
+  PlayerUiList:
+  - {fileID: 2026247322}
+  - {fileID: 427903679}
+  - {fileID: 224765032}
+  - {fileID: 111810004}
 --- !u!114 &1276059283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11670,7 +11722,7 @@ MonoBehaviour:
   m_text: LandName
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1592513434061130, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11805,7 +11857,7 @@ MonoBehaviour:
   m_text: LandName
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1592513434061130, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -15778,7 +15830,7 @@ MonoBehaviour:
   m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 1592513434061130, guid: c3e27f95e8ba45545b51abd4893d8a1c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16118,7 +16170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTurnPlayer: {fileID: 0}
-  cDice: 0
+  cDice: 1
   cDice1: 0
   cDice2: 3
   startMoney: 2000000
@@ -18134,37 +18186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdb6ac01566b8b4282dc41433c60aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landMag: 1
-  landName: {fileID: 0}
-  landMagText: {fileID: 0}
-  charge: 0
-  landTallFee: 0
-  landCount: 0
-  land: 0
-  landFlagFactory: {fileID: 0}
-  landPrice: 0
-  tear1Count: 0
-  tear1: 0
-  tear1Factory: {fileID: 0}
-  tear1Price: 0
-  tear1TallFee: 0
-  tear2Count: 0
-  tear2: 0
-  tear2Factory: {fileID: 0}
-  tear2Price: 0
-  tear2TallFee: 0
-  tear3Count: 0
-  tear3: 0
-  tear3Factory: {fileID: 0}
-  tear3Price: 0
-  tear3TallFee: 0
-  landMarkCount: 0
-  landMark: 0
-  landMarkFactory: {fileID: 0}
-  landMarkPrice: 0
-  landMarkTallFee: 0
-  LandOwner: {fileID: 0}
-  takeOverCharge: 0
 --- !u!33 &15158401542412050
 MeshFilter:
   m_ObjectHideFlags: 0

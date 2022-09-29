@@ -304,4 +304,18 @@ public class BasicBlock : Block
         }
     }
 
+    public void OnTakeOver(GameObject player)
+    {
+        LandOwner = player;
+    }
+
+    public void OnLandMarkPurchase()
+    {
+        landMarkFactory.SetActive(true);
+        landMarkCount = 1;
+        landMark = true;
+        tear1Factory.SetActive(false);
+        tear2Factory.SetActive(false);
+        tear3Factory.SetActive(false);
+    }
 }

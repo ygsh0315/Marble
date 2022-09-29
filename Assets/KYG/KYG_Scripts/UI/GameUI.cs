@@ -33,6 +33,8 @@ public class GameUI : MonoBehaviourPun
     public GameObject WinUI;
 
     public GameObject GameStartUI;
+
+    public GameObject[] PlayerUiList;
     // Start is called before the first frame update
     void Start()
     {
