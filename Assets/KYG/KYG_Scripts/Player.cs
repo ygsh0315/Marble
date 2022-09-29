@@ -249,13 +249,28 @@ public class Player : MonoBehaviour
                 {
                     if (GameManager.instance.MapList[i].GetComponent<BasicBlock>())
                     {
-                        GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag *=2;
+
                         GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival = true;
+                        if (GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival == true)
+                        {
+                        GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag *=2;
+                        }
+                        else
+                        {
+                            GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag = 1;
+                        }
                     }
                     if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>())
                     {
-                        GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag *= 2;
                         GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival = true;
+                        if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival == true)
+                        {
+                        GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag *= 2;
+                        }
+                        else
+                        {
+                            GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag = 1;
+                        }
                     }
                 }
             }

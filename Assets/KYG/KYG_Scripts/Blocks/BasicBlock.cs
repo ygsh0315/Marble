@@ -125,11 +125,15 @@ public class BasicBlock : MonoBehaviour
         {
             landMagText.text = (charge / 10000).ToString() + " ¸¸";
         }
+        if (festival == false)
+        {
+            landMag = 1;
+        }
         //if (festival == true)
         //{
         //   landMag *= 2;
         //}
-      
+
         charge = (landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount) * landMag;
 
         takeOverCharge = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count + landMarkPrice * landMarkCount) * 2;
@@ -218,9 +222,10 @@ public class BasicBlock : MonoBehaviour
     }
     public void FestivalCount()
     {
-        if(festivalCount >3)
+        if(festivalCount >12)
         {
             festival = false;
+            festivalCount = 0;
         }
     }
     public void ColorCheck()

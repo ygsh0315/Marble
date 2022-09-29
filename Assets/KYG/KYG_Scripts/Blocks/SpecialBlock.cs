@@ -98,7 +98,7 @@ public class SpecialBlock : MonoBehaviour
     }
     public void FestivalCount()
     {
-        if (festivalCount > 3)
+        if (festivalCount > 12)
         {         
             festivalCount = 0;
             festival = false;
