@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventBlock : MonoBehaviour
+public class EventBlock : Block
 {
     // Start is called before the first frame update
     void Start()
@@ -20,4 +20,10 @@ public class EventBlock : MonoBehaviour
         print("EventBlock");
         player.GetComponent<Player>().TurnCheck();
     }
+
+    //public override void OnBlock(GameObject player)
+    //{
+    //    print("EventBlock");
+    //    player.GetComponent<Player>().TurnCheck();
+    //}
 }

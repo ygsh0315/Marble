@@ -74,12 +74,12 @@ public class GameUI : MonoBehaviourPun
         if (PhotonNetwork.IsMasterClient)
         {
             photonView.RPC("RPCGameStart", RpcTarget.All);
+            GameManager.instance.ChangeCurrentTurnPlayer();
         }
     }
     [PunRPC]
     void RPCGameStart()
     {
-        GameManager.instance.ChangeCurrentTurnPlayer();
         GameStartUI.SetActive(false);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FestivalBlock : MonoBehaviour
+public class FestivalBlock : Block
 {
     
     // Start is called before the first frame update

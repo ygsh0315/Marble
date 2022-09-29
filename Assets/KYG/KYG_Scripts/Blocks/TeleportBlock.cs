@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportBlock : MonoBehaviour
+public class TeleportBlock : Block
 {
     
     // Start is called before the first frame update
@@ -26,5 +26,12 @@ public class TeleportBlock : MonoBehaviour
         
     }
 
-  
+    //public override void OnBlock(GameObject player)
+    //{
+    //    print("TeleportBlock");
+    //    player.GetComponent<Player>().teleportUI = true;
+    //    player.GetComponent<Player>().telePort = true;
+    //}
+
+
 }

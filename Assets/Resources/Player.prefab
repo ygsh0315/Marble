@@ -160,6 +160,7 @@ MonoBehaviour:
   telePortCount: 0
   trapCount: 0
   colorCount: 0
+  myColor: {fileID: 0}
   state: 0
   createTime: 1
 --- !u!114 &-5914983488293862166

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class SpecialBlock : MonoBehaviour
+public class SpecialBlock : Block
 {
     public TextMeshProUGUI landName;
     public TextMeshProUGUI landMagText;

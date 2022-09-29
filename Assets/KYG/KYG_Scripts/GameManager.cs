@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviourPun
     public int turnIndex;
     public List<GameObject> PlayerList = new List<GameObject>();
     public List<GameObject> MapList = new List<GameObject>();
+    public List<Block> BlockList = new List<Block>();
     public List<GameObject> FestivalList = new List<GameObject>();
     public List<GameObject> SpecialBockList = new List<GameObject>();
     public List<GameObject> Line1BlockList = new List<GameObject>();
@@ -100,6 +101,12 @@ public class GameManager : MonoBehaviourPun
             {
                 SpecialBockList.Add(MapList[i]);
             }
+
+            Block block = MapList[i].GetComponent<Block>(); 
+           
+            block.blockID = i;
+            BlockList.Add(block);
+
         }
         for (int i = 1; i < 8; i++)
         {
@@ -214,6 +221,7 @@ public class GameManager : MonoBehaviourPun
     }
     public void turnCalculate()
     {
+        turnIndex++;
         if (turnIndex > PlayerList.Count - 1)
         {
             turnIndex -= PlayerList.Count;
@@ -264,12 +272,19 @@ public class GameManager : MonoBehaviourPun
         }
     }
 
+    public Material[] playerMat;
     public void AddPlayer(GameObject player)
     {
         PlayerList.Add(player);
 
         //정렬
         PlayerList.Sort(SortByViewID);
+
+        //자기색 셋팅
+        for(int i = 0; i < PlayerList.Count; i++)
+        {
+            PlayerList[i].GetComponent<Player>().myColor = playerMat[i];
+        }
     }
 
     int SortByViewID(GameObject g1, GameObject g2)
@@ -287,5 +302,29 @@ public class GameManager : MonoBehaviourPun
         }
 
         return 0;
+    }
+
+    public Block GetBlock(int blockId)
+    {
+        for(int i = 0; i < BlockList.Count; i++)
+        {
+            if(BlockList[i].blockID == blockId)
+            {
+                return BlockList[i];
+            }
+        }
+        return null;
+    }
+
+    public GameObject GetPlayer(int viewId)
+    {
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+            if (PlayerList[i].GetComponent<PhotonView>().ViewID == viewId)
+            {
+                return PlayerList[i];
+            }
+        }
+        return null;
     }
 }

@@ -61,6 +61,9 @@ public class Player : MonoBehaviourPun
     bool eight = true;
     public int trapCount = 0;
     public int colorCount = 0;
+
+    public Material myColor;
+
     public enum PlayerState
     {
         Idle,
@@ -310,6 +313,14 @@ public class Player : MonoBehaviourPun
         state = PlayerState.Idle;
         getBlockInfo();
     }
+
+    void Check(int idx)
+    {
+        ownLandList.Add(GameManager.instance.MapList[idx]);
+        ColorCheck();
+        CheckLine();
+    }
+
     private void OwnLandCheck()
     {
         for (int i = 0; i < GameManager.instance.MapList.Count; i++)
@@ -322,6 +333,8 @@ public class Player : MonoBehaviourPun
                     {
                        
                         ownLandList.Add(GameManager.instance.MapList[i]);
+                        //Check(i);
+
                     }
                 }
                 else
@@ -356,93 +369,113 @@ public class Player : MonoBehaviourPun
                     if (!ownLandList.Contains(GameManager.instance.MapList[i]))
                     {
                         ownLandList.Add(GameManager.instance.MapList[i]);
+                       // Check(i);
                     }
                 }
                 else
                 {
                     if (ownLandList.Contains(GameManager.instance.MapList[i]))
                     {
+                        List<GameObject> [] color = { color1, color2, color3, color4 , color5, color6 , color7 , color8 };
+                        List<GameObject>[] line = { lineOne, lineTwo, lineThree, lineFour };
+                        string[] blockName = { 
+                            "피시 신전" , "잠보 신전" , "심바 신전", "추어 신전",
+                            "카라 신전", "파즈 신전" , "루나 신전", "디오스 신전",
+                            "도란 신전", "나래 신전", "해솔 신전", "가온 신전",
+                            "파르테논 신전", "아폴론 신전", "니케 신전", "헤라 신전"
+                        };
 
-                        if (GameManager.instance.MapList[i].gameObject.name == "피시 신전")
-                        {                            
-                            lineOne.Add(GameManager.instance.MapList[i]);
-                            color1.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "잠보 신전")
+                        for(int j = 0; j < blockName.Length; j++)
                         {
-                            lineOne.Add(GameManager.instance.MapList[i]);
-                            color1.Add(GameManager.instance.MapList[i]);
+                            if(GameManager.instance.MapList[i].gameObject.name == blockName[j])
+                            {
+                                line[j / 4].Add(GameManager.instance.MapList[i]);
+                                color[j / 2].Add(GameManager.instance.MapList[i]);
+                            }
                         }
-                        if (GameManager.instance.MapList[i].gameObject.name == "심바 신전")
-                        {
-                            lineOne.Add(GameManager.instance.MapList[i]);
-                            color2.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "추어 신전")
-                        {
-                            lineOne.Add(GameManager.instance.MapList[i]);
-                            color2.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "카라 신전")
-                        {
-                            lineTwo.Add(GameManager.instance.MapList[i]);
-                            color3.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "파즈 신전")
-                        {
-                            lineTwo.Add(GameManager.instance.MapList[i]);
-                            color3.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "루나 신전")
-                        {
-                            lineTwo.Add(GameManager.instance.MapList[i]);
-                            color4.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "디오스 신전")
-                        {
-                            lineTwo.Add(GameManager.instance.MapList[i]);
-                            color4.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "도란 신전")
-                        {
-                            lineThree.Add(GameManager.instance.MapList[i]);
-                            color5.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "나래 신전")
-                        {
-                            lineThree.Add(GameManager.instance.MapList[i]);
-                            color5.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "해솔 신전")
-                        {
-                            lineThree.Add(GameManager.instance.MapList[i]);
-                            color6.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "가온 신전")
-                        {
-                            lineThree.Add(GameManager.instance.MapList[i]);
-                            color6.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "파르테논 신전")
-                        {
-                            lineFour.Add(GameManager.instance.MapList[i]);
-                            color7.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "아폴론 신전")
-                        {
-                            lineFour.Add(GameManager.instance.MapList[i]);
-                            color7.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "니케 신전")
-                        {
-                            lineFour.Add(GameManager.instance.MapList[i]);
-                            color8.Add(GameManager.instance.MapList[i]);
-                        }
-                        if (GameManager.instance.MapList[i].gameObject.name == "헤라 신전")
-                        {
-                            lineFour.Add(GameManager.instance.MapList[i]);
-                            color8.Add(GameManager.instance.MapList[i]);
-                        }
+                       
+
+
+                        //if (GameManager.instance.MapList[i].gameObject.name == "피시 신전")
+                        //{                            
+                        //    lineOne.Add(GameManager.instance.MapList[i]);
+                        //    color1.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "잠보 신전")
+                        //{
+                        //    lineOne.Add(GameManager.instance.MapList[i]);
+                        //    color1.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "심바 신전")
+                        //{
+                        //    lineOne.Add(GameManager.instance.MapList[i]);
+                        //    color2.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "추어 신전")
+                        //{
+                        //    lineOne.Add(GameManager.instance.MapList[i]);
+                        //    color2.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "카라 신전")
+                        //{
+                        //    lineTwo.Add(GameManager.instance.MapList[i]);
+                        //    color3.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "파즈 신전")
+                        //{
+                        //    lineTwo.Add(GameManager.instance.MapList[i]);
+                        //    color3.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "루나 신전")
+                        //{
+                        //    lineTwo.Add(GameManager.instance.MapList[i]);
+                        //    color4.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "디오스 신전")
+                        //{
+                        //    lineTwo.Add(GameManager.instance.MapList[i]);
+                        //    color4.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "도란 신전")
+                        //{
+                        //    lineThree.Add(GameManager.instance.MapList[i]);
+                        //    color5.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "나래 신전")
+                        //{
+                        //    lineThree.Add(GameManager.instance.MapList[i]);
+                        //    color5.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "해솔 신전")
+                        //{
+                        //    lineThree.Add(GameManager.instance.MapList[i]);
+                        //    color6.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "가온 신전")
+                        //{
+                        //    lineThree.Add(GameManager.instance.MapList[i]);
+                        //    color6.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "파르테논 신전")
+                        //{
+                        //    lineFour.Add(GameManager.instance.MapList[i]);
+                        //    color7.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "아폴론 신전")
+                        //{
+                        //    lineFour.Add(GameManager.instance.MapList[i]);
+                        //    color7.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "니케 신전")
+                        //{
+                        //    lineFour.Add(GameManager.instance.MapList[i]);
+                        //    color8.Add(GameManager.instance.MapList[i]);
+                        //}
+                        //if (GameManager.instance.MapList[i].gameObject.name == "헤라 신전")
+                        //{
+                        //    lineFour.Add(GameManager.instance.MapList[i]);
+                        //    color8.Add(GameManager.instance.MapList[i]);
+                        //}
                         ownLandList.Remove(GameManager.instance.MapList[i]);
                     }
                 }
@@ -839,6 +872,8 @@ public class Player : MonoBehaviourPun
         hasInfo = true;
         RollDiceBtn.SetActive(false);
         GameObject currentBlock = GameManager.instance.MapList[currentMapIndex];
+        // currentBlock.GetComponent<Block>().OnBlock(gameObject);
+     
         switch (currentBlock.tag)
         {
             case "StartBlock":
@@ -987,11 +1022,12 @@ public class Player : MonoBehaviourPun
 
         getBlockInfo();
 
-
     }
     
-    void ListAddPlayer(GameObject player)
+    
+    [PunRPC]
+    void RpcAddMoney(int addMoney)
     {
-        GameManager.instance.PlayerList.Add(player);
+        money += addMoney;
     }
 }

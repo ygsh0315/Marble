@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardBlock : MonoBehaviour
+public class CardBlock : Block
 {
     // Start is called before the first frame update
     void Start()

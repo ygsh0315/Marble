@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
-public class BasicBlock : MonoBehaviour
+public class BasicBlock : Block
 {
     public TextMeshProUGUI landName;
 
@@ -138,6 +139,8 @@ public class BasicBlock : MonoBehaviour
 
         takeOverCharge = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count + landMarkPrice * landMarkCount) * 2;
     }
+    
+
     public void OnBasicBlock(GameObject player)
     {
         print("BasicBlock");
@@ -187,7 +190,6 @@ public class BasicBlock : MonoBehaviour
                         player.GetComponent<Player>().TurnCheck();
                     }
 
-
                 }
                 else
                 {
@@ -201,8 +203,8 @@ public class BasicBlock : MonoBehaviour
         }
         else
         {
-            player.GetComponent<Player>().money -= charge;
-            LandOwner.GetComponent<Player>().money += charge;
+            player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+            LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
             if (!landMark)
             {
                 if (player.GetComponent<Player>().money >= takeOverCharge)
@@ -232,16 +234,21 @@ public class BasicBlock : MonoBehaviour
     {
         if (LandOwner)
         {
-            for (int i = 0; i < materials.Length; i++)
-            {
-                if (LandOwner.gameObject.name == materials[i].name)
-                {
-                    rbOne.material = materials[i];
-                    rbTwo.material = materials[i];
-                    rbThree.material = materials[i];
-                    landM.material = materials[i];               
-                }
-            }
+            Material mat = LandOwner.GetComponent<Player>().myColor;
+            rbOne.material = mat;
+            rbTwo.material = mat;
+            rbThree.material = mat;
+            landM.material = mat;
+            //for (int i = 0; i < materials.Length; i++)
+            //{
+            //    if (LandOwner.gameObject.name == materials[i].name)
+            //    {
+            //        rbOne.material = materials[i];
+            //        rbTwo.material = materials[i];
+            //        rbThree.material = materials[i];
+            //        landM.material = materials[i];               
+            //    }
+            //}
         }
     }
     public void OnPurchaseBtn()
@@ -267,4 +274,34 @@ public class BasicBlock : MonoBehaviour
         }
         return false;
     }
+
+    public void OnPurchase(GameObject player, bool isLandTog, bool isTear1Tog, bool isTear2Tog, bool isTear3Tog)
+    {
+        LandOwner = player;
+
+        if (isLandTog)
+        {
+            landCount = 1;
+            land = true;
+        }
+        if (isTear1Tog)
+        {
+            tear1Factory.SetActive(true);
+            tear1Count = 1;
+            tear1 = true;
+        }
+        if (isTear2Tog)
+        {
+            tear2Factory.SetActive(true);
+            tear2Count = 1;
+            tear2 = true;
+        }
+        if (isTear3Tog)
+        {
+            tear3Factory.SetActive(true);
+            tear3Count = 1;
+            tear3 = true;
+        }
+    }
+
 }
