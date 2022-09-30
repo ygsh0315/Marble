@@ -79,8 +79,6 @@ public class Buttons : MonoBehaviour
 
                 dice1 = Random.Range(4, 7);
                 dice2 = Random.Range(4, 7);
-
-
             }
         }
         if (GameManager.instance.cDice == true)
@@ -94,7 +92,5 @@ public class Buttons : MonoBehaviour
         dicePower.diceButton = true;
         even.GetComponent<EvenOdd>().even = false;
         odd.GetComponent<EvenOdd>().odd = false;
-
-
     }
 }
