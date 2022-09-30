@@ -979,13 +979,16 @@ public class Player : MonoBehaviourPun
         {
 
             GameObject telePortt = GameObject.Find(mouseInfo.transform.name);
-            for (int i = 0; i < GameManager.instance.MapList.Count; i++)
+            for (int result = 0;  result< GameManager.instance.MapList.Count; result++)
             {
-                if (GameManager.instance.MapList[i] == telePortt)
+                if (GameManager.instance.MapList[result] == telePortt)
                 {
-                    GameManager.instance.currentTurnPlayer.transform.position =
-                    GameManager.instance.MapList[i].transform.position + new Vector3(0, 1.5f, 0);
-                    GameManager.instance.currentTurnPlayer.GetComponent<Player>().currentMapIndex = i;
+                    int d = result + 8;
+                    StartCoroutine(IETeleport(d));
+                    //GameManager.instance.currentTurnPlayer.transform.position =
+                    //GameManager.instance.MapList[result].transform.position + new Vector3(0, 1.5f, 0);
+
+                    //GameManager.instance.currentTurnPlayer.GetComponent<Player>().currentMapIndex = i;
                 }
             }
             telePortCount++;
@@ -996,9 +999,28 @@ public class Player : MonoBehaviourPun
         }
     }
 
+    IEnumerator IETeleport(int result)
+    {
+        int destinationIndex = result;
+
+        for (int i = 1; i <= destinationIndex; i++)
+        {
+            if (currentMapIndex + i > 31)
+            {
+                money += salary;
+                currentMapIndex -= 32;
+            }
+            transform.position = GameManager.instance.MapList[currentMapIndex + i].transform.position + new Vector3(0, 1.5f, 0);
+            yield return new WaitForSeconds(0.1f);
+        }
+        currentMapIndex += destinationIndex;
+    }
+
+
     IEnumerator IEMove(int dice1, int dice2)
     {
         int destinationIndex = dice1 + dice2;
+        
         for (int i = 1; i <= destinationIndex; i++)
         {
             if (currentMapIndex + i > 31)
