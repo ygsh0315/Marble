@@ -98,6 +98,7 @@ public class Player : MonoBehaviourPun
         color8.Add(GameObject.Find("니케 신전"));
         color8.Add(GameObject.Find("헤라 신전"));
         Line();
+        RollDiceBtn.SetActive(false);
     }
 
     // Update is called once per frame
@@ -774,15 +775,14 @@ public class Player : MonoBehaviourPun
 
     private void Idle()
     {
-        //if (GameManager.instance.currentTurnPlayer)
-        //{
-
-        //    if (GameManager.instance.currentTurnPlayer.GetComponent<Player>().isTraped)
-        //    {
-        //        GameManager.instance.turnIndex++;
-        //        trapCount++;
-        //    }
-        //}
+        if (GameManager.instance.currentTurnPlayer == gameObject && photonView.IsMine)
+        {
+            RollDiceBtn.SetActive(true);
+        }
+        else
+        {
+            RollDiceBtn.SetActive(false);
+        }
     }
     private void Move()
     {

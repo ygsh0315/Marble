@@ -246,7 +246,6 @@ public class GameManager : MonoBehaviourPun
         currentTurnPlayer = PlayerList[i];
         if (currentTurnPlayer)
         {
-            //print(currentTurnPlayer);
             if (currentTurnPlayer.GetComponent<Player>().trapCount >= 4)
             {
                 currentTurnPlayer.GetComponent<Player>().isTraped = false;

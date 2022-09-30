@@ -20,6 +20,7 @@ public class PlayerUI : MonoBehaviour
     {
         if (player)
         {
+            isGone.SetActive(false);
             playerMoney.text = player.GetComponent<Player>().money.ToString();
             totalMoney.text = player.GetComponent<Player>().TotalMoney.ToString();
             playerRank.text = player.GetComponent<Player>().playerRank.ToString() + " À§";

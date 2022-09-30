@@ -13,6 +13,11 @@ public class GameUI : MonoBehaviourPun
             instance = this;
         }
     }
+    public GameObject[] PlayerUiList;
+
+    public GameObject dice1Number;
+    
+    public GameObject dice2Number;
 
     public GameObject PurchaseUI;
 
@@ -34,7 +39,6 @@ public class GameUI : MonoBehaviourPun
 
     public GameObject GameStartUI;
 
-    public GameObject[] PlayerUiList;
     // Start is called before the first frame update
     void Start()
     {

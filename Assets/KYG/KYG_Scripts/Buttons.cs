@@ -15,6 +15,8 @@ public class Buttons : MonoBehaviour
     void Start()
     {
         dicePower = GetComponent<DicePower>();
+        dice1Number = GameUI.instance.dice1Number.GetComponent<TextMeshProUGUI>();
+        dice2Number = GameUI.instance.dice2Number.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
