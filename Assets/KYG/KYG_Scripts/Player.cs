@@ -61,7 +61,7 @@ public class Player : MonoBehaviourPun
     bool eight = true;
     public int trapCount = 0;
     public int colorCount = 0;
-
+    public int[] a = { 1, 2, 3, 4, 5, 6 };
     public Material myColor;
 
     public enum PlayerState
@@ -732,8 +732,8 @@ public class Player : MonoBehaviourPun
             GameManager.instance.turnIndex--;
             bankrupt = true;
             RollDiceBtn.SetActive(true);
+            GameManager.instance.PlayerList.Remove(gameObject);
             Destroy(gameObject);
-            //GameManager.instance.PlayerList.Remove(gameObject);
         }
     }
 
@@ -925,15 +925,10 @@ public class Player : MonoBehaviourPun
 
             }
         }
-
         //GameManager.instance.turnIndex++;
         GameManager.instance.ChangeCurrentTurnPlayer();
-
-
-
         // currentTime = 0;
         state = PlayerState.Idle;
-
     }
 
     public void PlayerMove(int dice1, int dice2)
@@ -1029,5 +1024,62 @@ public class Player : MonoBehaviourPun
     void RpcAddMoney(int addMoney)
     {
         money += addMoney;
+    }
+    public void Chance()
+    {
+        int n = UnityEngine.Random.Range(0, a.Length + 1);
+        if (n == 1)
+        {
+            ChanceTrap();
+        }
+        if (n == 2)
+        {
+            ChanceTeleport();
+        }
+        if (n == 3)
+        {
+            ChanceStart();
+        }
+        if (n == 4)
+        {
+            ChanceShield();
+        }
+        if (n == 5)
+        {
+            ChanceMoney();
+        }
+        if (n == 6)
+        {
+            ChanceTakeMoney();
+        }
+    }
+
+    public void ChanceTrap()
+    {
+
+    }
+
+    public void ChanceTeleport()
+    {
+
+    }
+
+    public void ChanceStart()
+    {
+
+    }
+
+    public void ChanceShield()
+    {
+
+    }
+
+    public void ChanceMoney()
+    {
+
+    }
+    public void ChanceTakeMoney()
+    {
+
     }
 }

@@ -76,7 +76,7 @@ public class ConncectionManager : MonoBehaviourPunCallbacks
         print("OnConnectedToMaster");
 
         //닉네임 설정
-        PhotonNetwork.NickName = "Player" + Random.Range(1, 1000);/*inputNickName.text*/;
+        PhotonNetwork.NickName = inputNickName.text;
         //로비진입
         PhotonNetwork.JoinLobby();
     }

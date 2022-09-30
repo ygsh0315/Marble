@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Photon.Pun;
 public class WinUI : MonoBehaviour
 {
     public TextMeshProUGUI winner;
@@ -16,7 +17,7 @@ public class WinUI : MonoBehaviour
     {
         if (GameManager.instance.winner)
         {
-            winner.text = GameManager.instance.winner.name + GameManager.instance.winType;
+            winner.text = GameManager.instance.winner.GetComponent<PhotonView>().Owner.NickName +" " +GameManager.instance.winType;
 
         }
     }

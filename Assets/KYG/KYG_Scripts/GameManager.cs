@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviourPun
         //PlayerList.Add(Player2);
         //PlayerList.Add(Player3);
         //PlayerList.Add(Player4);
-        PhotonNetwork.Instantiate("Player", MapList[0].transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+        PhotonNetwork.Instantiate("Player", MapList[0].transform.position + new Vector3(0, 1.5f, 0), Quaternion.Euler(0,-135,0));
     }
     //¸Ê ¼¼ÆÃ ÇÔ¼ö
     private void MapSet()
