@@ -317,8 +317,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 7a4243a9217b6ae46bf33e8d724f9b35, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1899,6 +1899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9519ea9dcadec4a8e5823bd42995c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: {fileID: 0}
   playerMoney: {fileID: 632444410}
   totalMoney: {fileID: 1951618587}
   playerRank: {fileID: 157963926}
@@ -2175,6 +2176,7 @@ MonoBehaviour:
   currentBlock: {fileID: 0}
   LandName: {fileID: 1308044255}
   TakeOverChargeText: {fileID: 630959569}
+  takeOverCharge: 0
 --- !u!1 &126728661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3001,6 +3003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9519ea9dcadec4a8e5823bd42995c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: {fileID: 0}
   playerMoney: {fileID: 249919224}
   totalMoney: {fileID: 1090120509}
   playerRank: {fileID: 113185568}
@@ -3122,6 +3125,8 @@ MonoBehaviour:
   telePortCount: 0
   trapCount: 0
   colorCount: 0
+  a: 010000000200000003000000040000000500000006000000
+  myColor: {fileID: 0}
   state: 0
   createTime: 1
 --- !u!136 &226556182
@@ -4547,6 +4552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9519ea9dcadec4a8e5823bd42995c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: {fileID: 0}
   playerMoney: {fileID: 1107557249}
   totalMoney: {fileID: 1539395996}
   playerRank: {fileID: 680665590}
@@ -4992,6 +4998,7 @@ MonoBehaviour:
   chargeText: {fileID: 1863181041}
   player: {fileID: 0}
   currentBlock: {fileID: 0}
+  landMarkPrice: 0
 --- !u!114 &461878663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5012,7 +5019,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3fd22f7677e274f458a18dc001f40ce9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7143,6 +7150,8 @@ MonoBehaviour:
   telePortCount: 0
   trapCount: 0
   colorCount: 0
+  a: 010000000200000003000000040000000500000006000000
+  myColor: {fileID: 0}
   state: 0
   createTime: 1
 --- !u!136 &697700632
@@ -11170,6 +11179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5316e2dfc316b4caf8b6b172cf6085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerUiList: []
+  dice1Number: {fileID: 0}
+  dice2Number: {fileID: 0}
   PurchaseUI: {fileID: 523216464}
   SPurchaseUI: {fileID: 659633320}
   TakeOverUI: {fileID: 119000828}
@@ -13947,6 +13959,8 @@ MonoBehaviour:
   telePortCount: 0
   trapCount: 0
   colorCount: 0
+  a: 010000000200000003000000040000000500000006000000
+  myColor: {fileID: 0}
   state: 0
   createTime: 1
 --- !u!136 &1698953039
@@ -15502,6 +15516,7 @@ MonoBehaviour:
   turnIndex: 0
   PlayerList: []
   MapList: []
+  BlockList: []
   FestivalList: []
   SpecialBockList: []
   Line1BlockList: []
@@ -15532,6 +15547,7 @@ MonoBehaviour:
   Group8BlockList:
   - {fileID: 1787781340}
   - {fileID: 1893716170}
+  playerMat: []
 --- !u!4 &1942610885
 Transform:
   m_ObjectHideFlags: 0
@@ -16271,6 +16287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9519ea9dcadec4a8e5823bd42995c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: {fileID: 0}
   playerMoney: {fileID: 1575662901}
   totalMoney: {fileID: 1031886780}
   playerRank: {fileID: 81546020}
@@ -17462,8 +17479,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0a42c0453a8a3614ca12c7fa6e17f4d2, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -17497,37 +17514,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdb6ac01566b8b4282dc41433c60aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landMag: 1
-  landName: {fileID: 0}
-  landMagText: {fileID: 0}
-  charge: 0
-  landTallFee: 0
-  landCount: 0
-  land: 0
-  landFlagFactory: {fileID: 0}
-  landPrice: 0
-  tear1Count: 0
-  tear1: 0
-  tear1Factory: {fileID: 0}
-  tear1Price: 0
-  tear1TallFee: 0
-  tear2Count: 0
-  tear2: 0
-  tear2Factory: {fileID: 0}
-  tear2Price: 0
-  tear2TallFee: 0
-  tear3Count: 0
-  tear3: 0
-  tear3Factory: {fileID: 0}
-  tear3Price: 0
-  tear3TallFee: 0
-  landMarkCount: 0
-  landMark: 0
-  landMarkFactory: {fileID: 0}
-  landMarkPrice: 0
-  landMarkTallFee: 0
-  LandOwner: {fileID: 0}
-  takeOverCharge: 0
 --- !u!33 &15158401542412050
 MeshFilter:
   m_ObjectHideFlags: 0
