@@ -49,6 +49,8 @@ public class Player : MonoBehaviourPun
     public bool teleportUI = false;
     public bool startUI = false;
     public bool startB = false;
+    public bool shield = false;
+    public bool takeMoney = false;
     public int festivaCount = 0;
     public int telePortCount = 0;
     bool one = true;
@@ -61,7 +63,7 @@ public class Player : MonoBehaviourPun
     bool eight = true;
     public int trapCount = 0;
     public int colorCount = 0;
-    public int[] a = { 1, 2, 3, 4, 5, 6 };
+    public int[] chanceCard = { 1, 2, 3, 4, 5, 6 };
     public Material myColor;
 
     public enum PlayerState
@@ -1049,7 +1051,7 @@ public class Player : MonoBehaviourPun
     }
     public void Chance()
     {
-        int n = UnityEngine.Random.Range(0, a.Length + 1);
+        int n = UnityEngine.Random.Range(0, chanceCard.Length + 1);
         if (n == 1)
         {
             ChanceTrap();
@@ -1078,22 +1080,25 @@ public class Player : MonoBehaviourPun
 
     public void ChanceTrap()
     {
-
+        transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
+        isTraped = true;
     }
 
     public void ChanceTeleport()
     {
-
+        transform.position = GameManager.instance.MapList[24].transform.position + new Vector3(0, 1.5f, 0);
+        telePort = true;
     }
 
     public void ChanceStart()
     {
-
+        transform.position = GameManager.instance.MapList[32].transform.position + new Vector3(0, 1.5f, 0);
+        telePort = true;
     }
 
     public void ChanceShield()
     {
-
+        shield = true;
     }
 
     public void ChanceMoney()
@@ -1102,6 +1107,7 @@ public class Player : MonoBehaviourPun
     }
     public void ChanceTakeMoney()
     {
+        takeMoney = true;
 
     }
 }
