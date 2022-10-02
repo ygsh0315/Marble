@@ -161,6 +161,7 @@ MonoBehaviour:
   takeMoney: 0
   festivaCount: 0
   telePortCount: 0
+  charge: 1000
   trapCount: 0
   colorCount: 0
   chanceCard: 010000000200000003000000040000000500000006000000
