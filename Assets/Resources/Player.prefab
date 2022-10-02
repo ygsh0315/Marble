@@ -156,9 +156,14 @@ MonoBehaviour:
   trapUI: 0
   teleportUI: 0
   startUI: 0
+  chance1: 0
+  chance2: 0
+  chance3: 0
+  chance4: 0
+  chance5: 0
+  chance6: 0
   startB: 0
   shield: 0
-  takeMoney: 0
   festivaCount: 0
   telePortCount: 0
   charge: 1000

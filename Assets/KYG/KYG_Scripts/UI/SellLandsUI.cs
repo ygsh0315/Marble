@@ -16,12 +16,12 @@ public class SellLandsUI : MonoBehaviourPun
     public List<Block> selectedBlockList = new List<Block>();
     private void OnEnable()
     {
-        player = GameManager.instance.currentTurnPlayer.GetComponent<Player>();
         SelectLands();
     }
 
     private void SelectLands()
     {
+        player = GameManager.instance.currentTurnPlayer.GetComponent<Player>();
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit mouseInfo;
         if (Physics.Raycast(mouseRay, out mouseInfo))
