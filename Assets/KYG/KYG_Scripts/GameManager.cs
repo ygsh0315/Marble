@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviourPun
     {
         for (int i = 0; i < FestivalList.Count; i++)
         {
-            FestivalList[i].GetComponent<BasicBlock>().landMag *= 2;
+            FestivalList[i].GetComponent<BasicBlock>().festival = true;
         }
     }
     private void PlayerSet()

@@ -39,6 +39,20 @@ public class GameUI : MonoBehaviourPun
 
     public GameObject GameStartUI;
 
+    public GameObject Chance1UI;
+
+    public GameObject Chance2UI;
+    
+    public GameObject Chance3UI;
+
+    public GameObject Chance4UI;
+
+    public GameObject Chance5UI;
+
+    public GameObject Chance6UI;
+
+    public GameObject SellLandsUI;
+
     // Start is called before the first frame update
     void Start()
     {
