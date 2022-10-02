@@ -132,6 +132,8 @@ public class Player : MonoBehaviourPun
             GameUI.instance.StartUI.SetActive(true);
             StartUI();
         }
+
+
         //print(gameObject.name);
         //TrapCheck();
         StateMachine();
@@ -1035,7 +1037,7 @@ public class Player : MonoBehaviourPun
     public void ChanceShield()
     {
         shield = true;
-        TurnCheck();
+        //TurnCheck();
     }
 
     public void ChanceMoney()
@@ -1049,7 +1051,7 @@ public class Player : MonoBehaviourPun
             }
 
         }
-        TurnCheck();
+        //TurnCheck();
 
     }
     GameObject poorP;
@@ -1078,7 +1080,7 @@ public class Player : MonoBehaviourPun
             }
 
         }
-        TurnCheck();
+        //TurnCheck();
     }
     public void Chance1UI()
     {
@@ -1086,7 +1088,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance1UI.SetActive(false);
-            //TurnCheck();
+            TurnCheck();
         }
     }
     public void Chance2UI()
@@ -1095,7 +1097,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance2UI.SetActive(false);
-            //TurnCheck();
+            TurnCheck();
         }
     }
     public void Chance3UI()
@@ -1104,7 +1106,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance3UI.SetActive(false);
-            //TurnCheck();
+            TurnCheck();
         }
     }
     public void Chance4()
@@ -1113,7 +1115,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance4UI.SetActive(false);
-            //TurnCheck();
+            TurnCheck();
         }
     }
     public void Chance5()
@@ -1122,7 +1124,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance5UI.SetActive(false);
-            //TurnCheck();
+            TurnCheck();
         }
     }
     public void Chance6()
@@ -1131,7 +1133,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance6UI.SetActive(false);
-            //TurnCheck();
+            TurnCheck();
         }
     }
 }
