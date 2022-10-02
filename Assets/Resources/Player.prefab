@@ -157,11 +157,14 @@ MonoBehaviour:
   teleportUI: 0
   startUI: 0
   startB: 0
+  shield: 0
+  takeMoney: 0
   festivaCount: 0
   telePortCount: 0
+  charge: 1000
   trapCount: 0
   colorCount: 0
-  a: 010000000200000003000000040000000500000006000000
+  chanceCard: 010000000200000003000000040000000500000006000000
   myColor: {fileID: 0}
   state: 0
   createTime: 1
