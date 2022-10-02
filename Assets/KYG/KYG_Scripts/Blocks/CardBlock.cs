@@ -18,6 +18,7 @@ public class CardBlock : Block
     public void OnCardBlock(Transform player)
     {
         print("CardBlock");
+        player.GetComponent<Player>().Chance();
         player.GetComponent<Player>().TurnCheck();
     }
 }

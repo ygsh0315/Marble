@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviourPun
     public int turnIndex;
     public List<GameObject> PlayerList = new List<GameObject>();
     public List<GameObject> MapList = new List<GameObject>();
-    public List<Block> BlockList = new List<Block>();
+    public List<Block> BlockList = new List<Block>();  
     public List<GameObject> FestivalList = new List<GameObject>();
     public List<GameObject> SpecialBockList = new List<GameObject>();
     public List<GameObject> Line1BlockList = new List<GameObject>();
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviourPun
     public List<GameObject> Group6BlockList = new List<GameObject>();
     public List<GameObject> Group7BlockList = new List<GameObject>();
     public List<GameObject> Group8BlockList = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {

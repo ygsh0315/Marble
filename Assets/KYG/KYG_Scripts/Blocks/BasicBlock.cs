@@ -203,8 +203,15 @@ public class BasicBlock : Block
         }
         else
         {
+            if(player.GetComponent<Player>().shield == true)
+            {
+                player.GetComponent<Player>().shield = false;
+            }
+            else
+            {
             player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
             LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
+            }
             if (!landMark)
             {
                 if (player.GetComponent<Player>().money >= takeOverCharge)
