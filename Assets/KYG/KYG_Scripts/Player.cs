@@ -53,6 +53,7 @@ public class Player : MonoBehaviourPun
     public bool takeMoney = false;
     public int festivaCount = 0;
     public int telePortCount = 0;
+    public int charge = 1000;
     bool one = true;
     bool two = true;
     bool three = true;
@@ -1093,7 +1094,7 @@ public class Player : MonoBehaviourPun
     public void ChanceStart()
     {
         transform.position = GameManager.instance.MapList[32].transform.position + new Vector3(0, 1.5f, 0);
-        telePort = true;
+        startB = true;
     }
 
     public void ChanceShield()
@@ -1103,7 +1104,7 @@ public class Player : MonoBehaviourPun
 
     public void ChanceMoney()
     {
-
+        gameObject.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
     }
     public void ChanceTakeMoney()
     {
