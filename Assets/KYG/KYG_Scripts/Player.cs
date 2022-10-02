@@ -48,9 +48,14 @@ public class Player : MonoBehaviourPun
     public bool trapUI = false;
     public bool teleportUI = false;
     public bool startUI = false;
+    public bool chance1 = false;
+    public bool chance2 = false;
+    public bool chance3 = false;
+    public bool chance4 = false;
+    public bool chance5 = false;
+    public bool chance6 = false;
     public bool startB = false;
     public bool shield = false;
-    public bool takeMoney = false;
     public int festivaCount = 0;
     public int telePortCount = 0;
     public int charge = 1000;
@@ -1030,6 +1035,7 @@ public class Player : MonoBehaviourPun
     public void ChanceShield()
     {
         shield = true;
+        TurnCheck();
     }
 
     public void ChanceMoney()
@@ -1043,14 +1049,13 @@ public class Player : MonoBehaviourPun
             }
 
         }
-
+        TurnCheck();
 
     }
-    GameObject richP;
     GameObject poorP;
     public void ChanceTakeMoney()
     {
-        takeMoney = true;
+       
             
             int poor = GameManager.instance.currentTurnPlayer.GetComponent<Player>().TotalMoney;
         for (int i = 0; i < GameManager.instance.PlayerList.Count; i++)
@@ -1073,7 +1078,60 @@ public class Player : MonoBehaviourPun
             }
 
         }
-        print(takeMoney);
-
+        TurnCheck();
+    }
+    public void Chance1UI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance1UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance2UI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance2UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance3UI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance3UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance4()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance4UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance5()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance5UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance6()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance6UI.SetActive(false);
+            //TurnCheck();
+        }
     }
 }
