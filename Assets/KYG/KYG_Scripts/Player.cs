@@ -1013,26 +1013,32 @@ public class Player : MonoBehaviourPun
         int n = UnityEngine.Random.Range(5, chanceCard.Length);
         if (n == 1)
         {
+            chance1 = true;
             ChanceTrap();
         }
         if (n == 2)
         {
+            chance2 = true;
             ChanceTeleport();
         }
         if (n == 3)
         {
+            chance3 = true;
             ChanceStart();
         }
         if (n == 4)
         {
+            chance4 = true;
             ChanceShield();
         }
         if (n == 5)
         {
+            chance5 = true;
             ChanceMoney();
         }
         if (n == 6)
         {
+            chance6 = true;
             ChanceTakeMoney();
         }
     }
@@ -1118,6 +1124,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance1UI.SetActive(false);
+            chance1 = false;
             TurnCheck();
         }
     }
@@ -1127,6 +1134,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance2UI.SetActive(false);
+            chance2 = false;
             TurnCheck();
         }
     }
@@ -1136,6 +1144,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance3UI.SetActive(false);
+            chance3 = false;
             TurnCheck();
         }
     }
@@ -1145,6 +1154,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance4UI.SetActive(false);
+            chance4 = false;
             TurnCheck();
         }
     }
@@ -1154,6 +1164,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance5UI.SetActive(false);
+            chance5 = false;
             TurnCheck();
         }
     }
@@ -1163,6 +1174,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.Chance6UI.SetActive(false);
+            chance6 = false;
             TurnCheck();
         }
     }
