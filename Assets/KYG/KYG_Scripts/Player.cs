@@ -1009,8 +1009,8 @@ public class Player : MonoBehaviourPun
     }
     public void Chance()
     {
-        //int n = UnityEngine.Random.Range(0, chanceCard.Length + 1);
-        int n = UnityEngine.Random.Range(5, chanceCard.Length);
+        int n = UnityEngine.Random.Range(0, chanceCard.Length + 1);
+        //int n = UnityEngine.Random.Range(5, chanceCard.Length);
         if (n == 1)
         {
             chance1 = true;
