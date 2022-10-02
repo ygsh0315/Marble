@@ -132,6 +132,36 @@ public class Player : MonoBehaviourPun
             GameUI.instance.StartUI.SetActive(true);
             StartUI();
         }
+        if (chance1 == true)
+        {
+            GameUI.instance.Chance1UI.SetActive(true);
+            Chance1UI();
+        }
+        if (chance2 == true)
+        {
+            GameUI.instance.Chance2UI.SetActive(true);
+            Chance2UI();
+        }
+        if (chance3 == true)
+        {
+            GameUI.instance.Chance3UI.SetActive(true);
+            Chance3UI();
+        }
+        if (chance4 == true)
+        {
+            GameUI.instance.Chance4UI.SetActive(true);
+            Chance4UI();
+        }
+        if (chance5 == true)
+        {
+            GameUI.instance.Chance5UI.SetActive(true);
+            Chance5UI();
+        }
+        if (chance6 == true)
+        {
+            GameUI.instance.Chance6UI.SetActive(true);
+            Chance6UI();
+        }
 
 
         //print(gameObject.name);
@@ -1109,7 +1139,7 @@ public class Player : MonoBehaviourPun
             TurnCheck();
         }
     }
-    public void Chance4()
+    public void Chance4UI()
     {
         currentTime += Time.deltaTime;
         if (currentTime > createTime)
@@ -1118,7 +1148,7 @@ public class Player : MonoBehaviourPun
             TurnCheck();
         }
     }
-    public void Chance5()
+    public void Chance5UI()
     {
         currentTime += Time.deltaTime;
         if (currentTime > createTime)
@@ -1127,7 +1157,7 @@ public class Player : MonoBehaviourPun
             TurnCheck();
         }
     }
-    public void Chance6()
+    public void Chance6UI()
     {
         currentTime += Time.deltaTime;
         if (currentTime > createTime)
