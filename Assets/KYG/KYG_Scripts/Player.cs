@@ -48,9 +48,14 @@ public class Player : MonoBehaviourPun
     public bool trapUI = false;
     public bool teleportUI = false;
     public bool startUI = false;
+    public bool chance1 = false;
+    public bool chance2 = false;
+    public bool chance3 = false;
+    public bool chance4 = false;
+    public bool chance5 = false;
+    public bool chance6 = false;
     public bool startB = false;
     public bool shield = false;
-    public bool takeMoney = false;
     public int festivaCount = 0;
     public int telePortCount = 0;
     public int charge = 1000;
@@ -140,7 +145,7 @@ public class Player : MonoBehaviourPun
         CheckLine();
         ColorCheck();
         ColorCount();
-        
+
 
     }
 
@@ -177,7 +182,7 @@ public class Player : MonoBehaviourPun
     public void FestivalUI()
     {
         currentTime += Time.deltaTime;
-        if(currentTime > createTime)
+        if (currentTime > createTime)
         {
             GameUI.instance.FestivalUI.SetActive(false);
             TurnCheck();
@@ -262,7 +267,7 @@ public class Player : MonoBehaviourPun
                         GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival = true;
                         if (GameManager.instance.MapList[i].GetComponent<BasicBlock>().festival == true)
                         {
-                        GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag *=2;
+                            GameManager.instance.MapList[i].GetComponent<BasicBlock>().landMag *= 2;
                         }
                         else
                         {
@@ -274,7 +279,7 @@ public class Player : MonoBehaviourPun
                         GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival = true;
                         if (GameManager.instance.MapList[i].GetComponent<SpecialBlock>().festival == true)
                         {
-                        GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag *= 2;
+                            GameManager.instance.MapList[i].GetComponent<SpecialBlock>().landMag *= 2;
                         }
                         else
                         {
@@ -335,7 +340,7 @@ public class Player : MonoBehaviourPun
                 {
                     if (!ownLandList.Contains(GameManager.instance.MapList[i]))
                     {
-                       
+
                         ownLandList.Add(GameManager.instance.MapList[i]);
                         //Check(i);
 
@@ -373,113 +378,32 @@ public class Player : MonoBehaviourPun
                     if (!ownLandList.Contains(GameManager.instance.MapList[i]))
                     {
                         ownLandList.Add(GameManager.instance.MapList[i]);
-                       // Check(i);
+                        // Check(i);
                     }
                 }
                 else
                 {
                     if (ownLandList.Contains(GameManager.instance.MapList[i]))
                     {
-                        List<GameObject> [] color = { color1, color2, color3, color4 , color5, color6 , color7 , color8 };
+                        List<GameObject>[] color = { color1, color2, color3, color4, color5, color6, color7, color8 };
                         List<GameObject>[] line = { lineOne, lineTwo, lineThree, lineFour };
-                        string[] blockName = { 
+                        string[] blockName = {
                             "피시 신전" , "잠보 신전" , "심바 신전", "추어 신전",
                             "카라 신전", "파즈 신전" , "루나 신전", "디오스 신전",
                             "도란 신전", "나래 신전", "해솔 신전", "가온 신전",
                             "파르테논 신전", "아폴론 신전", "니케 신전", "헤라 신전"
                         };
 
-                        for(int j = 0; j < blockName.Length; j++)
+                        for (int j = 0; j < blockName.Length; j++)
                         {
-                            if(GameManager.instance.MapList[i].gameObject.name == blockName[j])
+                            if (GameManager.instance.MapList[i].gameObject.name == blockName[j])
                             {
                                 line[j / 4].Add(GameManager.instance.MapList[i]);
                                 color[j / 2].Add(GameManager.instance.MapList[i]);
                             }
                         }
-                       
 
 
-                        //if (GameManager.instance.MapList[i].gameObject.name == "피시 신전")
-                        //{                            
-                        //    lineOne.Add(GameManager.instance.MapList[i]);
-                        //    color1.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "잠보 신전")
-                        //{
-                        //    lineOne.Add(GameManager.instance.MapList[i]);
-                        //    color1.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "심바 신전")
-                        //{
-                        //    lineOne.Add(GameManager.instance.MapList[i]);
-                        //    color2.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "추어 신전")
-                        //{
-                        //    lineOne.Add(GameManager.instance.MapList[i]);
-                        //    color2.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "카라 신전")
-                        //{
-                        //    lineTwo.Add(GameManager.instance.MapList[i]);
-                        //    color3.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "파즈 신전")
-                        //{
-                        //    lineTwo.Add(GameManager.instance.MapList[i]);
-                        //    color3.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "루나 신전")
-                        //{
-                        //    lineTwo.Add(GameManager.instance.MapList[i]);
-                        //    color4.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "디오스 신전")
-                        //{
-                        //    lineTwo.Add(GameManager.instance.MapList[i]);
-                        //    color4.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "도란 신전")
-                        //{
-                        //    lineThree.Add(GameManager.instance.MapList[i]);
-                        //    color5.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "나래 신전")
-                        //{
-                        //    lineThree.Add(GameManager.instance.MapList[i]);
-                        //    color5.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "해솔 신전")
-                        //{
-                        //    lineThree.Add(GameManager.instance.MapList[i]);
-                        //    color6.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "가온 신전")
-                        //{
-                        //    lineThree.Add(GameManager.instance.MapList[i]);
-                        //    color6.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "파르테논 신전")
-                        //{
-                        //    lineFour.Add(GameManager.instance.MapList[i]);
-                        //    color7.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "아폴론 신전")
-                        //{
-                        //    lineFour.Add(GameManager.instance.MapList[i]);
-                        //    color7.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "니케 신전")
-                        //{
-                        //    lineFour.Add(GameManager.instance.MapList[i]);
-                        //    color8.Add(GameManager.instance.MapList[i]);
-                        //}
-                        //if (GameManager.instance.MapList[i].gameObject.name == "헤라 신전")
-                        //{
-                        //    lineFour.Add(GameManager.instance.MapList[i]);
-                        //    color8.Add(GameManager.instance.MapList[i]);
-                        //}
                         ownLandList.Remove(GameManager.instance.MapList[i]);
                     }
                 }
@@ -532,7 +456,7 @@ public class Player : MonoBehaviourPun
                     lineTwo.Remove(lineTwo[j]);
                 }
             }
-            for (int j=0; j < lineThree.Count; j++)
+            for (int j = 0; j < lineThree.Count; j++)
             {
                 if (ownLandList[i] == lineThree[j])
                 {
@@ -540,7 +464,7 @@ public class Player : MonoBehaviourPun
                     lineThree.Remove(lineThree[j]);
                 }
             }
-            for (int j=0; j< lineFour.Count; j++)
+            for (int j = 0; j < lineFour.Count; j++)
             {
                 if (ownLandList[i] == lineFour[j])
                 {
@@ -567,94 +491,94 @@ public class Player : MonoBehaviourPun
     {
         //if (GameManager.instance.currentTurnPlayer)
         //{
-            for (int i = 0; i < ownLandList.Count; i++)
+        for (int i = 0; i < ownLandList.Count; i++)
+        {
+            for (int j = 0; j < color1.Count; j++)
             {
-                for (int j = 0; j < color1.Count; j++)
+                if (ownLandList[i] == color1[j])
                 {
-                    if (ownLandList[i] == color1[j])
-                    {
-                        color1.Remove(color1[j]);
-                    }
+                    color1.Remove(color1[j]);
                 }
-                for (int j = 0; j < color2.Count; j++)
+            }
+            for (int j = 0; j < color2.Count; j++)
+            {
+                if (ownLandList[i] == color2[j])
                 {
-                    if (ownLandList[i] == color2[j])
-                    {
-                        color2.Remove(color2[j]);
-                    }
+                    color2.Remove(color2[j]);
                 }
-                for (int j = 0; j < color3.Count; j++)
+            }
+            for (int j = 0; j < color3.Count; j++)
+            {
+                if (ownLandList[i] == color3[j])
                 {
-                    if (ownLandList[i] == color3[j])
-                    {
-                        color3.Remove(color3[j]);
-                    }
+                    color3.Remove(color3[j]);
                 }
-                for (int j = 0; j < color4.Count; j++)
+            }
+            for (int j = 0; j < color4.Count; j++)
+            {
+                if (ownLandList[i] == color4[j])
                 {
-                    if (ownLandList[i] == color4[j])
-                    {
-                        color4.Remove(color4[j]);
-                    }
+                    color4.Remove(color4[j]);
                 }
-                for (int j = 0; j < color5.Count; j++)
+            }
+            for (int j = 0; j < color5.Count; j++)
+            {
+                if (ownLandList[i] == color5[j])
                 {
-                    if (ownLandList[i] == color5[j])
-                    {
-                        color5.Remove(color5[j]);
-                    }
+                    color5.Remove(color5[j]);
                 }
-                for (int j = 0; j < color6.Count; j++)
+            }
+            for (int j = 0; j < color6.Count; j++)
+            {
+                if (ownLandList[i] == color6[j])
                 {
-                    if (ownLandList[i] == color6[j])
-                    {
-                        color6.Remove(color6[j]);
-                    }
+                    color6.Remove(color6[j]);
                 }
-                for (int j = 0; j < color7.Count; j++)
+            }
+            for (int j = 0; j < color7.Count; j++)
+            {
+                if (ownLandList[i] == color7[j])
                 {
-                    if (ownLandList[i] == color7[j])
-                    {
-                        color7.Remove(color7[j]);
-                    }
+                    color7.Remove(color7[j]);
                 }
-                for (int j = 0; j < color8.Count; j++)
+            }
+            for (int j = 0; j < color8.Count; j++)
+            {
+                if (ownLandList[i] == color8[j])
                 {
-                    if (ownLandList[i] == color8[j])
-                    {
-                        color8.Remove(color8[j]);
-                    }
+                    color8.Remove(color8[j]);
                 }
+            }
             //}
         }
 
     }
-    public  void TakeOverColor()
+    public void TakeOverColor()
     {
-       for(int i = 0; i< ownLandList.Count; i++)
+        for (int i = 0; i < ownLandList.Count; i++)
         {
-            for(int j =0; j < lineOnePool.Count; j++)
+            for (int j = 0; j < lineOnePool.Count; j++)
             {
-                if(ownLandList[i] == lineOnePool[j])
+                if (ownLandList[i] == lineOnePool[j])
                 {
                     lineOne.Add(lineOnePool[j]);
-                }              
+                }
             }
-            for (int j=0; j< lineTwoPool.Count; j++)
+            for (int j = 0; j < lineTwoPool.Count; j++)
             {
                 if (ownLandList[i] == lineTwoPool[j])
                 {
                     lineTwo.Add(lineTwoPool[j]);
                 }
             }
-            for (int j=0; j< lineThreePool.Count; j++)
+            for (int j = 0; j < lineThreePool.Count; j++)
             {
                 if (ownLandList[i] == lineThreePool[j])
                 {
                     lineThree.Add(lineThreePool[j]);
                 }
             }
-            for(int j=0; j< lineFourPool.Count; j++)
+            for (int j = 0; j < lineFourPool.Count; j++)
             {
                 if (ownLandList[i] == lineFourPool[j])
                 {
@@ -876,7 +800,7 @@ public class Player : MonoBehaviourPun
         RollDiceBtn.SetActive(false);
         GameObject currentBlock = GameManager.instance.MapList[currentMapIndex];
         // currentBlock.GetComponent<Block>().OnBlock(gameObject);
-     
+
         switch (currentBlock.tag)
         {
             case "StartBlock":
@@ -977,7 +901,7 @@ public class Player : MonoBehaviourPun
         {
 
             GameObject telePortt = GameObject.Find(mouseInfo.transform.name);
-            for (int result = 0;  result< GameManager.instance.MapList.Count; result++)
+            for (int result = 0; result < GameManager.instance.MapList.Count; result++)
             {
                 if (GameManager.instance.MapList[result] == telePortt)
                 {
@@ -1015,10 +939,11 @@ public class Player : MonoBehaviourPun
     }
 
 
+
     IEnumerator IEMove(int dice1, int dice2)
     {
         int destinationIndex = dice1 + dice2;
-        
+
         for (int i = 1; i <= destinationIndex; i++)
         {
             if (currentMapIndex + i > 31)
@@ -1043,8 +968,8 @@ public class Player : MonoBehaviourPun
         getBlockInfo();
 
     }
-    
-    
+
+
     [PunRPC]
     void RpcAddMoney(int addMoney)
     {
@@ -1052,7 +977,8 @@ public class Player : MonoBehaviourPun
     }
     public void Chance()
     {
-        int n = UnityEngine.Random.Range(0, chanceCard.Length + 1);
+        //int n = UnityEngine.Random.Range(0, chanceCard.Length + 1);
+        int n = UnityEngine.Random.Range(5, chanceCard.Length);
         if (n == 1)
         {
             ChanceTrap();
@@ -1082,33 +1008,130 @@ public class Player : MonoBehaviourPun
     public void ChanceTrap()
     {
         transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
-        isTraped = true;
+        //GameObject currentBlock = GameManager.instance.MapList[8];
+        currentMapIndex = 8;
+        getBlockInfo();
+        //isTraped = true;
     }
 
     public void ChanceTeleport()
     {
         transform.position = GameManager.instance.MapList[24].transform.position + new Vector3(0, 1.5f, 0);
-        telePort = true;
+        currentMapIndex = 24;
+        //GameObject currentBlock = GameManager.instance.MapList[24];
+        getBlockInfo();
+        //telePort = true;
     }
 
     public void ChanceStart()
     {
-        transform.position = GameManager.instance.MapList[32].transform.position + new Vector3(0, 1.5f, 0);
-        startB = true;
+        transform.position = GameManager.instance.MapList[0].transform.position + new Vector3(0, 1.5f, 0);
+        currentMapIndex = 0;
+        getBlockInfo();
+
+        //startB = true;
     }
 
     public void ChanceShield()
     {
         shield = true;
+        TurnCheck();
     }
 
     public void ChanceMoney()
     {
-        gameObject.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+        for (int i = 0; i < GameManager.instance.PlayerList.Count; i++)
+        {
+            if (GameManager.instance.PlayerList[i] != gameObject)
+            {
+                GameManager.instance.PlayerList[i].GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+                gameObject.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, +charge);
+            }
+
+        }
+        TurnCheck();
+
     }
+    GameObject poorP;
     public void ChanceTakeMoney()
     {
-        takeMoney = true;
+       
+            
+            int poor = GameManager.instance.currentTurnPlayer.GetComponent<Player>().TotalMoney;
+        for (int i = 0; i < GameManager.instance.PlayerList.Count; i++)
+        {
+          
+              
+                if (poor <= GameManager.instance.PlayerList[i].GetComponent<Player>().TotalMoney)
+                {
+                    poorP = GameManager.instance.PlayerList[i];
+                }
 
+            
+        }
+        for (int i =0; i < GameManager.instance.PlayerList.Count; i++)
+        {
+            if (GameManager.instance.PlayerList[i] != poorP)
+            {
+            poorP.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, +charge);
+                GameManager.instance.PlayerList[i].GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+            }
+
+        }
+        TurnCheck();
+    }
+    public void Chance1UI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance1UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance2UI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance2UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance3UI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance3UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance4()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance4UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance5()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance5UI.SetActive(false);
+            //TurnCheck();
+        }
+    }
+    public void Chance6()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.Chance6UI.SetActive(false);
+            //TurnCheck();
+        }
     }
 }
