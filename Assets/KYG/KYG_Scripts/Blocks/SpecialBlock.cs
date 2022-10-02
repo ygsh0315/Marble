@@ -15,8 +15,7 @@ public class SpecialBlock : Block
     public GameObject tourThree;
     public GameObject tourFour;
     List<GameObject> tourBlocks = new List<GameObject>();
-    //∂• ¡÷¿Œ
-    public GameObject LandOwner;
+    
     GameObject tourO;
     GameObject tourT;
     GameObject tourTh;

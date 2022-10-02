@@ -11,8 +11,6 @@ public class BasicBlock : Block
     public TextMeshProUGUI landMagText;
 
     public int landMag = 1;
-    //땅 주인
-    public GameObject LandOwner;
     
     //통행료
     public int charge = 0;
@@ -99,6 +97,7 @@ public class BasicBlock : Block
     Renderer landM;
     public bool festival = false;
     public int festivalCount = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -209,8 +208,16 @@ public class BasicBlock : Block
             }
             else
             {
-            player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
-            LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
+                if (player.GetComponent<Player>().money >= charge || player.GetComponent<Player>().TotalMoney < charge)
+                {
+                    player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+                    LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
+                }else if(player.GetComponent<Player>().TotalMoney>= charge)
+                {
+                    GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().totalMoney = player.GetComponent<Player>().TotalMoney;
+                    GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().charge = charge;
+                    GameUI.instance.SellLandsUI.SetActive(true);
+                }
             }
             if (!landMark)
             {

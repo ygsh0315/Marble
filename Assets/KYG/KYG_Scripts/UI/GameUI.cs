@@ -39,6 +39,22 @@ public class GameUI : MonoBehaviourPun
 
     public GameObject GameStartUI;
 
+<<<<<<< HEAD
+    public GameObject SellLandsUI;
+=======
+    public GameObject Chance1UI;
+
+    public GameObject Chance2UI;
+    
+    public GameObject Chance3UI;
+
+    public GameObject Chance4UI;
+
+    public GameObject Chance5UI;
+
+    public GameObject Chance6UI;
+>>>>>>> 2af167f6a94332bafa48221960f71c3f591caeba
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +63,7 @@ public class GameUI : MonoBehaviourPun
         LandMarkUI.SetActive(false);
         //TrapBlockUI.SetActive(false);
         WinUI.SetActive(false);
+        SellLandsUI.SetActive(false);
     }
 
     // Update is called once per frame
