@@ -27486,7 +27486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTurnPlayer: {fileID: 0}
-  cDice: 1
+  cDice: 0
   cDice1: 0
   cDice2: 5
   startMoney: 2000000

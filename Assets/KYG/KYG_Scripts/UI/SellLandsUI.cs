@@ -26,9 +26,19 @@ public class SellLandsUI : MonoBehaviourPun
         {
             SelectLands();
         }
+        if (charge - player.money - selectedPrice > 0)
+        {
+            SellBtn.interactable = false;
+        }
+        else
+        {
+            SellBtn.interactable = true;
+        }
     }
     public void SelectLands()
     {
+        GameUI.instance.dice1Number.SetActive(false);
+        GameUI.instance.dice2Number.SetActive(false);
         player = GameManager.instance.currentTurnPlayer.GetComponent<Player>();
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit mouseInfo;
@@ -99,13 +109,16 @@ public class SellLandsUI : MonoBehaviourPun
     {
         for(int i = 0; i<player.ownLandList.Count; i++)
         {
-            if (overMoney < 0)
+            if (charge - player.money - selectedPrice > 0)
             {
                 SelectedBlock = player.ownLandList[i].GetComponent<Block>();
-                SelectedBlock.isSelected = true;
-                SelectedBlock.OutLine.SetActive(true);
-                selectedBlockList.Add(SelectedBlock);
-                selectedPrice += SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
+                if (!SelectedBlock.isSelected)
+                {
+                    SelectedBlock.isSelected = true;
+                    SelectedBlock.OutLine.SetActive(true);
+                    selectedBlockList.Add(SelectedBlock);
+                    selectedPrice += SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
+                }
                 SetText();
             }
             else
@@ -116,14 +129,8 @@ public class SellLandsUI : MonoBehaviourPun
     }
     public void OnSellBtn()
     {
-        if(charge - player.money - selectedPrice>0)
-        {
-            SellBtn.interactable = false;
-        }
-        else
-        {
-            SellBtn.interactable = true;
-        }
+        GameUI.instance.dice1Number.SetActive(true);
+        GameUI.instance.dice2Number.SetActive(true);
         player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, selectedPrice);
         player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge); 
         GameManager.instance.MapList[player.currentMapIndex].GetComponent<Block>().LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
