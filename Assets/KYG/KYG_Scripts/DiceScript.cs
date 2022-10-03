@@ -9,7 +9,8 @@ public class DiceScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();   
+        rb = GetComponent<Rigidbody>();
+        transform.rotation = Quaternion.identity;
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class DiceScript : MonoBehaviour
         {
             float dirX = 50;
             float dirY = 300;
-            float dirZ = 250;
+            float dirZ = 50;
             transform.position = new Vector3(11, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
