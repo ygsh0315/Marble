@@ -187,7 +187,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.TeleportUI.SetActive(false);
-            TurnCheck();
+            //TurnCheck();
         }
     }
     public void StartUI()
@@ -196,7 +196,7 @@ public class Player : MonoBehaviourPun
         if (currentTime > createTime)
         {
             GameUI.instance.StartUI.SetActive(false);
-            TurnCheck();
+            //TurnCheck();
         }
     }
 
@@ -951,6 +951,7 @@ public class Player : MonoBehaviourPun
                 telePort = false;
             }
         }
+        
     }
 
     IEnumerator IETeleport(int result)
@@ -1009,7 +1010,8 @@ public class Player : MonoBehaviourPun
     }
     public void Chance()
     {
-        int n = UnityEngine.Random.Range(0, chanceCard.Length + 1);
+        int n = UnityEngine.Random.Range(2, 3);
+        print(n);
         //int n = UnityEngine.Random.Range(5, chanceCard.Length);
         if (n == 1)
         {
@@ -1045,6 +1047,7 @@ public class Player : MonoBehaviourPun
 
     public void ChanceTrap()
     {
+        print("ChanceTrap");
         transform.position = GameManager.instance.MapList[8].transform.position + new Vector3(0, 1.5f, 0);
         //GameObject currentBlock = GameManager.instance.MapList[8];
         currentMapIndex = 8;
@@ -1054,6 +1057,7 @@ public class Player : MonoBehaviourPun
 
     public void ChanceTeleport()
     {
+        print("ChanceTeleport");
         transform.position = GameManager.instance.MapList[24].transform.position + new Vector3(0, 1.5f, 0);
         currentMapIndex = 24;
         //GameObject currentBlock = GameManager.instance.MapList[24];
@@ -1063,6 +1067,7 @@ public class Player : MonoBehaviourPun
 
     public void ChanceStart()
     {
+        print("ChanceStart");
         transform.position = GameManager.instance.MapList[0].transform.position + new Vector3(0, 1.5f, 0);
         currentMapIndex = 0;
         getBlockInfo();
@@ -1072,12 +1077,14 @@ public class Player : MonoBehaviourPun
 
     public void ChanceShield()
     {
+        print("ChanceShield");
         shield = true;
         //TurnCheck();
     }
 
     public void ChanceMoney()
     {
+        print("ChanceMoney");
         for (int i = 0; i < GameManager.instance.PlayerList.Count; i++)
         {
             if (GameManager.instance.PlayerList[i] != gameObject)
@@ -1093,9 +1100,9 @@ public class Player : MonoBehaviourPun
     GameObject poorP;
     public void ChanceTakeMoney()
     {
-       
-            
-            int poor = GameManager.instance.currentTurnPlayer.GetComponent<Player>().TotalMoney;
+
+        print("ChanceTakeMoney");
+        int poor = GameManager.instance.currentTurnPlayer.GetComponent<Player>().TotalMoney;
         for (int i = 0; i < GameManager.instance.PlayerList.Count; i++)
         {
           
@@ -1125,7 +1132,7 @@ public class Player : MonoBehaviourPun
         {
             GameUI.instance.Chance1UI.SetActive(false);
             chance1 = false;
-            TurnCheck();
+            //TurnCheck();
         }
     }
     public void Chance2UI()
@@ -1135,7 +1142,7 @@ public class Player : MonoBehaviourPun
         {
             GameUI.instance.Chance2UI.SetActive(false);
             chance2 = false;
-            TurnCheck();
+            //TurnCheck();
         }
     }
     public void Chance3UI()
@@ -1145,7 +1152,7 @@ public class Player : MonoBehaviourPun
         {
             GameUI.instance.Chance3UI.SetActive(false);
             chance3 = false;
-            TurnCheck();
+            //TurnCheck();
         }
     }
     public void Chance4UI()

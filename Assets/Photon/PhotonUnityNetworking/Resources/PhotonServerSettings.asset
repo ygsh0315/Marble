@@ -47,6 +47,7 @@ MonoBehaviour:
   - RpcOnTakeOverBtn
   - RpcOnPurchaseBtn
   - RPCOnSellBtn
+  - RPCModelPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
