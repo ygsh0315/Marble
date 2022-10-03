@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class SPurchaseUI : MonoBehaviour
+using Photon.Pun;
+public class SPurchaseUI : MonoBehaviourPun
 {
     public TextMeshProUGUI LandName;
     public TextMeshProUGUI chargeText;
@@ -66,13 +67,22 @@ public class SPurchaseUI : MonoBehaviour
 
     public void OnPurchaseBtn()
     {
-        currentBlock.GetComponent<SpecialBlock>().LandOwner = player;
-        
-        player.GetComponent<Player>().money -= charge;
-        gameObject.SetActive(false);
+        photonView.RPC("RPCOnPurchaseBtn", RpcTarget.All,
+            player.GetComponent<PhotonView>().ViewID,
+            charge,
+            currentBlock.GetComponent<Block>().blockID);
         player.GetComponent<Player>().TurnCheck();
+        gameObject.SetActive(false);
     }
+    [PunRPC]
+    public void RPCOnPurchaseBtn(int playerViewId, int charge, int blockId)
+    {
+        GameObject p = GameManager.instance.GetPlayer(playerViewId);
+        p.GetComponent<Player>().money -= charge;
 
+        SpecialBlock block = (SpecialBlock)GameManager.instance.GetBlock(blockId);
+        block.onPurchase(p);
+    }
     public void OnCancelBtn()
     {
         gameObject.SetActive(false);

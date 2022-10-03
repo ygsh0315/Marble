@@ -687,6 +687,10 @@ public class Player : MonoBehaviourPun
                     ownLandList[i].GetComponent<BasicBlock>().landMarkCount = 0;
                     ownLandList[i].GetComponent<BasicBlock>().landMarkFactory.SetActive(false);
                 }
+                if (ownLandList[i].GetComponent<SpecialBlock>())
+                {
+                    ownLandList[i].GetComponent<SpecialBlock>().tourS.SetActive(false);
+                }
             }
             GameManager.instance.turnIndex--;
             bankrupt = true;
@@ -706,6 +710,10 @@ public class Player : MonoBehaviourPun
             {
                 landPrice += ownLandList[i].GetComponent<BasicBlock>().totalLandPrice/2;
 
+            }
+            if (ownLandList[i].GetComponent<SpecialBlock>())
+            {
+                landPrice += ownLandList[i].GetComponent<SpecialBlock>().landPrice / 2;
             }
 
         }
