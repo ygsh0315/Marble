@@ -709,19 +709,19 @@ public class Player : MonoBehaviourPun
             bfive = false;
             five = true;
         }
-        if (color1.Count != 0 && bsix == true)
+        if (color6.Count != 0 && bsix == true)
         {
             colorCount--;
             bsix = false;
             six = true;
         }
-        if (color1.Count != 0 && bseven == true)
+        if (color7.Count != 0 && bseven == true)
         {
             colorCount--;
             bseven = false;
             seven = true;
         }
-        if (color1.Count != 0 && beight == true)
+        if (color8.Count != 0 && beight == true)
         {
             colorCount--;
             beight = false;
