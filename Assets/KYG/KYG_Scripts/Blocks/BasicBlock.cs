@@ -222,6 +222,7 @@ public class BasicBlock : Block
                     //GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().SelectLands();
                     GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().UIOn = true;
                     GameUI.instance.SellLandsUI.SetActive(true);
+                    GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().lackMoney.text = (-(charge-player.GetComponent<Player>().money)).ToString();
                 }
                 if (!landMark && !GameUI.instance.SellLandsUI.activeSelf)
                 {
@@ -278,6 +279,10 @@ public class BasicBlock : Block
         landMarkFactory.SetActive(true);
         landMarkCount = 1;
         landMark = true;
+    }
+    public void OnSellBtn()
+    {
+
     }
 
     public bool HasMoney(int type, Player player)

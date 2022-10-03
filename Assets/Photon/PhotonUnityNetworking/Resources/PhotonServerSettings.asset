@@ -46,6 +46,7 @@ MonoBehaviour:
   - RpcAddMoney
   - RpcOnTakeOverBtn
   - RpcOnPurchaseBtn
+  - RPCOnSellBtn
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
