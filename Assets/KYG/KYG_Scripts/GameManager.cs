@@ -30,9 +30,10 @@ public class GameManager : MonoBehaviourPun
     public GameObject Map;
     public int mapCount;
     public int turnIndex;
+    public List<string> PlayerS = new List<string>();
     public List<GameObject> PlayerList = new List<GameObject>();
     public List<GameObject> MapList = new List<GameObject>();
-    public List<Block> BlockList = new List<Block>();  
+    public List<Block> BlockList = new List<Block>();
     public List<GameObject> FestivalList = new List<GameObject>();
     public List<GameObject> SpecialBockList = new List<GameObject>();
     public List<GameObject> Line1BlockList = new List<GameObject>();
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviourPun
     void Update()
     {
         TrapCheck();
-        
+
         Winner();
         //turnCalculate();
         //ChangeCurrentTurnPlayer(turnIndex);
@@ -81,7 +82,12 @@ public class GameManager : MonoBehaviourPun
         //PlayerList.Add(Player2);
         //PlayerList.Add(Player3);
         //PlayerList.Add(Player4);
-        PhotonNetwork.Instantiate("Player", MapList[0].transform.position + new Vector3(0, 1.5f, 0), Quaternion.Euler(0,-135,0));
+    
+                PhotonNetwork.Instantiate("Player", MapList[0].transform.position + new Vector3(0, 1.5f, 0), Quaternion.Euler(0, -135, 0));
+      
+
+
+
     }
     //맵 세팅 함수
     private void MapSet()
@@ -103,8 +109,8 @@ public class GameManager : MonoBehaviourPun
                 SpecialBockList.Add(MapList[i]);
             }
 
-            Block block = MapList[i].GetComponent<Block>(); 
-           
+            Block block = MapList[i].GetComponent<Block>();
+
             block.blockID = i;
             BlockList.Add(block);
 
@@ -231,7 +237,7 @@ public class GameManager : MonoBehaviourPun
         {
             turnIndex = PlayerList.Count - 1;
         }
-        
+
     }
     public void ChangeCurrentTurnPlayer()
     {
@@ -264,7 +270,7 @@ public class GameManager : MonoBehaviourPun
     {
         if (currentTurnPlayer)
         {
-           // print(currentTurnPlayer);
+            // print(currentTurnPlayer);
             //if (currentTurnPlayer.GetComponent<Player>().isTraped == true)
             //{
             //    currentTurnPlayer.GetComponent<Player>().state = Player.PlayerState.End;
@@ -281,10 +287,30 @@ public class GameManager : MonoBehaviourPun
         PlayerList.Sort(SortByViewID);
 
         //자기색 셋팅
-        for(int i = 0; i < PlayerList.Count; i++)
+        for (int i = 0; i < PlayerList.Count; i++)
         {
             PlayerList[i].GetComponent<Player>().myColor = playerMat[i];
+           
             GameUI.instance.PlayerUiList[i].GetComponent<PlayerUI>().player = PlayerList[i];
+     
+        }
+        ModelPlayer();
+    }
+    public void ModelPlayer()
+    {
+        photonView.RPC("RPCModelPlayer", RpcTarget.All);
+    }
+    [PunRPC]
+    public void RPCModelPlayer()
+    {
+        for (int i = 0; i < PlayerList.Count; i++)
+        {
+           
+            GameUI.instance.PlayerUiList[i].GetComponent<PlayerUI>().player = PlayerList[i];
+
+            GameObject model = PlayerList[i].transform.GetChild(i).gameObject;
+            model.SetActive(false);
+
         }
     }
 
@@ -307,9 +333,9 @@ public class GameManager : MonoBehaviourPun
 
     public Block GetBlock(int blockId)
     {
-        for(int i = 0; i < BlockList.Count; i++)
+        for (int i = 0; i < BlockList.Count; i++)
         {
-            if(BlockList[i].blockID == blockId)
+            if (BlockList[i].blockID == blockId)
             {
                 return BlockList[i];
             }
