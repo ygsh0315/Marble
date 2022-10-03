@@ -67,6 +67,15 @@ public class Player : MonoBehaviourPun
     bool six = true;
     bool seven = true;
     bool eight = true;
+    bool bone = true;
+    bool btwo = true;
+    bool bthree = true;
+    bool bfour = true;
+    bool bfive = true;
+    bool bsix = true;
+    bool bseven = true;
+    bool beight = true;
+
     public int trapCount = 0;
     public int colorCount = 0;
     public int[] chanceCard = { 1, 2, 3, 4, 5, 6 };
@@ -626,42 +635,99 @@ public class Player : MonoBehaviourPun
         {
             colorCount++;
             one = false;
+            bone = true;
         }
         if (color2.Count == 0 && two == true)
         {
             colorCount++;
             two = false;
+            btwo = true;
         }
         if (color3.Count == 0 && three == true)
         {
             colorCount++;
             three = false;
+            bthree = true;
         }
         if (color4.Count == 0 && four == true)
         {
             colorCount++;
             four = false;
+            bfour = true;
         }
         if (color5.Count == 0 && five == true)
         {
             colorCount++;
             five = false;
+            bfive = true;
         }
         if (color6.Count == 0 && six == true)
         {
             colorCount++;
             six = false;
+            bsix = true;
         }
         if (color7.Count == 0 && seven == true)
         {
             colorCount++;
             seven = false;
+            bseven = true;
         }
         if (color8.Count == 0 && eight == true)
         {
             colorCount++;
             eight = false;
+            beight = true;
         }
+        if (color1.Count !=0 && bone == true)
+        {
+            colorCount--;
+            bone = false;
+            one = true;
+        }
+        if (color2.Count != 0 && btwo == true)
+        {
+            colorCount--;
+            btwo = false;
+            two = true;
+        }
+        if (color3.Count != 0 && bthree == true)
+        {
+            colorCount--;
+            bthree = false;
+            three = true;
+        }
+        if (color4.Count != 0 && bfour == true)
+        {
+            colorCount--;
+            bfour = false;
+            four = true;
+        }
+        if (color5.Count != 0 && bfive == true)
+        {
+            colorCount--;
+            bfive = false;
+            five = true;
+        }
+        if (color1.Count != 0 && bsix == true)
+        {
+            colorCount--;
+            bsix = false;
+            six = true;
+        }
+        if (color1.Count != 0 && bseven == true)
+        {
+            colorCount--;
+            bseven = false;
+            seven = true;
+        }
+        if (color1.Count != 0 && beight == true)
+        {
+            colorCount--;
+            beight = false;
+            eight = true;
+        }
+
 
 
     }
