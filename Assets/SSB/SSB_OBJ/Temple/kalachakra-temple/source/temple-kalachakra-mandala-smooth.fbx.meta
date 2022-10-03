@@ -3,7 +3,17 @@ guid: 064af41c2d2ecd14bb2000b3ccc63d1b
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #53
+    second: {fileID: 2100000, guid: 0f47a5db90cfcda419a7ee25afe10d2a, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mandala
+    second: {fileID: 2800000, guid: a5c55a9c2ac49c44f99290bc3cb4dd50, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
