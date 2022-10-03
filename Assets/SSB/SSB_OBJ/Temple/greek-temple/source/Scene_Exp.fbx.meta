@@ -3,7 +3,22 @@ guid: c8ad63b5acff55648936195fc76ff624
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BasesTex
+    second: {fileID: 2100000, guid: 07d176f666ce01540b35ce0ad093730d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plants_Base
+    second: {fileID: 2100000, guid: e4d5b5f79870df54380f53aadd10c07a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone_Tex
+    second: {fileID: 2100000, guid: 55fdde90eeffaf04dbbc41e31019c01d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

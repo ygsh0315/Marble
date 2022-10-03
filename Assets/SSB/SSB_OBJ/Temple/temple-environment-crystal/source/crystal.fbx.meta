@@ -3,7 +3,27 @@ guid: 209b339da973b4942a462970966ddfe4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_bricktile
+    second: {fileID: 2100000, guid: bfb8d54302aac4f4ba2244c0b0203826, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_crystal
+    second: {fileID: 2100000, guid: 861ee48d3e47b134fb13938c84f8135d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_crystalbase
+    second: {fileID: 2100000, guid: 2d569624dd7eca84daa28b5b95f0789b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_trimsheet
+    second: {fileID: 2100000, guid: 3cf6aeb77edb2354f9452570e101f5e5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
