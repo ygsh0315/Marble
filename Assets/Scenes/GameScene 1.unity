@@ -27323,6 +27323,11 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d405cb45f3f34634b9f946850de54a80, type: 2}
   - {fileID: 2100000, guid: 110e5c6a21ba4014c8374843aa35ef85, type: 2}
   - {fileID: 2100000, guid: 7f8d6e595ee099a4b9d66c1aee6c231a, type: 2}
+  playerModel:
+  - {fileID: 919132149155446097, guid: ba6e0459773dae74aa0dd2bc403dee24, type: 3}
+  - {fileID: 919132149155446097, guid: e0f0be81e78124a4f85e6c4d8f52ca08, type: 3}
+  - {fileID: 919132149155446097, guid: 72051db8c9a754f48aefa93bdac4f784, type: 3}
+  - {fileID: 919132149155446097, guid: c1ca2684ba6afdd4eb81b985247aea39, type: 3}
 --- !u!4 &1942610885
 Transform:
   m_ObjectHideFlags: 0

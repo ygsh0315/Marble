@@ -78,16 +78,7 @@ public class GameManager : MonoBehaviourPun
     }
     private void PlayerSet()
     {
-        //PlayerList.Add(Player1);
-        //PlayerList.Add(Player2);
-        //PlayerList.Add(Player3);
-        //PlayerList.Add(Player4);
-    
-                PhotonNetwork.Instantiate("Player", MapList[0].transform.position + new Vector3(0, 1.5f, 0), Quaternion.Euler(0, -135, 0));
-      
-
-
-
+        PhotonNetwork.Instantiate("Player", MapList[0].transform.position + new Vector3(0, 1.5f, 0), Quaternion.Euler(0, -135, 0));
     }
     //¸Ê ¼¼ÆÃ ÇÔ¼ö
     private void MapSet()
@@ -279,6 +270,7 @@ public class GameManager : MonoBehaviourPun
     }
 
     public Material[] playerMat;
+    public GameObject[] playerModel;
     public void AddPlayer(GameObject player)
     {
         PlayerList.Add(player);
@@ -290,29 +282,36 @@ public class GameManager : MonoBehaviourPun
         for (int i = 0; i < PlayerList.Count; i++)
         {
             PlayerList[i].GetComponent<Player>().myColor = playerMat[i];
-           
+            GameObject model = PlayerList[i].transform.GetChild(i).gameObject;
+            model.SetActive(true);
             GameUI.instance.PlayerUiList[i].GetComponent<PlayerUI>().player = PlayerList[i];
      
         }
-        ModelPlayer();
+        //ModelPlayer();
     }
-    public void ModelPlayer()
-    {
-        photonView.RPC("RPCModelPlayer", RpcTarget.All);
-    }
-    [PunRPC]
-    public void RPCModelPlayer()
-    {
-        for (int i = 0; i < PlayerList.Count; i++)
-        {
-           
-            GameUI.instance.PlayerUiList[i].GetComponent<PlayerUI>().player = PlayerList[i];
+    //public void ModelPlayer()
+    //{
+    //    for(int i = 0; i<PlayerList.Count; i++)
+    //    {
+    //        photonView.RPC("RPCModelPlayer", RpcTarget.All,
+    //        PlayerList[i].GetComponent<PhotonView>().ViewID);
 
-            GameObject model = PlayerList[i].transform.GetChild(i).gameObject;
-            model.SetActive(false);
-
-        }
-    }
+    //    }
+    //}
+    //[PunRPC]
+    //public void RPCModelPlayer(int playerViewId)
+    //{
+    //    //GameObject model = PlayerList[i].transform.GetChild(i).gameObject;
+    //    //model.SetActive(true);
+    //    GameObject p = GetPlayer(playerViewId);
+    //    for(int i = 0; i < PlayerList.Count; i++)
+    //    {
+    //        if(PlayerList[i].GetComponent<PhotonView>().ViewID == p.GetComponent<PhotonView>().ViewID)
+    //        {
+    //            p.transform.GetChild(i).gameObject.SetActive(true);
+    //        }
+    //    }
+    //}
 
     int SortByViewID(GameObject g1, GameObject g2)
     {

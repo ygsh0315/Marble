@@ -71,7 +71,7 @@ public class Player : MonoBehaviourPun
     public int colorCount = 0;
     public int[] chanceCard = { 1, 2, 3, 4, 5, 6 };
     public Material myColor;
-
+    public GameObject model;
     public enum PlayerState
     {
         Idle,

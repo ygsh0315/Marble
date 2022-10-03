@@ -174,6 +174,7 @@ MonoBehaviour:
   colorCount: 0
   chanceCard: 010000000200000003000000040000000500000006000000
   myColor: {fileID: 0}
+  model: {fileID: 0}
   state: 0
   createTime: 1
 --- !u!114 &-5914983488293862166
@@ -1603,6 +1604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Minion fbx
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e0f0be81e78124a4f85e6c4d8f52ca08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: e0f0be81e78124a4f85e6c4d8f52ca08, type: 3}
       propertyPath: m_Controller
       value: 
@@ -1830,6 +1835,10 @@ PrefabInstance:
       value: DancingBoy
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ba6e0459773dae74aa0dd2bc403dee24, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba6e0459773dae74aa0dd2bc403dee24, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -2015,6 +2024,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Uriel A Plotexia
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 72051db8c9a754f48aefa93bdac4f784, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72051db8c9a754f48aefa93bdac4f784, type: 3}
 --- !u!4 &5359676635939618499 stripped
@@ -2092,6 +2105,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c1ca2684ba6afdd4eb81b985247aea39, type: 3}
       propertyPath: m_Name
       value: WITHfangs@T-Pose
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c1ca2684ba6afdd4eb81b985247aea39, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2106145266610383287, guid: c1ca2684ba6afdd4eb81b985247aea39, type: 3}
       propertyPath: m_Materials.Array.data[0]
