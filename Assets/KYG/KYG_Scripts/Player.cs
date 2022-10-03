@@ -961,7 +961,7 @@ public class Player : MonoBehaviourPun
         {
             if (currentMapIndex + i > 31)
             {
-                money += salary;
+                gameObject.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, +salary);
                 currentMapIndex -= 32;
             }
             transform.position = GameManager.instance.MapList[currentMapIndex + i].transform.position + new Vector3(0, 1.5f, 0);

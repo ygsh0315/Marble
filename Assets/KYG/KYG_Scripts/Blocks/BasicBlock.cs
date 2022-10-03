@@ -18,7 +18,7 @@ public class BasicBlock : Block
     //인수 비용
     public int takeOverCharge = 0;
 
-
+    public int totalLandPrice;
     #region land
 
     public int landCount = 0;
@@ -137,6 +137,9 @@ public class BasicBlock : Block
         charge = (landTallFee * landCount + tear1TallFee * tear1Count + tear2TallFee * tear2Count + tear3TallFee * tear3Count + landMarkTallFee * landMarkCount) * landMag;
 
         takeOverCharge = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count + landMarkPrice * landMarkCount) * 2;
+
+        totalLandPrice = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count + landMarkPrice * landMarkCount);
+
     }
     
 
@@ -216,23 +219,25 @@ public class BasicBlock : Block
                 {
                     GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().totalMoney = player.GetComponent<Player>().TotalMoney;
                     GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().charge = charge;
+                    //GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().SelectLands();
+                    GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().UIOn = true;
                     GameUI.instance.SellLandsUI.SetActive(true);
                 }
-            }
-            if (!landMark)
-            {
-                if (player.GetComponent<Player>().money >= takeOverCharge)
+                if (!landMark && !GameUI.instance.SellLandsUI.activeSelf)
                 {
-                    GameUI.instance.TakeOver(gameObject, player);
+                    if (player.GetComponent<Player>().money >= takeOverCharge)
+                    {
+                        GameUI.instance.TakeOver(gameObject, player);
+                    }
+                    else
+                    {
+                        player.GetComponent<Player>().TurnCheck();
+                    }
                 }
-                else
-                {
-                    player.GetComponent<Player>().TurnCheck();
-                }
-            }
-            else
-            {
-                player.GetComponent<Player>().TurnCheck();
+                //else
+                //{
+                //    player.GetComponent<Player>().TurnCheck();
+                //}
             }
         }
     }
