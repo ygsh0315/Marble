@@ -181,7 +181,7 @@ public class PurchaseUI : MonoBehaviourPun
             tear1Tog.isOn,
             tear2Tog.isOn, 
             tear3Tog.isOn);
-
+        player.GetComponent<Player>().startB = false;
         player.GetComponent<Player>().TurnCheck();
         gameObject.SetActive(false);
 
@@ -199,6 +199,7 @@ public class PurchaseUI : MonoBehaviourPun
     public void OnCancelBtn()
     {
         gameObject.SetActive(false);
+        player.GetComponent<Player>().startB = false;
         player.GetComponent<Player>().TurnCheck();// = false;
         //player.GetComponent<Player>().state = Player.PlayerState.End;
     }
