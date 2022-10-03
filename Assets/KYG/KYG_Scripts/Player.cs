@@ -257,24 +257,32 @@ public class Player : MonoBehaviourPun
             {
                 print("가리키는 대상 없음");
             }
-            if (Input.GetButtonDown("Fire1"))
+            if (ownLandList == null)
             {
-                if (mouseInfo.transform)
+                return;
+            }
+            else
+            {
+                if (Input.GetButtonDown("Fire1"))
                 {
-
-                    GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
-                }
-                for (int i = 0; i < ownLandList.Count; i++)
-                {
-                    if (ownLandList[i].gameObject.name == mouseInfo.transform.name)
+                    if (mouseInfo.transform)
                     {
-                        if (ownLandList[i].GetComponent<BasicBlock>())
-                        {
-                            ownLandList[i].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
-                            startB = false;
-                        }
 
+                        GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
                     }
+                    for (int i = 0; i < ownLandList.Count; i++)
+                    {
+                        if (ownLandList[i].gameObject.name == mouseInfo.transform.name)
+                        {
+                            if (ownLandList[i].GetComponent<BasicBlock>())
+                            {
+                                ownLandList[i].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
+                                startB = false;
+                            }
+
+                        }
+                    }
+
                 }
 
             }
@@ -679,7 +687,7 @@ public class Player : MonoBehaviourPun
             eight = false;
             beight = true;
         }
-        if (color1.Count !=0 && bone == false)
+        if (color1.Count != 0 && bone == false)
         {
             colorCount--;
             bone = true;
@@ -775,7 +783,7 @@ public class Player : MonoBehaviourPun
         {
             if (ownLandList[i].GetComponent<BasicBlock>())
             {
-                landPrice += ownLandList[i].GetComponent<BasicBlock>().totalLandPrice/2;
+                landPrice += ownLandList[i].GetComponent<BasicBlock>().totalLandPrice / 2;
 
             }
             if (ownLandList[i].GetComponent<SpecialBlock>())
@@ -1026,7 +1034,7 @@ public class Player : MonoBehaviourPun
                 telePort = false;
             }
         }
-        
+
     }
 
     IEnumerator IETeleport(int result)
@@ -1180,20 +1188,20 @@ public class Player : MonoBehaviourPun
         int poor = GameManager.instance.currentTurnPlayer.GetComponent<Player>().TotalMoney;
         for (int i = 0; i < GameManager.instance.PlayerList.Count; i++)
         {
-          
-              
-                if (poor <= GameManager.instance.PlayerList[i].GetComponent<Player>().TotalMoney)
-                {
-                    poorP = GameManager.instance.PlayerList[i];
-                }
 
-            
+
+            if (poor <= GameManager.instance.PlayerList[i].GetComponent<Player>().TotalMoney)
+            {
+                poorP = GameManager.instance.PlayerList[i];
+            }
+
+
         }
-        for (int i =0; i < GameManager.instance.PlayerList.Count; i++)
+        for (int i = 0; i < GameManager.instance.PlayerList.Count; i++)
         {
             if (GameManager.instance.PlayerList[i] != poorP)
             {
-            poorP.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, +charge);
+                poorP.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, +charge);
                 GameManager.instance.PlayerList[i].GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
             }
 
