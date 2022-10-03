@@ -226,17 +226,17 @@ MonoBehaviour:
   landTallFee: 0
   tear1Count: 0
   tear1: 0
-  tear1Factory: {fileID: 4059946881027662610}
+  tear1Factory: {fileID: 650951571636479613}
   tear1Price: 0
   tear1TallFee: 0
   tear2Count: 0
   tear2: 0
-  tear2Factory: {fileID: 5559947988697076338}
+  tear2Factory: {fileID: 2094853267684236965}
   tear2Price: 0
   tear2TallFee: 0
   tear3Count: 0
   tear3: 0
-  tear3Factory: {fileID: 5398754825220818979}
+  tear3Factory: {fileID: 8208844580695170370}
   tear3Price: 0
   tear3TallFee: 0
   landMarkCount: 0
