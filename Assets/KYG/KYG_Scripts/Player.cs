@@ -262,6 +262,7 @@ public class Player : MonoBehaviourPun
                         if (ownLandList[i].GetComponent<BasicBlock>())
                         {
                             ownLandList[i].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
+                            startB = false;
                         }
 
                     }
