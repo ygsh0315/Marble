@@ -53,10 +53,14 @@ public class SpecialBlock : Block
     public int festivalCount = 0;
 
 
-
+    public Material[] materials;
+    Renderer col;
+    public GameObject tourS;
     // Start is called before the first frame update
     void Start()
     {
+        materials = Resources.LoadAll<Material>("Color");
+        col = tourS.GetComponent<MeshRenderer>();
         landName.text = gameObject.name;
         //landPriceText.text = (landPrice/10000).ToString() + " ¸¸";
         tourBlocks.Add(tourOne);
@@ -78,6 +82,7 @@ public class SpecialBlock : Block
     // Update is called once per frame
     void Update()
     {
+        ColorCheck();
         FestivalCount();
         if (landMag >= 2)
         {
@@ -102,6 +107,15 @@ public class SpecialBlock : Block
         {         
             festivalCount = 0;
             festival = false;
+        }
+    }
+    public void ColorCheck()
+    {
+        if (LandOwner)
+        {
+            Material mat = LandOwner.GetComponent<Player>().myColor;
+            col.material = mat;
+
         }
     }
     public void OnSpecialBlock(GameObject player)
@@ -179,5 +193,19 @@ public class SpecialBlock : Block
         {
             player.GetComponent<Player>().TurnCheck();
         }
+    }
+    
+    public void onPurchase(GameObject player)
+    {
+        LandOwner = player;
+        tourS.SetActive(true);
+    }
+    public void OnSellBtn()
+    {
+        LandOwner = null;
+        land = false;
+        landCount = 0;
+        tourS.SetActive(false);
+        OutLine.SetActive(false);
     }
 }

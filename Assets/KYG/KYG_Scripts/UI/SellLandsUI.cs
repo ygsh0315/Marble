@@ -59,14 +59,28 @@ public class SellLandsUI : MonoBehaviourPun
                             SelectedBlock.isSelected = true;
                             SelectedBlock.OutLine.SetActive(true);
                             selectedBlockList.Add(SelectedBlock);
-                            selectedPrice += SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
+                            if (SelectedBlock.gameObject.GetComponent<BasicBlock>())
+                            {
+                                selectedPrice += SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
+                            }
+                            if (SelectedBlock.gameObject.GetComponent<SpecialBlock>())
+                            {
+                                selectedPrice += SelectedBlock.gameObject.GetComponent<SpecialBlock>().landPrice / 2;
+                            }
                         }
                         else
                         {
                             SelectedBlock.isSelected = false;
                             SelectedBlock.OutLine.SetActive(false);
                             selectedBlockList.Remove(SelectedBlock);
-                            selectedPrice -= SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
+                            if (SelectedBlock.gameObject.GetComponent<BasicBlock>())
+                            {
+                                selectedPrice -= SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
+                            }
+                            if (SelectedBlock.gameObject.GetComponent<SpecialBlock>())
+                            {
+                                selectedPrice -= SelectedBlock.gameObject.GetComponent<SpecialBlock>().landPrice / 2;
+                            }
                         }
                         
                     }
@@ -117,7 +131,14 @@ public class SellLandsUI : MonoBehaviourPun
                     SelectedBlock.isSelected = true;
                     SelectedBlock.OutLine.SetActive(true);
                     selectedBlockList.Add(SelectedBlock);
-                    selectedPrice += SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
+                    if (SelectedBlock.gameObject.GetComponent<BasicBlock>())
+                    {
+                        selectedPrice += SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
+                    }
+                    if (SelectedBlock.gameObject.GetComponent<SpecialBlock>())
+                    {
+                        selectedPrice += SelectedBlock.gameObject.GetComponent<SpecialBlock>().landPrice / 2;
+                    }
                 }
                 SetText();
             }
@@ -137,7 +158,7 @@ public class SellLandsUI : MonoBehaviourPun
         for (int i = 0; i < selectedBlockList.Count; i++)
         {
             selectedBlockList[i].LandOwner = null;
-            if (selectedBlockList[i].gameObject.GetComponent<BasicBlock>())
+            if (selectedBlockList[i].gameObject.GetComponent<Block>())
             {
                 photonView.RPC("RPCOnSellBtn", RpcTarget.All, selectedBlockList[i].GetComponent<Block>().blockID);
             }
@@ -149,7 +170,14 @@ public class SellLandsUI : MonoBehaviourPun
     [PunRPC]
     public void RPCOnSellBtn(int blockId)
     {
-        BasicBlock block = (BasicBlock)GameManager.instance.GetBlock(blockId);
-        block.OnSellBtn();
+        Block block = GameManager.instance.GetBlock(blockId);
+        if (block.GetComponent<BasicBlock>())
+        {
+            block.gameObject.GetComponent<BasicBlock>().OnSellBtn();
+        }
+        if (block.GetComponent<SpecialBlock>())
+        {
+            block.gameObject.GetComponent<SpecialBlock>().OnSellBtn();
+        }
     }
 }

@@ -56,6 +56,7 @@ public class GameUI : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
+        SPurchaseUI.SetActive(false);
         SellLandsUI.SetActive(false);
         PurchaseUI.SetActive(false);
         TakeOverUI.SetActive(false);
