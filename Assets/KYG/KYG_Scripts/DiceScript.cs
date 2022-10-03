@@ -20,9 +20,9 @@ public class DiceScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             DiceNumberTextScript.diceNumber = 0;
-            float dirX = Random.Range(0, 500);
-            float dirY = Random.Range(0, 500);
-            float dirZ = Random.Range(0, 500);
+            float dirX = 0;
+            float dirY = 0;
+            float dirZ = 250;
             transform.position = new Vector3(0, transform.position.y + 2, 0);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
