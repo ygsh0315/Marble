@@ -1055,6 +1055,8 @@ MonoBehaviour:
   dice2Number: {fileID: 0}
   even: {fileID: 6383619192700664167}
   odd: {fileID: 6383619191052128664}
+  diceOne: {fileID: 0}
+  diceTwo: {fileID: 0}
 --- !u!114 &6383619191265884514
 MonoBehaviour:
   m_ObjectHideFlags: 0
