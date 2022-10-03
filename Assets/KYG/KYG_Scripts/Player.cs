@@ -67,6 +67,15 @@ public class Player : MonoBehaviourPun
     bool six = true;
     bool seven = true;
     bool eight = true;
+    bool bone = true;
+    bool btwo = true;
+    bool bthree = true;
+    bool bfour = true;
+    bool bfive = true;
+    bool bsix = true;
+    bool bseven = true;
+    bool beight = true;
+
     public int trapCount = 0;
     public int colorCount = 0;
     public int[] chanceCard = { 1, 2, 3, 4, 5, 6 };
@@ -626,42 +635,99 @@ public class Player : MonoBehaviourPun
         {
             colorCount++;
             one = false;
+            bone = true;
         }
         if (color2.Count == 0 && two == true)
         {
             colorCount++;
             two = false;
+            btwo = true;
         }
         if (color3.Count == 0 && three == true)
         {
             colorCount++;
             three = false;
+            bthree = true;
         }
         if (color4.Count == 0 && four == true)
         {
             colorCount++;
             four = false;
+            bfour = true;
         }
         if (color5.Count == 0 && five == true)
         {
             colorCount++;
             five = false;
+            bfive = true;
         }
         if (color6.Count == 0 && six == true)
         {
             colorCount++;
             six = false;
+            bsix = true;
         }
         if (color7.Count == 0 && seven == true)
         {
             colorCount++;
             seven = false;
+            bseven = true;
         }
         if (color8.Count == 0 && eight == true)
         {
             colorCount++;
             eight = false;
+            beight = true;
         }
+        if (color1.Count !=0 && bone == false)
+        {
+            colorCount--;
+            bone = true;
+            one = true;
+        }
+        if (color2.Count != 0 && btwo == false)
+        {
+            colorCount--;
+            btwo = true;
+            two = true;
+        }
+        if (color3.Count != 0 && bthree == false)
+        {
+            colorCount--;
+            bthree = true;
+            three = true;
+        }
+        if (color4.Count != 0 && bfour == false)
+        {
+            colorCount--;
+            bfour = true;
+            four = true;
+        }
+        if (color5.Count != 0 && bfive == false)
+        {
+            colorCount--;
+            bfive = true;
+            five = true;
+        }
+        if (color6.Count != 0 && bsix == false)
+        {
+            colorCount--;
+            bsix = true;
+            six = true;
+        }
+        if (color7.Count != 0 && bseven == false)
+        {
+            colorCount--;
+            bseven = true;
+            seven = true;
+        }
+        if (color8.Count != 0 && beight == false)
+        {
+            colorCount--;
+            beight = true;
+            eight = true;
+        }
+
 
 
     }
@@ -1019,7 +1085,7 @@ public class Player : MonoBehaviourPun
     }
     public void Chance()
     {
-        int n = UnityEngine.Random.Range(5, 6);
+        int n = UnityEngine.Random.Range(1, 6);
         print(n);
         //int n = UnityEngine.Random.Range(5, chanceCard.Length);
         if (n == 1)
