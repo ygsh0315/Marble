@@ -214,8 +214,9 @@ public class BasicBlock : Block
                     LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
                 }else if(player.GetComponent<Player>().TotalMoney>= charge)
                 {
-                    GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().totalMoney = player.GetComponent<Player>().TotalMoney;
+                    //GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().totalMoney = player.GetComponent<Player>().TotalMoney;
                     GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().charge = charge;
+                    GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().UIOn = true;
                     GameUI.instance.SellLandsUI.SetActive(true);
                 }
             }

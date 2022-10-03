@@ -27485,9 +27485,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTurnPlayer: {fileID: 0}
-  cDice: 0
+  cDice: 1
   cDice1: 0
-  cDice2: 3
+  cDice2: 5
   startMoney: 2000000
   Player1: {fileID: 0}
   Player2: {fileID: 0}
@@ -32321,6 +32321,7 @@ MonoBehaviour:
   totalMoney: 0
   charge: 0
   player: {fileID: 0}
+  UIOn: 0
   selectedBlockList: []
 --- !u!4 &7227212881697902479
 Transform:

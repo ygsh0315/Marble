@@ -13,12 +13,16 @@ public class SellLandsUI : MonoBehaviourPun
     public int totalMoney;
     public int charge;
     public Player player;
+    public bool UIOn;
     public List<Block> selectedBlockList = new List<Block>();
-    private void OnEnable()
-    {
-        SelectLands();
-    }
 
+    private void Update()
+    {
+        if (UIOn)
+        {
+            SelectLands();
+        }
+    }
     private void SelectLands()
     {
         player = GameManager.instance.currentTurnPlayer.GetComponent<Player>();
@@ -34,13 +38,18 @@ public class SellLandsUI : MonoBehaviourPun
         }
         if (Input.GetButtonDown("Fire1"))
         {
+            print(1);
             if (mouseInfo.transform)
             {
+                print(2);
                 Block SelectedBlock = mouseInfo.transform.gameObject.GetComponent<Block>();
+                print(SelectedBlock.name);
                 if (SelectedBlock.LandOwner == player)
                 {
+                    print(3);
                     if (!SelectedBlock.isSelected)
                     {
+                        print(4);
                         SelectedBlock.isSelected = true;
                         SelectedBlock.OutLine.SetActive(true);
                         selectedBlockList.Add(SelectedBlock);
@@ -48,6 +57,7 @@ public class SellLandsUI : MonoBehaviourPun
                     }
                     else
                     {
+                        print(5);
                         SelectedBlock.isSelected = false;
                         SelectedBlock.OutLine.SetActive(false);
                         selectedBlockList.Remove(SelectedBlock);
