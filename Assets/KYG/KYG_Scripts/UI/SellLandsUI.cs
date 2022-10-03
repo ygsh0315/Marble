@@ -28,63 +28,55 @@ public class SellLandsUI : MonoBehaviourPun
         player = GameManager.instance.currentTurnPlayer.GetComponent<Player>();
         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit mouseInfo;
-        while (gameObject.activeSelf)
+        print(1);
+        if (Input.GetButtonDown("Fire1"))
         {
-            print(1);
-            if (Input.GetButtonDown("Fire1"))
+            print(2);
+            if (Physics.Raycast(mouseRay, out mouseInfo))
             {
-                print(2);
-                if (Physics.Raycast(mouseRay, out mouseInfo))
+                print("가리키는 대상: " + mouseInfo.transform.name);
+                if (mouseInfo.transform)
                 {
-                    print("가리키는 대상: " + mouseInfo.transform.name);
-                    if (mouseInfo.transform)
+                    print(3);
+                    Block SelectedBlock = mouseInfo.transform.gameObject.GetComponent<Block>();
+                    //Block SelectedBlock = GameObject.Find(mouseInfo.transform.name).GetComponent<Block>();
+                    print(SelectedBlock);
+                    if (SelectedBlock.LandOwner == player.gameObject)
                     {
-                        print(3);
-                        Block SelectedBlock = mouseInfo.transform.gameObject.GetComponent<Block>();
-                        //Block SelectedBlock = GameObject.Find(mouseInfo.transform.name).GetComponent<Block>();
-                        //print(SelectedBlock.LandOwner.name);
-                        print(player.name);
-                        if (SelectedBlock.LandOwner == player)
+                        print(4);
+                        if (!SelectedBlock.isSelected)
                         {
-                            print(4);
-                            if (!SelectedBlock.isSelected)
-                            {
-                                print(5);
-                                SelectedBlock.isSelected = true;
-                                SelectedBlock.OutLine.SetActive(true);
-                                selectedBlockList.Add(SelectedBlock);
-                                selectedPrice += SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
-                            }
-                            else
-                            {
-                                print(6);
-                                SelectedBlock.isSelected = false;
-                                SelectedBlock.OutLine.SetActive(false);
-                                selectedBlockList.Remove(SelectedBlock);
-                                selectedPrice -= SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
-                            }
-                            SetText();
+                            print(5);
+                            SelectedBlock.isSelected = true;
+                            SelectedBlock.OutLine.SetActive(true);
+                            selectedBlockList.Add(SelectedBlock);
+                            selectedPrice += SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
                         }
-
+                        else
+                        {
+                            print(6);
+                            SelectedBlock.isSelected = false;
+                            SelectedBlock.OutLine.SetActive(false);
+                            selectedBlockList.Remove(SelectedBlock);
+                            selectedPrice -= SelectedBlock.gameObject.GetComponent<BasicBlock>().totalLandPrice / 2;
+                        }
+                        
                     }
+
                 }
-                else
-                {
-                    print("가리키는 대상 없음");
-                }
-                print(1);
-                
+                SetText();
             }
+            else
+            {
+                print("가리키는 대상 없음");
+            }              
         }
+        
        
-    }
-
-    private void SelectBlock()
-    {
-
     }
     private void SetText()
     {
+        print("setText");
         overMoney = charge - totalMoney + selectedPrice;
         lackMoney.text = (charge - totalMoney).ToString();
         leftMoney.text = overMoney.ToString();

@@ -704,7 +704,7 @@ public class Player : MonoBehaviourPun
         {
             if (ownLandList[i].GetComponent<BasicBlock>())
             {
-                landPrice += ownLandList[i].GetComponent<BasicBlock>().takeOverCharge / 2;
+                landPrice += ownLandList[i].GetComponent<BasicBlock>().totalLandPrice;
 
             }
 
