@@ -11,9 +11,13 @@ public class Buttons : MonoBehaviour
     public TextMeshProUGUI dice2Number;
     public GameObject even;
     public GameObject odd;
+    public GameObject diceOne;
+    public GameObject diceTwo;
     DicePower dicePower;
     void Start()
     {
+        diceOne = GameObject.Find("dice");
+        diceTwo = GameObject.Find("diceTwo");
         dicePower = GetComponent<DicePower>();
         dice1Number = GameUI.instance.dice1Number.GetComponent<TextMeshProUGUI>();
         dice2Number = GameUI.instance.dice2Number.GetComponent<TextMeshProUGUI>();
@@ -89,6 +93,8 @@ public class Buttons : MonoBehaviour
         dice1Number.text = dice1.ToString();
         dice2Number.text = dice2.ToString();
         GameManager.instance.currentTurnPlayer.GetComponent<Player>().PlayerMove(dice1, dice2);
+        diceOne.GetComponent<DiceScript>().Dice(dice1);
+        diceTwo.GetComponent<DiceScriptTwo>().Dice(dice2);
         dicePower.diceButton = true;
         even.GetComponent<EvenOdd>().even = false;
         odd.GetComponent<EvenOdd>().odd = false;

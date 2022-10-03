@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DiceScript : MonoBehaviour
+public class DiceScriptTwo : MonoBehaviour
 {
     static Rigidbody rb;
     public static Vector3 diceVelocity;
@@ -24,74 +24,76 @@ public class DiceScript : MonoBehaviour
         //    float dirX = 0;
         //    float dirY = 0;
         //    float dirZ = 250;
-        //    transform.position = new Vector3(12, transform.position.y + 2, 15);
+        //    transform.position = new Vector3(17, transform.position.y + 2, 15);
         //    transform.rotation = Quaternion.identity;
         //    rb.AddForce(transform.up * 500);
         //    rb.AddTorque(dirX, dirY, dirZ);
         //}
+        
     }
-    public void Dice(int dice1)
+
+    public void Dice(int dice2)
     {
         diceVelocity = rb.velocity;
 
-
-        DiceNumberTextScript.diceNumber = 0;
-        if (dice1 == 1)
+    
+            DiceNumberTextScript.diceNumber = 0;
+        if (dice2 == 1)
         {
             float dirX = 50;
             float dirY = 300;
             float dirZ = 50;
-            transform.position = new Vector3(11, transform.position.y + 2, 15);
+            transform.position = new Vector3(17, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
             rb.AddTorque(dirX, dirY, dirZ);
         }
-        else if (dice1 == 2)
+        else if (dice2 == 2)
         {
             float dirX = 0;
             float dirY = 0;
             float dirZ = 250;
-            transform.position = new Vector3(11, transform.position.y + 2, 15);
+            transform.position = new Vector3(17, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
             rb.AddTorque(dirX, dirY, dirZ);
         }
-        else if (dice1 == 3)
+        else if (dice2 == 3)
         {
             float dirX = 100;
             float dirY = 500;
             float dirZ = 100;
-            transform.position = new Vector3(11, transform.position.y + 2, 15);
+            transform.position = new Vector3(17, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
             rb.AddTorque(dirX, dirY, dirZ);
         }
-        else if (dice1 == 4)
+        else if (dice2 == 4)
         {
             float dirX = 500;
             float dirY = 300;
             float dirZ = 800;
-            transform.position = new Vector3(11, transform.position.y + 2, 15);
+            transform.position = new Vector3(17, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
             rb.AddTorque(dirX, dirY, dirZ);
         }
-        else if (dice1 == 5)
+        else if (dice2 == 5)
         {
             float dirX = 100;
             float dirY = 200;
             float dirZ = 400;
-            transform.position = new Vector3(11, transform.position.y + 2, 15);
+            transform.position = new Vector3(17, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
             rb.AddTorque(dirX, dirY, dirZ);
         }
-        else if (dice1 == 6)
+        else if (dice2 == 6)
         {
             float dirX = 400;
             float dirY = 200;
             float dirZ = 300;
-            transform.position = new Vector3(11, transform.position.y + 2, 15);
+            transform.position = new Vector3(17, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
             rb.AddTorque(dirX, dirY, dirZ);
