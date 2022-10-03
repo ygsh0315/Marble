@@ -679,52 +679,52 @@ public class Player : MonoBehaviourPun
             eight = false;
             beight = true;
         }
-        if (color1.Count !=0 && bone == true)
+        if (color1.Count !=0 && bone == false)
         {
             colorCount--;
-            bone = false;
+            bone = true;
             one = true;
         }
-        if (color2.Count != 0 && btwo == true)
+        if (color2.Count != 0 && btwo == false)
         {
             colorCount--;
-            btwo = false;
+            btwo = true;
             two = true;
         }
-        if (color3.Count != 0 && bthree == true)
+        if (color3.Count != 0 && bthree == false)
         {
             colorCount--;
-            bthree = false;
+            bthree = true;
             three = true;
         }
-        if (color4.Count != 0 && bfour == true)
+        if (color4.Count != 0 && bfour == false)
         {
             colorCount--;
-            bfour = false;
+            bfour = true;
             four = true;
         }
-        if (color5.Count != 0 && bfive == true)
+        if (color5.Count != 0 && bfive == false)
         {
             colorCount--;
-            bfive = false;
+            bfive = true;
             five = true;
         }
-        if (color1.Count != 0 && bsix == true)
+        if (color6.Count != 0 && bsix == false)
         {
             colorCount--;
-            bsix = false;
+            bsix = true;
             six = true;
         }
-        if (color1.Count != 0 && bseven == true)
+        if (color7.Count != 0 && bseven == false)
         {
             colorCount--;
-            bseven = false;
+            bseven = true;
             seven = true;
         }
-        if (color1.Count != 0 && beight == true)
+        if (color8.Count != 0 && beight == false)
         {
             colorCount--;
-            beight = false;
+            beight = true;
             eight = true;
         }
 
@@ -1085,7 +1085,7 @@ public class Player : MonoBehaviourPun
     }
     public void Chance()
     {
-        int n = UnityEngine.Random.Range(5, 6);
+        int n = UnityEngine.Random.Range(1, 6);
         print(n);
         //int n = UnityEngine.Random.Range(5, chanceCard.Length);
         if (n == 1)
