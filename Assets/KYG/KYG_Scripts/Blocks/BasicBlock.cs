@@ -11,7 +11,7 @@ public class BasicBlock : Block
     public TextMeshProUGUI landMagText;
 
     public int landMag = 1;
-    
+
     //통행료
     public int charge = 0;
 
@@ -68,7 +68,7 @@ public class BasicBlock : Block
     public bool tear3 = false;
     //object3공장
     public GameObject tear3Factory;
-    
+
     //tear3 건설 가격
     public int tear3Price;
 
@@ -97,7 +97,7 @@ public class BasicBlock : Block
     Renderer landM;
     public bool festival = false;
     public int festivalCount = 0;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -106,7 +106,7 @@ public class BasicBlock : Block
         rbOne = tear1Factory.GetComponent<MeshRenderer>();
         rbTwo = tear2Factory.GetComponent<MeshRenderer>();
         rbThree = tear3Factory.GetComponent<MeshRenderer>();
-        landM = landMarkFactory.GetComponent<MeshRenderer>();      
+        landM = landMarkFactory.GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -117,9 +117,10 @@ public class BasicBlock : Block
         if (landMag >= 2)
         {
             landMagText.text = "X " + landMag;
-        }else if (!LandOwner)
+        }
+        else if (!LandOwner)
         {
-            landMagText.text = "";   
+            landMagText.text = "";
         }
         else
         {
@@ -141,7 +142,7 @@ public class BasicBlock : Block
         totalLandPrice = (landPrice * landCount + tear1Price * tear1Count + tear2Price * tear2Count + tear3Price * tear3Count + landMarkPrice * landMarkCount);
 
     }
-    
+
 
     public void OnBasicBlock(GameObject player)
     {
@@ -154,20 +155,20 @@ public class BasicBlock : Block
             }
             else
             {
-                player.GetComponent<Player>().TurnCheck(); 
+                player.GetComponent<Player>().TurnCheck();
             }
         }
-        else if(LandOwner == player)
+        else if (LandOwner == player)
         {
-            if(!landMark)
-            {             
-                if(land && tear1 && tear2 && tear3 && player.GetComponent<Player>().money >=landMarkPrice)
+            if (!landMark)
+            {
+                if (land && tear1 && tear2 && tear3 && player.GetComponent<Player>().money >= landMarkPrice)
                 {
                     GameUI.instance.LandMarkPurchase(gameObject, player);
                 }
-                else if(!tear1 || !tear2 || !tear3)
+                else if (!tear1 || !tear2 || !tear3)
                 {
-                    if(!tear1 && player.GetComponent<Player>().money>= tear1Price)
+                    if (!tear1 && player.GetComponent<Player>().money >= tear1Price)
                     {
                         GameUI.instance.Purchase(gameObject, player);
                     }
@@ -205,7 +206,7 @@ public class BasicBlock : Block
         }
         else
         {
-            if(player.GetComponent<Player>().shield == true)
+            if (player.GetComponent<Player>().shield == true)
             {
                 player.GetComponent<Player>().shield = false;
             }
@@ -215,14 +216,15 @@ public class BasicBlock : Block
                 {
                     player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
                     LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
-                }else if(player.GetComponent<Player>().TotalMoney>= charge)
+                }
+                else if (player.GetComponent<Player>().TotalMoney >= charge)
                 {
                     GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().totalMoney = player.GetComponent<Player>().TotalMoney;
                     GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().charge = charge;
                     //GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().SelectLands();
                     GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().UIOn = true;
                     GameUI.instance.SellLandsUI.SetActive(true);
-                    GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().lackMoney.text = (-(charge-player.GetComponent<Player>().money)).ToString();
+                    GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().lackMoney.text = (-(charge - player.GetComponent<Player>().money)).ToString();
                 }
                 if (!landMark && !GameUI.instance.SellLandsUI.activeSelf)
                 {
@@ -244,7 +246,7 @@ public class BasicBlock : Block
     }
     public void FestivalCount()
     {
-        if(festivalCount >12)
+        if (festivalCount > 12)
         {
             festival = false;
             festivalCount = 0;
@@ -298,18 +300,33 @@ public class BasicBlock : Block
         landMarkCount = 0;
         landMarkFactory.SetActive(false);
         OutLine.SetActive(false);
+        for (int i = 0; i < GameManager.instance.PlayerList.Count; i++)
+        {
+            if (GameManager.instance.PlayerList[i].GetComponent<Player>().ownLandList.Count != 0)
+            {
+                for (int j = 0; j < GameManager.instance.PlayerList[i].GetComponent<Player>().ownLandList.Count; j++)
+                {
+
+                    if (gameObject.name == GameManager.instance.PlayerList[i].GetComponent<Player>().ownLandList[j].gameObject.name)
+                    {
+                        GameManager.instance.PlayerList[i].GetComponent<Player>().ownLandList.Remove(GameManager.instance.PlayerList[i].GetComponent<Player>().ownLandList[j]);
+                    }
+                }
+
+            }
+        }
     }
 
     public bool HasMoney(int type, Player player)
     {
-        switch(type)
+        switch (type)
         {
             case 1:
                 return (tear1 || player.money < landPrice + tear1Price);
             case 2:
                 return tear2 || player.money < landPrice + tear1Price + tear2Price;
             case 3:
-                return tear3 || player.money < landPrice + tear1Price + tear2Price +tear3Price;
+                return tear3 || player.money < landPrice + tear1Price + tear2Price + tear3Price;
         }
         return false;
     }

@@ -643,49 +643,49 @@ public class Player : MonoBehaviourPun
         {
             colorCount++;
             one = false;
-            bone = true;
+            bone = false;
         }
         if (color2.Count == 0 && two == true)
         {
             colorCount++;
             two = false;
-            btwo = true;
+            btwo = false;
         }
         if (color3.Count == 0 && three == true)
         {
             colorCount++;
             three = false;
-            bthree = true;
+            bthree = false;
         }
         if (color4.Count == 0 && four == true)
         {
             colorCount++;
             four = false;
-            bfour = true;
+            bfour = false;
         }
         if (color5.Count == 0 && five == true)
         {
             colorCount++;
             five = false;
-            bfive = true;
+            bfive = false;
         }
         if (color6.Count == 0 && six == true)
         {
             colorCount++;
             six = false;
-            bsix = true;
+            bsix = false;
         }
         if (color7.Count == 0 && seven == true)
         {
             colorCount++;
             seven = false;
-            bseven = true;
+            bseven = false;
         }
         if (color8.Count == 0 && eight == true)
         {
             colorCount++;
             eight = false;
-            beight = true;
+            beight =false;
         }
         if (color1.Count != 0 && bone == false)
         {
@@ -849,7 +849,7 @@ public class Player : MonoBehaviourPun
         }
     }
     float currentTime = 0;
-    public float createTime = 1;
+    public float createTime = 2;
     public void TurnCheck()
     {
         trapUI = false;
