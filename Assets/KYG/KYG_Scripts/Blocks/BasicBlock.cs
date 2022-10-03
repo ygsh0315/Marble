@@ -282,7 +282,22 @@ public class BasicBlock : Block
     }
     public void OnSellBtn()
     {
-
+        LandOwner = null;
+        land = false;
+        landCount = 0;
+        tear1 = false;
+        tear1Count = 0;
+        tear1Factory.SetActive(false);
+        tear2 = false;
+        tear2Count = 0;
+        tear2Factory.SetActive(false);
+        tear3 = false;
+        tear3Count = 0;
+        tear3Factory.SetActive(false);
+        landMark = false;
+        landMarkCount = 0;
+        landMarkFactory.SetActive(false);
+        OutLine.SetActive(false);
     }
 
     public bool HasMoney(int type, Player player)

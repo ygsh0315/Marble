@@ -4,10 +4,12 @@ using UnityEngine;
 using TMPro;
 using System;
 using Photon.Pun;
+using UnityEngine.UI;
 public class SellLandsUI : MonoBehaviourPun
 {
     public TextMeshProUGUI lackMoney;
     public TextMeshProUGUI leftMoney;
+    public Button SellBtn;
     public int overMoney;
     public int selectedPrice;
     public int totalMoney;
@@ -114,40 +116,33 @@ public class SellLandsUI : MonoBehaviourPun
     }
     public void OnSellBtn()
     {
+        if(charge - player.money - selectedPrice>0)
+        {
+            SellBtn.interactable = false;
+        }
+        else
+        {
+            SellBtn.interactable = true;
+        }
         player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, selectedPrice);
-        player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
+        player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge); 
         GameManager.instance.MapList[player.currentMapIndex].GetComponent<Block>().LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
-        photonView.RPC("RPCOnSellBtn", RpcTarget.All);
-
-        gameObject.SetActive(false);
-        UIOn = false;
-        player.GetComponent<Player>().TurnCheck();
-    }
-    [PunRPC]
-    public void RPCOnSellBtn()
-    {
         for (int i = 0; i < selectedBlockList.Count; i++)
         {
             selectedBlockList[i].LandOwner = null;
             if (selectedBlockList[i].gameObject.GetComponent<BasicBlock>())
             {
-                selectedBlockList[i].GetComponent<BasicBlock>().land = false;
-                selectedBlockList[i].GetComponent<BasicBlock>().landCount = 0;
-                selectedBlockList[i].GetComponent<BasicBlock>().tear1 = false;
-                selectedBlockList[i].GetComponent<BasicBlock>().tear1Count = 0;
-                selectedBlockList[i].GetComponent<BasicBlock>().tear1Factory.SetActive(false);
-                selectedBlockList[i].GetComponent<BasicBlock>().tear2 = false;
-                selectedBlockList[i].GetComponent<BasicBlock>().tear2Count = 0;
-                selectedBlockList[i].GetComponent<BasicBlock>().tear2Factory.SetActive(false);
-                selectedBlockList[i].GetComponent<BasicBlock>().tear3 = false;
-                selectedBlockList[i].GetComponent<BasicBlock>().tear3Count = 0;
-                selectedBlockList[i].GetComponent<BasicBlock>().tear3Factory.SetActive(false);
-                selectedBlockList[i].GetComponent<BasicBlock>().landMark = false;
-                selectedBlockList[i].GetComponent<BasicBlock>().landMarkCount = 0;
-                selectedBlockList[i].GetComponent<BasicBlock>().landMarkFactory.SetActive(false);
-                selectedBlockList[i].OutLine.SetActive(false);
+                photonView.RPC("RPCOnSellBtn", RpcTarget.All, selectedBlockList[i].GetComponent<Block>().blockID);
             }
-            
         }
+        gameObject.SetActive(false);
+        UIOn = false;
+        player.GetComponent<Player>().TurnCheck();
+    }
+    [PunRPC]
+    public void RPCOnSellBtn(int blockId)
+    {
+        BasicBlock block = (BasicBlock)GameManager.instance.GetBlock(blockId);
+        block.OnSellBtn();
     }
 }

@@ -32317,6 +32317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lackMoney: {fileID: 482186987}
   leftMoney: {fileID: 820402643}
+  SellBtn: {fileID: 1968590887}
   overMoney: 0
   selectedPrice: 0
   totalMoney: 0
