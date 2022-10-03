@@ -245,6 +245,7 @@ public class Player : MonoBehaviourPun
 
     public void StartBonus()
     {
+        if (ownLandList.Count <= 0) return;
         if (startB == true)
         {
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);

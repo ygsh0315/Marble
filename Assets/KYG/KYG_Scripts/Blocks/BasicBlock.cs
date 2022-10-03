@@ -209,6 +209,7 @@ public class BasicBlock : Block
             if (player.GetComponent<Player>().shield == true)
             {
                 player.GetComponent<Player>().shield = false;
+                player.GetComponent<Player>().TurnCheck();
             }
             else
             {
