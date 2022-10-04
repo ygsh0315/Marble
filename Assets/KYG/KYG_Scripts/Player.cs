@@ -58,6 +58,7 @@ public class Player : MonoBehaviourPun
     public bool chance6 = false;
     public bool startB = false;
     public bool shield = false;
+    public bool startCount = false;
     public int festivaCount = 0;
     public int telePortCount = 0;
     public int charge = 1000;
@@ -180,7 +181,10 @@ public class Player : MonoBehaviourPun
             GameUI.instance.EventBlockUI.SetActive(true);
             EventBlockUI();
         }
-
+        if(startCount == true)
+        {
+            StartTurn();
+        }
 
         //print(gameObject.name);
         //TrapCheck();
@@ -198,7 +202,16 @@ public class Player : MonoBehaviourPun
 
 
     }
-
+    float startCurrentTime = 0;
+    float startCreateTime = 6;
+    public void StartTurn()
+    {
+        startCurrentTime += Time.deltaTime;
+        if(startCurrentTime > startCreateTime)
+        {
+            TurnCheck();
+        }
+    }
     private void TeleportUI()
     {
         currentTime += Time.deltaTime;
@@ -269,6 +282,7 @@ public class Player : MonoBehaviourPun
     public void StartBonus()
     {
         StartBonusList();
+        startCount = true;
         if (startB == true)
         {
             print(9);
@@ -288,7 +302,7 @@ public class Player : MonoBehaviourPun
                     print(4);
                     TurnCheck();
                 }
-                else if (start.Count >0 && startLand.Count >0)
+                else if (start.Count >0 || startLand.Count >0)
                 {
                     //블록과 랜드마크 둘다 있는경우
                     print(3);
@@ -949,6 +963,7 @@ public class Player : MonoBehaviourPun
     public float createTime = 2.5f;
     public void TurnCheck()
     {
+        startCount = false;
         trapUI = false;
         teleportUI = false;
         startUI = false;
