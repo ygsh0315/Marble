@@ -20,9 +20,9 @@ public class DiceScriptTwo1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             DiceNumberTextScript.diceNumber = 0;
-            float dirX = 50;
-            float dirY = 300;
-            float dirZ = 50;
+            float dirX = 100;
+            float dirY = 500;
+            float dirZ = 100;
             transform.position = new Vector3(0, transform.position.y + 2, 0);
             transform.rotation = Quaternion.identity;
             //transform.rotation = Quaternion.Euler(-17.66f,10.672f,-31.847f);
