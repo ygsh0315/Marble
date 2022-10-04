@@ -53,6 +53,8 @@ public class GameUI : MonoBehaviourPun
 
     public GameObject SellLandsUI;
 
+    public GameObject EventBlockUI;
+
     // Start is called before the first frame update
     void Start()
     {
