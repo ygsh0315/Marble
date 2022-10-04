@@ -1388,6 +1388,7 @@ public class Player : MonoBehaviourPun
         if (eventCurrentTime > createTime)
         {
             GameUI.instance.EventBlockUI.SetActive(false);
+            eventCurrentTime = 0;
             TurnCheck();
         }
     }
