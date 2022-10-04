@@ -152,6 +152,7 @@ public class SellLandsUI : MonoBehaviourPun
     {
         GameUI.instance.dice1Number.SetActive(true);
         GameUI.instance.dice2Number.SetActive(true);
+        overMoney = 0;
         player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, selectedPrice);
         player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge); 
         GameManager.instance.MapList[player.currentMapIndex].GetComponent<Block>().LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
