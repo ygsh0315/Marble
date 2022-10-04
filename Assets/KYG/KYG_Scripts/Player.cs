@@ -247,7 +247,12 @@ public class Player : MonoBehaviourPun
     {
         if (startB == true)
         {
-            if (ownLandList.Count <= 0) TurnCheck();
+            if (ownLandList.Count <= 0)
+            {
+                TurnCheck();
+                startB = false;
+                return;
+            }
             else
             {
 
