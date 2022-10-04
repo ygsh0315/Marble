@@ -217,6 +217,7 @@ public class BasicBlock : Block
                 {
                     player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
                     LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
+                    player.GetComponent<Player>().TurnCheck();
                 }
                 else if (player.GetComponent<Player>().TotalMoney >= charge)
                 {
