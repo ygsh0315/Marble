@@ -258,8 +258,10 @@ public class Player : MonoBehaviourPun
 
                 for (int i = 1; i < ownLandList.Count; i++)
                 {
-                    if (ownLandList[i].tag == "BasicBlock")
+
+                    if (ownLandList[i].tag == "BasicBlock" && ownLandList[i].GetComponent<BasicBlock>().landMark == false)
                     {
+                        
                         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                         RaycastHit mouseInfo;
                         if (Physics.Raycast(mouseRay, out mouseInfo))
@@ -290,8 +292,6 @@ public class Player : MonoBehaviourPun
 
                                 }
                             }
-
-
                         }
 
                     }
