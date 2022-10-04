@@ -6,6 +6,9 @@ public class DiceScript : MonoBehaviour
 {
     static Rigidbody rb;
     public static Vector3 diceVelocity;
+    //public float dirX = 0;
+    //public float dirY = 0;
+    //public float dirZ = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +24,9 @@ public class DiceScript : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
         //    DiceNumberTextScript.diceNumber = 0;
-        //    float dirX = 0;
-        //    float dirY = 0;
-        //    float dirZ = 250;
+        //    //dirX = 0;
+        //    //dirY = 0;
+        //    //dirZ = 250;
         //    transform.position = new Vector3(12, transform.position.y + 2, 15);
         //    transform.rotation = Quaternion.identity;
         //    rb.AddForce(transform.up * 500);
@@ -78,9 +81,9 @@ public class DiceScript : MonoBehaviour
         }
         else if (dice1 == 5)
         {
-            float dirX = 100;
+            float dirX = 400;
             float dirY = 200;
-            float dirZ = 400;
+            float dirZ = 300;
             transform.position = new Vector3(11, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
@@ -88,9 +91,9 @@ public class DiceScript : MonoBehaviour
         }
         else if (dice1 == 6)
         {
-            float dirX = 400;
+            float dirX = 100;
             float dirY = 200;
-            float dirZ = 300;
+            float dirZ = 100;
             transform.position = new Vector3(11, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
             rb.AddForce(transform.up * 500);
