@@ -22,8 +22,8 @@ public class EventBlock : Block
     public void OnEventBlock(Transform player)
     {
         print("EventBlock");
-        player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, specialMoney);
         player.GetComponent<Player>().eventBlock = true;
+        player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, specialMoney);
     }
 
     //public override void OnBlock(GameObject player)

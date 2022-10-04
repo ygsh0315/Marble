@@ -174,6 +174,7 @@ public class Player : MonoBehaviourPun
         }
         if(eventBlock == true)
         {
+            print("±èÇöÁø");
             GameUI.instance.EventBlockUI.SetActive(true);
             EventBlockUI();
         }
@@ -1305,10 +1306,11 @@ public class Player : MonoBehaviourPun
             TurnCheck();
         }
     }
+    float eventCurrentTime;
     public void EventBlockUI()
     {
-        currentTime += Time.deltaTime;
-        if (currentTime > createTime)
+        eventCurrentTime += Time.deltaTime;
+        if (eventCurrentTime > createTime)
         {
             GameUI.instance.EventBlockUI.SetActive(false);
             TurnCheck();
