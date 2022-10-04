@@ -878,10 +878,10 @@ public class Player : MonoBehaviourPun
                     ownLandList[i].GetComponent<SpecialBlock>().tourS.SetActive(false);
                 }
             }
-            GameManager.instance.turnIndex--;
             bankrupt = true;
             RollDiceBtn.SetActive(true);
             GameManager.instance.PlayerList.Remove(gameObject);
+            GameManager.instance.turnIndex--;
             Destroy(gameObject);
         }
     }
