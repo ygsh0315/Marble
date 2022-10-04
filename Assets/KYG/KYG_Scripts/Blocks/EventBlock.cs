@@ -23,7 +23,7 @@ public class EventBlock : Block
     {
         print("EventBlock");
         player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, specialMoney);
-        EventBlockUI(player);
+        player.GetComponent<Player>().eventBlock = true;
     }
 
     //public override void OnBlock(GameObject player)
@@ -31,15 +31,6 @@ public class EventBlock : Block
     //    print("EventBlock");
     //    player.GetComponent<Player>().TurnCheck();
     //}
-    public void EventBlockUI(Transform player)
-    {
-        GameUI.instance.EventBlockUI.SetActive(true);
-        currentTime += Time.deltaTime;
-        if(currentTime> createTime)
-        {
-            GameUI.instance.EventBlockUI.SetActive(false);
-            player.GetComponent<Player>().TurnCheck();
-        }
-    }
+    
 
 }

@@ -170,13 +170,14 @@ MonoBehaviour:
   festivaCount: 0
   telePortCount: 0
   charge: 1000
+  eventBlock: 0
   trapCount: 0
   colorCount: 0
   chanceCard: 010000000200000003000000040000000500000006000000
   myColor: {fileID: 0}
   model: {fileID: 0}
   state: 0
-  createTime: 1
+  createTime: 2
 --- !u!114 &-5914983488293862166
 MonoBehaviour:
   m_ObjectHideFlags: 0

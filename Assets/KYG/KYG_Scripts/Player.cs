@@ -59,6 +59,7 @@ public class Player : MonoBehaviourPun
     public int festivaCount = 0;
     public int telePortCount = 0;
     public int charge = 1000;
+    public bool eventBlock = false;
     bool one = true;
     bool two = true;
     bool three = true;
@@ -170,6 +171,11 @@ public class Player : MonoBehaviourPun
         {
             GameUI.instance.Chance6UI.SetActive(true);
             Chance6UI();
+        }
+        if(eventBlock == true)
+        {
+            GameUI.instance.EventBlockUI.SetActive(true);
+            EventBlockUI();
         }
 
 
@@ -879,7 +885,7 @@ public class Player : MonoBehaviourPun
         }
     }
     float currentTime = 0;
-    public float createTime = 2;
+    public float createTime = 2.5f;
     public void TurnCheck()
     {
         trapUI = false;
@@ -888,6 +894,7 @@ public class Player : MonoBehaviourPun
         festivalUI = false;
         currentTime = 0;
         hasInfo = false;
+        eventBlock = false;
         //if (trapCount == 0)
         //{
         //    isTraped = false;
@@ -1295,6 +1302,15 @@ public class Player : MonoBehaviourPun
         {
             GameUI.instance.Chance6UI.SetActive(false);
             chance6 = false;
+            TurnCheck();
+        }
+    }
+    public void EventBlockUI()
+    {
+        currentTime += Time.deltaTime;
+        if (currentTime > createTime)
+        {
+            GameUI.instance.EventBlockUI.SetActive(false);
             TurnCheck();
         }
     }
