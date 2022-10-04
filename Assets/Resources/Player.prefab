@@ -147,6 +147,8 @@ MonoBehaviour:
   lineTwoPool: []
   lineThreePool: []
   lineFourPool: []
+  start: []
+  startLand: []
   line: 1
   special: 1
   onTurn: 0

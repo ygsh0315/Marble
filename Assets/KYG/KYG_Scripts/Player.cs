@@ -36,6 +36,8 @@ public class Player : MonoBehaviourPun
     public List<GameObject> lineTwoPool = new List<GameObject>();
     public List<GameObject> lineThreePool = new List<GameObject>();
     public List<GameObject> lineFourPool = new List<GameObject>();
+    public List<GameObject> start = new List<GameObject>();
+    public List<GameObject> startLand = new List<GameObject>();
     public bool line = true;
     public bool special = true;
     public bool onTurn = false;
@@ -248,9 +250,24 @@ public class Player : MonoBehaviourPun
 
     //    }
     //}
+    public void StartBonusList()
+    {
+        for (int i =0; i< ownLandList.Count; i++)
+        {
+            if (ownLandList[i].tag == "BasicBlock" && ownLandList[i].GetComponent<BasicBlock>().landMark == false)
+            {
+                start.Add(ownLandList[i]);
 
+            }
+            else if (ownLandList[i].tag == "BasicBlock" && ownLandList[i].GetComponent<BasicBlock>().landMark == true)
+            {
+                startLand.Add(ownLandList[i]);
+            }
+        }
+    }
     public void StartBonus()
     {
+        StartBonusList();
         if (startB == true)
         {
             print(9);
@@ -263,55 +280,98 @@ public class Player : MonoBehaviourPun
             }
             else
             {
-
-                for (int i = 0; i < ownLandList.Count; i++)
+                if (start.Count ==0 && startLand.Count > 0)
                 {
-                    print(2);
-                    if (ownLandList[i].tag == "BasicBlock" && ownLandList[i].GetComponent<BasicBlock>().landMark == false)
+                    //블록이 없고 랜드마크만 있는경우
+                    startB = false;
+                    print(4);
+                    TurnCheck();
+                }
+                else if (start.Count >0 && startLand.Count >0)
+                {
+                    //블록과 랜드마크 둘다 있는경우
+                    print(3);
+                    Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit mouseInfo;
+                    if (Physics.Raycast(mouseRay, out mouseInfo))
                     {
-                        print(3);
-                        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                        RaycastHit mouseInfo;
-                        if (Physics.Raycast(mouseRay, out mouseInfo))
-                        {
-                            print("가리키는 대상: " + mouseInfo.transform.name);
-                        }
-                        else
-                        {
-                            print("가리키는 대상 없음");
-                        }
-
-                        if (Input.GetButtonDown("Fire1"))
-                        {
-                            if (mouseInfo.transform)
-                            {
-
-                                GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
-                            }
-                            for (int j = 0; j < ownLandList.Count; j++)
-                            {
-                                if (ownLandList[j].gameObject.name == mouseInfo.transform.name)
-                                {
-                                    if (ownLandList[j].GetComponent<BasicBlock>())
-                                    {
-                                        ownLandList[j].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
-                                        startB = false;
-                                    }
-
-                                }
-                            }
-                        }
-
+                        print("가리키는 대상: " + mouseInfo.transform.name);
                     }
                     else
-                    { 
-                        startB = false;
-                    print(4);
-                       TurnCheck();
+                    {
+                        print("가리키는 대상 없음");
                     }
 
+                    if (Input.GetButtonDown("Fire1"))
+                    {
+                        if (mouseInfo.transform)
+                        {
 
+                            GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
+                        }
+                        for (int j = 0; j < ownLandList.Count; j++)
+                        {
+                            if (ownLandList[j].gameObject.name == mouseInfo.transform.name)
+                            {
+                                if (ownLandList[j].GetComponent<BasicBlock>())
+                                {
+                                    ownLandList[j].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
+                                    startB = false;
+                                }
+
+                            }
+                        }
+                    }
                 }
+                //for (int i = 0; i < ownLandList.Count; i++)
+                //{
+                //    print(2);
+                //    if (ownLandList[i].tag == "BasicBlock" && ownLandList[i].GetComponent<BasicBlock>().landMark == false)
+                //    {
+                        
+                //        print(3);
+                //        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                //        RaycastHit mouseInfo;
+                //        if (Physics.Raycast(mouseRay, out mouseInfo))
+                //        {
+                //            print("가리키는 대상: " + mouseInfo.transform.name);
+                //        }
+                //        else
+                //        {
+                //            print("가리키는 대상 없음");
+                //        }
+
+                //        if (Input.GetButtonDown("Fire1"))
+                //        {
+                //            if (mouseInfo.transform)
+                //            {
+
+                //                GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
+                //            }
+                //            for (int j = 0; j < ownLandList.Count; j++)
+                //            {
+                //                if (ownLandList[j].gameObject.name == mouseInfo.transform.name)
+                //                {
+                //                    if (ownLandList[j].GetComponent<BasicBlock>())
+                //                    {
+                //                        ownLandList[j].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
+                //                        startB = false;
+                //                    }
+
+                //                }
+                //            }
+                //        }
+
+                //    }
+                //    //else
+                //    //{ 
+                //    //    startB = false;
+                //    //print(4);
+                //    //   TurnCheck();
+                //    //}
+
+
+                //}
 
 
 
