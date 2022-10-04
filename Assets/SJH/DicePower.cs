@@ -38,7 +38,7 @@ public class DicePower : MonoBehaviour
     bool start = true;
     bool end = false;
     float currentTime = 0;
-    float createTime = 0.005f;
+    float createTime = 0.01f;
     // Update is called once per frame
     void Update()
     {

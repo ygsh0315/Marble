@@ -245,60 +245,64 @@ public class Player : MonoBehaviourPun
 
     public void StartBonus()
     {
-        if (ownLandList.Count <= 0) TurnCheck();
-        else
+        if (startB == true)
         {
-
-            for (int i = 1; i < ownLandList.Count; i++)
+            if (ownLandList.Count <= 0) TurnCheck();
+            else
             {
-                if (ownLandList[i].tag == "BasicBlock")
+
+                for (int i = 1; i < ownLandList.Count; i++)
                 {
-                    Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit mouseInfo;
-                    if (Physics.Raycast(mouseRay, out mouseInfo))
+                    if (ownLandList[i].tag == "BasicBlock")
                     {
-                        print("가리키는 대상: " + mouseInfo.transform.name);
+                        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                        RaycastHit mouseInfo;
+                        if (Physics.Raycast(mouseRay, out mouseInfo))
+                        {
+                            print("가리키는 대상: " + mouseInfo.transform.name);
+                        }
+                        else
+                        {
+                            print("가리키는 대상 없음");
+                        }
+
+                        if (Input.GetButtonDown("Fire1"))
+                        {
+                            if (mouseInfo.transform)
+                            {
+
+                                GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
+                            }
+                            for (int j = 0; j < ownLandList.Count; i++)
+                            {
+                                if (ownLandList[j].gameObject.name == mouseInfo.transform.name)
+                                {
+                                    if (ownLandList[j].GetComponent<BasicBlock>())
+                                    {
+                                        ownLandList[j].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
+                                        startB = false;
+                                    }
+
+                                }
+                            }
+
+
+                        }
+
                     }
                     else
                     {
-                        print("가리키는 대상 없음");
+                        TurnCheck();
                     }
 
-                    if (Input.GetButtonDown("Fire1"))
-                    {
-                        if (mouseInfo.transform)
-                        {
-
-                            GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
-                        }
-                        for (int j = 0; j < ownLandList.Count; i++)
-                        {
-                            if (ownLandList[j].gameObject.name == mouseInfo.transform.name)
-                            {
-                                if (ownLandList[j].GetComponent<BasicBlock>())
-                                {
-                                    ownLandList[j].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
-                                    startB = false;
-                                }
-
-                            }
-                        }
-
-
-                    }
 
                 }
-                else
-                {
-                    TurnCheck();
-                }
+
+
+
 
 
             }
-
-
-
-
 
         }
     }
