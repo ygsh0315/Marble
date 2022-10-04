@@ -181,10 +181,10 @@ public class Player : MonoBehaviourPun
             GameUI.instance.EventBlockUI.SetActive(true);
             EventBlockUI();
         }
-        if(startCount == true)
-        {
-            StartTurn();
-        }
+        //if(startCount == true)
+        //{
+        //    StartTurn();
+        //}
 
         //print(gameObject.name);
         //TrapCheck();
@@ -963,6 +963,7 @@ public class Player : MonoBehaviourPun
     public float createTime = 2.5f;
     public void TurnCheck()
     {
+        startCurrentTime = 0;
         startCount = false;
         trapUI = false;
         teleportUI = false;
@@ -1206,7 +1207,7 @@ public class Player : MonoBehaviourPun
     }
     public void Chance()
     {
-        int n = UnityEngine.Random.Range(1, 6);
+        int n = UnityEngine.Random.Range(1, 5);
         print(n);
         //int n = UnityEngine.Random.Range(5, chanceCard.Length);
         if (n == 1)
@@ -1219,22 +1220,22 @@ public class Player : MonoBehaviourPun
             chance2 = true;
             ChanceTeleport();
         }
+        //if (n == 3)
+        //{
+        //    chance3 = true;
+        //    ChanceStart();
+        //}
         if (n == 3)
-        {
-            chance3 = true;
-            ChanceStart();
-        }
-        if (n == 4)
         {
             chance4 = true;
             ChanceShield();
         }
-        if (n == 5)
+        if (n == 4)
         {
             chance5 = true;
             ChanceMoney();
         }
-        if (n == 6)
+        if (n == 5)
         {
             chance6 = true;
             ChanceTakeMoney();
