@@ -360,7 +360,7 @@ public class BasicBlock : Block
         if (isTear2Tog)
         {
             //tear2Factory.SetActive(true);
-            GameObject tear2object = Instantiate(tear2Factory);
+            GameObject tear2object = Instantiate(tear2Factory, gameObject.transform);
             tear2object.SetActive(true);
             tear2object.transform.position = tear2Pos.position;
             tear2Count = 1;
@@ -369,7 +369,7 @@ public class BasicBlock : Block
         if (isTear3Tog)
         {
             //tear3Factory.SetActive(true);
-            GameObject tear3object = Instantiate(tear3Factory);
+            GameObject tear3object = Instantiate(tear3Factory, gameObject.transform);
             tear3object.SetActive(true);
             tear3object.transform.position = tear3Pos.position;
             tear3Count = 1;
@@ -384,11 +384,20 @@ public class BasicBlock : Block
 
     public void OnLandMarkPurchase()
     {
-        landMarkFactory.SetActive(true);
+        //landMarkFactory.SetActive(true);
+        GameObject landMarkObj = Instantiate(landMarkFactory, gameObject.transform);
+        landMarkObj.SetActive(true);
+        landMarkObj.transform.position = tear2Pos.position;
         landMarkCount = 1;
         landMark = true;
-        tear1Factory.SetActive(false);
-        tear2Factory.SetActive(false);
-        tear3Factory.SetActive(false);
+        GameObject tear1obj = GameObject.Find("tear1object");
+        GameObject tear2obj = GameObject.Find("tear2object");
+        GameObject tear3obj = GameObject.Find("tear3object");
+        if (tear1obj) Destroy(tear1obj);
+        if (tear2obj) Destroy(tear2obj);
+        if (tear3obj) Destroy(tear3obj);
+        //tear1Factory.SetActive(false);
+        //tear2Factory.SetActive(false);
+        //tear3Factory.SetActive(false);
     }
 }
