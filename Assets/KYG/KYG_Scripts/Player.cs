@@ -181,10 +181,10 @@ public class Player : MonoBehaviourPun
             GameUI.instance.EventBlockUI.SetActive(true);
             EventBlockUI();
         }
-        if(startCount == true)
-        {
-            StartTurn();
-        }
+        //if(startCount == true)
+        //{
+        //    StartTurn();
+        //}
 
         //print(gameObject.name);
         //TrapCheck();
@@ -963,6 +963,7 @@ public class Player : MonoBehaviourPun
     public float createTime = 2.5f;
     public void TurnCheck()
     {
+        startCurrentTime = 0;
         startCount = false;
         trapUI = false;
         teleportUI = false;

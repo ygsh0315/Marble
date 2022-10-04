@@ -169,6 +169,7 @@ MonoBehaviour:
   chance6: 0
   startB: 0
   shield: 0
+  startCount: 0
   festivaCount: 0
   telePortCount: 0
   charge: 1000
