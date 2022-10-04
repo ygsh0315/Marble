@@ -247,6 +247,8 @@ public class Player : MonoBehaviourPun
     {
         if (startB == true)
         {
+            print(9);
+            print(ownLandList.Count);
             if (ownLandList.Count <= 0)
             {
                 TurnCheck();
@@ -256,12 +258,12 @@ public class Player : MonoBehaviourPun
             else
             {
 
-                for (int i = 1; i < ownLandList.Count; i++)
+                for (int i = 0; i < ownLandList.Count; i++)
                 {
-
+                    print(2);
                     if (ownLandList[i].tag == "BasicBlock" && ownLandList[i].GetComponent<BasicBlock>().landMark == false)
                     {
-                        
+                        print(3);
                         Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
                         RaycastHit mouseInfo;
                         if (Physics.Raycast(mouseRay, out mouseInfo))
@@ -280,7 +282,7 @@ public class Player : MonoBehaviourPun
 
                                 GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
                             }
-                            for (int j = 0; j < ownLandList.Count; i++)
+                            for (int j = 0; j < ownLandList.Count; j++)
                             {
                                 if (ownLandList[j].gameObject.name == mouseInfo.transform.name)
                                 {
@@ -296,8 +298,10 @@ public class Player : MonoBehaviourPun
 
                     }
                     else
-                    {
-                        TurnCheck();
+                    { 
+                        startB = false;
+                    print(4);
+                       TurnCheck();
                     }
 
 
