@@ -68,21 +68,21 @@ public class Buttons : MonoBehaviour
         {
             if (value >= 0 && value <= 33)
             {
-                dice1 = Random.Range(1, 3);
-                dice2 = Random.Range(1, 3);
+                dice1 = Random.Range(1, 5);
+                dice2 = Random.Range(1, 5);
             }
             if (value >= 34 && value <= 66)
             {
 
-                dice1 = Random.Range(3, 5);
-                dice2 = Random.Range(3, 5);
+                dice1 = Random.Range(2, 6);
+                dice2 = Random.Range(2, 6);
 
             }
             if (value >= 67 && value <= 100)
             {
 
-                dice1 = Random.Range(4, 7);
-                dice2 = Random.Range(4, 7);
+                dice1 = Random.Range(3, 7);
+                dice2 = Random.Range(3, 7);
             }
         }
         if (GameManager.instance.cDice == true)
