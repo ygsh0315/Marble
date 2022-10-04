@@ -15,20 +15,20 @@ public class DiceScriptTwo1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        diceVelocity = rb.velocity;
+        //diceVelocity = rb.velocity;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DiceNumberTextScript.diceNumber = 0;
-            float dirX = 100;
-            float dirY = 500;
-            float dirZ = 100;
-            transform.position = new Vector3(0, transform.position.y + 2, 0);
-            transform.rotation = Quaternion.identity;
-            //transform.rotation = Quaternion.Euler(-17.66f,10.672f,-31.847f);
-            rb.AddForce(transform.up * 500);
-            rb.AddTorque(dirX, dirY, dirZ);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    DiceNumberTextScript.diceNumber = 0;
+        //    float dirX = 100;
+        //    float dirY = 500;
+        //    float dirZ = 100;
+        //    transform.position = new Vector3(0, transform.position.y + 2, 0);
+        //    transform.rotation = Quaternion.identity;
+        //    //transform.rotation = Quaternion.Euler(-17.66f,10.672f,-31.847f);
+        //    rb.AddForce(transform.up * 500);
+        //    rb.AddTorque(dirX, dirY, dirZ);
+        //}
 
     }
 

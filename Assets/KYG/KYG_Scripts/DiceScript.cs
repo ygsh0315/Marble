@@ -41,8 +41,8 @@ public class DiceScript : MonoBehaviour
         DiceNumberTextScript.diceNumber = 0;
         if (dice1 == 1)
         {
-            float dirX = 50;
-            float dirY = 300;
+            float dirX = 380;
+            float dirY = 100;
             float dirZ = 50;
             transform.position = new Vector3(11, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;

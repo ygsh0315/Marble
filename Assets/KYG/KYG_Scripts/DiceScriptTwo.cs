@@ -6,9 +6,9 @@ public class DiceScriptTwo : MonoBehaviour
 {
     static Rigidbody rb;
     public static Vector3 diceVelocity;
-    public float dirX = 0;
-    public float dirY = 0;
-    public float dirZ = 0;
+    //public float dirX = 0;
+    //public float dirY = 0;
+    //public float dirZ = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,19 +19,19 @@ public class DiceScriptTwo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        diceVelocity = rb.velocity;
+        //diceVelocity = rb.velocity;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DiceNumberTextScript.diceNumber = 0;
-            //dirX = 0;
-            //dirY = 0;
-            //dirZ = 250;
-            transform.position = new Vector3(17, transform.position.y + 2, 15);
-            transform.rotation = Quaternion.identity;
-            rb.AddForce(transform.up * 500);
-            rb.AddTorque(dirX, dirY, dirZ);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    DiceNumberTextScript.diceNumber = 0;
+        //    //dirX = 0;
+        //    //dirY = 0;
+        //    //dirZ = 250;
+        //    transform.position = new Vector3(17, transform.position.y + 2, 15);
+        //    transform.rotation = Quaternion.identity;
+        //    rb.AddForce(transform.up * 500);
+        //    rb.AddTorque(dirX, dirY, dirZ);
+        //}
 
     }
 
@@ -43,8 +43,8 @@ public class DiceScriptTwo : MonoBehaviour
             DiceNumberTextScript.diceNumber = 0;
         if (dice2 == 1)
         {
-            float dirX = 50;
-            float dirY = 300;
+            float dirX = 380;
+            float dirY = 100;
             float dirZ = 50;
             transform.position = new Vector3(17, transform.position.y + 2, 15);
             transform.rotation = Quaternion.identity;
