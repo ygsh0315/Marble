@@ -228,6 +228,21 @@ public class BasicBlock : Block
                 {
                     player.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, -charge);
                     LandOwner.GetComponent<PhotonView>().RPC("RpcAddMoney", RpcTarget.All, charge);
+                    if (!landMark && !GameUI.instance.SellLandsUI.activeSelf)
+                    {
+                        if (player.GetComponent<Player>().money >= takeOverCharge)
+                        {
+                            GameUI.instance.TakeOver(gameObject, player);
+                        }
+                        else
+                        {
+                            player.GetComponent<Player>().TurnCheck();
+                        }
+                    }
+                    else
+                    {
+                        player.GetComponent<Player>().TurnCheck();
+                    }
                 }
                 else if (player.GetComponent<Player>().TotalMoney >= charge)
                 {
@@ -238,21 +253,7 @@ public class BasicBlock : Block
                     GameUI.instance.SellLandsUI.SetActive(true);
                     GameUI.instance.SellLandsUI.GetComponent<SellLandsUI>().lackMoney.text = (-(charge - player.GetComponent<Player>().money)).ToString();
                 }
-                if (!landMark && !GameUI.instance.SellLandsUI.activeSelf)
-                {
-                    if (player.GetComponent<Player>().money >= takeOverCharge)
-                    {
-                        GameUI.instance.TakeOver(gameObject, player);
-                    }
-                    else
-                    {
-                        player.GetComponent<Player>().TurnCheck();
-                    }
-                }
-                //else
-                //{
-                //    player.GetComponent<Player>().TurnCheck();
-                //}
+                
             }
         }
     }
