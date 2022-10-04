@@ -764,16 +764,20 @@ public class Player : MonoBehaviourPun
                     ownLandList[i].GetComponent<BasicBlock>().landCount = 0;
                     ownLandList[i].GetComponent<BasicBlock>().tear1 = false;
                     ownLandList[i].GetComponent<BasicBlock>().tear1Count = 0;
-                    ownLandList[i].GetComponent<BasicBlock>().tear1Factory.SetActive(false);
+                    Destroy(ownLandList[i].GetComponent<BasicBlock>().tear1object);
+                    //ownLandList[i].GetComponent<BasicBlock>().tear1Factory.SetActive(false);
                     ownLandList[i].GetComponent<BasicBlock>().tear2 = false;
                     ownLandList[i].GetComponent<BasicBlock>().tear2Count = 0;
-                    ownLandList[i].GetComponent<BasicBlock>().tear2Factory.SetActive(false);
+                    Destroy(ownLandList[i].GetComponent<BasicBlock>().tear2object);
+                    //ownLandList[i].GetComponent<BasicBlock>().tear2Factory.SetActive(false);
                     ownLandList[i].GetComponent<BasicBlock>().tear3 = false;
                     ownLandList[i].GetComponent<BasicBlock>().tear3Count = 0;
-                    ownLandList[i].GetComponent<BasicBlock>().tear3Factory.SetActive(false);
+                    Destroy(ownLandList[i].GetComponent<BasicBlock>().tear3object);
+                    //ownLandList[i].GetComponent<BasicBlock>().tear3Factory.SetActive(false);
                     ownLandList[i].GetComponent<BasicBlock>().landMark = false;
                     ownLandList[i].GetComponent<BasicBlock>().landMarkCount = 0;
-                    ownLandList[i].GetComponent<BasicBlock>().landMarkFactory.SetActive(false);
+                    Destroy(ownLandList[i].GetComponent<BasicBlock>().landMarkObj);
+                    //ownLandList[i].GetComponent<BasicBlock>().landMarkFactory.SetActive(false);
                 }
                 if (ownLandList[i].GetComponent<SpecialBlock>())
                 {
