@@ -46,6 +46,8 @@ public class BasicBlock : Block
 
     //통행료
     public int tear1TallFee;
+
+    public Transform tear1Pos;
     #endregion
 
     #region tear2
@@ -60,6 +62,8 @@ public class BasicBlock : Block
 
     //통행료
     public int tear2TallFee;
+
+    public Transform tear2Pos;
     #endregion
 
     #region tear3
@@ -74,6 +78,8 @@ public class BasicBlock : Block
 
     //통행료
     public int tear3TallFee;
+
+    public Transform tear3Pos;
     #endregion
 
     #region landMark
@@ -344,19 +350,28 @@ public class BasicBlock : Block
         }
         if (isTear1Tog)
         {
-            tear1Factory.SetActive(true);
+            //tear1Factory.SetActive(true);
+            GameObject tear1object = Instantiate(tear1Factory, gameObject.transform);
+            tear1object.SetActive(true);
+            tear1object.transform.position = tear1Pos.position;
             tear1Count = 1;
             tear1 = true;
         }
         if (isTear2Tog)
         {
-            tear2Factory.SetActive(true);
+            //tear2Factory.SetActive(true);
+            GameObject tear2object = Instantiate(tear2Factory);
+            tear2object.SetActive(true);
+            tear2object.transform.position = tear2Pos.position;
             tear2Count = 1;
             tear2 = true;
         }
         if (isTear3Tog)
         {
-            tear3Factory.SetActive(true);
+            //tear3Factory.SetActive(true);
+            GameObject tear3object = Instantiate(tear3Factory);
+            tear3object.SetActive(true);
+            tear3object.transform.position = tear3Pos.position;
             tear3Count = 1;
             tear3 = true;
         }
