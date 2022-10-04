@@ -103,23 +103,28 @@ public class BasicBlock : Block
     Renderer landM;
     public bool festival = false;
     public int festivalCount = 0;
+    public GameObject tear1object;
+    public GameObject tear2object;
+    public GameObject tear3object;
+    public GameObject landMarkObj;
+
 
     // Start is called before the first frame update
     void Start()
     {
         landName.text = gameObject.name;
         materials = Resources.LoadAll<Material>("Color");
-        rbOne = tear1Factory.GetComponent<MeshRenderer>();
-        rbTwo = tear2Factory.GetComponent<MeshRenderer>();
-        rbThree = tear3Factory.GetComponent<MeshRenderer>();
-        landM = landMarkFactory.GetComponent<MeshRenderer>();
+        //rbOne = tear1Factory.GetComponent<MeshRenderer>();
+        //rbTwo = tear2Factory.GetComponent<MeshRenderer>();
+        //rbThree = tear3Factory.GetComponent<MeshRenderer>();
+        //landM = landMarkFactory.GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         FestivalCount();
-        ColorCheck();
+        //ColorCheck();
         if (landMag >= 2)
         {
             landMagText.text = "X " + landMag;
@@ -297,16 +302,20 @@ public class BasicBlock : Block
         landCount = 0;
         tear1 = false;
         tear1Count = 0;
-        tear1Factory.SetActive(false);
+        if (tear1object) Destroy(tear1object);
+        //tear1Factory.SetActive(false);
         tear2 = false;
         tear2Count = 0;
-        tear2Factory.SetActive(false);
+        if (tear2object) Destroy(tear2object);
+        //tear2Factory.SetActive(false);
         tear3 = false;
         tear3Count = 0;
-        tear3Factory.SetActive(false);
+        if (tear3object) Destroy(tear3object);
+        //tear3Factory.SetActive(false);
         landMark = false;
         landMarkCount = 0;
-        landMarkFactory.SetActive(false);
+        if (landMarkObj) Destroy(landMarkObj);
+        //landMarkFactory.SetActive(false);
         OutLine.SetActive(false);
         for (int i = 0; i < GameManager.instance.PlayerList.Count; i++)
         {
@@ -351,7 +360,8 @@ public class BasicBlock : Block
         if (isTear1Tog)
         {
             //tear1Factory.SetActive(true);
-            GameObject tear1object = Instantiate(tear1Factory, gameObject.transform);
+            tear1object = Instantiate(tear1Factory, gameObject.transform);
+            tear1object.GetComponent<MeshRenderer>().material = LandOwner.GetComponent<Player>().myColor;
             tear1object.SetActive(true);
             tear1object.transform.position = tear1Pos.position;
             tear1Count = 1;
@@ -360,7 +370,8 @@ public class BasicBlock : Block
         if (isTear2Tog)
         {
             //tear2Factory.SetActive(true);
-            GameObject tear2object = Instantiate(tear2Factory, gameObject.transform);
+            tear2object = Instantiate(tear2Factory, gameObject.transform);
+            tear2object.GetComponent<MeshRenderer>().material = LandOwner.GetComponent<Player>().myColor;
             tear2object.SetActive(true);
             tear2object.transform.position = tear2Pos.position;
             tear2Count = 1;
@@ -369,7 +380,8 @@ public class BasicBlock : Block
         if (isTear3Tog)
         {
             //tear3Factory.SetActive(true);
-            GameObject tear3object = Instantiate(tear3Factory, gameObject.transform);
+            tear3object = Instantiate(tear3Factory, gameObject.transform);
+            tear3object.GetComponent<MeshRenderer>().material = LandOwner.GetComponent<Player>().myColor;
             tear3object.SetActive(true);
             tear3object.transform.position = tear3Pos.position;
             tear3Count = 1;
@@ -380,22 +392,24 @@ public class BasicBlock : Block
     public void OnTakeOver(GameObject player)
     {
         LandOwner = player;
+        if(tear1object) tear1object.GetComponent<MeshRenderer>().material = LandOwner.GetComponent<Player>().myColor;
+        if(tear2object) tear2object.GetComponent<MeshRenderer>().material = LandOwner.GetComponent<Player>().myColor;
+        if(tear3object) tear3object.GetComponent<MeshRenderer>().material = LandOwner.GetComponent<Player>().myColor;
     }
 
     public void OnLandMarkPurchase()
     {
         //landMarkFactory.SetActive(true);
-        GameObject landMarkObj = Instantiate(landMarkFactory, gameObject.transform);
+        landMarkObj = Instantiate(landMarkFactory, gameObject.transform);
+        landMarkObj.GetComponent<MeshRenderer>().material = LandOwner.GetComponent<Player>().myColor;
         landMarkObj.SetActive(true);
-        landMarkObj.transform.position = tear2Pos.position;
+        landMarkObj.transform.position = tear2Pos.position + new Vector3(0,1,0);
         landMarkCount = 1;
         landMark = true;
-        GameObject tear1obj = GameObject.Find("tear1object");
-        GameObject tear2obj = GameObject.Find("tear2object");
-        GameObject tear3obj = GameObject.Find("tear3object");
-        if (tear1obj) Destroy(tear1obj);
-        if (tear2obj) Destroy(tear2obj);
-        if (tear3obj) Destroy(tear3obj);
+        
+        Destroy(tear1object);
+        Destroy(tear2object);
+        Destroy(tear3object);
         //tear1Factory.SetActive(false);
         //tear2Factory.SetActive(false);
         //tear3Factory.SetActive(false);
