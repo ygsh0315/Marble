@@ -245,48 +245,61 @@ public class Player : MonoBehaviourPun
 
     public void StartBonus()
     {
-        if (ownLandList.Count <= 0) return;
-        if (startB == true)
+        if (ownLandList.Count <= 0) TurnCheck();
+        else
         {
-            Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit mouseInfo;
-            if (Physics.Raycast(mouseRay, out mouseInfo))
+
+            for (int i = 1; i < ownLandList.Count; i++)
             {
-                print("가리키는 대상: " + mouseInfo.transform.name);
-            }
-            else
-            {
-                print("가리키는 대상 없음");
-            }
-            if (ownLandList == null)
-            {
-                return;
-            }
-            else
-            {
-                if (Input.GetButtonDown("Fire1"))
+                if (ownLandList[i].tag == "BasicBlock")
                 {
-                    if (mouseInfo.transform)
+                    Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit mouseInfo;
+                    if (Physics.Raycast(mouseRay, out mouseInfo))
                     {
-
-                        GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
+                        print("가리키는 대상: " + mouseInfo.transform.name);
                     }
-                    for (int i = 0; i < ownLandList.Count; i++)
+                    else
                     {
-                        if (ownLandList[i].gameObject.name == mouseInfo.transform.name)
-                        {
-                            if (ownLandList[i].GetComponent<BasicBlock>())
-                            {
-                                ownLandList[i].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
-                                startB = false;
-                            }
+                        print("가리키는 대상 없음");
+                    }
 
+                    if (Input.GetButtonDown("Fire1"))
+                    {
+                        if (mouseInfo.transform)
+                        {
+
+                            GameObject startBonus = GameObject.Find(mouseInfo.transform.name);
                         }
+                        for (int j = 0; j < ownLandList.Count; i++)
+                        {
+                            if (ownLandList[j].gameObject.name == mouseInfo.transform.name)
+                            {
+                                if (ownLandList[j].GetComponent<BasicBlock>())
+                                {
+                                    ownLandList[j].GetComponent<BasicBlock>().OnBasicBlock(gameObject);
+                                    startB = false;
+                                }
+
+                            }
+                        }
+
+
                     }
 
                 }
+                else
+                {
+                    TurnCheck();
+                }
+
 
             }
+
+
+
+
+
         }
     }
 
@@ -367,7 +380,6 @@ public class Player : MonoBehaviourPun
 
     public void ReturnTelePort()
     {
-
         telePortCount = 0;
         telePort = false;
         state = PlayerState.Idle;
@@ -686,7 +698,7 @@ public class Player : MonoBehaviourPun
         {
             colorCount++;
             eight = false;
-            beight =false;
+            beight = false;
         }
         if (color1.Count != 0 && bone == false)
         {
@@ -1098,7 +1110,7 @@ public class Player : MonoBehaviourPun
     }
     public void Chance()
     {
-        int n = UnityEngine.Random.Range(1, 6);
+        int n = UnityEngine.Random.Range(3, 4);
         print(n);
         //int n = UnityEngine.Random.Range(5, chanceCard.Length);
         if (n == 1)
