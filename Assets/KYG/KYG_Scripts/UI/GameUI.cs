@@ -102,6 +102,8 @@ public class GameUI : MonoBehaviourPun
     [PunRPC]
     void RPCGameStart()
     {
+        GameManager.instance.InitPlayer();
+
         GameStartUI.SetActive(false);
     }
 }

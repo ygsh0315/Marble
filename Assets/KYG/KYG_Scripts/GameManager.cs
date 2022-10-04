@@ -275,6 +275,12 @@ public class GameManager : MonoBehaviourPun
     {
         PlayerList.Add(player);
 
+       
+        //ModelPlayer();
+    }
+
+    public void InitPlayer()
+    {
         //Á¤·Ä
         PlayerList.Sort(SortByViewID);
 
@@ -285,9 +291,7 @@ public class GameManager : MonoBehaviourPun
             GameObject model = PlayerList[i].transform.GetChild(i).gameObject;
             model.SetActive(true);
             GameUI.instance.PlayerUiList[i].GetComponent<PlayerUI>().player = PlayerList[i];
-     
         }
-        //ModelPlayer();
     }
     //public void ModelPlayer()
     //{
